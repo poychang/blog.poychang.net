@@ -6,6 +6,7 @@ author: Poy Chang
 comments: true
 categories: [App]
 ---
+
 在將 Cordova 專案的 CLI 工具從 6.0 生到 6.4 的時候發生了「授權」問題，在偉大的 stackoverflow 中找到了快速解法，筆記一下。
 
 將 Cordova CLI 工具升級很簡單，只要將 `taco.json` （我用 Visual Studio 的 [TACO](https://taco.visualstudio.com/) 專案來開發）中對應的版本號改一下，改成 `"cordova-cli": "6.4.0"`基本上就 OK 了，下次編譯的時候會改用新的版本去執行，當然前提是你的環境有先將 cordova 升級成這個版本。

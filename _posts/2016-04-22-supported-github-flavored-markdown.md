@@ -6,6 +6,7 @@ author: Poy Chang
 comments: true
 categories: [Tools, Develop]
 ---
+
 使用 Markdown 來撰寫文件真的相當方便，不只可以快速地將文件結構組織起來，現在我更拿它來作筆記、寫部落格，像現在這篇文章就是使用 [Github Pages](https://pages.github.com/) 的服務，加上使用 [jekyll](https://jekyllrb.com/) 工具，然後搭配 Markdown 來寫文章，基本的語法可以參考 [Markdown 語法說明](http://markdown.tw/)。
 
 然而在文章中常會放上程式碼，這時候如果有語法高亮，那就完美了！[Github Flavored](https://help.github.com/articles/creating-and-highlighting-code-blocks/) 就是提供這樣的功能，寫法也很簡單：
@@ -13,10 +14,10 @@ categories: [Tools, Develop]
 <pre>
 ```javascript
 function foo() {
-	var bar = '';
-	if (bar === 'Awesome'){
-	  return true
-	}
+  var bar = '';
+  if (bar === 'Awesome'){
+    return true
+  }
 }
 ```
 </pre>
@@ -25,10 +26,10 @@ function foo() {
 
 ```javascript
 function foo() {
-	var bar = '';
-	if (bar === 'Awesome'){
-	  return true
-	}
+  var bar = '';
+  if (bar === 'Awesome'){
+    return true
+  }
 }
 ```
 

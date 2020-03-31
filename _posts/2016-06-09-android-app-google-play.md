@@ -6,6 +6,7 @@ author: Poy Chang
 comments: true
 categories: [App, Tools]
 ---
+
 Android 的上架動作其實很簡單，相關資料打一打，分級問卷寫一寫就差不多了，只是封裝好的 APK 需要做一些處理，才能上傳成功。
 
 因為我是開發 Cordova 專案，因此我沒有裝 [Android Studio](https://developer.android.com/studio/index.html) 開發工具，但一定會裝 JDK 和 Android SDK，所以可以透過指令來完成許多必要的動作，接下來就說明一下，用指令來完成 APK 上架前的準備動作。

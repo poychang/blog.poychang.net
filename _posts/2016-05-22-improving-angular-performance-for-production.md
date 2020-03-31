@@ -6,6 +6,7 @@ author: Poy Chang
 comments: true
 categories: [Javascript, App]
 ---
+
 不多看文件不會知道，其實 Angular 裡面有很多地方可以調整效能，其中有一個方式可以一行 code 就提升整個 Angular App 效能的方法，你一定要知道。
 
 在官方文件中 $compileProvider 有一個設定可以將關閉 Angular 提供的 debug 資訊 [debugInfoEnabled](https://docs.angularjs.org/api/ng/provider/$compileProvider#debugInfoEnabled)，程式碼就只需要一行，如下：

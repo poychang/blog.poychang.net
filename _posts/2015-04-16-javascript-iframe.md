@@ -6,13 +6,16 @@ author: Poy Chang
 comments: true
 categories: [Develop, Javascript]
 ---
+
 有些時候我們會使用 iframe 來嵌入其他頁面，但 iframe 的高度無法根據內容來自動擴展，這時候我們可以使用下面的方法 Javascript 來讓 iframe 自動調整高度。
+
 ## 方法一︰
+
 先加入iframe的語法。（Ex︰A.html）
 
 ```html
  <iframe src="./sourcePage.html" name="mainframe" id="mainframe"
-	width="100%" marginwidth="0" marginheight="0" scrolling="No" frameborder="0">
+    width="100%" marginwidth="0" marginheight="0" scrolling="No" frameborder="0">
 </iframe> 
 ```
 
@@ -35,6 +38,7 @@ categories: [Develop, Javascript]
 ```
 
 ## 方法二︰
+
 在同一個檔案內編寫就可以了。
 
 ```html
@@ -58,8 +62,8 @@ function SetCwinHeight() {
 
 ```html
 <iframe src="./sourcePage.html" name="mainframe" id="mainframe"
-	width="100%" marginwidth="0" marginheight="0"
-	scrolling="No" frameborder="0"
-	onload="Javascript:SetCwinHeight()">
+    width="100%" marginwidth="0" marginheight="0"
+    scrolling="No" frameborder="0"
+    onload="Javascript:SetCwinHeight()">
 </iframe>
 ```

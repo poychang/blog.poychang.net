@@ -34,7 +34,9 @@ author:
 
 permalink: /:title/
 
-plugins: ["jekyll-paginate"]
+plugins: 
+    - jekyll-paginate
+    - jekyll-redirect-from
 
 github_repo_url: https://github.com/poychang/blog.poychang.net/
 

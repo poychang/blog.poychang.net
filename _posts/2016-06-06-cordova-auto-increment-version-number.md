@@ -6,6 +6,7 @@ author: Poy Chang
 comments: true
 categories: [Javascript, App, Develop]
 ---
+
 更新版本號這個小動作總是讓人忽略，如果能自動更新就好了。
 
 在 Cordova 專案中，有一個工具叫做 [cordova-build-increment](https://www.npmjs.com/package/cordova-build-increment) 可以在執行 `cordova build` 時，加上下列三種指令，控制版本號的產生
@@ -29,7 +30,7 @@ categories: [Javascript, App, Develop]
 
 ----------
 
-### samplecode
+### sample code
 
 [poychang/010_increment_build_number.js](https://gist.github.com/poychang/b38051ae3f2402fe7900e202afffa913)
 

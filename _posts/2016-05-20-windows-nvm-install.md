@@ -47,4 +47,3 @@ Windows 版的安裝相對簡單，從網頁中[下載最新版](https://github.
   * 列出所有安裝過的 Node.js 清單
 * `nvm use <版本號>`
   * 切換 Node.js 版本
-

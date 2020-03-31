@@ -6,6 +6,7 @@ author: Poy Chang
 comments: true
 categories: [CSharp, WebAPI, Develop, Tools]
 ---
+
 在 2016 年 5 月的時候就有消息說 .NET Core 計畫要棄用 `package.json`，在安裝完 Visual Studio 2017 並使用新範本來建立專案時，確認了這項傳言，.NET Core 棄用 package.json 啦！
 
 在官方部落格的 [Announcing .NET Core Tools MSBuild “alpha”](https://blogs.msdn.microsoft.com/dotnet/2016/11/16/announcing-net-core-tools-msbuild-alpha/) 這篇文章中，在開頭第二段就提到這件事，當初為了讓各平台的使用者，能用非 Visual Studio 的編輯器來寫 .NET Core 程式，而導入使用的 `package.json`，但因許多客戶更希望能相容於 MSBuild，使其他專案能繼續使用，因此開發團隊擷取了 `package.json` 的優點，整合至 `.csproj/MSBuild` 中。

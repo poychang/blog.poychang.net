@@ -6,6 +6,7 @@ author: Poy Chang
 comments: true
 categories: [SQL, Tools]
 ---
+
 工作環境中有台歷史的資料庫，Oracle Database 8.1.7，這出生於 Windows 98 時代的資料庫，要跟他索取資料，那就一定要注意所使用的 Oracle Client 是否符合版本需求，不然你可是會得到 `Connections to this server version are no longer supported.` 這種令人沮喪的訊息。
 
 一直以來在尋找 Oracle Client 和 Server 的對照表，到底我們的 Oracle Database 8.1.7 能夠支援到多新的 Oracle Client，這個問號藏在心中已久，今天終於找到答案了，就是下表。

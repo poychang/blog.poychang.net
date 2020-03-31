@@ -6,6 +6,7 @@ author: Poy Chang
 comments: true
 categories: [SQL, Tools]
 ---
+
 有時候在看 MSDN 的文件練習 SQL 語法時，會看到官方的範例 SQL，如果你想要執行該 SQL 試試看了話，你必須要先有一個 SQL Server 和一個資料庫，我通常會用 SQL Server Express 搭配 LocalDB 來當作測試環境，而官方的範例資料幾乎都是用 Adventure Works 的資料（以前是用NorthWind），那我們怎樣快速還原資料庫呢？請看下去。
 
 >要還原 Adventure Works 資料庫的資料，方法很多種，可以用 Script 還原或用資料庫還原的方式，不管哪種方式，你所需要的檔案都可以從[這裡下載](https://msftdbprodsamples.codeplex.com/)或到[Sql Server Samples GitHub](https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks)，下載時要注意你`所需要的版本`和`還原的方式`就是了。
@@ -16,8 +17,8 @@ categories: [SQL, Tools]
 
 1. 下載 `Adventure Works 2014 OLTP Script.zip`。注意！是 Script 的方式唷
 2. 解壓縮下載的檔案，會得到 CSV和 `instawdb.sql` 檔案
-	* 請複製到 `C:\Program Files\Microsoft SQL Server\120\Tools\Samples\Adventure Works 2014 OLTP Script\`
-	* 這是因為等一下要執行的 SQL 預設是指向這裡，當然，你也可以修改成自己想要的
+    * 請複製到 `C:\Program Files\Microsoft SQL Server\120\Tools\Samples\Adventure Works 2014 OLTP Script\`
+    * 這是因為等一下要執行的 SQL 預設是指向這裡，當然，你也可以修改成自己想要的
 3. 使用 SSMS 開啟壓縮檔中的 `instawdb.sql`
 4. 點選 SSMS 的`工具列` > `查詢` > `SQLCMD模式` 開啟此功能
 5. 接著`執行`此 Script 即可
@@ -26,9 +27,9 @@ categories: [SQL, Tools]
 
 1. 下載 `Adventure Works DW 2014 Full Database Backup.zip`。注意！是 Backup 的方式唷
 2. 解壓縮下載的檔案，會得到一個 `AdventureWorks2014.bak` 檔案
-	* 64 位元系統，請複製至 `C:\Program Files\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\Backup`
-	* 32 位元系統，請複製至 `C:\Program Files (x86)\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\Backup`
-	* 這是預設的路徑，當然，你也可以修改成自己想要的
+    * 64 位元系統，請複製至 `C:\Program Files\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\Backup`
+    * 32 位元系統，請複製至 `C:\Program Files (x86)\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\Backup`
+    * 這是預設的路徑，當然，你也可以修改成自己想要的
 3. 開啟 SSMS 並新增查詢視窗
 4. 接著`執行`下面的 SQL 指令即可
 

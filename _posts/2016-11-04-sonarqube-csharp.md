@@ -6,6 +6,7 @@ author: Poy Chang
 comments: true
 categories: [Tools]
 ---
+
 SonarQube 是一套分析程式碼品質的工具，支援超過 25 種程式語言，如 C/C++、C#/VB.NET、Java、JavaScript、Python...等。這邊為測試架設 SonarQube 系統時所製作的筆記。
 
 [SonarQube 官方網站](http://www.sonarqube.org/)

@@ -6,6 +6,7 @@ author: Poy Chang
 comments: true
 categories: [Javascript, App]
 ---
+
 要控制裝置的相機進行拍照和儲存、讀取照片，可以透過 [apache/cordova-plugin-camera](https://github.com/apache/cordova-plugin-camera) 套件進行處理，那如果只是想將圖片做另存的動作呢？那可以選用 [devgeeks/Canvas2ImagePlugin](https://github.com/devgeeks/Canvas2ImagePlugin) 來達成這樣的目標。
 
 首先你可以透過 npm 或是 cordova 來安裝此套件
@@ -96,4 +97,3 @@ saveImageToPhone(
 
 * [Ionic Framework 教學 - 10. 使用 Cordova Plugin](http://sushiwens.blogspot.tw/2015/11/ionic-framework-10.html)
 * [Save a web photo to camera roll in Phonegap](http://stackoverflow.com/questions/11618266/save-a-web-photo-to-camera-roll-in-phonegap)
-

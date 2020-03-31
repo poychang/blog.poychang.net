@@ -6,6 +6,7 @@ author: Poy Chang
 comments: true
 categories: [PowerShell, Tools]
 ---
+
 不管使用哪一種 Command Line Tool 都會遇到的問題，自訂指令的別名。PowerShell 當然可以自訂，方法也很簡單，使用 `Set-Alias` 指令就可以辦到，只是這個別名的生命週期只有這一次的 Session 有效，那要怎麼讓它成為永久的別名呢？。
 
 假設我們今天要建立一個別名叫做 `ll`，用來取代 `Get-ChildItem`（為什麼會取 `ll`？因為我習慣使用 bash 的 `ls -l` 指令...）。

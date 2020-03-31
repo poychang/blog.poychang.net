@@ -6,6 +6,7 @@ author: Poy Chang
 comments: true
 categories: [Tools]
 ---
+
 在使用 [Gitlab](https://about.gitlab.com/) 之後，實現了自由自在的做版控，但隨之而來的就是資料安全問題，深怕哪一天硬碟掛掉不再運作，陷入心血付之一炬的窘境，雖然是使用 VN 來架設 Gitlab 的環境，可以設定 VM 的備份計畫，不過多備一份就多一份安心，不是嗎～
 
 ## 環境

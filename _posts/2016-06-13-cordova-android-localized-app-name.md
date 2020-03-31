@@ -6,6 +6,7 @@ author: Poy Chang
 comments: true
 categories: [App, Develop]
 ---
+
 要讓 App 邁向國際，多語系是一定要做的。透過 [angular-translate](https://github.com/angular-translate/angular-translate) 可以輕鬆讓 App 做到 i18n 的服務。內容搞定了，那 App 名稱呢，也能依據語系而且不同的名稱嗎？答案是肯定的。
 
 在[官方文件](https://developer.android.com/training/basics/supporting-devices/languages.html)裡面就有提到支援多語系的做法，處理方式很簡單，只要在特定的資料夾下建立對應的檔案就 OK了。

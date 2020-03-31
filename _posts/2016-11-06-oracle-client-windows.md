@@ -6,6 +6,7 @@ author: Poy Chang
 comments: true
 categories: [Tools]
 ---
+
 這篇是為公司寫的。如何在 Windows 環境下安裝支援 Oracle Database 8.1.7 的 Oracle Client。
 
 要安裝 Oracle Client 前要先確認所安裝的版本是否支援該資料庫，可以先到 [Oracle Client/Server 支援對照表](https://blog.poychang.net/oracle-client-server-interoperability/)這裡確認資料庫所能支援的 Oracle Client 到哪一版，以目前環境來說，**Oracel Client 10.2.0 是最後可相容 Oracle Database 8.1.7 的版本**了。
@@ -43,20 +44,20 @@ categories: [Tools]
 <thead>
   <tr>
     <th>變數名稱</th>
-	<th>值</th>
-	<th>備註</th>
+  <th>值</th>
+  <th>備註</th>
   </tr>
 </thead>
 <tbody>
   <tr>
     <td>NLS_LANG</td>
-	<td>TRADITIONAL CHINESE_TAIWAN.ZHT16MSWIN950</td>
-	<td>設定語系</td>
+  <td>TRADITIONAL CHINESE_TAIWAN.ZHT16MSWIN950</td>
+  <td>設定語系</td>
   </tr>
   <tr>
     <td>TNS_ADMIN</td>
-	<td>C:\OracleClient\NetWork\Admin</td>
-	<td>TNS 連線資訊位置</td>
+  <td>C:\OracleClient\NetWork\Admin</td>
+  <td>TNS 連線資訊位置</td>
   </tr>
 </tbody>
 </table>

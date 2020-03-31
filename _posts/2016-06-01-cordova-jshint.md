@@ -6,6 +6,7 @@ author: Poy Chang
 comments: true
 categories: [Javascript, App, Develop]
 ---
+
 JavaScript 是一個好好先生，總是包容我們程式碼的小瑕疵，不和我們計較語法結尾是否有 `;` 或是一些奇怪的打字錯誤，但總不能因為這樣的包容性，就讓程式碼老是髒髒的，不管程式碼品質這件事。
 
 在 Cordova 專案中，可以在 hooks 中自訂一些建置流程，常用的 hooks 類別有下面四個

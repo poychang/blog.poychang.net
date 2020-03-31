@@ -6,6 +6,7 @@ author: Poy Chang
 comments: true
 categories: [Develop, SQL]
 ---
+
 在SQL Server 中建立好與 Oracle 的 DBLink 連接後，可透過下列方式查詢 Oracle DB Server 的資料
 
 ```sql

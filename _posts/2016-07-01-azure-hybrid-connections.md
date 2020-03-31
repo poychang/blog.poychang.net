@@ -6,6 +6,7 @@ author: Poy Chang
 comments: true
 categories: [Azure]
 ---
+
 架設在 Azure 上的網站或服務，如果需要和自家內部的伺服器連結了話，除了打 VPN 通道外，還可以透過 Azure BizTalk 的服務，達成 Hybrid Connections 混合式連結。
 
 相關的運作方式，可以參考下圖，主要透過`混合式連結`服務，並在內部的伺服器上安裝對應的 Agent，混合式連線管理員，就可以達成雲與地的連結。

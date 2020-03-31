@@ -6,6 +6,7 @@ author: Poy Chang
 comments: true
 categories: [SQL]
 ---
+
 舊系統維護久了難免會遇見程 SQL Injection 攻擊，真的遇上了。
 
 這次是被透過一些駭客工具，透過該站台開放的 Web Service，利用 SQL Injection 手法所攻擊造成，紀錄本次修復方法，如下。

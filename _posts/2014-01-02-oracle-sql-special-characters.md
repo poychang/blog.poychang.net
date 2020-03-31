@@ -6,6 +6,7 @@ author: Poy Chang
 comments: true
 categories: [SQL]
 ---
+
 今天要分享 Oracle 執行 SQL 報表時，可能會出現的錯誤狀況。
 
 你是否曾經遇過，SQL 明明就是正確的，在 TOAD 上可以順利執行，但上傳到 Oracle 之後，卻頻頻出現出現錯誤，或毫無作用。解決的方法是：

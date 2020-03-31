@@ -6,6 +6,7 @@ author: Poy Chang
 comments: true
 categories: [Javascript]
 ---
+
 偶然在逛到一篇在講 JavaScript 的 hack 小技巧，有幾項覺得滿實用的，寫下來筆記。
 
 ## 使用 `!!` 將變數轉型成 Boolean

@@ -6,6 +6,7 @@ author: Poy Chang
 comments: true
 categories: [CSharp, Develop]
 ---
+
 LINQ 語言整合查詢（Language Integrated Query），提供標準且容易學習的資料查詢與更新方法，並且從 .NET Framework 3.5 開始就可以在 C# 以及 VB.NET 中使用此查詢語法。寫法分兩種方式：
 
 * 宣告式(Declarative) -> LINQ
@@ -19,7 +20,7 @@ LINQ 如何改善我們對資料存取的開發效率，以及在各種使用情
 
 將取回來的資料在程式中做進一步的資料篩選，在同一批資料中做不同條件的篩選資料時，不用再做一次資料庫連線及重新抓資料，降低資料庫負擔。
 
-```cs
+```csharp
 // Query Syntax
 var col1 = from o in Orders
            where o.CustomerID == 23
@@ -35,7 +36,7 @@ var col2 = Orders.Where(o => o.CustomerID == 23);
 
 如果要使用具名型別，在 `new` 後面加上你要的資料型別即可。
 
-```cs
+```csharp
 // Query Syntax
 var col1 = from o in Orders
            select new
@@ -54,7 +55,7 @@ var col2 = Orders.Select(o => new
 
 ## Ording 排序
 
-```cs
+```csharp
 // Query Syntax
 var col1 = from o in Orders
            orderby o.Cost ascending
@@ -66,7 +67,7 @@ var col2 = Orders.OrderBy(o => o.Cost);
 
 ---
 
-```cs
+```csharp
 // Query Syntax
 var col1 = from o in Orders
            orderby o.Cost descending
@@ -78,7 +79,7 @@ var col2 = Orders.OrderByDescending(o => o.Cost);
 
 ---
 
-```cs
+```csharp
 // Query Syntax
 var col1 = from o in Orders
            orderby o.CustomerID, o.Cost descending
@@ -97,7 +98,7 @@ var col3 = Orders.OrderBy(o => o.CustomerID)
 
 LINQ 的 Join 很容易讓人看不懂，建議 Join 的動作在 SQL server 中完成，程式會有比較好的維護性。
 
-```cs
+```csharp
 // Query Syntax
 var col1 = from c in Customers
            join o in Orders on
@@ -126,7 +127,7 @@ var col2 = Customers.Join(Orders,
 
 使用 Grouping 時，其 `Key` 的型別會和 `Value` 一樣，例如 `o.CustomerID` 型別是 `int` 則其 `Key` 也是 `int`型別。
 
-```cs
+```csharp
 // Query Syntax
 var OrderCounts1 = from o in Orders
                    group o by o.CustomerID into g
@@ -149,7 +150,7 @@ var OrderCounts2 = Orders.GroupBy(o => o.CustomerID)
 
 分頁基本上就是 `Skip` 和 `Take` 的應用。
 
-```cs
+```csharp
 // select top 3
 // Query Syntax
 var col1 = (from o in Orders
@@ -163,7 +164,7 @@ var col2 = Orders.Where(o => o.CustomerID == 23)
 
 ---
 
-```cs
+```csharp
 // skip first 2 and return the 2 after
 // Query Syntax
 var col1 = (from o in Orders
@@ -185,7 +186,7 @@ var col2 = Orders.Where(o => o.CustomerID == 23)
 * 若 T 是參考型別或是 nullable 資料型別，會回傳 NULL。
 * 若 T 是非 nullable 資料型別（如：int、bool）則會回傳 default(T)。
 
-```cs
+```csharp
 // throws exception if no elements
 // Query Syntax
 var cust1 = (from c in Customers
@@ -198,7 +199,7 @@ var cust2 = Customer.Single(c => c.CustomerID == 23);
 
 ---
 
-```cs
+```csharp
 // returns null if no elements
 // Query Syntax
 var cust1 = (from c in Customers
@@ -211,7 +212,7 @@ var cust2 = Customer.SingleOrDefault(c => c.CustomerID == 23);
 
 ---
 
-```cs
+```csharp
 // returns a new customer instance if no elements
 // Query Syntax
 var cust1 = (from c in Customers
@@ -226,7 +227,7 @@ var cust2 = Customer.Where(c => c.CustomerID == 21)
 
 ---
 
-```cs
+```csharp
 // First, Last and ElementAt used in same way
 // Query Syntax
 var cust1 = (from o in Orders
@@ -241,7 +242,7 @@ var cust2 = Orders.Where(o => o.CustomerID == 23)
 
 ---
 
-```cs
+```csharp
 // returns 0 if no elements
 // Query Syntax
 var i = (from c in Customers
@@ -262,7 +263,7 @@ LINQ 提供將查詢結果轉成各種 IEnumerable 資料型別，方便後續�
 * List
 * ILookup
 
-```cs
+```csharp
 // To Array
 string[] names = (from c in Customers
                   select c.Name).ToArray();

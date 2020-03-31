@@ -6,6 +6,7 @@ author: Poy Chang
 comments: true
 categories: [CSharp, Tools]
 ---
+
 在練習使用 LINQPad 來將 JSON 當作 ORM 來處理的時候，因為我買的 LINQPad 不是 DEVELOPER/PREMIUM 版本，所以無法使用內建的 NuGet 功能，必須手動加入所需的 LINQ to JSON 套件，也就是超級好用的 [Newtonsoft.Json](http://www.newtonsoft.com/json)，我此篇的範例程式碼也是從[該網站文件中](http://www.newtonsoft.com/json/help/html/linqtojson.htm)節取出來的。
 
 如果直接將範例程式碼貼上 LINQPad 按 `f5` 去執行，會出現「找不到類型或命名空間名稱 'JObject' (您是否遺漏 using 指示詞或組件參考?)」的錯誤訊息。
@@ -18,14 +19,14 @@ categories: [CSharp, Tools]
 
 加入需要的參考後，必須在第二個頁籤 `Additional Namespace Imports` 中輸入所需要命名空間：
 
-```cs
+```csharp
 Newtonsoft.Json
 Newtonsoft.Json.Linq
 ```
 
 這裡的動作相當於 CSharp 程式碼中的 using
 
-```cs
+```csharp
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 ```

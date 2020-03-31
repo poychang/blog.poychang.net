@@ -6,6 +6,7 @@ author: Poy Chang
 comments: true
 categories: [Tools]
 ---
+
 最近開始用 OneNote 寫筆記，當要記錄一些程式碼的時候，卻發現 OneNote 沒有支援程式碼高亮的功能，看著一片黑黑的程式碼，閱讀起來不太舒服，但又總不能手工一個個調顏色吧，找了一些工具來幫忙是一定要的！
 
 小抱怨一下，看過 [OneNote UserVoice 的回應](https://onenote.uservoice.com/forums/245490-onenote-developer-apis/suggestions/5688964-syntax-highlighting)，覺得可惜呀。

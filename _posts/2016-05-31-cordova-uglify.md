@@ -6,6 +6,7 @@ author: Poy Chang
 comments: true
 categories: [App, Develop]
 ---
+
 使用 Cordova 來做 Hybrid App 的缺點之一就是程式碼很容易就曝光，例如 Android 的 apk 封裝檔，只要用解壓縮軟體，就可以看到專案的結構，只要開啟裡面的 `assets\www` 資料夾就可以把你的程式碼看光光了。
 
 ![APK 檔案結構](http://i.imgur.com/zeQ7a9u.png)

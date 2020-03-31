@@ -6,6 +6,7 @@ author: Poy Chang
 comments: true
 categories: [Develop]
 ---
+
 製作網頁時，經常需要針對行動裝置另外做框架規劃，這時候需要判斷使用者的裝置來進行引導，那要如何偵測使用者是使用行動裝置來瀏覽網站呢？
 
 [http://detectmobilebrowsers.com/](http://detectmobilebrowsers.com/)

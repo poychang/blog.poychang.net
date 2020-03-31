@@ -6,6 +6,7 @@ author: Poy Chang
 comments: true
 categories: [App]
 ---
+
 利用 Visual Studio + Cordova 開發跨平台的 App，可以利用 [remotebuild](http://taco.tools/docs/remote-build.html) 來達成不離開 Visual Studio 又可以測試 iOS App 的開發環境。
 
 使用 remotebuild 的先決條件：你必須要有一台 Mac（真希望之後可以不用...），再來 Mac 須符合下列環境需求及安裝相關工具。
@@ -48,7 +49,7 @@ remotebuild --secure false
 解法如下：
 
 ```bash
-# 檢查檔案中，結尾是否有 ^M 
+# 檢查檔案中，結尾是否有 ^M
 cat -v 010_add_platform_class.js
 # 修正檔案
 tr -d '\r' < 010_add_platform_class.js > 010_add_platform_class.js.fix

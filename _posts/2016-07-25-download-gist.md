@@ -6,6 +6,7 @@ author: Poy Chang
 comments: true
 categories: [Develop]
 ---
+
 [GitHub](https://github.com) 有個好用的服務，[Gist](https://gist.github.com)，最基本的用法就是分享程式碼，相較於 GitHub，這裡所分享的程式碼通常以檔案為單位，或是小型的程式專案。
 
 但小歸小，所能提供的功能並不少，例如一樣擁有版本控制的功能、私有的存取限制，更還有 API 可以呼叫，更詳細的資訊，就移駕至官網 [About Gist](https://help.github.com/articles/about-gists/) 了。

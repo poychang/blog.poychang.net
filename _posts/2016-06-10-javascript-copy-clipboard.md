@@ -6,6 +6,7 @@ author: Poy Chang
 comments: true
 categories: [Javascript]
 ---
+
 很久以前要做到在網頁上提供貼心的「一鍵複製」小功能，會需要用到 flash。後來 JavaScript 有了 `execCommand` 之後，搭配 jQuery 來選定 HTML 元素，實作一鍵複製的功能就變得輕鬆許多。
 
 那麼在沒有使用 jQuery 框架的情況下，要如何達成一樣的功能呢？
