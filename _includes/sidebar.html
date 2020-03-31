@@ -1,0 +1,68 @@
+<!-- sidebar.html -->
+<header class="sidebar-header" role="banner">
+    <a href="{{ site.BASE_PATH }}/">
+        <!--<h1 class="text-center">{{ site.title }}</h1>-->
+        <img src="https://www.gravatar.com/avatar/{{site.author.email_md5}}?s=150" class="img-circle" />
+    </a>
+    <h3 class="title">
+        <a href="{{ site.BASE_PATH }}/">{{ site.title }}</a>
+    </h3>
+</header>
+
+<div class="sidebar-content">
+    {% if site.author.bio %}
+    <div id="bio" class="text-center">
+        {{ site.author.bio }}
+    </div>
+    {% endif %}
+    <nav id="page-nav">
+        <ul class="main-navigation list-unstyled list-inline">
+            <li><a href="{{ site.BASE_PATH }}/{{ site.about_path }}">About</a></li>
+            <li><a href="{{ site.BASE_PATH }}/{{ site.categories_path }}">Categories</a></li>
+            <li><a href="{{ site.BASE_PATH }}/{{ site.list_path }}">List</a></li>
+            <li><a href="{{ site.BASE_PATH }}/{{ site.rss_path }}">Feed</i></a></li>
+            <!--<li><a href="/articles/">Articles</a></li>-->
+        </ul>
+    </nav>
+
+    <form action="/search" method="get" class="form-inline text-center">
+        <div class="form-group">
+            <input type="text" class="form-control" id="sidebar-search-box" name="query" placeholder="keyword..." autofocus>
+        </div>
+        <button type="submit" class="btn btn-default btn-sm">
+            <i class="fa fa-search fa-lg"></i>
+        </button>
+    </form>
+
+    <hr>
+
+    <h5>Recent Posts</h5>
+    <ul class="list-unstyled">
+        {% for post in site.posts limit:10 %}
+            <li>
+                <span>{{ post.date | date_to_string | slice: 0, 6}}</span> &raquo;
+                <a href="{{ BASE_PATH }}{{ post.url }}">
+                {{ post.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <div align="center">
+        <a href="https://mvp.microsoft.com/zh-tw/PublicProfile/5003022">
+            <img src="/assets/images/mvp_logo.png" alt="Microsoft MVP 2018-2019 - Visual Studio and Development Technologies" />
+        </a>
+        <p>Microsoft MVP 2018-2019</p>
+    </div>
+    <div align="center">
+        <a href="https://www.facebook.com/groups/augularjs.tw">
+            <img src="/assets/images/angular-taiwan-banner.png" alt="Angular Taiwan" />
+        </a>
+        <p>Angular Taiwan</p>
+    </div>
+    <div align="center">
+        <a href="http://study4.tw/">
+            <img src="/assets/images/study4_logo.png" alt="STUDY4" />
+        </a>
+        <p>STUDY4</p>
+    </div>
+</div>
+<!-- sidebar.html end -->

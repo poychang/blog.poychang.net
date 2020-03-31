@@ -1,0 +1,26 @@
+# sudo apt-get install -qq ncftp
+
+# sudo
+
+# echo 'i am about to deal with ncftp'
+# apt-get -yq --no-install-suggests --no-install-recommends --force-yes install ncftp
+# echo 'i am done with ncftp'
+# which ncftp
+
+ncftp -u "$USERNAME" -p "$PASSWORD" $HOST<<EOF
+
+# remove all folders except wp-content
+#rm -rf site/wwwroot
+#mkdir site/wwwroot
+# find all files that are not in the wp-content folder and remove them
+find ./site/wwwroot -type f | grep -v "./wp-content" | xargs rm -rf
+
+# copy the index file from site to root
+# not needed now
+# cp ./_site/index.html ./index.html
+
+quit
+EOF
+
+cd _site
+ncftpput -R -v -u "$USERNAME" -p "$PASSWORD" $HOST /site/wwwroot .

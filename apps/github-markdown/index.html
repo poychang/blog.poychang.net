@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GitHub Markdown API</title>
+    <link rel="stylesheet" href="github-markdown.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body onload="init()">
+    <div class="container markdown-body">
+        <div class="row p-1">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Markdown</span>
+                </div>
+                <textarea id="markdown-text" class="form-control" aria-label="With textarea" rows="8"></textarea>
+            </div>
+        </div>
+
+        <div class="row p-1">
+            <button type="button" class="btn btn-outline-secondary btn-lg btn-block"
+                onclick="translateToHtml()">Translate to HTML</button>
+        </div>
+
+        <div class="row p-1">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">HTML</span>
+                </div>
+                <textarea id="html-text" class="form-control" aria-label="With textarea" rows="4"></textarea>
+            </div>
+        </div>
+
+        <div class="row p-1">
+            <button type="button" class="btn btn-outline-secondary btn-lg btn-block" onclick="copyHtml()">Copy HTML</button>
+        </div>
+
+        <div class="row p-1">
+            <div class="col border rounded">
+
+                <p class="w-100 text-center p-3">Preview</p>
+
+                <article id="html-preview" class="markdown-body"></article>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function init() {
+            document.getElementById('markdown-text').value =
+                `# 如何將 Markdown 轉成 HTML
+GitHub 有提供將 Markdown 轉成 HTML 的 API [GitHub REST API v3 Markdown](https://developer.github.com/v3/markdown/)，使用 HTTP POST 呼叫 \`https://api.github.com/markdown\` 並附加 \`{ "text": "Hello world github/linguist#1 **cool**, and #1!", "mode": "markdown", "context": "github/gollum" }\` 這樣的 HTTP Body，即可取得轉換成 HTML 格式的資料。
+## 其他資源
+這個網站 [Free Markdown to HTML Converter](https://markdowntohtml.com/) 很好用，可以將 Markdown 轉成 HTML 語法，並且提供預覽服務。`;
+        }
+        function translateToHtml() {
+            let requestBody = {
+                text: document.getElementById('markdown-text').value,
+                mode: 'markdown',
+                context: 'github/gollum'
+            };
+            let postBody = {
+                body: JSON.stringify(requestBody),
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+            };
+            fetch('https://api.github.com/markdown', postBody)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('html-text').value = data;
+                    document.getElementById('html-preview').innerHTML = data;
+                });
+        }
+        function copyHtml(item) {
+            try {
+                window.getSelection().removeAllRanges();
+
+                let range = document.createRange();
+                range.selectNode(document.getElementById('html-text'));
+                window.getSelection().addRange(range);
+                document.execCommand('copy');
+            } catch (error) {
+                console.log('Oops!, unable to copy');
+            }
+            window.getSelection().removeAllRanges();
+        }
+    </script>
+</body>
+
+</html>

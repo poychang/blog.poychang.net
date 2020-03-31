@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Online Docs Viewer / Microsoft Office Viewer</title>
+</head>
+
+<body onload="init()">
+    <div class="container">
+        <br>
+        <div class="row">
+            <div class="col">
+                <h1><a href="./">Online Docs Viewer</a> / Microsoft Office Viewer</h1>
+                <hr>
+                <div class="row">
+                    <div class="col">
+                        <div class="input-group">
+                            <input id="input" stype="text" class="form-control"
+                                placeholder="Enter a Office Document URL...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-success" type="button" onclick="update_viewer()">Update
+                                    Viewer</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <pre>Example: <span id="example-url"></span></pre>
+                    </div>
+                </div>
+                <hr>
+                <h4>Viewer</h4>
+                <iframe id="office" src="https://view.officeapps.live.com/op/embed.aspx?src=" width="100%" height="300"
+                    frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+                <hr>
+                <h4>Microsoft Office Viewer</h4>
+                <p>Only files under 10 MB can be previewed with the Microsoft Office Viewer.</p>
+                <p>
+                    <ul>
+                        <li>Office Viewer Link: <a id="office-viewer-link" href=""
+                                target="_blank">https://view.officeapps.live.com/op/view.aspx?src=[OFFICE_FILE_URL]</a>
+                        </li>
+                        <li>Office Viewer Embedded Link: <a id="office-viewer-embedded-link" href=""
+                                target="_blank">https://view.officeapps.live.com/op/embed.aspx?src=[OFFICE_FILE_URL]</a>
+                        </li>
+                    </ul>
+                </p>
+                <p>Microsoft Office Viewer only previews office document types, listed below:</p>
+                <p>
+                    <ol>
+                        <li>Microsoft Word (.DOCX, .DOCM, .DOTM, .DOTX, .DOC)</li>
+                        <li>Microsoft Excel (.XLSX, .XLSB, .XLS, .XLSM)</li>
+                        <li>Microsoft PowerPoint (.PPTX, .PPSX, .PPT, .PPS, .PPTM, .POTM, .PPAM, .POTX, .PPSM)</li>
+                    </ol>
+                </p>
+                <hr>
+                <p style="text-align: right;"><a href="./">Online Docs Viewer</a> / Microsoft Office Viewer</p>
+            </div>
+        </div>
+    </div>
+    <style type="text/css">
+        #office {
+            border: 1px solid #dedede;
+        }
+    </style>
+    <script type="text/javascript">
+        var exampleUrl = 'https://github.com/poychang/poychang.github.io/raw/master/assets/post-files/THIS-IS-WORD.docx';
+        function init() {
+            document.getElementById('example-url').innerText = exampleUrl;
+            document.getElementById('office').setAttribute('src', `https://view.officeapps.live.com/op/embed.aspx?src=${exampleUrl}`);
+            document.getElementById('office-viewer-link').setAttribute('href', `https://view.officeapps.live.com/op/view.aspx?src=${exampleUrl}`);
+            document.getElementById('office-viewer-embedded-link').setAttribute('href', `https://view.officeapps.live.com/op/embed.aspx?src=${exampleUrl}`);
+        }
+        function update_viewer() {
+            var link = document.getElementById('input').value;
+            if (link.length <= 1) {
+                link = exampleUrl;
+            }
+            document.getElementById('office').setAttribute('src', 'https://docs.google.com/a/umd.edu/viewer?url=' + link + '&embedded=true');
+        }
+    </script>
+</body>
+
+</html>

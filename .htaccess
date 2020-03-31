@@ -1,0 +1,17 @@
+# Cache-Control
+# ------------------------------
+# One minute: max-age=60
+# One hour: max-age=3600
+# One day: max-age=86400
+# One week: max-age=604800
+# One month: max-age=2628000
+# One year: max-age=31536000
+# ------------------------------
+# One year for image files
+<filesMatch ".(jpg|jpeg|png|gif|ico)$">
+Header set Cache-Control "max-age=31536000, public"
+</filesMatch>
+# One month for css and js
+<filesMatch ".(css|js)$">
+Header set Cache-Control "max-age=2628000, public"
+</filesMatch>

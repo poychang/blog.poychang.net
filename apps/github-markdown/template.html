@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Markdown CSS</title>
+    <link rel="stylesheet" href="github-markdown.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <article class="markdown-body">
+
+        <h1>如何使用</h1>
+
+        <p>重點是加入 <code>&lt;link rel=&quot;stylesheet&quot; href=&quot;markdown.css&quot;&gt;</code> 這行，並在 HTML
+            <code>boay</code> 標籤內，把要呈現的內容用 <code>&lt;article class=&quot;markdown-body&quot;&gt;</code> 標籤包起來，即可。</p>
+
+        <h2>如何將 Markdown 轉成 HTML</h2>
+
+        <p>這個網站 <a href="https://markdowntohtml.com/">Free Markdown to HTML Converter
+            </a> 很好用，可以將 Markdown 轉成 HTML 語法，並且提供預覽服務。</p>
+
+        <p>或用 GitHub Markdown API 來將 Markdown 語法轉成 HTML，可以參考<a href="./index.html">這個範例網頁</a>。</p>
+
+    </article>
+</body>
+
+</html>

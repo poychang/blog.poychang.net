@@ -1,0 +1,48 @@
+# visit https://github.com/mojombo/jekyll/wiki/Configuration for more settings
+
+paginate: 10
+paginate_path: "page:num"
+exclude: ["README.md", "vendor"] # files to exclude
+highlighter: rouge
+markdown: kramdown
+disqus: 
+facebook_comments: poychang
+title: Poy Chang
+google_analytics: UA-1849069-6
+google_optimize: GTM-W9G45SD
+google_verification: lupuu8pc414C-KkxS_mqZgMcEwWFtckKZN5lsmFhFDA
+google_adsense: ca-pub-9725019211606469
+timezone: Asia/Taipei
+
+defaults:
+  -
+    scope:
+      path: "" # empty string for all files
+    values:
+      title: I am PC
+
+description: Poy Chang
+author:
+  name: Poy Chang
+  github: poychang
+  facebook: poychang
+  linkedin: poychang
+  twitter: poychang
+  bio: Trial and Error
+  email: poypost@gmail.com
+  email_md5: c525d15ee116aca696f7af9a926e1788
+
+permalink: /:title/
+
+plugins: ["jekyll-paginate"]
+
+github_repo_url: https://github.com/poychang/poychang.github.io/
+
+rss_path: feed.xml
+rss_url: http://feeds.feedburner.com/poychang
+categories_path: categories/
+about_path: about/
+list_path: list/
+#tags_path: tags.html
+
+BASE_PATH: https://poychang.github.io
