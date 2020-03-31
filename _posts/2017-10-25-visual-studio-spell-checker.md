@@ -40,5 +40,5 @@ categories: [Tools]
 
 參考資料：
 
-* [正規表示式 Regular Expression](https://poychang.github.io/note-regular-expression/)
+* [正規表示式 Regular Expression](https://blog.poychang.net/note-regular-expression/)
 * [EWSoftware/VSSpellChecker](https://github.com/EWSoftware/VSSpellChecker)

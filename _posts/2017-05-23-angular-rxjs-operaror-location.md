@@ -8,7 +8,7 @@ categories: [Typescript, Angular, Develop]
 ---
 Angular 專案環境是一個 RxJS friendly 的環境，可以透過 RxJS 幫我們完成很多任務，而如果你和我一樣總是傻傻分不清楚所使用的 RxJS 是來自 operator 和 observable 了話，然後總是背不起來運算子到底在哪裡，可以試試看下面這種查詢方式。
 
->如果是使用 RxJS 5.5 之後的版本，[建議使用這種方式 Import RxJS 的各項功能](https://poychang.github.io/import-rxjs-correctly/)。
+>如果是使用 RxJS 5.5 之後的版本，[建議使用這種方式 Import RxJS 的各項功能](https://blog.poychang.net/import-rxjs-correctly/)。
 
 在專案資料夾中，`node_modules/rxjs/` 這裡路徑下，有個 `Rx.d.ts` 檔案，裡面 import 了所有 Rx 方法，在裡面你會看到像下面這段程式碼：
 

@@ -20,9 +20,9 @@ categories: [Develop, Bot, Tools]
     "packageName": "tw.com.your-domain.app-name",
     "developer": {
         "name": "Poy Chang",
-        "websiteUrl": "https://poychang.github.io",
-        "privacyUrl": "https://poychang.github.io",
-        "termsOfUseUrl": "https://poychang.github.io"
+        "websiteUrl": "https://blog.poychang.net",
+        "privacyUrl": "https://blog.poychang.net",
+        "termsOfUseUrl": "https://blog.poychang.net"
     },
     "icons": {
         "color": "color.png",

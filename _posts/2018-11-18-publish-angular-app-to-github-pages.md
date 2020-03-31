@@ -82,7 +82,7 @@ npx ngh --dir=dist/PROJECT_NAME
 
 ### 開啟網站
 
-完成上述的建置及佈署後，就可以開啟瀏覽器，輸入 [https://poychang.github.io/angular-tour-of-heroes/heroes](https://poychang.github.io/angular-tour-of-heroes/heroes) 來檢視你的 Angular 應用程式囉。
+完成上述的建置及佈署後，就可以開啟瀏覽器，輸入 [https://blog.poychang.net/angular-tour-of-heroes/heroes](https://blog.poychang.net/angular-tour-of-heroes/heroes) 來檢視你的 Angular 應用程式囉。
 
 ![檢視 angular-tour-of-heroes 網站](https://i.imgur.com/TlZL0jr.png)
 

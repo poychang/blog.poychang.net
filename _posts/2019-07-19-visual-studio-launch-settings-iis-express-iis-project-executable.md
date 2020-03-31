@@ -11,7 +11,7 @@ categories: [Dotnet, WebAPI, Develop]
 
 ## 緣由
 
-在參考這篇[在 ASP.NET Core WebAPI 中做 Windows 驗證](https://poychang.github.io/asp-net-core-windows-authentication/)的文章做實驗時，有些人可以成功拿到 Windows 驗證的 AD 資訊，但有些人沒辦法，正覺得奇怪時，發現成功取得 AD 資訊的人，是使用 `IIS Express` Profile 來啟動應用程式，而無法取得資訊的人是用 `WindowsSecurity`。
+在參考這篇[在 ASP.NET Core WebAPI 中做 Windows 驗證](https://blog.poychang.net/asp-net-core-windows-authentication/)的文章做實驗時，有些人可以成功拿到 Windows 驗證的 AD 資訊，但有些人沒辦法，正覺得奇怪時，發現成功取得 AD 資訊的人，是使用 `IIS Express` Profile 來啟動應用程式，而無法取得資訊的人是用 `WindowsSecurity`。
 
 ![選擇使用哪個 Profile 啟動應用程式](https://i.imgur.com/Ry6cCC3.png)
 

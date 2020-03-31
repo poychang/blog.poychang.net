@@ -53,7 +53,7 @@ SQL 明明就是正確的，在 TOAD 上可以順利執行，但上傳到 Oracle
 - 將多餘的空行刪掉
 - 注意 SQL 最後一行有沒有加 `/` 符號
 
-詳細請參考[此篇文章](https://poychang.github.io/oracle-sql-special-characters/)。
+詳細請參考[此篇文章](https://blog.poychang.net/oracle-sql-special-characters/)。
 
 ## C# System.Data.OracleClient 問題
 
@@ -71,7 +71,7 @@ SQL 明明就是正確的，在 TOAD 上可以順利執行，但上傳到 Oracle
 
 OracleClient 會依 x64/x86 決定適當的 Oracle Client 版本，不必手工切換。因此，如果想在 Windows x64 上使用 `System.Data.Oraclient`，最好 32bit/64bit 兩種 10.2 + 版本的 Oracle Client 都要裝，並確定 `PATH` 變數中二者的 bin 目錄都有在其中。
 
-詳細請參考[此篇文章](https://poychang.github.io/oracle-client-windows/)。
+詳細請參考[此篇文章](https://blog.poychang.net/oracle-client-windows/)。
 
 ---
 

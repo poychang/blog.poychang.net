@@ -152,7 +152,7 @@ LEFT JOIN sys.dm_exec_sessions s ON c.session_id = s.session_id
 
 ## DBLink 連線至另一台資料庫做查詢的動作
 
-參考文章：[SQL Server 使用 OpenQuery 以及傳遞參數](http://poychang.github.io/sql-server-open-query/)
+參考文章：[SQL Server 使用 OpenQuery 以及傳遞參數](http://blog.poychang.net/sql-server-open-query/)
 
 先建立連結
 

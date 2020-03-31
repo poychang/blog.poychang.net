@@ -36,7 +36,7 @@ permalink: /:title/
 
 plugins: ["jekyll-paginate"]
 
-github_repo_url: https://github.com/poychang/poychang.github.io/
+github_repo_url: https://github.com/poychang/blog.poychang.net/
 
 rss_path: feed.xml
 rss_url: http://feeds.feedburner.com/poychang
@@ -45,4 +45,4 @@ about_path: about/
 list_path: list/
 #tags_path: tags.html
 
-BASE_PATH: https://poychang.github.io
+BASE_PATH: https://blog.poychang.net

@@ -11,13 +11,13 @@ categories: [CSharp, Dotnet]
 
 目錄：
 
-- [基本操作](https://poychang.github.io/linq-to-xml-basic-usage/)
-- [建立 XML 檔案](https://poychang.github.io/linq-to-xml-create-xml-file)
-- [查詢 XML 資料](https://poychang.github.io/linq-to-xml-query-xml/)
-- [修改 XML 資料](https://poychang.github.io/linq-to-xml-edit-xml)
-- [轉換 XML 資料](https://poychang.github.io/linq-to-xml-transfom-xml)
-- [驗證 XML 資料](https://poychang.github.io/linq-to-xml-validate-xml)
-- [取得 CDATA 資料](https://poychang.github.io/2018-02-05-linq-to-xml-extract-data-from-cdata)
+- [基本操作](https://blog.poychang.net/linq-to-xml-basic-usage/)
+- [建立 XML 檔案](https://blog.poychang.net/linq-to-xml-create-xml-file)
+- [查詢 XML 資料](https://blog.poychang.net/linq-to-xml-query-xml/)
+- [修改 XML 資料](https://blog.poychang.net/linq-to-xml-edit-xml)
+- [轉換 XML 資料](https://blog.poychang.net/linq-to-xml-transfom-xml)
+- [驗證 XML 資料](https://blog.poychang.net/linq-to-xml-validate-xml)
+- [取得 CDATA 資料](https://blog.poychang.net/2018-02-05-linq-to-xml-extract-data-from-cdata)
 
 > 系列文完整範例程式碼請參考 [poychang/Demo-Linq-To-Xml](https://github.com/poychang/Demo-Linq-To-Xml)。
 
@@ -46,7 +46,7 @@ xmlDocument.Descendants("Student")
 
 ### 轉換成 HTML
 
-如果要將 XML 　資料轉換成同樣是標記式語言的 HTML 格式，玩法就可以改變一下，因為 HTML 本身符合 XML 格式，因此我們可以藉由 LINQ to XML [建立 XML 文件的方法](https://poychang.github.io/linq-to-xml-create-xml-file)，來協助我們進行轉換，請見以下範例：
+如果要將 XML 　資料轉換成同樣是標記式語言的 HTML 格式，玩法就可以改變一下，因為 HTML 本身符合 XML 格式，因此我們可以藉由 LINQ to XML [建立 XML 文件的方法](https://blog.poychang.net/linq-to-xml-create-xml-file)，來協助我們進行轉換，請見以下範例：
 
 ```csharp
 var result = new XDocument(

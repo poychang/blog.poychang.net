@@ -101,7 +101,7 @@ categories: [Note, Tools]
   _ 檢視各個 Method 的循環複雜度
 - [Visual Studio Spell Checker](https://marketplace.visualstudio.com/items?itemName=EWoodruff.VisualStudioSpellCheckerVS2017andLater)
   - 檢查程式碼英文拼寫是否正確
-  - [介紹文](https://poychang.github.io/visual-studio-spell-checker/)
+  - [介紹文](https://blog.poychang.net/visual-studio-spell-checker/)
 - [Web Essentials](http://vswebessentials.com/)
   - Web Essentials 是增強 Visual Studio 在 Web、CSS、JavaScript 開發上的方便性
   - 再加裝 [Web Extension Pack](https://visualstudiogallery.msdn.microsoft.com/f3b504c6-0095-42f1-a989-51d5fc2a8459?SRC=Home) 裡面包含很多好用的工具

@@ -53,7 +53,7 @@ categories: [Azure, Tools]
 
 ![佈署後的網站畫面](https://i.imgur.com/iCR6l1U.png)
 
->如果佈署至 Azure 過程中，發生 ERROR_FILE_IN_USE 錯誤，可以參考這篇 [使用 VSTS 佈署 Azure Web App 發生 ERROR_FILE_IN_USE](https://poychang.github.io/vsts-depoly-azure-web-app-occur-error-file-in-use/)。
+>如果佈署至 Azure 過程中，發生 ERROR_FILE_IN_USE 錯誤，可以參考這篇 [使用 VSTS 佈署 Azure Web App 發生 ERROR_FILE_IN_USE](https://blog.poychang.net/vsts-depoly-azure-web-app-occur-error-file-in-use/)。
 
 ----------
 

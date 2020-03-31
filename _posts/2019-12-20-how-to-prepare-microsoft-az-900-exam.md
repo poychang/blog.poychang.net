@@ -47,7 +47,7 @@ categories: [Azure, Develop]
 
 ### 官方教材
 
-Microsoft 官方有個教學平台 Microsoft Learn，這個平台上面有很豐富的教學資源，除了適合[作為公司內部的教育訓練資源](https://poychang.github.io/using-microsoft-learn-as-company-training-center/)，這上面有每一張 [Microsoft 證照的介紹](https://docs.microsoft.com/zh-tw/learn/certifications/browse/)，而在 AZ-900 證照的介紹中，還有提供[繁體中文的 Azure 基本概念官方教學資源](https://docs.microsoft.com/zh-tw/learn/paths/azure-fundamentals/)。沒錯！是繁體中文！
+Microsoft 官方有個教學平台 Microsoft Learn，這個平台上面有很豐富的教學資源，除了適合[作為公司內部的教育訓練資源](https://blog.poychang.net/using-microsoft-learn-as-company-training-center/)，這上面有每一張 [Microsoft 證照的介紹](https://docs.microsoft.com/zh-tw/learn/certifications/browse/)，而在 AZ-900 證照的介紹中，還有提供[繁體中文的 Azure 基本概念官方教學資源](https://docs.microsoft.com/zh-tw/learn/paths/azure-fundamentals/)。沒錯！是繁體中文！
 
 ![Azure 基本概念](https://i.imgur.com/nNsnrKH.png)
 

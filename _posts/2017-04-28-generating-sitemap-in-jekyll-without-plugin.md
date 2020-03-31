@@ -17,7 +17,7 @@ categories: [Tools]
 ```xml
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://poychang.github.io/generating-sitemap-in-jekyll-without-plugin/</loc>
+        <loc>https://blog.poychang.net/generating-sitemap-in-jekyll-without-plugin/</loc>
         <lastmod>2017-04-27T23:42:00+08:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>

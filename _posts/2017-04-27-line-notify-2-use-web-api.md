@@ -6,7 +6,7 @@ author: Poy Chang
 comments: true
 categories: [CSharp, Dotnet, WebAPI]
 ---
-做過上一篇[實作 Line Notify 通知服務 (1)](https://poychang.github.io/line-notify-1-basic/)後，雖然作法有些複雜，但對 Line Notify 的連動的操作以及發訊息的方法有了認識，這篇打算將複雜封裝，做成一隻隻的 API 服務，讓使用上變得簡單。
+做過上一篇[實作 Line Notify 通知服務 (1)](https://blog.poychang.net/line-notify-1-basic/)後，雖然作法有些複雜，但對 Line Notify 的連動的操作以及發訊息的方法有了認識，這篇打算將複雜封裝，做成一隻隻的 API 服務，讓使用上變得簡單。
 
 >我使用的開發工具是 Visual Studio 2017，使用 ASP.NET Core 專案範本。
 

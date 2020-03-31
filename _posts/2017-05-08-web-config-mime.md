@@ -23,7 +23,7 @@ IIS 中已經幫我們設定好基本的 MIME 類型，但總有些特殊的 MIM
 </configuration>
 ```
 
->常用的 MIME 類型可以參考[此連結](https://poychang.github.io/note-mime-type/)
+>常用的 MIME 類型可以參考[此連結](https://blog.poychang.net/note-mime-type/)
 
 另外，為了避免 IIS 在根據你的 web.config 做設定的時候，出現類似`在唯一金錀屬性'value'設為'xxxx'的情況下，無法新增類型'add'的重複集合項目`的錯誤訊息，可以使用 `remove` 將該設定移除然後再新增，程式碼如下：
 

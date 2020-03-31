@@ -147,7 +147,7 @@ Postman 裡面的操作步驟如下：
 
 看到這裡應該會覺得，要使用 Line Notify 的訊息服務，要做的事情有好多，感覺很複雜，應該會有股即使他免費（對！他免費！）卻不想玩他的感覺吧。
 
-不過其實裡面很多步驟，可以透過程式幫我們處理掉，讓我們的操作變的單純。[下一篇](https://poychang.github.io/line-notify-2-use-web-api/)我打算利用 ASP.NET Web API 來整合上面的流程，讓這一切操作變得輕鬆些。
+不過其實裡面很多步驟，可以透過程式幫我們處理掉，讓我們的操作變的單純。[下一篇](https://blog.poychang.net/line-notify-2-use-web-api/)我打算利用 ASP.NET Web API 來整合上面的流程，讓這一切操作變得輕鬆些。
 
 ## 補充
 

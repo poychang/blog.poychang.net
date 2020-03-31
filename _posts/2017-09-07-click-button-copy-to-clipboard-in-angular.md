@@ -6,7 +6,7 @@ author: Poy Chang
 comments: true
 categories: [Typescript, Angular]
 ---
-之前寫過一篇[只用 JavaScript 實作一鍵複製](https://poychang.github.io/javascript-copy-clipboard/)的作法，在了解原理後，想要在 Angular 中也來實作同樣的功能，其實也很簡單唷！
+之前寫過一篇[只用 JavaScript 實作一鍵複製](https://blog.poychang.net/javascript-copy-clipboard/)的作法，在了解原理後，想要在 Angular 中也來實作同樣的功能，其實也很簡單唷！
 
 >先提一下，複製、貼上這動作是由瀏覽器所提供的，所以需要使用到 `document` 和 `window` 這個瀏覽器物件。
 

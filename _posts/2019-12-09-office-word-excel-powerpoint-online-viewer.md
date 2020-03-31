@@ -18,7 +18,7 @@ categories: [WebAPI, Develop, Tools]
 https://view.officeapps.live.com/op/view.aspx?src=
 ```
 
-例如我有個 Word 檔網址是 `https://github.com/poychang/poychang.github.io/raw/master/assets/post-files/THIS-IS-WORD.docx`，你的預覽網址便是長這樣 `https://view.officeapps.live.com/op/view.aspx?src=https://github.com/poychang/poychang.github.io/raw/master/assets/post-files/THIS-IS-WORD.docx`，直接連到此網址結果如下：
+例如我有個 Word 檔網址是 `https://github.com/poychang/blog.poychang.net/raw/master/assets/post-files/THIS-IS-WORD.docx`，你的預覽網址便是長這樣 `https://view.officeapps.live.com/op/view.aspx?src=https://github.com/poychang/blog.poychang.net/raw/master/assets/post-files/THIS-IS-WORD.docx`，直接連到此網址結果如下：
 
 ![Microsoft Office Viewer 預覽 Word 文件](https://i.imgur.com/Uq0rk0y.png)
 
@@ -32,7 +32,7 @@ https://view.officeapps.live.com/op/embed.aspx?src=
 
 ```html
 <iframe
-    src='https://view.officeapps.live.com/op/embed.aspx?src=https://github.com/poychang/poychang.github.io/raw/master/assets/post-files/THIS-IS-WORD.docx'
+    src='https://view.officeapps.live.com/op/embed.aspx?src=https://github.com/poychang/blog.poychang.net/raw/master/assets/post-files/THIS-IS-WORD.docx'
     width='500px' height='300px' frameborder='0'>
     This is an embedded <a target='_blank' href='http://office.com'>Microsoft Office</a> document, powered by <a target='_blank' href='http://office.com/webapps'>Office Online</a>.
 </iframe>
@@ -81,7 +81,7 @@ https://docs.google.com/viewer?url=
 
 ## 測試範例
 
-上面兩種使用方式都很簡單，範例可以參考這個網址 [https://poychang.github.io/apps/online-docs-viewer/](https://poychang.github.io/apps/online-docs-viewer/)，可以體驗看看至兩個服務的效果如何。
+上面兩種使用方式都很簡單，範例可以參考這個網址 [https://blog.poychang.net/apps/online-docs-viewer/](https://blog.poychang.net/apps/online-docs-viewer/)，可以體驗看看至兩個服務的效果如何。
 
 完整範例程式碼請參考 [poychang/demo-online-docs-viewer](https://github.com/poychang/demo-online-docs-viewer)。
 

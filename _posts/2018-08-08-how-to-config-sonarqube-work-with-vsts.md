@@ -11,7 +11,7 @@ categories: [Develop, Tools]
 
 ## 安裝 SonarQube
 
-相關安裝請參考[這篇文章](https://poychang.github.io/sonarqube-csharp/)的介紹。
+相關安裝請參考[這篇文章](https://blog.poychang.net/sonarqube-csharp/)的介紹。
 
 如果需要 SonarQube 7.2 版的繁體中文的語言包，請至[這裡下載](https://github.com/poychang/sonar-l10n-zh-tw/releases)安裝，安裝方式很簡單，將下載的 `.jar` 檔複製至 SonarQube 安裝目錄下的 `\extensions\plugins` 資料夾中，重新啟動系統即可。
 

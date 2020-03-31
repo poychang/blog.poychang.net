@@ -193,7 +193,7 @@ alias dockerx="docker -H=DOCKER_REMOTE_SERVER"
 REF:
 
 - [Run commands on remote Docker host](https://gist.github.com/kekru/4e6d49b4290a4eebc7b597c07eaf61f2)
-- [使用 DosKey 簡化操作遠端 Docker 的指令](http://poychang.github.io/use-doskey-to-alias-docker-command/)
+- [使用 DosKey 簡化操作遠端 Docker 的指令](http://blog.poychang.net/use-doskey-to-alias-docker-command/)
 
 ## Docker Compose
 

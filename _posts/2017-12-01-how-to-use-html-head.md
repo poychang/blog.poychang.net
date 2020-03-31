@@ -27,7 +27,7 @@ HTML 中的 Meta 標籤可以用來提供網頁的內容資訊給瀏覽器或存
 </html>
 ```
 
-這個範例同時也是建議網頁最少要配置的 Meta 標籤，如果網頁的用戶有使用 IE 的時候，建議再加上這行，讓什麼版本的 IE 就用什麼版本的標準模式，避免 [IE 相容性檢視所造成的問題](https://poychang.github.io/iis-http-header-ie-compatible/)。
+這個範例同時也是建議網頁最少要配置的 Meta 標籤，如果網頁的用戶有使用 IE 的時候，建議再加上這行，讓什麼版本的 IE 就用什麼版本的標準模式，避免 [IE 相容性檢視所造成的問題](https://blog.poychang.net/iis-http-header-ie-compatible/)。
 
 ```
 <meta http-equiv="X-UA-Compatible" content="IE=edge">

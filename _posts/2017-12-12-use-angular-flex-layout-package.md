@@ -213,7 +213,7 @@ FlexBox CSS 本身無法控制 DOM 的顯示與否，透過此特殊響應功能
 
 這個套件雖然還沒有 release 版，不過滿方便使用的，比起自己寫 FlexBox CSS 方便多了。大部分的功能使用 Directive 來設定布局，但除此之外，還提供了可程式化的 JavaScript API 功能，十分強大呀。
 
->我另外做了張 [Angular Flex-Layout Cheat Sheet](https://poychang.github.io/angular-flex-layout-cheat-sheet/)，提供給有需要的開發者們。
+>我另外做了張 [Angular Flex-Layout Cheat Sheet](https://blog.poychang.net/angular-flex-layout-cheat-sheet/)，提供給有需要的開發者們。
 
 ----------
 

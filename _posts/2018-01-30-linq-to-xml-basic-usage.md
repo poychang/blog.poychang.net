@@ -11,13 +11,13 @@ XML(eXtensible Markup Language) 可擴展標記語言常作為各種資訊交換
 
 目錄：
 
-- [基本操作](https://poychang.github.io/linq-to-xml-basic-usage/)
-- [建立 XML 檔案](https://poychang.github.io/linq-to-xml-create-xml-file)
-- [查詢 XML 資料](https://poychang.github.io/linq-to-xml-query-xml/)
-- [修改 XML 資料](https://poychang.github.io/linq-to-xml-edit-xml)
-- [轉換 XML 資料](https://poychang.github.io/linq-to-xml-transfom-xml)
-- [驗證 XML 資料](https://poychang.github.io/linq-to-xml-validate-xml)
-- [取得 CDATA 資料](https://poychang.github.io/2018-02-05-linq-to-xml-extract-data-from-cdata)
+- [基本操作](https://blog.poychang.net/linq-to-xml-basic-usage/)
+- [建立 XML 檔案](https://blog.poychang.net/linq-to-xml-create-xml-file)
+- [查詢 XML 資料](https://blog.poychang.net/linq-to-xml-query-xml/)
+- [修改 XML 資料](https://blog.poychang.net/linq-to-xml-edit-xml)
+- [轉換 XML 資料](https://blog.poychang.net/linq-to-xml-transfom-xml)
+- [驗證 XML 資料](https://blog.poychang.net/linq-to-xml-validate-xml)
+- [取得 CDATA 資料](https://blog.poychang.net/2018-02-05-linq-to-xml-extract-data-from-cdata)
 
 > 系列文完整範例程式碼請參考 [poychang/Demo-Linq-To-Xml](https://github.com/poychang/Demo-Linq-To-Xml)。
 

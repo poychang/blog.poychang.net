@@ -8,7 +8,7 @@ categories: [SQL]
 ---
 在 SQL Server 做跨異質資料庫（如 Oracle）查詢的時候，可以透過 DBLink 方式建立連結，然後透過 OpenQuery 的方式做查詢，但是如果遇到要執行的 SQL 語法，超級無敵長的時候，就會發生 `'SELECT xxxxxxxx' 開頭的 字元字串 太長。最大長度為 8000。` 這樣的錯誤訊息。
 
->建立 DBLink 後，使用 OpenQuery 的基本方法，可以參考這篇：[SQL Server 使用 OpenQuery 以及傳遞參數](http://poychang.github.io/sql-server-open-query/)
+>建立 DBLink 後，使用 OpenQuery 的基本方法，可以參考這篇：[SQL Server 使用 OpenQuery 以及傳遞參數](http://blog.poychang.net/sql-server-open-query/)
 
 嚴格來說，`'SELECT xxxxxxxx' 開頭的 字元字串 太長。最大長度為 8000。` 這錯誤訊息不是 OpenQuery 的限制，而是因為 VARCHAR 變數型態的關係，才出現這樣的錯誤訊息。
 
