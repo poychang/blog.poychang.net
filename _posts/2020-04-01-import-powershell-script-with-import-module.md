@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 簡單使用 Import-Module 匯入 PowerShell 模組腳本
+title: 簡單使用 Import-Module 匯入 PowerShell 模組指令碼
 date: 2020-04-01 00:35
 author: Poy Chang
 comments: true
@@ -13,7 +13,7 @@ PowerShell 提供模組化使用方式，讓你可以將各種功能模組化後
 
 ## 模組化架構
 
-講架構感覺有點太高尚，其實也就是整理腳本的管理方式，我這邊先建立了一個專案資料夾，並在裡面建立 `modules` 模組資料夾，然後在 `modules` 資料夾中建立兩個 PowerShell 模組腳本檔 `.psm1`，腳本內容如下：
+講架構感覺有點太高尚，其實也就是整理指令碼的管理方式，我這邊先建立了一個專案資料夾，並在裡面建立 `modules` 模組資料夾，然後在 `modules` 資料夾中建立兩個 PowerShell 模組指令檔 `.psm1`，指令碼內容如下：
 
 ```ps1
 # ./modules/module1.psm1
@@ -29,9 +29,9 @@ function Get-Something2() {
 }
 ```
 
->注意！腳本模組的附檔名一定要是 `.psm1`，若你使用 `.ps1` 則會造成指令第二次執行時發生找不到 cmdlet 的錯誤訊息。
+>注意！指令碼模組的附檔名一定要是 `.psm1`，若你使用 `.ps1` 則會造成指令第二次執行時發生找不到 cmdlet 的錯誤訊息。
 
-接著在專案根目錄中建立一個 `main.ps1` 腳本檔，在裡面匯入上面這兩個模組並執行他們，腳本如下：
+接著在專案根目錄中建立一個 `main.ps1` 指令檔，在裡面匯入上面這兩個模組並執行他們，指令碼如下：
 
 ```ps1
 Import-Module ".\modules\module1.psm1"
@@ -49,9 +49,9 @@ Get-Something2
 
 ![執行結果](https://i.imgur.com/IYcs1E8.png)
 
-## 把 .ps1 腳本檔當成模組匯入，會怎樣？
+## 把 .ps1 指令檔當成模組匯入，會怎樣？
 
-前面有提到 PowerShell 模組腳本檔的附檔名是 `.psm1`，如果你使用 `Import-Module` 載入模組腳本的時候，載入到 `.ps1` 的時候，會發生甚麼事呢？
+前面有提到 PowerShell 模組指令檔的附檔名是 `.psm1`，如果你使用 `Import-Module` 載入模組指令碼的時候，載入到 `.ps1` 的時候，會發生甚麼事呢？
 
 我們來實驗一下，把 `main.ps1` 改成下面這樣：
 
@@ -83,7 +83,7 @@ The term 'Get-Something1' is not recognized as the name of a cmdlet, function, s
 
 那位甚麼第一次執行會成功呢？
 
-第一次之所以會執行成功，是因為當前工作階段的 `Get-Module` 沒有 `module1` 這個模組，所以 `Import-Module` 會真的執行 `module1.ps1` 這個腳本，這時候就讓 `main.ps1` 可以執行 `Get-Something1` 這個 cmdlet 了。
+第一次之所以會執行成功，是因為當前工作階段的 `Get-Module` 沒有 `module1` 這個模組，所以 `Import-Module` 會真的執行 `module1.ps1` 這個指令檔內的指令碼，這時候就讓 `main.ps1` 可以執行 `Get-Something1` 這個 cmdlet 了。
 
 而第二次執行的時候，`Get-Module` 裡面已經有 `module1` 這個模組的設定，因此會去找 `module1.psm1` 來執行，但因為沒有這個檔案呀，所以當然找不到所需要的 cmdlet。
 
@@ -91,8 +91,8 @@ The term 'Get-Something1' is not recognized as the name of a cmdlet, function, s
 
 這篇其實就兩個重點：
 
-1. `Import-Module` 可以使用路徑來載入模組腳本
-2. 撰寫模組腳本請用 `.psm1` 副檔名
+1. `Import-Module` 可以使用路徑來載入模組指令碼
+2. 撰寫模組指令碼請用 `.psm1` 副檔名
 
 ----------
 

@@ -7,7 +7,7 @@ comments: true
 categories: [CSharp, Dotnet, PowerShell, Develop, Tools]
 ---
 
-PowerShell 不僅僅是一種腳本語言，還是一個可執行命令列的 Shell 工具，而他也和其他 Shell 一樣可以透過撰寫腳本來執行很複雜的功能，但有時候我們已經有大量用 C# 撰寫好的類別庫，或者想要用熟悉的 C# 程式碼來擴充 PowerShell 的使用情境時，這裡提供兩種讓你在 PowerShell 中執行 C# 程式的方法。
+PowerShell 不僅僅是一種指令碼語言，還是一個可執行命令列的 Shell 工具，而他也和其他 Shell 一樣可以透過撰寫指令碼來執行很複雜的功能，但有時候我們已經有大量用 C# 撰寫好的類別庫，或者想要用熟悉的 C# 程式碼來擴充 PowerShell 的使用情境時，這裡提供兩種讓你在 PowerShell 中執行 C# 程式的方法。
 
 ## 直接寫程式碼進行載入
 

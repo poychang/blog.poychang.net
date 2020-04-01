@@ -11,7 +11,7 @@ categories: [Note]
 
 ## Script
 
-`script` 來指定執行動作或測試的腳本
+`script` 來指定執行動作或測試的指令碼
 
 ```yml
 script: bundle exec thor build 
@@ -33,7 +33,7 @@ script:
 script: command1 && command2 
 ```
 
-## 腳本生命週期
+## 指令碼生命週期
 
 完整的生命週期，從開始到結束是下面的流程：
 
@@ -47,7 +47,7 @@ script: command1 && command2
 - [OPTIONAL] after_deploy
 - after_script
 
-## 腳本範例
+## 指令碼範例
 
 REF: [nukc/how-to-use-travis-ci](https://github.com/nukc/how-to-use-travis-ci)
 

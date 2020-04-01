@@ -13,7 +13,7 @@ categories: [Develop, PowerShell]
 
 ![在登陸檔中查詢 .NET Core Hosting Bundle 版本](https://i.imgur.com/drq0rpp.png)
 
-但每次都要這樣找，其實滿累的，[這裡](https://gallery.technet.microsoft.com/How-to-determine-ASPNET-512379b5)有人寫了一個 PowerShell Script 來快速將登陸檔內 .NET Core Hosting Bundle 版本名稱列出來，腳本如下：
+但每次都要這樣找，其實滿累的，[這裡](https://gallery.technet.microsoft.com/How-to-determine-ASPNET-512379b5)有人寫了一個 PowerShell Script 來快速將登陸檔內 .NET Core Hosting Bundle 版本名稱列出來，指令碼如下：
 
 ```powershell
 $DotNETCoreUpdatesPath = "Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Updates\.NET Core"
@@ -32,7 +32,7 @@ If ($NotInstalled) {
 
 ![透過 PowerShell 查詢  .NET Core Hosting Bundle 版本](https://i.imgur.com/urZpiM4.png)
 
-如果你經查需要查詢了話，也可以將這個 PowerShell 腳本存成檔案，隨時叫用執行（但應該不會需要天天查吧 XD），我個人是存到 [Gist](https://gist.github.com/poychang/239f6a11fd9e9d1606b499839d991b62) 方便我查找。
+如果你經查需要查詢了話，也可以將這個 PowerShell 指令碼存成檔案，隨時叫用執行（但應該不會需要天天查吧 XD），我個人是存到 [Gist](https://gist.github.com/poychang/239f6a11fd9e9d1606b499839d991b62) 方便我查找。
 
 ----------
 

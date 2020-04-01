@@ -133,4 +133,4 @@ PowerShell 的比較運算子有分**字串**及**數字**的比較，字串又�
 
 - [官方教學文件](https://docs.microsoft.com/zh-tw/powershell/scripting/powershell-scripting?WT.mc_id=DT-MVP-5003022)
 - [強而有力的 Windows PowerShell 系列](http://ithelp.ithome.com.tw/users/20005121/ironman/54)
-- [如何在 Powershell 開啟時自動引入常用的 ps1 指令檔腳本](https://msdn.microsoft.com/zh-tw/library/dn464004.aspx)
+- [如何在 Powershell 開啟時自動引入常用的 ps1 指令檔](https://msdn.microsoft.com/zh-tw/library/dn464004.aspx)
