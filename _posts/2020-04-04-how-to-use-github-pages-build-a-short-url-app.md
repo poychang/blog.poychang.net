@@ -100,7 +100,7 @@ categories: [Javascript, App, Azure]
 
 ## 後記
 
-這篇的起源來自於 Andrew 大神的 **Short URL as Code** 這句話，藉由 GitHub Pages 的服務來打造短網址服務，並使用 Git 來管理短網址對照表，用寫程式碼的方式來維護短網址服務，實做起來還真的蠻有趣的 😀
+這篇的起源來自於 [Andrew 大神](https://columns.chicken-house.net/)的 **Short URL as Code** 這句話，藉由 GitHub Pages 的服務來打造短網址服務，並使用 Git 來管理短網址對照表，用寫程式碼的方式來維護短網址服務，實做起來還真的蠻有趣的 😀
 
 ----------
 
