@@ -76,12 +76,14 @@ categories: [Javascript, App, Azure]
 }
 ```
 
-透過 JSON 的標準特性，我們可以讓短網址關鍵字達成以下目標：
+透過 [JSON Schema 建議的標準特性](https://json-schema.org/understanding-json-schema/reference/object.html#property-names)，我們可以讓短網址關鍵字達成以下目標：
 
-1. 必須唯一
-2. 區分大小寫
-3. 第一個字符必須是英文字母、`_` 底線、`$` 錢字號
-4. 隨後的字符可以是英文字母、`_` 底線、`$` 錢字號
+1. 鍵值必須唯一
+2. 鍵值區分大小寫
+3. 第一個字符必須是英文字母、`_` 底線
+4. 隨後的字符可以是英文字母、`_` 底線
+
+但其實 JSON 的鍵值只要是字串就可以了（詳請參考[ECMA-404 JSON 標準](https://www.json.org/json-en.html#spec)），所以可使用的短網址格式限制是很寬鬆的。
 
 透過上面的 `routes.json`，我們就可以提供 2 個短網址服務，分別是：
 
