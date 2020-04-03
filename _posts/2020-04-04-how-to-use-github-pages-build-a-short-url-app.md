@@ -88,7 +88,7 @@ categories: [Javascript, App, Azure]
 1. `https://domain.name/s4`
 2. `https://domain.name/PoyChang`
 
-## GitHub Pages 自動網址
+## GitHub Pages 自訂網址
 
 這裡補充一下，要如何設定 GitHub Pages 自訂網址。
 
