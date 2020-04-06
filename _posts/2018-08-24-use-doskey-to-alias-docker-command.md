@@ -10,13 +10,13 @@ categories: [Docker, Tools]
 
 例如要執行像這樣的指令：
 
-```ps1
+```powershell
 docker -H=docker.server.com logs --tail 100 WebApp
 ```
 
 這指令是要顯示遠端 `docker.server.com` 伺服器的 Docker 裡面的 WebApp 容器最後 100 行的 log，原本簡單的指令因為要加上 `-H` 變得要打很多字，而且變得很長，此時我們可以寫一個 cmd 指令檔如下：
 
-```ps1
+```powershell
 ;= @echo off
 ;= rem Call DOSKEY and use this file as the macrofile
 ;= %SystemRoot%\system32\doskey /listsize=1000 /macrofile=%0%
@@ -28,7 +28,7 @@ remote-docker=docker -H=docker.server.com $*
 
 假設這個指令檔叫做 `docker-alias.cmd`，在終端機中執行完此指令檔後，我們的指令就可以改成如下：
 
-```ps1
+```powershell
 remote-docker logs --tail 100 WebApp
 ```
 
@@ -40,7 +40,7 @@ remote-docker logs --tail 100 WebApp
 
 指令詳解：
 
-```ps1
+```powershell
 DOSKEY [/REINSTALL] [/LISTSIZE=size] [/MACROS[:ALL | :exename]]
        [/HISTORY] [/INSERT | /OVERSTRIKE] [/EXENAME=exename] [/MACROFILE=filename]
        [macroname=[text]]

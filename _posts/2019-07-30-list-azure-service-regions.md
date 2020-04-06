@@ -41,7 +41,7 @@ az account list-locations -o table
 
 而 Azure Powershell 指令如下：
 
-```ps1
+```powershell
 Get-AzureRMLocation
 ```
 

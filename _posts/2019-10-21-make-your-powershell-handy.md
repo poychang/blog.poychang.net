@@ -41,7 +41,7 @@ categories: [PowerShell, Tools]
 
 自訂指令的別名是所有 Shell 都會提供的功能，PowerShell 當然也可以自訂，透過 `Set-Alias` 指令就可以辦到，例如要建立一個別名叫做 `ll`（這是在 Linux 中常看到的 `ls -l` 縮寫），用來表示 PowerShell 中 `Get-ChildItem` 指令，指令就是：
 
-```ps1
+```powershell
 Set-Alias ll Get-ChildItem
 ```
 
@@ -55,7 +55,7 @@ Set-Alias ll Get-ChildItem
 
 要建立一個簡單的 Functions 如下：
 
-```ps1
+```powershell
 function Hello {
      param($Name, $Message)                 # 接收 -Name 和 -Message 這個兩個參數的值
      Write-Host "Hello, $Name. $Message"    # 將內容印出來
@@ -78,7 +78,7 @@ function Hello {
 
 最後這個 PowerShell Functions 就長這樣：
 
-```ps1
+```powershell
 function grep {
     $input | out-string -stream | select-string -pattern $args
 }
@@ -92,7 +92,7 @@ function grep {
 
 可是 `e.` 指令因為有 `.` 無法使用 `Set-Alias` 來設定別名，但我們可以使用 Functions 來達成這目標，寫法很簡單請參考下面的程式碼：
 
-```ps1
+```powershell
 function e. {
     cmd /c explorer.exe .
 }
@@ -104,7 +104,7 @@ function e. {
 
 如果你有在玩 Docker，你一定會經常操作 Docker CLI 的指令，為了簡化日常的操作，我自訂了一些 Docker 命令工具，參考下面的程式碼：
 
-```ps1
+```powershell
 # 方便操作遠端的 Docker 
 function vtdocker1 { cmd /c docker -H=VTDocker1.poychang.net $args }
 function vtdocker2 { cmd /c docker -H=VTDocker2.poychang.net $args }

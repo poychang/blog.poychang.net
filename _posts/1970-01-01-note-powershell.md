@@ -17,7 +17,7 @@ PowerShell 的執行環境是有分版本的，結至 2018 年最新版本為 6.
 
 版本不同所提供的功能或指令就會有些不同，因此如果你要確保指令檔是在某特定版本下執行時，在撰寫 `.ps1` 檔的時候，建議在開頭加上 `#REQUIRES` 並註明該指令碼所使用的版本，例如：
 
-```ps1
+```powershell
 #REQUIRES -Version 2
 
 param([string]$BasePath="", [string]$FolderName="")
@@ -31,11 +31,11 @@ REF: [CTP: PowerShell Versioning](https://blogs.msdn.microsoft.com/powershell/20
 
 ## 註解
 
-```ps1
+```powershell
 # 單行註解
 ```
 
-```ps1
+```powershell
 <#
 多行註解 1
 多行註解 2
@@ -67,7 +67,7 @@ REF: [Windows PowerShell ISE 的鍵盤快速鍵](https://docs.microsoft.com/zh-t
 
 要透過 Powershell 發送 HTTP Request 來測試 API 主要透過 `Invoke-WebRequest` 命令，參考下列做法：
 
-```ps1
+```powershell
 $JSON = @'
 {"name":"PoyChang","email":"","message":"Okay, I'm here.","property":{"key1":"value1","key2":"value2"}}
 '@

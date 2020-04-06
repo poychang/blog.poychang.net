@@ -21,7 +21,7 @@ categories: [PowerShell, Tools]
 
 首先當然是先來安裝 `gsudo` 這支第三方的程式，他提供 3 種安裝方式 [Scoop](https://scoop.sh/)、[Chocolatey](https://chocolatey.org/install) 以及 PowerShell 指令來安裝，這邊我用 PowerShell 指令來處理，安裝指令如下：
 
-```ps1
+```powershell
 PowerShell -Command "Set-ExecutionPolicy RemoteSigned -scope Process; iwr -useb https://raw.githubusercontent.com/gerardog/gsudo/master/installgsudo.ps1 | iex"
 ```
 

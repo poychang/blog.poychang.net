@@ -29,7 +29,7 @@ categories: [Dotnet, Tools]
 
 首先，先查看本機有安裝那些版本的 .NET Core，你可以執行下面指令來列出 SDK、Runtime 甚至 Hosting Bundle 的安裝版本，如果你只想看到特定類別了話，可以在後面加上 `--sdk`、`--runtime` 或是 `--hosting-bundle` 來過濾。
 
-```ps1
+```powershell
 dotnet-core-uninstall list
 ```
 
@@ -43,7 +43,7 @@ dotnet-core-uninstall list
 
 以我這次為案例，我只想保留最新版本的 .NET Core SDK (`--sdk`)，因此我可以使用下面這個指令，只保留最新版本 (`--all-but-latest`)，但為了避免移除不開移除的，可以使用 `dry-run` 指令來先行測試，看看有那些版本會被移除：
 
-```ps1
+```powershell
 dotnet-core-uninstall dry-run --sdk --all-but-latest
 ```
 
@@ -53,7 +53,7 @@ dotnet-core-uninstall dry-run --sdk --all-but-latest
 
 確認所列出來的版本是我們要移除的之後，就可以改用 `remove` 來正式移除那些不需要的版本，移除各個版本的過程中，程式會一直問你是否真的要移除，若你想避免一直打 `Yes`，可以再指令後面加上 `--yes` 讓他直接往下去執行。
 
-```ps1
+```powershell
 dotnet-core-uninstall remove --sdk --all-but-latest --yes
 ```
 

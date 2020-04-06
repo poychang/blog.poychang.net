@@ -15,14 +15,14 @@ PowerShell 提供模組化使用方式，讓你可以將各種功能模組化後
 
 講架構感覺有點太高尚，其實也就是整理指令碼的管理方式，我這邊先建立了一個專案資料夾，並在裡面建立 `modules` 模組資料夾，然後在 `modules` 資料夾中建立兩個 PowerShell 模組指令檔 `.psm1`，指令碼內容如下：
 
-```ps1
+```powershell
 # ./modules/module1.psm1
 function Get-Something1() {
     Write-Output "This is a Get-Something1"
 }
 ```
 
-```ps1
+```powershell
 # ./modules/module2.psm1
 function Get-Something2() {
     Write-Output "This is a Get-Something2"
@@ -33,7 +33,7 @@ function Get-Something2() {
 
 接著在專案根目錄中建立一個 `main.ps1` 指令檔，在裡面匯入上面這兩個模組並執行他們，指令碼如下：
 
-```ps1
+```powershell
 Import-Module ".\modules\module1.psm1"
 Import-Module ".\modules\module2.psm1"
 
@@ -55,7 +55,7 @@ Get-Something2
 
 我們來實驗一下，把 `main.ps1` 改成下面這樣：
 
-```ps1
+```powershell
 Import-Module ".\modules\module1.ps1"
 
 Get-Something1

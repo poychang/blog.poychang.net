@@ -15,7 +15,7 @@ categories: [Develop, PowerShell, Tools]
 
 開啟 Windows PowerSell 後執行下面兩個安裝指令，這會從 [PowerShell Gallery](https://www.powershellgallery.com/) 下載並安裝 `posh-git` 和 `oh-my-posh` 這兩個模組，前者是在命令列中顯示 Git 專案的相關資訊，後者則是美美的樣式套件。
 
-```ps1
+```powershell
 Install-Module posh-git -Scope CurrentUser
 Install-Module oh-my-posh -Scope CurrentUser
 ```
@@ -24,14 +24,14 @@ Install-Module oh-my-posh -Scope CurrentUser
 
 你的電腦可能沒有這個實體檔案，這時可以執行下面的指令，如果沒有該設定檔，則建立一個，然後使用 notepad 來開啟該設定檔。
 
-```ps1
+```powershell
 if (!(Test-Path -Path $PROFILE )) { New-Item -Type File -Path $PROFILE -Force }
 notepad $PROFILE
 ```
 
 最後在該設定檔中加入下列指令：
 
-```ps1
+```powershell
 Import-Module posh-git
 Import-Module oh-my-posh
 Set-Theme Paradox

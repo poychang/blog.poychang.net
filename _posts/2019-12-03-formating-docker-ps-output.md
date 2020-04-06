@@ -48,7 +48,7 @@ docker ps --format "table {{.Names}}\t{{.Status}}"
 
 但是如果每次都要打這麼長的格式化參數，那肯定不方便，如果你使用 Powershell 了話，可以參考[透過 Alias 和 Function 讓你的 PowerShell 變得順手、更好用](https://blog.poychang.net/make-your-powershell-handy/)這篇來建立方便你使用的快速鍵，例如：
 
-```ps1
+```powershell
 # 將遠端三台 Docker 的 PS 資訊一次吐回來，並且格式化表格資訊
 function vtps {
     cmd /c echo "-----VT01-----"

@@ -11,7 +11,7 @@ Git 版控工具是大多數開發者每天都會使用到的工具之一，每�
 
 首先來處理核心功能，取得 Git 專案下的所有分支名稱，然後逐一執行 `git pull` 將遠端最新版本的資料拉下來，：
 
-```ps1
+```powershell
 function Receive-AllBranches() {
     # 取得所有分支名稱
     $branches = git branch
@@ -48,7 +48,7 @@ function Receive-AllBranches() {
 
 程式碼如下：
 
-```ps1
+```powershell
 function Start-PullAllBranches() {
     # 指定根目錄位置，並切換到該路徑下
     $target_location = "C:\Users\poychang\Code"
