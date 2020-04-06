@@ -9,6 +9,8 @@ categories: [Tools]
 
 最近在做投影片的時候，會大量用到 SVG 圖案，SVG 除了有檔案小的優勢，還具有可縮放的向量特性，不怕放大失真。不過在 Windows 的檔案總管中，只能支援檢視例如 JPG、PNG 等圖檔，遇到 SVG 預設就是顯示 IE 的圖示而不是預覽圖，有點小不方便。
 
+>2019/04/06 Microsoft 官方推出了 [PowerToys](https://github.com/microsoft/PowerToys) 工具，提供了不少有趣的功能，其中一項就是在檔案總管中預覽 SVG 和 Markdown 文件，可以試用看看。
+
 經過一番尋找，找到一個可用的套件，而且還是開源專案 [maphew/svg-explorer-extension](https://github.com/maphew/svg-explorer-extension)，安裝程式可以[從這裡下載](https://github.com/maphew/svg-explorer-extension/releases)。
 
 在還沒有安裝之前，從檔案總管中看到的 SVG 預覽如下圖這樣，除非一個個點開，不會知道內容是什麼。
