@@ -15,18 +15,13 @@
 
     <!-- Google Fonts Noto Sans TC -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC">
-
-    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-    <!-- [if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif] -->
-
+    
     <!-- Le styles -->
-    <link rel="stylesheet" href="{{ site.BASE_PATH }}/assets/resources/font-awesome/css/font-awesome.min.css">
-    <!-- <link rel="stylesheet" href="{{ site.BASE_PATH }}/assets/resources/bootstrap/css/bootstrap.min.css"> -->
-    <!-- <link rel="stylesheet" href="{{ site.BASE_PATH }}/assets/resources/syntax/syntax.min.css"> -->
-    <link rel="stylesheet" href="{{ site.BASE_PATH }}/assets/css/vendor.css">
-    <link rel="stylesheet" href="{{ site.BASE_PATH }}/assets/css/style.css">
+    <link rel="preload" href="{{ site.BASE_PATH }}/assets/resources/font-awesome/css/font-awesome.min.css" as="style">
+    <!-- <link rel="preload" href="{{ site.BASE_PATH }}/assets/resources/bootstrap/css/bootstrap.min.css" as="style"> -->
+    <!-- <link rel="preload" href="{{ site.BASE_PATH }}/assets/resources/syntax/syntax.min.css" as="style"> -->
+    <link rel="preload" href="{{ site.BASE_PATH }}/assets/css/vendor.css" as="style">
+    <link rel="preload" href="{{ site.BASE_PATH }}/assets/css/style.css" as="style">
     <link rel="shortcut icon" type="image/x-icon" href="{{ site.BASE_PATH}}/assets/images/favicon.png">
 
     <!-- Le fav and touch icons -->
@@ -36,6 +31,11 @@
     <!-- <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png"> -->
 
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.BASE_PATH }}/feed.xml">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!-- [if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif] -->
 
     {% if site.google_analytics %}
     <!-- Google Optimize code -->
