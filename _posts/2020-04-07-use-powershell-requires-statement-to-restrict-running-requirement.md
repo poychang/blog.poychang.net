@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 使用 Require 陳述式限制 PowerShell 執行
+title: 使用 Requires 陳述式限制 PowerShell 執行
 date: 2020-04-07 12:31
 author: Poy Chang
 comments: true
