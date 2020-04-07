@@ -14,6 +14,8 @@
 
     <!-- Google Search Console verification -->
     <meta name="google-site-verification" content="{{ site.google_verification }}" />
+    <!-- Google Fonts Noto Sans TC -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
@@ -27,21 +29,6 @@
     <link href="{{ site.BASE_PATH }}/assets/css/vendor.css" rel="stylesheet">
     <link href="{{ site.BASE_PATH }}/assets/css/style.css" rel="stylesheet">
     <link rel="shortcut icon" type="image/x-icon" href="{{ site.BASE_PATH}}/assets/images/favicon.png">
-
-    <script>
-        var cb = function() {
-            // Google Fonts cwTeXHei 黑體
-            var a = document.createElement('link');
-            a.rel = 'stylesheet';
-            a.href = 'https://fonts.googleapis.com/earlyaccess/cwtexhei.css';
-
-            var dom = document.getElementsByTagName('head')[0];
-            dom.parentNode.insertBefore(a, dom);
-        };
-        var raf = requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame;
-        if (raf) raf(cb);
-        else window.addEventListener('load', cb);
-    </script>
 
     <!-- Le fav and touch icons -->
     <!-- Update these with your own images
