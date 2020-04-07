@@ -4,38 +4,36 @@
 <head>
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
+
     {% if page.description %}
     <meta name="description" content="{{ page.description }}">
     {% endif %}
     <meta name="author" content="{{ site.author.name }}">
-
-    <!-- Enable responsive viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <!-- Google Search Console verification -->
     <meta name="google-site-verification" content="{{ site.google_verification }}" />
+
     <!-- Google Fonts Noto Sans TC -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-    <!--[if lt IE 9]>
+    <!-- [if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <![endif] -->
 
     <!-- Le styles -->
-    <link href="{{ site.BASE_PATH }}/assets/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <!--<link href="{{ site.BASE_PATH }}/assets/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
-    <!--<link href="{{ site.BASE_PATH }}/assets/resources/syntax/syntax.min.css" rel="stylesheet">-->
-    <link href="{{ site.BASE_PATH }}/assets/css/vendor.css" rel="stylesheet">
-    <link href="{{ site.BASE_PATH }}/assets/css/style.css" rel="stylesheet">
+    <link rel=preload href="{{ site.BASE_PATH }}/assets/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- <link href="{{ site.BASE_PATH }}/assets/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- <link href="{{ site.BASE_PATH }}/assets/resources/syntax/syntax.min.css" rel="stylesheet"> -->
+    <link rel=preload href="{{ site.BASE_PATH }}/assets/css/vendor.css" rel="stylesheet">
+    <link rel=preload href="{{ site.BASE_PATH }}/assets/css/style.css" rel="stylesheet">
     <link rel="shortcut icon" type="image/x-icon" href="{{ site.BASE_PATH}}/assets/images/favicon.png">
 
     <!-- Le fav and touch icons -->
-    <!-- Update these with your own images
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
-    -->
+    <!-- Update these with your own images -->
+    <!-- <link rel="apple-touch-icon" href="images/apple-touch-icon.png"> -->
+    <!-- <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png"> -->
+    <!-- <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png"> -->
 
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.BASE_PATH }}/feed.xml">
 
@@ -58,7 +56,6 @@
     ga('create', '{{ site.google_analytics }}', 'auto');
     ga('require', '{{ site.google_optimize }}');
     ga('send', 'pageview');
-
     </script>
     {% endif %}
 
