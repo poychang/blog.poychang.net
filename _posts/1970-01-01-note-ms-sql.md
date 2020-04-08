@@ -35,6 +35,27 @@ ALTER DATABASE [資料庫名稱] SET RECOVERY FULL WITH NO_WAIT
 GO
 ```
 
+## 大量資料批次刪除
+
+REF: [Break large delete operations into chunks](https://sqlperformance.com/2013/03/io-subsystem/chunk-deletes)
+
+如果使用 `DELETE` 指令刪除大量資料時，可能會因為執行時間過長，造成其他也需要該資料表的功能被卡住，而發生 Timeout 的問題，因此可使用下列語法批次刪除特定數量的資料，讓刪除大量資料的動作可以分成一段一段，讓資料庫的交易可以切換。
+
+```sql
+SET NOCOUNT ON;
+DECLARE @Rowcount INT;
+DECLARE @LimitRowcount INT = 100000;
+
+SET @Rowcount = 1;
+WHILE @Rowcount > 0
+    BEGIN
+        BEGIN TRANSACTION;
+        DELETE TOP (LimitRowcount) dbo.TargetTable WHERE 1 = 1;
+        SET @Rowcount = @@ROWCOUNT;
+        COMMIT TRANSACTION;
+    END;
+```
+
 ## 設定 In-Memory 資料表
 
 計算最佳 Bucket count 語法
