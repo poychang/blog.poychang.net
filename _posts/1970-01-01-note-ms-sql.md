@@ -109,11 +109,11 @@ HAVING (COUNT(*) > 1)
 SELECT ID, Number, Price, Date
 FROM test AS T
 WHERE Date IN (
-		SELECT TOP 1 DATE
-		FROM test
-		WHERE ID = T.ID
-		ORDER BY Date DESC
-		)
+        SELECT TOP 1 DATE
+        FROM test
+        WHERE ID = T.ID
+        ORDER BY Date DESC
+        )
 ```
 
 ## 資料庫定序
@@ -151,7 +151,7 @@ USE master
 SELECT cntr_value AS User_Connections
 FROM sys.sysperfinfo AS sp
 WHERE sp.object_name = 'SQLServer:General Statistics'
-	AND sp.counter_name = 'User Connections'
+    AND sp.counter_name = 'User Connections'
 ```
 
 查詢目前連線明細
@@ -160,11 +160,11 @@ WHERE sp.object_name = 'SQLServer:General Statistics'
 USE master
 
 SELECT c.session_id
-	,c.connect_time
-	,s.login_time
-	,c.client_net_address
-	,s.login_name
-	,s.STATUS
+    ,c.connect_time
+    ,s.login_time
+    ,c.client_net_address
+    ,s.login_name
+    ,s.STATUS
 FROM sys.dm_exec_connections c
 LEFT JOIN sys.dm_exec_sessions s ON c.session_id = s.session_id
 ```
@@ -199,9 +199,19 @@ SELECT * FROM OPENQUERY(PROD, 'select sysdate from dual')
 ## 使用 SQL 指令取得資料表內的欄位名稱
 
 ```sql
-SELECT NAME
+SELECT NAME, *
 FROM SYSCOLUMNS
-WHERE ID= Object_ID('[TableName]')
+WHERE ID = Object_ID('[TableName]')
+```
+
+## 使用 SQL 指令取得所有資料表名稱
+
+```sql
+SELECT TABLE_NAME, *
+FROM INFORMATION_SCHEMA.TABLES
+WHERE TABLE_TYPE = 'BASE TABLE'
+AND TABLE_CATALOG = 'DatabaseName'
+AND TABLE_NAME = 'TableName'
 ```
 
 ## 使用 SQL 指令查詢資料庫定序(Collation)
@@ -263,11 +273,11 @@ kill			--可直接把該連線刪除
 
 ```sql
 SELECT RIGHT(LEFT(@@VERSION,25),4) N'產品版本編號' ,
-	SERVERPROPERTY('ProductVersion') N'版本編號',
-	SERVERPROPERTY('ProductLevel') N'版本層級',
-	SERVERPROPERTY('Edition') N'執行個體產品版本',
-	DATABASEPROPERTYEX('master','Version') N'資料庫的內部版本號碼',
-	@@VERSION N'相關的版本編號、處理器架構、建置日期和作業系統'
+    SERVERPROPERTY('ProductVersion') N'版本編號',
+    SERVERPROPERTY('ProductLevel') N'版本層級',
+    SERVERPROPERTY('Edition') N'執行個體產品版本',
+    DATABASEPROPERTYEX('master','Version') N'資料庫的內部版本號碼',
+    @@VERSION N'相關的版本編號、處理器架構、建置日期和作業系統'
 ```
 
 ## 取得資料庫中各 Table 的使用量資訊
@@ -326,23 +336,23 @@ DBCC CHECKIDENT(dbo.TableName, RESEED, 0)
 
 ```sql
 SELECT getdate()
-	,DatePart(year, getdate()) AS '年'
-	,DatePart(month, getdate()) AS '月'
-	,DatePart(day, getdate()) AS '日'
-	,DatePart(dayofyear, getdate()) AS '本年一月一號至今的天數'
-	,DatePart(week, getdate()) AS '第N週'
-	,DatePart(weekday, getdate()) AS '星期幾(代號)' --星期日 = 1
-	--星期一 = 2
-	--星期二 = 3
-	--星期三 = 4
-	--星期四 = 5
-	--星期五 = 6
-	--星期六 = 7
-	,DATENAME(Weekday, GETDATE()) AS '星期幾'
-	,DatePart(hour, getdate()) AS '時'
-	,DatePart(minute, getdate()) AS '分'
-	,DatePart(second, getdate()) AS '秒'
-	,DatePart(millisecond, getdate()) AS '毫秒'
+    ,DatePart(year, getdate()) AS '年'
+    ,DatePart(month, getdate()) AS '月'
+    ,DatePart(day, getdate()) AS '日'
+    ,DatePart(dayofyear, getdate()) AS '本年一月一號至今的天數'
+    ,DatePart(week, getdate()) AS '第N週'
+    ,DatePart(weekday, getdate()) AS '星期幾(代號)' --星期日 = 1
+    --星期一 = 2
+    --星期二 = 3
+    --星期三 = 4
+    --星期四 = 5
+    --星期五 = 6
+    --星期六 = 7
+    ,DATENAME(Weekday, GETDATE()) AS '星期幾'
+    ,DatePart(hour, getdate()) AS '時'
+    ,DatePart(minute, getdate()) AS '分'
+    ,DatePart(second, getdate()) AS '秒'
+    ,DatePart(millisecond, getdate()) AS '毫秒'
 ```
 
 資料來源：[MSDN DATEPART (Transact-SQL)](https://msdn.microsoft.com/zh-tw/library/ms174420.aspx?f=255&MSPPError=-2147217396)
@@ -455,18 +465,18 @@ DateInput   TimeInput   DateTimeOutput
 --Job ID : 代表Job在資料庫的唯一代碼
 
 SELECT SB.Enabled
-	,SB.NAME AS Job_Name
-	,SB.Description AS aDescription
-	,CASE Next_Run_Date
-		WHEN '0' THEN '0'
-		ELSE Cast(LEFT(Next_Run_Date, 4) AS CHAR(4)) + '/' + Cast(Substring(Cast(Next_Run_Date AS CHAR(8)), 5, 2) AS CHAR(2)) + '/' + Cast(RIGHT(Next_Run_Date, 2) AS CHAR(2))
-		END + ' '
-		+ LEFT(Replicate('0', 6 - Len(sc.Next_Run_Time)) + Cast(sc.Next_Run_Time AS VARCHAR(6)), 2)
-		+ ':'
-		+ Substring(Replicate('0', 6 - Len(sc.Next_Run_Time)) + Cast(sc.Next_Run_Time AS VARCHAR(6)), 3, 2)
-		+ ':'
-		+ RIGHT(Replicate('0', 6 - Len(sc.Next_Run_Time)) + Cast(sc.Next_Run_Time AS VARCHAR(6)), 2) AS Next_Run_Time
-	,SB.Job_ID
+    ,SB.NAME AS Job_Name
+    ,SB.Description AS aDescription
+    ,CASE Next_Run_Date
+        WHEN '0' THEN '0'
+        ELSE Cast(LEFT(Next_Run_Date, 4) AS CHAR(4)) + '/' + Cast(Substring(Cast(Next_Run_Date AS CHAR(8)), 5, 2) AS CHAR(2)) + '/' + Cast(RIGHT(Next_Run_Date, 2) AS CHAR(2))
+        END + ' '
+        + LEFT(Replicate('0', 6 - Len(sc.Next_Run_Time)) + Cast(sc.Next_Run_Time AS VARCHAR(6)), 2)
+        + ':'
+        + Substring(Replicate('0', 6 - Len(sc.Next_Run_Time)) + Cast(sc.Next_Run_Time AS VARCHAR(6)), 3, 2)
+        + ':'
+        + RIGHT(Replicate('0', 6 - Len(sc.Next_Run_Time)) + Cast(sc.Next_Run_Time AS VARCHAR(6)), 2) AS Next_Run_Time
+    ,SB.Job_ID
 FROM msdb.dbo.sysjobschedules AS sc
 LEFT OUTER JOIN msdb.dbo.sysjobs AS sb ON sc.Job_ID = SB.Job_ID
 ```
@@ -475,41 +485,41 @@ LEFT OUTER JOIN msdb.dbo.sysjobs AS sb ON sc.Job_ID = SB.Job_ID
 
 ```
 SELECT SH.instance_id
-	,SH.SERVER AS oserver
-	,SB.NAME AS job_name
-	,SH.step_id
-	,SH.step_name
-	,Cast(LEFT(SH.run_date, 4) AS CHAR(4)) + '/'
-	+ Cast(Substring(Cast(SH.run_date AS CHAR(8)), 5, 2) AS CHAR(2))
-	+ '/' + Cast(RIGHT(SH.run_date, 2) AS CHAR(2)) AS rundate
-	,LEFT(Replicate('0', 6 - Len(SH.run_time))
-	+ Cast(SH.run_time AS VARCHAR(6)), 2)
-	+ ':'
-	+ Substring(Replicate('0', 6 - Len(SH.run_time))
-	+ Cast(SH.run_time AS VARCHAR(6)), 3, 2)
-	+ ':'
-	+ RIGHT(Replicate('0', 6 - Len(SH.run_time))
-	+ Cast(SH.run_time AS VARCHAR(6)), 2) AS runtime
-	,LEFT(Replicate('0', 6 - Len(SH.run_duration))
-	+ Cast(SH.run_duration AS VARCHAR(6)), 2)
-	+ ':'
-	+ Substring(Replicate('0', 6 - Len(SH.run_duration))
-	+ Cast(SH.run_duration AS VARCHAR(6)), 3, 2)
-	+ ':'
-	+ RIGHT(Replicate('0', 6 - Len(SH.run_duration))
-	+ Cast(SH.run_duration AS VARCHAR(6)), 2) AS cotime
-	,CASE run_status
-		WHEN 0 THEN 'Failed'
-		WHEN 1 THEN 'Succeeded'
-		WHEN 2 THEN 'Retry'
-		WHEN 3 THEN 'Canceled'
-		WHEN 5 THEN 'Unknown'
-		END AS jobstatus
-	,SH.message AS omessage
-	,SH.operator_id_emailed
-	,SH.operator_id_netsent
-	,SH.operator_id_paged
-	,SH.retries_attempted
+    ,SH.SERVER AS oserver
+    ,SB.NAME AS job_name
+    ,SH.step_id
+    ,SH.step_name
+    ,Cast(LEFT(SH.run_date, 4) AS CHAR(4)) + '/'
+    + Cast(Substring(Cast(SH.run_date AS CHAR(8)), 5, 2) AS CHAR(2))
+    + '/' + Cast(RIGHT(SH.run_date, 2) AS CHAR(2)) AS rundate
+    ,LEFT(Replicate('0', 6 - Len(SH.run_time))
+    + Cast(SH.run_time AS VARCHAR(6)), 2)
+    + ':'
+    + Substring(Replicate('0', 6 - Len(SH.run_time))
+    + Cast(SH.run_time AS VARCHAR(6)), 3, 2)
+    + ':'
+    + RIGHT(Replicate('0', 6 - Len(SH.run_time))
+    + Cast(SH.run_time AS VARCHAR(6)), 2) AS runtime
+    ,LEFT(Replicate('0', 6 - Len(SH.run_duration))
+    + Cast(SH.run_duration AS VARCHAR(6)), 2)
+    + ':'
+    + Substring(Replicate('0', 6 - Len(SH.run_duration))
+    + Cast(SH.run_duration AS VARCHAR(6)), 3, 2)
+    + ':'
+    + RIGHT(Replicate('0', 6 - Len(SH.run_duration))
+    + Cast(SH.run_duration AS VARCHAR(6)), 2) AS cotime
+    ,CASE run_status
+        WHEN 0 THEN 'Failed'
+        WHEN 1 THEN 'Succeeded'
+        WHEN 2 THEN 'Retry'
+        WHEN 3 THEN 'Canceled'
+        WHEN 5 THEN 'Unknown'
+        END AS jobstatus
+    ,SH.message AS omessage
+    ,SH.operator_id_emailed
+    ,SH.operator_id_netsent
+    ,SH.operator_id_paged
+    ,SH.retries_attempted
 FROM msdb.dbo.sysjobhistory AS sh
 LEFT OUTER JOIN msdb.dbo.sysjobs AS SB ON SH.job_id = SB.job_id
 WHERE SB.NAME = 'XXXX'
