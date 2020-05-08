@@ -27,6 +27,22 @@ categories: [Javascript, Note]
 
 [完整的 Array 用法可以看 MDN 官網](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 
+## Fetch
+
+MDN - [使用 Fetch 發送請求](https://developer.mozilla.org/zh-TW/docs/Web/API/Fetch_API/Using_Fetch)
+
+```javascript
+fetch('https://domain.url/api', {
+    body: JSON.stringify({
+        payloadProperty: 'hello world',
+    }),
+    headers: {
+      'content-type': 'application/json'
+    },
+    method: 'POST',
+});
+```
+
 ## 推薦使用 [Lodash](https://lodash.com/)
 
 - Lodash 提供很多我們平常 coding 會用到的工具函式，部分函式的效能甚至比原生 JavaScript 函式還要快。

@@ -9,6 +9,136 @@ categories: [Note, CSharp, Dotnet]
 
 本篇作為筆記用途，記錄 .NET Unit Test 參考資料
 
+## Test Execution Workflow
+
+```csharp
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+namespace MSTestUnitTests
+{
+    // 包含MSTest單元測試的類（必要）
+    [TestClass]
+    public class YourUnitTests
+    {
+        [AssemblyInitialize]
+        public static void AssemblyInit(TestContext context)
+        {
+            // 在測試運行之前執行一次（選用）
+        }
+
+        [ClassInitialize]
+        public static void TestFixtureSetup(TestContext context)
+        {
+            // 對測試類執行一次（選用）
+        }
+
+        [TestInitialize]
+        public void Setup()
+        {
+            // 在每次測試之前運行（選用）
+        }
+
+        [AssemblyCleanup]
+        public static void AssemblyCleanup()
+        {
+            // 測試運行後執行一次（選用）
+        }
+
+        [ClassCleanup]
+        public static void TestFixtureTearDown()
+        {
+            // 在執行該類中的所有測試之後運行一次（選用）
+            // 不保證在類進行所有測試後立即執行
+        }
+
+        [TestCleanup]
+        public void TearDown()
+        {
+            // 在每次測試後運行（選用）
+        }
+
+        // 標記這是一種單元測試方法（必要）
+        [TestMethod]
+        public void YouTestMethod()
+        {
+            // 您的測試代碼在這裡
+        }
+    }
+}
+```
+
+## Attributes
+
+| MSTest v2.x        | NUnit              | xUnit.net 2.x           | 說明                        |
+| ------------------ | ------------------ | ----------------------- | -------------------------- |
+| [TestMethod]       | [Test]             | [Fact]                  | 標記測試方法                 |
+| [TestClass]        | [TestFixture]      | n/a                     | 標記測試班                   |
+| [TestInitialize]   | [SetUp]            | Constructor             | 在每個測試用例之前觸發         |
+| [TestCleanup]      | [TearDown]         | IDisposable.Dispose     | 在每個測試用例之後觸發         |
+| [ClassInitialize]  | [OneTimeSetUp]     | IClassFixture<T>        | 測試用例開始之前的一次性觸發方法 |
+| [ClassCleanup]     | [OneTimeTearDown]  | IClassFixture<T>        | 測試用例結束後的一次性觸發方法  |
+| [Ignore]           | [Ignore("reason")] | [Fact(Skip="reason")]   | 忽略測試用例                 |
+| [TestProperty]     | [Property]         | [Trait]                 | 在測試上設置任意元數據         |
+| [DataRow]          | [Theory]           | [Theory]                | 配置數據驅動的測試            |
+| [TestCategory("")] | [Category("")]     | [Trait("Category", "")] | 對測試用例或類進行分類         |
+
+
+## Assertions
+
+```csharp
+// 測試指定的值是否相等。
+Assert.AreEqual(28, _actualFuel);
+// 測試指定的值是否不相等。與數字的AreEqual相同。
+Assert.AreNotEqual(28, _actualFuel);
+// 測試指定的對像是否都引用相同的對象
+Assert.AreSame(_expectedRocket, _actualRocket);
+// 測試指定的對像是否引用了不同的對象
+Assert.AreNotSame(_expectedRocket, _actualRocket);
+// 測試指定條件是否為真
+Assert.IsTrue(_isThereEnoughFuel);
+// 測試指定條件是否為假
+Assert.IsFalse(_isThereEnoughFuel);
+// 測試指定的對像是否為null
+Assert.IsNull(_actualRocket);
+// 測試指定的對像是否為非null
+Assert.IsNotNull(_actualRocket);
+// 測試指定的對像是否為預期類型的實例
+Assert.IsInstanceOfType(_actualRocket, typeof(Falcon9Rocket));
+// 測試指定的對像是否不是type的實例
+Assert.IsNotInstanceOfType(_actualRocket, typeof(Falcon9Rocket));
+// 測試指定的字符串是否包含指定的子字符串
+StringAssert.Contains(_expectedBellatrixTitle, "Bellatrix");
+// 測試指定的字符串是否以指定的子字符串開頭
+StringAssert.StartsWith(_expectedBellatrixTitle, "Bellatrix");
+// 測試指定的字符串是否與正則表達式匹配
+StringAssert.Matches("(281)388-0388", @"(?d{3})?-? *d{3}-? *-?d{4}");
+// 測試指定的字符串是否與正則表達式不匹配
+StringAssert.DoesNotMatch("281)388-0388", @"(?d{3})?-? *d{3}-? *-?d{4}");
+// 測試指定的集合是否具有相同的元素，並且順序和數量相同。
+CollectionAssert.AreEqual(_expectedRockets, _actualRockets);
+// 測試指定的集合是否不具有相同的元素，或者元素的順序和數量是否不同。
+CollectionAssert.AreNotEqual(_expectedRockets, _actualRockets);
+// 測試兩個集合是否包含相同的元素。
+CollectionAssert.AreEquivalent(_expectedRockets, _actualRockets);
+// 測試兩個集合是否包含不同的元素。
+CollectionAssert.AreNotEquivalent(_expectedRockets, _actualRockets);
+// 測試指定集合中的所有元素是否為預期類型的實例
+CollectionAssert.AllItemsAreInstancesOfType(_expectedRockets, _actualRockets);
+// 測試指定集合中的所有項目是否為非null
+CollectionAssert.AllItemsAreNotNull(_expectedRockets);
+// 測試指定集合中的所有項目是否唯一
+CollectionAssert.AllItemsAreUnique(_expectedRockets);
+// 測試指定的集合是否包含指定的元素
+CollectionAssert.Contains(_actualRockets, falcon9);
+// 測試指定的集合是否不包含指定的元素
+CollectionAssert.DoesNotContain(_actualRockets, falcon9);
+// 測試一個集合是否是另一個集合的子集
+CollectionAssert.IsSubsetOf(_expectedRockets, _actualRockets);
+// 測試一個集合是否不是另一個集合的子集
+CollectionAssert.IsNotSubsetOf(_expectedRockets, _actualRockets);
+// 測試委託指定的代碼是否拋出T類型的確切給定異常
+Assert.ThrowsException<ArgumentNullException>(() => new Regex(null));
+```
+
 ## 指定輸入值
 
 MSTest 可以使用在 `[DataRow]` 來對 `[TestMethod]` 加上多筆測試用的輸入資料，裡如下面的用法：
