@@ -22,10 +22,12 @@ categories: [Tools]
   ![在實驗功能設定頁面中搜尋 #edge-internet-explorer-integration 關鍵字](https://i.imgur.com/5ixGMt3.png)
 3. 另外兩個選項 `Enable enhanced hang resistance for IE Integration` 和 `Enable IE window hang resistance for IE Integration` 也可以順便啟用，增強 IE Mode 的啟動
 4. 重新啟動 Microsoft Edge 瀏覽器
+5. 修改 Microsoft Edge 瀏覽器的捷徑，在路徑後面加上 `--ie-mode-test`
+6. 瀏覽器選項的 `更多工具` 就會有 `在 Internet Explorer 模式中開啟網站`
 
 ## 使用 IE Mode
 
-設定完成之後，可以在 Microsoft Edge 的設定選單的 `More tools` 中，點選 `Show this page using Internet Explorer` 來用 IE 開啟當前頁面。
+設定完成之後，可以在 Microsoft Edge 的設定選單的 `More tools` 中，點選 `Open sites in Internet Explorer mode` 來用 IE 開啟當前頁面。
 
 ![啟動 IE Mode 的方式](https://i.imgur.com/VsX7Woy.png)
 
@@ -46,3 +48,4 @@ categories: [Tools]
 * [How to enable IE Mode on Microsoft Edge Chromium](https://pureinfotech.com/enable-ie-mode-microsoft-edge-chromium/)
 * [Microsoft Edge Chromium Receives Full Featured IE Mode](https://winaero.com/blog/microsoft-edge-chromium-receives-full-featured-ie-mode/)
 * [以 IE 模式使用 Microsoft Edge](https://docs.microsoft.com/zh-tw/deployedge/edge-ie-mode)
+* [開啟 Microsoft Edge 內建 IE Mode，使用 Internet Explorer 模式開啟網頁](https://free.com.tw/microsoft-edge-ie-mode/)
