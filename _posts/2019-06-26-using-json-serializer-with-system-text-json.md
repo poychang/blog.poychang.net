@@ -63,7 +63,21 @@ var json = JsonSerializer.Serialize<Student>(student, options);
 }
 ```
 
-`JsonSerializerOptions` 還有其他屬性可以做調整，詳請查看[官方文件](https://docs.microsoft.com/zh-tw/dotnet/api/system.text.json.jsonserializeroptions?WT.mc_id=DT-MVP-5003022)。
+## Unicode 編碼
+
+如果 C# 物件的屬性值本身就是 JSON 的時候，使用 `JsonSerializer.Serialize()` 時你會看到輸出的結果會有 Unicode 編碼，例如 `"` 會編碼成 `\u0022`，這是因為 `System.Text.Json` 預設會使用 Unicode 來進行比較安全的序列化作法，因此將字串內的特殊符號編碼成 Unicode，但這樣可能會有兩個問題，第一個是這容易造成 JSON 字串變大，畢盡一個 `"` 字符，會變六個字符 `\u0022`，第二個這編碼後結果比較不容易閱讀，若要解決這問題，可以參考以下做法：
+
+```csharp
+var options = new JsonSerializerOptions
+{
+    Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+};
+var json = JsonSerializer.Serialize<Student>(student, options);
+```
+
+另外一提，`Newtonsoft.Json` 預設也是這種非 Unicode 編碼的模式。
+
+>`JsonSerializerOptions` 還有其他屬性可以做調整，詳請查看[官方文件](https://docs.microsoft.com/zh-tw/dotnet/api/system.text.json.jsonserializeroptions?WT.mc_id=DT-MVP-5003022)。
 
 ## 將文字反序列化成物件
 
@@ -89,13 +103,19 @@ class Student {
 }
 ```
 
-如此一來，透過 `JsonSerializer.Serialize()` 序列化的結過就是變成
+如此一來，透過 `JsonSerializer.Serialize()` 序列化的結過就是變成：
 
 ```json
 {
   "studentName": "Poy Chang",
   "studentAge": 20
 }
+```
+
+如果你要轉換的屬性型別是 Enum 了話，可以使用下面這個屬性裝飾器：
+
+```csharp
+[JsonConverter(typeof(JsonStringEnumConverter))]
 ```
 
 ## 後記
