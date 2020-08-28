@@ -81,3 +81,4 @@ Microsoft 官方有個教學平台 Microsoft Learn，這個平台上面有很豐
 * [Microsoft Learn - Microsoft Certified Azure Fundamentals](https://docs.microsoft.com/zh-tw/learn/certifications/azure-fundamentals)
 * [GitHub - MicrosoftLearning/AZ-900T0x-MicrosoftAzureFundamentals](https://github.com/MicrosoftLearning/AZ-900T0x-MicrosoftAzureFundamentals)
 * [Prepare for Exam AZ-900](https://www.exam-answer.com/microsoft/az-900)
+* [CertBolt - Prepare your Certification](https://www.certbolt.com/microsoft-certification-dumps)
