@@ -1,5 +1,6 @@
 _site
 .sass-cache
+.jekyll-cache
 
 _posts/!Draft/
 _posts/!RecycleBin/
