@@ -19,6 +19,20 @@ Node.js 是一個開放原始碼、跨平台的、可用於伺服器端和網路
 - Node.js 將其註冊到作業系統中，這樣可以及時注意到新連線的產生。
 - 與其他伺服器程式不同的是，Node.js 不使用行程或執行緒處理連線，而是採用事件迴圈來處理並行連線。
 
+
+## 設定 npm init 預設值
+
+npm 會使用你家目錄下的 `~/.npmrc` 檔案內容作為預設初始化的設定，你也可以使用 `npm config` 指令來設定，如下：
+
+```bash
+npm config set init-author-name "Poy Chang"
+npm config set init-license "MIT"
+```
+
+初始化 npm 專案請使用 `npm init`，若想要全部套用預設值，可使用 `npm -y` 指令。
+
+REF:[Change Default NPM License](https://jaketrent.com/post/change-default-npm-license/)
+
 ## 基本程式範例
 
 參考資料：[https://zh.wikipedia.org/wiki/Node.js](https://zh.wikipedia.org/wiki/Node.js)

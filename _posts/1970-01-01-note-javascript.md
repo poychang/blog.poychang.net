@@ -27,6 +27,27 @@ categories: [Javascript, Note]
 
 [完整的 Array 用法可以看 MDN 官網](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 
+## 日期加減運算
+
+這題提供最原始的日期加減運算方案，而不用套件或用 prototype 的擴充寫法，來達成常見的日期計算
+
+```javascript
+// 取得 90 天前的日期
+var today = new Date();
+var at90DaysAgoTicks = today.getDate() - 90; // Number 型別
+var at90DaysAgo = new Date(at90DaysAgoTicks); // Date 型別
+
+console.log(at90DaysAgo.toISOString().substring(0, 10));
+// 輸出：2020-10-10
+```
+
+```javascript
+// 簡化上面程式碼，取得 90 天前的日期
+var at90DaysAgo = new Date(new Date().setDate(new Date().getDate() - 90));
+
+console.log(at90DaysAgo.toISOString().substring(0, 10));
+```
+
 ## Fetch
 
 MDN - [使用 Fetch 發送請求](https://developer.mozilla.org/zh-TW/docs/Web/API/Fetch_API/Using_Fetch)
