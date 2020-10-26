@@ -21,6 +21,14 @@ categories: [Note, CSharp, Dotnet]
   - 開發時執行程式，並輸出相關執行的資訊
   - `--verbosity` 設定命令的詳細資訊層級。允許的值為 q[uiet]、m[inimal]、n[ormal]、d[etailed] 及 diag[nostic]
 
+## 執行位置
+
+- `AppDomain.CurrentDomain.BaseDirectory`：獲得的是執行的應用程式在哪裡
+- `System.Reflection.Assembly.GetExecutingAssembly().Location`：獲得的是目前執行的組件在哪裡
+- `System.IO.Directory.GetCurrentDirectory()`：獲得的是在哪裡下執行指令
+
+REF:[檔案目前位置取得方法的不同，而不是不同的檔案目前位置取得方法](https://dotblogs.com.tw/supershowwei/2019/02/04/153701)
+
 ## Entity Framework
 
 ### Code First
@@ -627,28 +635,29 @@ var date = DateTime.ParseExact(sDate , "yyyy/MM/dd", null, System.Globalization.
 
 參考資料：
 
-- [指令](#%e6%8c%87%e4%bb%a4)
-  - [常用指令](#%e5%b8%b8%e7%94%a8%e6%8c%87%e4%bb%a4)
+- [指令](#指令)
+  - [常用指令](#常用指令)
+- [執行位置](#執行位置)
 - [Entity Framework](#entity-framework)
   - [Code First](#code-first)
   - [Data Annotations](#data-annotations)
 - [Http StatusCode](#http-statuscode)
-- [佈署至 IIS](#%e4%bd%88%e7%bd%b2%e8%87%b3-iis)
-- [開發時自動編譯](#%e9%96%8b%e7%99%bc%e6%99%82%e8%87%aa%e5%8b%95%e7%b7%a8%e8%ad%af)
-- [ASP.NET Core 教學 - Middleware](#aspnet-core-%e6%95%99%e5%ad%b8---middleware)
-- [ASP.NET Core 框架揭秘 by Artech](#aspnet-core-%e6%a1%86%e6%9e%b6%e6%8f%ad%e7%a7%98-by-artech)
-- [ASP.NET Core 原始碼閱讀筆記 by Bill Shooting](#aspnet-core-%e5%8e%9f%e5%a7%8b%e7%a2%bc%e9%96%b1%e8%ae%80%e7%ad%86%e8%a8%98-by-bill-shooting)
-- [計算程式執行時間](#%e8%a8%88%e7%ae%97%e7%a8%8b%e5%bc%8f%e5%9f%b7%e8%a1%8c%e6%99%82%e9%96%93)
-- [.NET 實作支援](#net-%e5%af%a6%e4%bd%9c%e6%94%af%e6%8f%b4)
-- [執行(發佈)模式](#%e5%9f%b7%e8%a1%8c%e7%99%bc%e4%bd%88%e6%a8%a1%e5%bc%8f)
+- [佈署至 IIS](#佈署至-iis)
+- [開發時自動編譯](#開發時自動編譯)
+- [ASP.NET Core 教學 - Middleware](#aspnet-core-教學---middleware)
+- [ASP.NET Core 框架揭秘 by Artech](#aspnet-core-框架揭秘-by-artech)
+- [ASP.NET Core 原始碼閱讀筆記 by Bill Shooting](#aspnet-core-原始碼閱讀筆記-by-bill-shooting)
+- [計算程式執行時間](#計算程式執行時間)
+- [.NET 實作支援](#net-實作支援)
+- [執行(發佈)模式](#執行發佈模式)
   - [Framework Dependent Deployment(FDD)](#framework-dependent-deploymentfdd)
   - [Self Contained Deployment(SCD)](#self-contained-deploymentscd)
-- [開啟 Dotnet 專案時效能低落的問題](#%e9%96%8b%e5%95%9f-dotnet-%e5%b0%88%e6%a1%88%e6%99%82%e6%95%88%e8%83%bd%e4%bd%8e%e8%90%bd%e7%9a%84%e5%95%8f%e9%a1%8c)
+- [開啟 Dotnet 專案時效能低落的問題](#開啟-dotnet-專案時效能低落的問題)
 - [Web Depoly](#web-depoly)
-- [判斷 Windows 目前安裝的 .NET Framework 版本](#%e5%88%a4%e6%96%b7-windows-%e7%9b%ae%e5%89%8d%e5%ae%89%e8%a3%9d%e7%9a%84-net-framework-%e7%89%88%e6%9c%ac)
-- [單元測試命名方法](#%e5%96%ae%e5%85%83%e6%b8%ac%e8%a9%a6%e5%91%bd%e5%90%8d%e6%96%b9%e6%b3%95)
-- [Class 類別](#class-%e9%a1%9e%e5%88%a5)
-- [取得當前名稱空間、類名和方法名稱](#%e5%8f%96%e5%be%97%e7%95%b6%e5%89%8d%e5%90%8d%e7%a8%b1%e7%a9%ba%e9%96%93%e9%a1%9e%e5%90%8d%e5%92%8c%e6%96%b9%e6%b3%95%e5%90%8d%e7%a8%b1)
+- [判斷 Windows 目前安裝的 .NET Framework 版本](#判斷-windows-目前安裝的-net-framework-版本)
+- [單元測試命名方法](#單元測試命名方法)
+- [Class 類別](#class-類別)
+- [取得當前名稱空間、類名和方法名稱](#取得當前名稱空間類名和方法名稱)
 - [LINQ](#linq)
 - [Threads vs. Tasks](#threads-vs-tasks)
   - [Thread](#thread)
