@@ -38,7 +38,7 @@ categories: [Note, Docker]
 - Registry: 註冊伺服器，用於散佈 Docker 映像檔的存儲系統
 - Repository: 倉庫，一組相關相同應用程式但不同版本的 Docker 映像檔儲存倉庫
 
-## 啟動 Docker 容器內的命令列
+## 啟動容器內的命令列
 
 一般來說我們可以使用 `docker attach` 來將 Docker 運行中的容器附加到終端機上，讓我們能夠在容器內操作指令，但如果這個容器是一個運行中的 Web 服務，這只應會讓你附加到 Web Server Process，你只會看到 Web Server Process 所透過 `stdout` 輸出的訊息，這時我們便無法做更多操作。
 
@@ -51,6 +51,20 @@ categories: [Note, Docker]
 REF: https://stackoverflow.com/questions/30172605/how-do-i-get-into-a-docker-container
 
 透過 `docker exec -it DOCKER_NAME cmd` 可以在容器中開啟 cmd 命令列，並讓我們進行操作，如果要退出該命令列環境，可使用 `exit` 指令退出，如果你只是想要暫時退出，則要使用特殊方式，`ctrl` + `p` + `q` 來進行暫時退出。
+
+## 複製容器內的檔案
+
+可以使用 `docker cp` 將容器內的檔案複製至本機，指令參考如下：
+
+```ps1
+docker cp <containerId>:/file/path/within/container /host/path/target
+# Example
+docker cp MyContainer:C:\inetpub\logs\LogFiles\W3SVC1 C:\target
+```
+
+上面 `<containerId>` 可以使用容器名稱或容器 ID 來指定。
+
+REF:[Copying files from Docker container to host](https://stackoverflow.com/questions/22049212/copying-files-from-docker-container-to-host)
 
 ## 基本指令
 
