@@ -48,7 +48,15 @@ categories: [CSharp, Dotnet, Develop]
 - Windows 8 自帶 .NET Framework 4.5
 - Windows 7 自帶 .NET Framework 3.5(2.0/1.1)
 
-另外你可以透過 [.NET Version Detector](http://www.asoft.be/prod_netver.html) 這個軟體來查看電腦安裝了那些 .NET Framework。
+## 查詢本機安裝版本
+
+開啟命令提示字元（cmd.exe）並使用以下指令，即可列出本機當前 .NET Framework Runtime 版本：
+
+```
+dir /b /ad /o-n %systemroot%\Microsoft.NET\Framework\v?.*
+```
+
+另外你也可以透過 [.NET Version Detector](http://www.asoft.be/prod_netver.html) 這個軟體來查看電腦安裝了那些 .NET Framework。
 
 .NET Framework 基本上分三類，只要安裝各類中最新版的即可，對應版號如下：
 
@@ -58,7 +66,7 @@ categories: [CSharp, Dotnet, Develop]
 
 ## 後記
 
-.NET Framework 4.8 很有可能是最後一版了，相信絕對不會有 .NET Framework 5.0（畢竟有 .NET Core 了），如果還有新的版本了話，會在陸續更新這裡的下載連結（但我想大家應該就會去新的[微軟官方 .NET Framework 下載網站](https://dotnet.microsoft.com/download/dotnet-framework)下載了吧）。
+.NET Framework 4.8 很有可能是最後一版了，相信絕對不會有 .NET Framework 5.0（畢竟有 [.NET 5](https://docs.microsoft.com/en-us/dotnet/core/dotnet-five?WT.mc_id=DT-MVP-5003022) 了），如果還有新的版本了話，會在陸續更新這裡的下載連結（但我想大家應該就會去新的[微軟官方 .NET Framework 下載網站](https://dotnet.microsoft.com/download/dotnet-framework)下載了吧）。
 
 ----------
 
