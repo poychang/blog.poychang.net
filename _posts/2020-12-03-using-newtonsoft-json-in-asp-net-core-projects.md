@@ -32,6 +32,10 @@ services.AddRazorPages().AddNewtonsoftJson();
 
 安裝一個套件，修改一行程式碼，簡單幾個動作，重新回到 JSON.NET 的懷抱。
 
+## 後記
+
+基本上新的專案我還是會使用內建的 `System.Text.Json` 來處理資料繫結或相關的 JSON 處理，之所有會有這篇是因為要為 []() 這篇做準備。
+
 ----------
 
 參考資料：
