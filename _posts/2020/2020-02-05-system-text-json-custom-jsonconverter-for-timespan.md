@@ -1,6 +1,6 @@
 ---
 layout: post
-title: System.Text.Json 反/序列化轉換 TimeSpan 型別
+title: System.Text.Json 反序列化/序列化轉換 TimeSpan 型別
 date: 2020-02-05 01:40
 author: Poy Chang
 comments: true
@@ -68,6 +68,25 @@ Console.WriteLine(JsonSerializer.Serialize(obj));
 
 var jsonString = "{\"TimeSpan\": \"01:00:00\"}";
 Console.WriteLine(JsonSerializer.Deserialize<DemoClass>(jsonString).TimeSpan);
+// 輸出： 01:00:00
+```
+
+## 如果是用 Json.NET
+
+如果是使用 [Json.NET](https://www.newtonsoft.com/json) 了話，就不需要自己寫 `JsonConverter`，他內建的 `SerializeObject` 和 `DeserializeObject` 就可以直接反序列化/序列化 TimeSpan 型別，只能說 Json.NET 功能還是比較完整呀。
+
+以上面的測試範例改用 `Newtonsoft.Json`，直接寫這樣就搞定：
+
+```csharp
+var obj = new DemoClass
+{
+    TimeSpan = new TimeSpan(1, 0, 0)
+};
+Console.WriteLine(JsonConvert.SerializeObject(obj));
+// 輸出： {"TimeSpan":"01:00:00"}
+
+var jsonString = "{\"TimeSpan\": \"01:00:00\"}";
+Console.WriteLine(JsonConvert.DeserializeObject<DemoClass>(jsonString).TimeSpan);
 // 輸出： 01:00:00
 ```
 
