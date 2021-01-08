@@ -44,6 +44,15 @@ REF: [CTP: PowerShell Versioning](https://blogs.msdn.microsoft.com/powershell/20
 
 若要針對指令撰寫完整的註解，請參考[註解型說明的範例](https://docs.microsoft.com/zh-tw/powershell/scripting/developer/help/examples-of-comment-based-help)官方文件。
 
+## 好用的指令碼
+
+### 階段執行，按任意鍵繼續
+
+```powershell
+Write-Host -NoNewLine 'Press any key to continue...';
+$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+```
+
 ## 快速鍵
 
 REF: [Windows PowerShell ISE 的鍵盤快速鍵](https://docs.microsoft.com/zh-tw/powershell/scripting/core-powershell/ise/keyboard-shortcuts-for-the-windows-powershell-ise?view=powershell-6&WT.mc_id=DT-MVP-5003022)
@@ -112,19 +121,19 @@ PowerShell ISE 有 Add-On 可以安裝，[這篇文章](https://social.technet.m
 
 PowerShell 的比較運算子有分**字串**及**數字**的比較，字串又分為**限制大小寫**及**不限制大小寫**的比較，若是要限制比較字串的大小寫時，則在運算子前面加上 `c` 字元，如 `-cle` 即可。
 
-| 運算子        | 說明      | 範例                                | 備註 |
-| ------------ | -------- | ------------------------------------|  |
-| -le          | 小於或等於 | `10 –le 10` true                    | 字串不限大小寫 |
-| -lt          | 小於      | `10 –lt 10` false                   | 字串不限大小寫 |
-| -ge          | 大於或等於 | `10 –ge 10` true                    | 字串不限大小寫 |
-| -gt          | 大於      | `10 –ge 10` false                   | 字串不限大小寫 |
-| -eq          | 等於      | `10 –eq 10` true                    | 字串不限大小寫 |
-| -ne          | 不等於    | `10 –en 10` false                   | 字串不限大小寫 |
-| -like        | 相似      | `"ABC" –like "abc"` true            | 字串可用 `＊` 和 `?` 替代，並不限大小寫 |
-| -notlike     | 不相似    | `"ABC" –notlike "abc"` false        | 字串可用 `＊` 和 `?` 替代，並不限大小寫 |
+| 運算子        | 說明      | 範例                                | 備註          |
+| ------------ | -------- | ------------------------------------| ------------ |
+| -le          | 小於或等於 | `10 -le 10` true                    | 字串不限大小寫 |
+| -lt          | 小於      | `10 -lt 10` false                   | 字串不限大小寫 |
+| -ge          | 大於或等於 | `10 -ge 10` true                    | 字串不限大小寫 |
+| -gt          | 大於      | `10 -ge 10` false                   | 字串不限大小寫 |
+| -eq          | 等於      | `10 -eq 10` true                    | 字串不限大小寫 |
+| -ne          | 不等於    | `10 -en 10` false                   | 字串不限大小寫 |
+| -like        | 相似      | `"ABC" -like "abc"` true            | 字串可用 `＊` 和 `?` 替代，並不限大小寫 |
+| -notlike     | 不相似    | `"ABC" -notlike "abc"` false        | 字串可用 `＊` 和 `?` 替代，並不限大小寫 |
 | -match       | 符合      | `"ABC" -match "[AE]"` true          | 字串不限大小寫，並不限大小寫 |
-| -notmatch    | 不符合    | `"ABC" –notmatch "A"` true          | 字串不限大小寫，並不限大小寫 |
-| -contains    | 包含      | `"A","B","C" –contains "A"` true    | 運算子的左邊含有右邊的值，並不限大小寫 |
+| -notmatch    | 不符合    | `"ABC" -notmatch "A"` true          | 字串不限大小寫，並不限大小寫 |
+| -contains    | 包含      | `"A","B","C" -contains "A"` true    | 運算子的左邊含有右邊的值，並不限大小寫 |
 | -notcontains | 不包含    | `"A","B","C" notcontains "A"` false | 運算子的左邊含有右邊的值，並不限大小寫 |
 
 ---
