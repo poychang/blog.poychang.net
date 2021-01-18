@@ -42,10 +42,11 @@ C:\users\{username}\AppData\Local\Programs\Microsoft VS Code\resources\app\exten
 
 ![修改後樣式](https://i.imgur.com/EgBfuLr.png)
 
-當然裡面你還可以根據你自己的需要適度地做調整，如果改很大，就自己另外開發一個樣式套件吧！
+當然裡面你還可以根據你自己的需要適度地做調整，如果改很大，就自己另外[開發一個樣式套件](https://code.visualstudio.com/docs/getstarted/themes#_creating-your-own-color-theme)吧！
 
 ----------
 
 參考資料：
 
 * [How to edit default dark theme for Visual Studio Code?](https://stackoverflow.com/questions/35165362/how-to-edit-default-dark-theme-for-visual-studio-code)
+* [Visual Studio Code- Color Themes](https://code.visualstudio.com/docs/getstarted/themes)
