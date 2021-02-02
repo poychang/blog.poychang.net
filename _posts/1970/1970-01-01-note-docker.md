@@ -11,6 +11,10 @@ categories: [Note, Docker]
 
 - docs.docker.com Search URL `https://docs.docker.com/search/?q={q}` 其中 `{q}` 可替換成要搜尋的文字
 
+## 關注指令
+
+- 刪除 300 天前的 docker images `docker image prune -a --filter "until=7200h"`
+
 ## 容器基礎架構
 
 ![Container Architecture](https://i.imgur.com/MdajDvj.png)
