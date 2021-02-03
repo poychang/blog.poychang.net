@@ -71,7 +71,7 @@ categories: [Javascript, App, Azure]
 
 ```json
 {
-    "s4": "http://study4.tw",
+    "s4": "https://study4.tw",
     "PoyChang": "https://blog.poychang.net"
 }
 ```
@@ -108,5 +108,5 @@ categories: [Javascript, App, Azure]
 
 參考資料：
 
-* [URL rewriting with Github Pages](http://lea.verou.me/2016/11/url-rewriting-with-github-pages/)
+* [URL rewriting with Github Pages](https://lea.verou.me/2016/11/url-rewriting-with-github-pages/)
 * [Managing a custom domain for your GitHub Pages site - Configuring a subdomain](https://help.github.com/en/github/working-with-github-pages/managing-a-custom-domain-for-your-github-pages-site#configuring-a-subdomain)

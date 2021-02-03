@@ -106,5 +106,5 @@ categories: [Azure, Develop]
 
 參考資料：
 
-* [憑證格式轉換 - 將 crt 與 key 轉換 pfx](http://dog0416.blogspot.com/2017/08/opensslwindows-crt-key-pfx.html)
+* [憑證格式轉換 - 將 crt 與 key 轉換 pfx](https://dog0416.blogspot.com/2017/08/opensslwindows-crt-key-pfx.html)
 
