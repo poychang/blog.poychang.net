@@ -14,6 +14,7 @@ categories: [Note, Docker]
 ## 關注指令
 
 - 刪除 300 天前的 docker images `docker image prune -a --filter "until=7200h"`
+- 刪除所有未被 tag 的 images `docker rmi $(docker images -f "dangling=true" -q)`
 
 ## 容器基礎架構
 
