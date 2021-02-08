@@ -46,12 +46,15 @@ REF: [CTP: PowerShell Versioning](https://blogs.msdn.microsoft.com/powershell/20
 
 ## 好用的指令碼
 
-### 階段執行，按任意鍵繼續
-
-```powershell
-Write-Host -NoNewLine 'Press any key to continue...';
-$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
-```
+- 階段執行，按任意鍵繼續
+   ```powershell
+   Write-Host -NoNewLine 'Press any key to continue...';
+   $null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+   ```
+- 查詢資料夾空間用量
+  ```powershell
+  (Get-ChildItem $Path -Recurse -File | Measure-Object -property length -sum).SUM / 1GB
+  ```
 
 ## 快速鍵
 

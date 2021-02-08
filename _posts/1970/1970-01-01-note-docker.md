@@ -62,9 +62,12 @@ REF: https://stackoverflow.com/questions/30172605/how-do-i-get-into-a-docker-con
 可以使用 `docker cp` 將容器內的檔案複製至本機，指令參考如下：
 
 ```ps1
-docker cp <containerId>:/file/path/within/container /host/path/target
-# Example
-docker cp MyContainer:C:\inetpub\logs\LogFiles\W3SVC1 C:\target
+docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH
+docker cp [OPTIONS] SRC_PATH CONTAINER:DEST_PATH
+
+# 範例
+docker cp MyContainer:"C:\Program Files\logs\" C:\target
+docker cp MyContainer:C:\inetpub\logs\ C:\target
 ```
 
 上面 `<containerId>` 可以使用容器名稱或容器 ID 來指定。
@@ -216,10 +219,14 @@ REF:
 
 ## Docker Compose
 
-使用指定的 docker-compose.yml 設定檔來啟動遠端的容器。注意，指定遠端主機的地方要加上 2375 的 Port 號。
+[Docker Docs - docker-compose](https://docs.docker.com/compose/reference/overview/)
+
+使用指定的 `docker-compose.yml` 設定檔來啟動遠端的容器。注意，指定遠端主機的地方要加上 2375 的 Port 號。
 
 ```bash
 docker-compose.exe -H REMOTE_DOCKER_IP:2375 -f docker/command/docker-compose.yml up
+docker-compose.exe -H REMOTE_DOCKER_IP:2375 -f docker/command/docker-compose.yml down
+docker-compose.exe -H REMOTE_DOCKER_IP:2375 -f docker/command/docker-compose.yml restart
 ```
 
 - [官方文件 - Compose file version 3 reference](https://docs.docker.com/compose/compose-file/)
