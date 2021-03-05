@@ -78,13 +78,14 @@ Get-HelloFromDynamicFunction
 
 在 PowerShell 中，有很多種建立物件的方式，我個人偏好使用 `[PSCustomObject]` 搭配 HashTable 來建立，這是最快速、畫面最清爽的建立方式。
 
-然後只要把他們用 `()` 括起來，再用 `,` 拼接在一起，為了畫面整齊，我用了 `` ` `` 換行符號來排版：
+然後只要把他們用 `@()` 括起來，就可以建立出陣列裡面包含多個物件的資料格式：
 
 ```ps1
-$list = `
-    ([PSCustomObject]@{ FuncName="Func1"; Description="3" }), `
-    ([PSCustomObject]@{ FuncName="Func2"; Description="3" }), `
-    ([PSCustomObject]@{ FuncName="Func3"; Description="3" });
+$list = @(
+    [PSCustomObject]@{ FuncName="Func1"; Description="3" },
+    [PSCustomObject]@{ FuncName="Func2"; Description="3" },
+    [PSCustomObject]@{ FuncName="Func3"; Description="3" }
+);
 ```
 
 這時候你可以用清單變數自帶的 `ForEach` 方法、`ForEach-Object` Cmdlet、或用 `foreach` 語法來遍巡 `$list` 清單變數，但我建議使用第三種 `foreach` 語法，因為前面兩者通常會使用 `$_` 來取得當前資料，而 `$_` 是參考內部的 [Scope](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_scopes)，比較容易出現不如預期的狀況，相對的第三種 `foreach` 語法則比較不容易有問題。
