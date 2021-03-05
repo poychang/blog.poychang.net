@@ -56,6 +56,21 @@ REF: [CTP: PowerShell Versioning](https://blogs.msdn.microsoft.com/powershell/20
   (Get-ChildItem $Path -Recurse -File | Measure-Object -property length -sum).SUM / 1GB
   ```
 
+## 匿名物件
+
+```ps1
+$Object = @{ 'Key' = 'Value'; }
+# 比較嚴謹的寫法，在前面加 [PSCustomObject]
+# $Object = [PSCustomObject]@{ 'Key' = 'Value'; }
+ConvertTo-Json $Object # 轉成 JSON 字串
+
+$Array = @(
+  @{ 'Key' = 'Value1'; },
+  @{ 'Key' = 'Value2'; }
+)
+ConvertTo-Json $Array # 轉成 JSON 字串
+```
+
 ## 快速鍵
 
 REF: [Windows PowerShell ISE 的鍵盤快速鍵](https://docs.microsoft.com/zh-tw/powershell/scripting/core-powershell/ise/keyboard-shortcuts-for-the-windows-powershell-ise?view=powershell-6&WT.mc_id=DT-MVP-5003022)
