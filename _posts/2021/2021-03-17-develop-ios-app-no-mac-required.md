@@ -17,11 +17,11 @@ categories: [Dotnet, App, Develop, Tools]
 
 使用付費帳戶登入[開發人員後台](https://developer.apple.com/account/)，點選 People 選單。
 
-[使用付費帳戶登入後點選 People 選單](https://i.imgur.com/FelNn5E.png)
+![使用付費帳戶登入後點選 People 選單](https://i.imgur.com/FelNn5E.png)
 
 這時會轉跳到團隊使用者的管理介面，根據你想要給的權限將免費的開發人員帳戶加入即可。
 
-[將免費的開發人員帳戶加入並設定成 Admin 權限](https://i.imgur.com/hvMbwHZ.png)
+![將免費的開發人員帳戶加入並設定成 Admin 權限](https://i.imgur.com/hvMbwHZ.png)
 
 因為這篇是要使用到 Hot Restart 的功能，這裡的權限必須設定成 Admin，原因是只有 Admin 才能建立 App 的 Provision。
 
@@ -31,7 +31,7 @@ categories: [Dotnet, App, Develop, Tools]
 
 目前 Xamarin Hot Restart 僅適用於 Visual Studio 2019 16.5 以上版本，且現在還是預覽階段（希望會跟著 .NET 6 一起正式發布），所以開啟 Visual Studio 上方選單列的 [工具] > [選項] 視窗，然後在 [環境] > [預覽功能] 中開啟 Hot Restart 功能，設定完記得重新啟動 Visual Studio。
 
-[啟動預覽版的 Hot Restart 功能](https://i.imgur.com/vF5Dbs9.png)
+![啟動預覽版的 Hot Restart 功能](https://i.imgur.com/vF5Dbs9.png)
 
 >在 Visual Studio 16.9 之後的版本，Xamarin Hot Restart 已經是預設開啟的狀態，貌似已經脫離 Preview 了 👍
 
