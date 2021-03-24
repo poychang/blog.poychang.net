@@ -47,9 +47,21 @@ categories: [Dotnet, App, Develop, Tools]
 
 然後你就可以直接 F5 進行偵錯模式囉！
 
-![設定 Hot Restart 視窗畫面](https://i.imgur.com/jv40xLG.png)
+在執行偵錯模式時，如果是第一次使用，會開啟設定 Hot Restart 視窗畫面。
 
-在執行偵錯模式時，如果是第一次使用，會要你登入你的 Apple Developer 開發者帳號，並且選用對應的開發團隊，這裡主要是自動化建立給這個 App 用的 Provisioning Profile（這部分你可以到 Apple Developer 後台網站，點選 Certificates, Identifiers & Profiles 選單就可以看到這自動化建立的 Provisioning Profile），並且用一個很神秘的方式安裝了一個 Xamarin Shell App 到你的手機上，藉此你就可以橋接到你開發中的 App。
+![設定 Hot Restart 視窗畫面](https://i.imgur.com/lkXSio4.png)
+
+接著會要你連接你的 iOS 設備裝置，如果連接不到可以嘗試移除裝置重新接上連接線，或者開啟 iTunes（不知道為什麼開啟 iTunes 會讓連線變得順暢...）。
+
+![連接你的 iOS 裝置](https://i.imgur.com/YpHlxEY.png)
+
+再來會要你登入你的 Apple Developer 開發者帳號，並且選用對應的開發團隊，這裡主要是自動化建立給這個 App 用的 Provisioning Profile。
+
+![登入並選擇開發團隊](https://i.imgur.com/pq3zVqB.png)
+
+你可以到 Apple Developer 後台網站，點選 Certificates, Identifiers & Profiles 選單就可以看到這自動化建立的 Provisioning Profile。
+
+在完成啟動 Hot Restart 後，背後會用一個很神秘的方式安裝了一個 Xamarin Shell App 到你的手機上，藉此你就可以橋接到你開發中的 App。
 
 >之所以說神秘的方式，是因為我也不知道它到底怎麼裝進去的，如果有人知道，麻煩告訴我一下，感謝！
 
