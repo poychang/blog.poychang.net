@@ -63,7 +63,17 @@ categories: [Dotnet, App, Develop, Tools]
 
 在完成啟動 Hot Restart 後，背後會用一個很神秘的方式安裝了一個 Xamarin Shell App 到你的手機上，藉此你就可以橋接到你開發中的 App。
 
->之所以說神秘的方式，是因為我也不知道它到底怎麼裝進去的，如果有人知道，麻煩告訴我一下，感謝！
+## 背後黑魔法
+
+個人覺得 Hot Restart 非常的黑魔法，這到底是怎麼辦到的呢？先來看看下面張圖：
+
+![基本原理](https://i.imgur.com/lQiQ5k1.png)
+
+Hot Restart 背後的運作原理其實是預先建置了一個 Shell App 放在 Visual Studio for Windows 中，在偵錯時會先拿這個 Pre-build 的 App 加上你的程式碼（User Code），並加入必要執行程序（Libraries）來即時編譯、執行你所撰寫的程式，然後套上自動化建立的 Provisioning Profile，因為這基本上預先編譯好的 App（至少底層是），已經通過類似 XCode 的編譯檢查，所以有機會直接安裝至 iOS 中執行。
+
+這樣的處理方式還是有些限制，例如他無法調整 Launch Screen 和底層的 `info.plist`，不過這對於偵錯開發中的 App 已經非常夠用了！
+
+## 後記
 
 最後，貼一下這歷史的一刻，No Mac still can develop iOS App！
 
