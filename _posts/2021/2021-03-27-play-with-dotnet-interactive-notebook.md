@@ -183,6 +183,6 @@ Magic Commands 會以 `#!` 或 `#` 作為前綴，通常會用前者，後者則
 
 參考資料：
 
-* [.NET Interactive is here! | .NET Notebooks Preview 2](https://devblogs.microsoft.com/dotnet/net-interactive-is-here-net-notebooks-preview-2/)
+* [.NET Interactive is here!](https://devblogs.microsoft.com/dotnet/net-interactive-is-here-net-notebooks-preview-2/)
 * [dotnet/interactive](https://github.com/dotnet/interactive)
 * [.NET Interactive - Magic Commands](https://github.com/dotnet/interactive/blob/main/docs/magic-commands.md)
