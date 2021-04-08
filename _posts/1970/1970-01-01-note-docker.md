@@ -15,6 +15,13 @@ categories: [Note, Docker]
 
 - 刪除 300 天前的 docker images `docker image prune -a --filter "until=7200h"`
 - 刪除所有未被 tag 的 images `docker rmi $(docker images -f "dangling=true" -q)`
+- 打掃除！執行前可先用 `docker system df` 查看當前狀態，再用 `docker system prune` 清理 4 個維度的使用空間
+  - Images 刪除沒有被任何 Container 使用的 Image
+  - Containers 刪除非執行狀態的 Container
+  - Network 刪除沒有被任何 Container 參考的 Network
+  - Build Cache 刪除建置 Container 用的快取
+  - 預設不會清理 Volume，指令可以加上 `--volumes` 進行清理
+  - [doc](https://docs.docker.com/engine/reference/commandline/system/)
 
 ## 容器基礎架構
 
