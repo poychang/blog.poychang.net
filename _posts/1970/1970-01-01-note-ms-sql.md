@@ -72,6 +72,49 @@ REF:
 - [透過參考數值設定In Memory Table的Index](https://edwardkuo.imas.tw/paper/2017/03/22/DataBase/Memorytableindex/)
 - [[SQL Server][In-Memory OLTP]記憶內資料表BUCKET_COUNT預估](https://dotblogs.com.tw/stanley14/2016/10/28/234914)
 
+## SQL Server 資料類型對應
+
+SQL Server 和 .NET 是以不同的型別系統為基礎，可以使用下表來推斷 SQL Server 和 .NET 型別類型對應。
+
+REF: [SQL Server 資料類型對應](https://docs.microsoft.com/zh-tw/dotnet/framework/data/adonet/sql-server-data-type-mappings)
+
+- `DbType` 列舉：指定 .NET 資料提供者的欄位、屬性或 Parameter 物件的資料類型。
+- `SqlDbType` 列舉：指定欄位的 SQL Server 特定的資料型別與屬性，以便在 SqlParameter 中使用。
+
+| SQL Server Database Engine 類型             | .NET Framework 類型 | SqlDbType 列舉型別           | DbType 列舉型別                                 |
+| ------------------------------------------- | ------------------- | ---------------------------- | ----------------------------------------------- |
+| BIGINT                                      | Int64               | `SqlDbType.BigInt`           | `DbType.Int64`                                  |
+| BINARY                                      | Byte[]              | `SqlDbType.VarBinary`        | `DbType.Binary`                                 |
+| bit                                         | Boolean             | `SqlDbType.Bit`              | `DbType.Boolean`                                |
+| char                                        | String、Char[]      | `SqlDbType.Char`             | `DbType.AnsiStringFixedLength`, `DbType.String` |
+| date (SQL Server 2008 及以後版本)           | Datetime            | `SqlDbType.Date`             | `DbType.Date`                                   |
+| Datetime                                    | Datetime            | `SqlDbType.DateTime`         | `DbType.DateTime`                               |
+| datetime2 (SQL Server 2008 及以後版本)      | Datetime            | `SqlDbType.DateTime2`        | `DbType.DateTime2`                              |
+| datetimeoffset (SQL Server 2008 及以後版本) | DateTimeOffset      | `SqlDbType.DateTimeOffset`   | `DbType.DateTimeOffset`                         |
+| decimal                                     | Decimal             | `SqlDbType.Decimal`          | `DbType.Decimal`                                |
+| FILESTREAM attribute (varbinary(max))       | Byte[]              | `SqlDbType.VarBinary`        | `DbType.Binary`                                 |
+| FLOAT                                       | Double              | `SqlDbType.Float`            | `DbType.Double`                                 |
+| image                                       | Byte[]              | `SqlDbType.Binary`           | `DbType.Binary`                                 |
+| int                                         | Int32               | `SqlDbType.Int`              | `DbType.Int32`                                  |
+| money                                       | Decimal             | `SqlDbType.Money`            | `DbType.Decimal`                                |
+| NCHAR                                       | String、Char[]      | `SqlDbType.NChar`            | `DbType.StringFixedLength`                      |
+| ntext                                       | String、Char[]      | `SqlDbType.NText`            | `DbType.String`                                 |
+| NUMERIC                                     | Decimal             | `SqlDbType.Decimal`          | `DbType.Decimal`                                |
+| NVARCHAR                                    | String、Char[]      | `SqlDbType.NVarChar`         | `DbType.String`                                 |
+| real                                        | Single              | `SqlDbType.Real`             | `DbType.Single`                                 |
+| rowversion                                  | Byte[]              | `SqlDbType.Timestamp`        | `DbType.Binary`                                 |
+| smalldatetime                               | Datetime            | `SqlDbType.DateTime`         | `DbType.DateTime`                               |
+| SMALLINT                                    | Int16               | `SqlDbType.SmallInt`         | `DbType.Int16`                                  |
+| SMALLMONEY                                  | Decimal             | `SqlDbType.SmallMoney`       | `DbType.Decimal`                                |
+| sql_variant                                 | Object              | `SqlDbType.Variant`          | `DbType.Object`                                 |
+| text                                        | String、Char[]      | `SqlDbType.Text`             | `DbType.String`                                 |
+| time (SQL Server 2008 及以後版本)           | TimeSpan            | `SqlDbType.Time`             | `DbType.Time`                                   |
+| timestamp                                   | Byte[]              | `SqlDbType.Timestamp`        | `DbType.Binary`                                 |
+| TINYINT                                     | Byte                | `SqlDbType.TinyInt`          | `DbType.Byte`                                   |
+| UNIQUEIDENTIFIER                            | Guid                | `SqlDbType.UniqueIdentifier` | `DbType.Guid`                                   |
+| varbinary                                   | Byte[]              | `SqlDbType.VarBinary`        | `DbType.Binary`                                 |
+| varchar                                     | String、Char[]      | `SqlDbType.VarChar`          | `DbType.AnsiString`, `DbType.String`            |
+| xml                                         | Xml                 | `SqlDbType.Xml`              | `DbType.Xml`                                    |
 
 ## 基本指令
 
