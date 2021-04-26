@@ -78,8 +78,8 @@ SQL Server 和 .NET 是以不同的型別系統為基礎，可以使用下表來
 
 REF: [SQL Server 資料類型對應](https://docs.microsoft.com/zh-tw/dotnet/framework/data/adonet/sql-server-data-type-mappings)
 
-- `DbType` 列舉：指定 .NET 資料提供者的欄位、屬性或 Parameter 物件的資料類型。
-- `SqlDbType` 列舉：指定欄位的 SQL Server 特定的資料型別與屬性，以便在 SqlParameter 中使用。
+- `DbType` 列舉：指定 .NET 資料提供者的欄位、屬性或 Parameter 物件的資料類型。([Docs](https://docs.microsoft.com/zh-tw/dotnet/api/system.data.dbtype))
+- `SqlDbType` 列舉：指定欄位的 SQL Server 特定的資料型別與屬性，以便在 SqlParameter 中使用。([Docs](https://docs.microsoft.com/zh-tw/dotnet/api/system.data.sqldbtype))
 
 | SQL Server Database Engine 類型             | .NET Framework 類型 | SqlDbType 列舉型別           | DbType 列舉型別                                 |
 | ------------------------------------------- | ------------------- | ---------------------------- | ----------------------------------------------- |
