@@ -402,6 +402,13 @@ SELECT getdate()
 
 ## SQL 字串樣式轉換為日期格式 CAST 和 CONVERT
 
+臨時找資料，方便又上手的查詢日期方式：
+
+```sql
+-- 換掉 Table 和 Date_Column 名稱
+SELECT * FROM Table WHERE CONVERT(varchar(8), [Date_Column], 112) = '20210425'
+```
+
 字串格式轉換為日期格式範例：
 
 ```sql
