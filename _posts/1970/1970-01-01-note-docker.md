@@ -101,8 +101,12 @@ Docker CLI 官方文件：[Use the Docker command line](https://docs.docker.com/
 - `docker stop [container]`: 停止一個執行中的容器
 - `docker exec -it [container] [command]`: Run a shell command inside a particular container.
 - `docker run [image]` 啟動容器 [doc](https://docs.docker.com/engine/reference/commandline/run/)
-- `docker run -it -image [image] [container] [command]`: 建立並啟動容器，並在內部執行指令
-- `docker run -it -rm -image [image] [container] [command]`: 建立並啟動容器，並在內部執行指令，指令完成後自動移除此容器
+  - `docker run -it -image [image] [container] [command]`: 建立並啟動容器，並在內部執行指令
+  - `docker run -it -rm -image [image] [container] [command]`: 建立並啟動容器，並在內部執行指令，指令完成後自動移除此容器
+  - 選用參數說明
+    - `-i`, `--interactive` 互動模式
+    - `-t`, `--tty` 配置一個終端機
+    - `-d`, `--detach` 在背景執行
 - `docker pause [container]`: Pause all processes running within a particular container.
 
 使用 Docker 工具：
@@ -231,7 +235,7 @@ REF:
 使用指定的 `docker-compose.yml` 設定檔來啟動遠端的容器。注意，指定遠端主機的地方要加上 2375 的 Port 號。
 
 ```bash
-docker-compose.exe -H REMOTE_DOCKER_IP:2375 -f docker/command/docker-compose.yml up
+docker-compose.exe -H REMOTE_DOCKER_IP:2375 -f docker/command/docker-compose.yml up --detach
 docker-compose.exe -H REMOTE_DOCKER_IP:2375 -f docker/command/docker-compose.yml down
 docker-compose.exe -H REMOTE_DOCKER_IP:2375 -f docker/command/docker-compose.yml restart
 ```
