@@ -4,8 +4,9 @@ title: SonarLint 程式碼品質分析工具
 date: 2021-05-11 12:59
 author: Poy Chang
 comments: true
-categories: [Typescript, Javascript, CSharp, Dotnet, SQL, App, Angular, WebAPI, Azure, Develop, Bot, IoT, Docker, PowerShell, Tools, Test, Note, Uncategorized]
+categories: [Develop, Tools]
 ---
+
 [SonarQube 是一套程式碼品質分析工具](https://blog.poychang.net/sonarqube-csharp/)，你可以自架伺服器並設定掃描規則來檢查專案程式碼，並可以搭配 CI/CD 工具來做到自動化掃描，例如[在 Azure DevOps 上使用 SonarQube 進行程式碼品質分析](https://blog.poychang.net/how-to-config-sonarqube-work-with-vsts/)，這對維持團隊開發品質有很大的幫助。然而如果每次都要提交程式碼到版控平台，再透過 CI/CD 去掃描，就太浪費時間了，若能在 IDE 或 Editor 等開發工具上接套用 SonarQube 上所自訂的團隊規則，直接在工具中掃描當前的程式碼，這樣的開發體驗才不會被影響。
 
 若把 SonarQube 看作伺服器端的程式碼掃描工具，那麼 [SonarLint](https://www.sonarlint.org/) 就是對應到用戶端的工具。
