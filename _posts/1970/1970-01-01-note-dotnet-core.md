@@ -7,7 +7,7 @@ comments: true
 categories: [Note, CSharp, Dotnet]
 ---
 
-本篇作為筆記用途，記錄 Dotnet Core 參考資料
+本篇作為筆記用途，記錄 .NET Core 參考資料
 
 真正跨平台之前，還是多利用 .NET Portability Analyzer 分析你的專案是否用到了不支援的 API 比較保險
 
