@@ -37,7 +37,7 @@ Jupyter Notebooks 就相當適用於這種情境，但如果你不想安裝 Jupy
 
 ![主介面](https://i.imgur.com/TVdvOJO.png)
 
-如果是 Code 區塊，則可以在右下角選擇該區塊藥使用的 Subkernel，預設是使用 C# Notebook。
+如果是 Code 區塊，則可以在右下角選擇該區塊要使用哪個 Subkernel，預設是使用 C# Notebook。
 
 ## C# Notebook
 
