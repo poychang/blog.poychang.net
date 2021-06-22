@@ -11,7 +11,7 @@ categories: [Develop, Tools]
 
 先來看一下最後的效果：
 
-[開啟 Windows Terminal 啟動時自動分割視窗給 NTop 即時監控系統資源](https://i.imgur.com/9X5UspZ.png)
+![開啟 Windows Terminal 啟動時自動分割視窗給 NTop 即時監控系統資源](https://i.imgur.com/9X5UspZ.png)
 
 ## NTop
 
