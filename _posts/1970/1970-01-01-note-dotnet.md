@@ -1,19 +1,19 @@
 ---
 layout: post
-title: .NET Core 筆記
+title: .NET 筆記
 date: 1970-01-01 12:00
 author: Poy Chang
 comments: true
 categories: [Note, CSharp, Dotnet]
 ---
 
-本篇作為筆記用途，記錄 .NET Core 參考資料
+本篇作為筆記用途，記錄 .NET 參考資料
 
 真正跨平台之前，還是多利用 .NET Portability Analyzer 分析你的專案是否用到了不支援的 API 比較保險
 
 ## 指令
 
-- [dotnet core 命令列介面 (CLI) 工具](https://docs.microsoft.com/zh-tw/dotnet/core/tools/?WT.mc_id=DT-MVP-5003022)
+- [dotnet 命令列介面 (CLI) 工具](https://docs.microsoft.com/zh-tw/dotnet/core/tools/?WT.mc_id=DT-MVP-5003022)
 
 ### 常用指令
 
