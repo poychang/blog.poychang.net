@@ -19,6 +19,12 @@ categories: [Note]
 
 但我推薦使用 [LinusU/wext-shipit](https://github.com/LinusU/wext-shipit) 這 node 套件，可以輕鬆將你的擴充套件發行到 Chrome、Firefox、Opera，而且使用放非常簡單，基本上只要把必要的 ID、SECRET 等參數在環境中設定好，自動化上架只要一行搞定。
 
+例如要透過 npx 來執行發行擴充套件的動作，可以參考以下指令：
+
+```
+npm install @wext/shipit && npx shipit chrome ./dist-chrome
+```
+
 ## Chrome 開發資訊
 
 - [Chrome 插件开发全攻略 sxei/chrome-plugin-demo](https://github.com/sxei/chrome-plugin-demo)
