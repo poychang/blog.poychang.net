@@ -13,7 +13,7 @@ categories: [Azure]
 
 ![Microsoft 認證測驗清單](https://i.imgur.com/3MjUDXC.png)
 
-首先先到 Microsoft 瀏覽[認證與測驗清單](https://docs.microsoft.com/en-us/learn/certifications/browse/)。
+首先，你可以到 Microsoft 瀏覽[認證與測驗清單](https://docs.microsoft.com/en-us/learn/certifications/browse/)，或到 [Microsoft 認證儀錶板](https://www.microsoft.com/en-us/learning/dashboard.aspx)查詢。
 
 接著，選擇你要註冊測驗的認證，這裡以安排 AZ-203 為例，選擇下方**所有認證測驗**列表中的 **AZ-203: Developing Solutions for Microsoft Azure**，會開啟[AZ-203 認證測驗的介紹網頁](https://docs.microsoft.com/en-us/learn/certifications/exams/az-203)，在這個介紹頁中也會提供考試評量的範圍，提供您做參考。
 
