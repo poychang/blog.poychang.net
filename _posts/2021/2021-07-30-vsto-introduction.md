@@ -104,7 +104,7 @@ Office 內包含了多款應用程式，而每一個應用程式都有自己的�
 
 在開發時期，Visual Studio 會幫我們處理好背後所需要的所有工作，包括修改/清除註冊表之類的動作。
 
-當要發布至正是環境時，有兩種方式可以選擇：
+當要發布至正式環境時，有兩種方式可以選擇：
 
 - ClickOnce
 - Windows Installer
@@ -116,7 +116,7 @@ Office 內包含了多款應用程式，而每一個應用程式都有自己的�
 參考資料：
 
 * [Pluralsight - Introduction to Visual Studio Tools for Office](https://app.pluralsight.com/library/courses/vsto/table-of-contents)
-* [Youtube - VSTO Tutorial](https://www.youtube.com/playlist?list=PL1Ni1fuY_1u8LDEnZVs9PjxVIxp29lKpL)
+* [YouTube - VSTO Tutorial](https://www.youtube.com/playlist?list=PL1Ni1fuY_1u8LDEnZVs9PjxVIxp29lKpL)
 * [MS Docs - Excel 物件模型總覽](https://docs.microsoft.com/zh-tw/visualstudio/vsto/excel-object-model-overview?WT.mc_id=DT-MVP-5003022)
 * [MS Docs - Word 物件模型總覽](https://docs.microsoft.com/zh-tw/visualstudio/vsto/word-object-model-overview?WT.mc_id=DT-MVP-5003022)
 * [MS Docs - Outlook 物件模型總覽](https://docs.microsoft.com/zh-tw/visualstudio/vsto/outlook-object-model-overview?WT.mc_id=DT-MVP-5003022)
