@@ -36,3 +36,4 @@ runas /user:poy@DOMAIN "C:\Windows\notepad.exe"
 參考資料：
 
 * [MS Docs - Runas](https://docs.microsoft.com/zh-tw/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc771525(v=ws.11)?WT.mc_id=DT-MVP-5003022)
+* [How to Run a Program as a Different User (RunAs) in Windows 10?](http://woshub.com/run-program-as-different-user-windows/)
