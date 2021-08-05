@@ -9,6 +9,8 @@ categories: [CSharp, Dotnet, Develop]
 
 要執行 .NET Framework 開發的應用程式，系統必須安裝對應版本的 .NET Framework Runtime，這裡整理了所有版本的 .NET Framework Runtime 下載路徑，方便使用。
 
+>.NET Framework 4.8 是 .NET Framework 的最後一個版本，官方每月都會提供安全性和可靠性錯誤修正給 .NET Framework。對於新的開發，請使用 .NET 5 或更新版本。
+
 其實微軟官方也做了一個完整的下載網站：[https://dotnet.microsoft.com/download/dotnet-framework](https://dotnet.microsoft.com/download/dotnet-framework)，這篇所有的下載連結都來自微軟官方網站：
 
 - .NET Framework 4.8
@@ -43,10 +45,13 @@ categories: [CSharp, Dotnet, Develop]
 
 ## Windows 內建版本
 
+- Windows 10 的 2019 5 月更新的版本，自帶 .NET Framework 4.8
 - Windows 10 自帶 .NET Framework 4.6
 - Windows 8.1 自帶 .NET Framework 4.5.1
 - Windows 8 自帶 .NET Framework 4.5
 - Windows 7 自帶 .NET Framework 3.5(2.0/1.1)
+
+詳細的作業系統與 .NET Framework 版本相依性，請參考官方文件[.NET Framework 版本和相依性](https://docs.microsoft.com/zh-tw/dotnet/framework/migration-guide/versions-and-dependencies)。
 
 ## 查詢本機安裝版本
 
@@ -63,6 +68,8 @@ dir /b /ad /o-n %systemroot%\Microsoft.NET\Framework\v?.*
 - CLR1 - .NET Framework 1.1
 - CLR2 - .NET Framework 3.5
 - CLR4 - .NET Framework 4.X
+
+更多官方提供的查詢方法，請參考官方文件[如何：判斷安裝的 .NET Framework 版本](https://docs.microsoft.com/zh-tw/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed)。
 
 ## 後記
 
