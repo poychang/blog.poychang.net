@@ -45,11 +45,11 @@ categories: [CSharp, Dotnet, Develop]
 
 ## Windows 內建版本
 
-- Windows 10 的 2019 5 月更新的版本，自帶 .NET Framework 4.8
-- Windows 10 自帶 .NET Framework 4.6
-- Windows 8.1 自帶 .NET Framework 4.5.1
-- Windows 8 自帶 .NET Framework 4.5
-- Windows 7 自帶 .NET Framework 3.5(2.0/1.1)
+- Windows 10 的 2019 5 月更新的版本，預設安裝 .NET Framework 4.8
+- Windows 10 預設安裝 .NET Framework 4.6
+- Windows 8.1 預設安裝 .NET Framework 4.5.1
+- Windows 8 預設安裝 .NET Framework 4.5
+- Windows 7 預設安裝 .NET Framework 3.5(2.0/1.1)
 
 詳細的作業系統與 .NET Framework 版本相依性，請參考官方文件[.NET Framework 版本和相依性](https://docs.microsoft.com/zh-tw/dotnet/framework/migration-guide/versions-and-dependencies)。
 
