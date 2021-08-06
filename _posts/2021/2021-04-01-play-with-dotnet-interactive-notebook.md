@@ -1,7 +1,7 @@
 ---
 layout: post
 title: .NET Interactive Notebook 基本玩法
-date: 2021-03-27 19:21
+date: 2021-04-01 19:21
 author: Poy Chang
 comments: true
 categories: [Javascript, CSharp, Dotnet, SQL, PowerShell, Tools]
