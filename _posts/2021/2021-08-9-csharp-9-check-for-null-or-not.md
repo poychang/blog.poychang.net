@@ -33,7 +33,7 @@ if (name is null)
 _ = name ?? throw new ArgumentNullException(nameof(name));
 ```
 
-在 C# 7 就可以有這麼多種變化可以使用了，在 C# 8 的時候對[Pattern Matching 模式比對](https://docs.microsoft.com/zh-tw/dotnet/csharp/fundamentals/functional/pattern-matching?WT.mc_id=DT-MVP-5003022)的特性有了大幅度的增強，讓我們可以用這樣的方式來檢查某物件是否**不是** Null：
+在 C# 7 就可以有這麼多種變化可以使用了，在 C# 8 的時候對[模式比對(Pattern Matching)](https://docs.microsoft.com/zh-tw/dotnet/csharp/fundamentals/functional/pattern-matching?WT.mc_id=DT-MVP-5003022)的特性有了大幅度的增強，讓我們可以用這樣的方式來檢查某物件是否**不是** Null：
 
 ```csharp
 if (name is object) { }
@@ -45,13 +45,15 @@ if (name is object) { }
 if (name is {}) { }
 ```
 
+這兩個運作的原理是 C# 7 的 `is` 有了模式比對的能力之後，進而在 C# 8 的 `is` 運算子擴充了此能力，增加了[屬性比對（Property Pattern）](https://docs.microsoft.com/zh-tw/dotnet/csharp/language-reference/operators/patterns#property-pattern?WT.mc_id=DT-MVP-5003022)能力，因此可以用來判斷某物件是否包含於 `{}` （相當於 `object` 物件），除了 Null 之外的物件都是會被包含於 `{}` 的，所以也就代表該物件**不是** Null，這個判斷式得以成立。
+
 此外，這樣的寫法還可以在後面加上別名，將原本的變數名稱改成另一個名稱，如下面的 `alias` 就是 `name` 的別名：
 
 ```csharp
 if (name is {} alias) { }
 ```
 
-到了 C# 9 的時候，對於 `is` 運算子又進行了特性上的擴充，讓我們可以使用 `is not` 這個 [Logical Patterns 邏輯模式](https://docs.microsoft.com/zh-tw/dotnet/csharp/language-reference/operators/patterns#logical-patterns)來判斷某物件是否**不是** Null，來看看下面的寫法：
+到了 C# 9 的時候，對於 `is` 運算子又進行了特性上的擴充，讓我們可以使用 `is not` 這個 [邏輯模式(Logical Patterns)](https://docs.microsoft.com/zh-tw/dotnet/csharp/language-reference/operators/patterns#logical-patterns?WT.mc_id=DT-MVP-5003022)來判斷某物件是否**不是** Null，來看看下面的寫法：
 
 ```csharp
 if (name is not null) { }
@@ -76,4 +78,6 @@ if (name is not null) { }
 * [MS Docs - _ 捨棄](https://docs.microsoft.com/zh-tw/dotnet/csharp/fundamentals/functional/discards?WT.mc_id=DT-MVP-5003022)
 * [MS Docs - ?? 聯合運算子](https://docs.microsoft.com/zh-tw/dotnet/csharp/language-reference/operators/null-coalescing-operator?WT.mc_id=DT-MVP-5003022)
 * [MS Docs - Pattern Matching 模式比對](https://docs.microsoft.com/zh-tw/dotnet/csharp/fundamentals/functional/pattern-matching?WT.mc_id=DT-MVP-5003022)
-* [MS Docs - Logical Patterns 邏輯模式](https://docs.microsoft.com/zh-tw/dotnet/csharp/language-reference/operators/patterns#logical-patterns)
+* [MS Docs - Property Pattern 屬性比對](https://docs.microsoft.com/zh-tw/dotnet/csharp/language-reference/operators/patterns#property-pattern?WT.mc_id=DT-MVP-5003022)
+* [MS Docs - Logical Patterns 邏輯模式](https://docs.microsoft.com/zh-tw/dotnet/csharp/language-reference/operators/patterns#logical-patterns?WT.mc_id=DT-MVP-5003022)
+* [MS Docs - 模式](https://docs.microsoft.com/zh-tw/dotnet/csharp/language-reference/proposals/csharp-8.0/patterns?WT.mc_id=DT-MVP-5003022)
