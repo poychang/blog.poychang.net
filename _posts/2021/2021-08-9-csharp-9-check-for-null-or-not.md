@@ -77,4 +77,3 @@ if (name is not null) { }
 * [MS Docs - ?? 聯合運算子](https://docs.microsoft.com/zh-tw/dotnet/csharp/language-reference/operators/null-coalescing-operator?WT.mc_id=DT-MVP-5003022)
 * [MS Docs - Pattern Matching 模式比對](https://docs.microsoft.com/zh-tw/dotnet/csharp/fundamentals/functional/pattern-matching?WT.mc_id=DT-MVP-5003022)
 * [MS Docs - Logical Patterns 邏輯模式](https://docs.microsoft.com/zh-tw/dotnet/csharp/language-reference/operators/patterns#logical-patterns)
-* [MS Docs](?WT.mc_id=DT-MVP-5003022)
