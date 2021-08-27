@@ -11,7 +11,7 @@ categories: [CSharp, Dotnet]
 
 要在 .NET Notebook 中增加新的 Magic Command 主要是透過安裝 NuGet 套件的方式，因此要寫一隻 Magic Command，就相當於寫一個 NuGet 套件，以下用 Visual Studio 來示範如何建立一個 Magic Command 的 NuGet 套件。
 
-首先，在 Visual Studio 中使用 .NET 5　建立一個全新的 Class Library 專案，並命名為 `Dotnet.Notebook.SampleMagicCommand`。
+首先，在 Visual Studio 中使用 .NET 5　建立一個全新的 Class Library 專案，並命名為 `DotNetNotebook.SampleMagicCommand`。
 
 接著安裝建立 Magic Command 所相依的 NuGet 套件：
 
