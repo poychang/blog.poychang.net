@@ -43,9 +43,9 @@ Invoke-RestMethod -Uri "https://<sonarqubeurl>/api/projects/update_visibility?pr
 
 ```powershell
 $list = `
-    ([PSCustomObject]@{ ProjectKey="A1", Visibility="private" }), `
-    ([PSCustomObject]@{ ProjectKey="B1", Visibility="private" }), `
-    ([PSCustomObject]@{ ProjectKey="C1", Visibility="public" });
+    ([PSCustomObject]@{ ProjectKey="A1"; Visibility="private" }), `
+    ([PSCustomObject]@{ ProjectKey="B1"; Visibility="private" }), `
+    ([PSCustomObject]@{ ProjectKey="C1"; Visibility="public" });
 
 $list.ForEach({ 
     # 上面修改專案狀態的 PowerShell Script 來處理
