@@ -37,7 +37,7 @@ Invoke-RestMethod -Uri "https://<sonarqubeurl>/api/projects/update_visibility?pr
 - `<sonarqubeurl>` SonarQube 的網址
 - `<Project_Key>` 要修改的 SonarQube 專案的 Project Key
 
-執行過程中會要你輸入 `<admin_user>` 這個帳號的密碼，當然你也可以直接寫死在腳本中，方便使用。
+執行過程中會要你輸入 `<admin_user>` 這個帳號的密碼，當然你也可以直接寫死在腳本中（如最下面的腳本），方便使用。
 
 最後，你可以搭配下面的寫法，來將所有專案都跑過一遍：
 
@@ -49,6 +49,16 @@ $list = `
 
 $list.ForEach({ 
     # 上面修改專案狀態的 PowerShell Script 來處理
+})
+
+$list.ForEach({ 
+    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+    $user = "<admin_user>"
+    $value = "<admin_user_passward>"
+    $combocred = "$($user):$($value)"
+    $encodedCreds = [System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes($combocred))
+    $headers = @{"Authorization" = "Basic "+$encodedCreds}
+    Invoke-RestMethod -Uri "https://<sonarqubeurl>/api/projects/update_visibility?project=$($_.ProjectKey)&visibility=$($_.Visibility)" -Method Post -Headers $headers -ContentType "application/json"
 })
 ```
 
