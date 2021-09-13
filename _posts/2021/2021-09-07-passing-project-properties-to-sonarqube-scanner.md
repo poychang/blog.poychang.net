@@ -83,6 +83,15 @@ categories: [Azure, Develop, Tools]
 
 關於更多 SonarQube 是如何偵測程式碼重複，請參考這篇[部落格文章](https://blog.poychang.net/how-sonarqube-detect-duplication/)。
 
+### 分析日誌
+
+| Key             | Description                              |
+| --------------- | ---------------------------------------- |
+| `sonar.log.level` | 輸出日誌的等級，可設定成 `DEBUG`、`INFO`、`TRACE` |
+| `sonar.verbose` | 詳細輸出執行時的日誌訊息，預設為 `false` |
+
+有時候執行分析時，出現一些不知道為什麼的錯誤，這時候可以打開日誌設定，查看 SonarScanner 在執行時發生了什麼事。
+
 ### 測試類
 
 這類的設定會根據對應的程式語言的不同而異，詳細可以參考這份官方文件[Test Coverage & Execution](https://docs.sonarqube.org/latest/analysis/coverage/)。
