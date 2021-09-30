@@ -17,7 +17,7 @@ categories: [PowerShell, Tools]
 
 但每個專案都要這樣用滑鼠點，也太花時間了，如果有上百個專案，那會很累。
 
-這時候你可以使用下面這個 PowerShell 腳本：
+SonarQube 其實有提供 [WebAPI](https://docs.sonarqube.org/latest/extend/web-api/) 介面，讓你有機會程式化一些動作，像上面的需求，這時候你可以使用下面這個 PowerShell 腳本：
 
 ```powershell
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
@@ -67,3 +67,4 @@ $list.ForEach({
 參考資料：
 
 * [How to set all existing projects to private in SonarQube?](https://community.sonarsource.com/t/how-to-set-all-existing-projects-to-private-in-sonarqube/4320/21)
+* [SonarQube Docs - Web API](https://docs.sonarqube.org/latest/extend/web-api/)
