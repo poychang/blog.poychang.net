@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 如何手動下載不同版本的 Xcode
+title: 如何手動快速下載不同版本的 Xcode
 date: 2021-10-12 15:40
 author: Poy Chang
 comments: true
@@ -34,6 +34,31 @@ https://download.developer.apple.com/Developer_Tools/Xcode_12.5.1/Xcode_12.5.1.x
 ```
 
 連結就是 `Xcode_版本號`，因此，如果你知道你要下載的版本號，可以直接打網址來下載，不過還是要先登入 Apple Developer 網站才能下載。
+
+## 下載連結
+
+這裡條列了 Xcode 開放 SwiftUI 框架之後，到目前為止的下載清單，方便直接下載。請注意，下載前請先[登入 Apple Developer](https://developer.apple.com/account/) 才能順利下載。
+
+- [Xcode 11](https://download.developer.apple.com/Developer_Tools/Xcode_11/Xcode_11.xip)
+- [Xcode 11.1](https://download.developer.apple.com/Developer_Tools/Xcode_11.1/Xcode_11.1.xip)
+- [Xcode 11.2](https://download.developer.apple.com/Developer_Tools/Xcode_11.2/Xcode_11.2.xip)
+- [Xcode 11.2.1](https://download.developer.apple.com/Developer_Tools/Xcode_11.2.1/Xcode_11.2.1.xip)
+- [Xcode 11.3](https://download.developer.apple.com/Developer_Tools/Xcode_11.3/Xcode_11.3.xip)
+- [Xcode 11.3.1](https://download.developer.apple.com/Developer_Tools/Xcode_11.3.1/Xcode_11.3.1.xip)
+- [Xcode 11.4](https://download.developer.apple.com/Developer_Tools/Xcode_11.4/Xcode_11.4.xip)
+- [Xcode 11.4.1](https://download.developer.apple.com/Developer_Tools/Xcode_11.4.1/Xcode_11.4.1.xip)
+- [Xcode 11.5](https://download.developer.apple.com/Developer_Tools/Xcode_11.5/Xcode_11.5.xip)
+- [Xcode 11.6](https://download.developer.apple.com/Developer_Tools/Xcode_11.6/Xcode_11.6.xip)
+- [Xcode 11.7](https://download.developer.apple.com/Developer_Tools/Xcode_11.7/Xcode_11.7.xip)
+- [Xcode 12](https://download.developer.apple.com/Developer_Tools/Xcode_12/Xcode_12.xip)
+- [Xcode 12.0.1](https://download.developer.apple.com/Developer_Tools/Xcode_12.0.1/Xcode_12.0.1.xip)
+- [Xcode 12.1](https://download.developer.apple.com/Developer_Tools/Xcode_12.1/Xcode_12.1.xip)
+- [Xcode 12.2](https://download.developer.apple.com/Developer_Tools/Xcode_12.2/Xcode_12.2.xip)
+- [Xcode 12.3](https://download.developer.apple.com/Developer_Tools/Xcode_12.3/Xcode_12.3.xip)
+- [Xcode 12.4](https://download.developer.apple.com/Developer_Tools/Xcode_12.4/Xcode_12.4.xip)
+- [Xcode 12.5](https://download.developer.apple.com/Developer_Tools/Xcode_12.5/Xcode_12.5.xip)
+- [Xcode 12.5.1](https://download.developer.apple.com/Developer_Tools/Xcode_12.5.1/Xcode_12.5.1.xip)
+- [Xcode 13](https://download.developer.apple.com/Developer_Tools/Xcode_13/Xcode_13.xip)
 
 ----------
 
