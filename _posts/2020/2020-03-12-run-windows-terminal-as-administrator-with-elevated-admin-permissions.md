@@ -38,9 +38,7 @@ PowerShell -Command "Set-ExecutionPolicy RemoteSigned -scope Process; iwr -useb 
       "name": "Windows PowerShell Elevated",
       "commandline": "gsudo.exe powershell.exe",
       "hidden": false,
-      "colorScheme": "Solarized Dark",
-      "fontFace": "Fira Code",
-      "icon" : "https://i.imgur.com/Giuj3FT.png"
+      "icon" : "https://i.imgur.com/kZeD6EN.png"
   },
   //...
 ]
@@ -66,7 +64,7 @@ PowerShell -Command "Set-ExecutionPolicy RemoteSigned -scope Process; iwr -useb 
 
 ![標準 PowerShell 藍色圖示](https://i.imgur.com/zXh2xU7.png)
 
-![自訂 PowerShell 紅色圖示](https://i.imgur.com/Giuj3FT.png)
+![自訂 PowerShell 紅色圖示](https://i.imgur.com/kZeD6EN.png)
 
 ----------
 
