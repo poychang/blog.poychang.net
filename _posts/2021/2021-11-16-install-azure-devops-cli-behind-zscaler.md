@@ -31,7 +31,7 @@ az extension add --source https://github.com/Azure/azure-devops-cli-extension/re
 
 >這裡請注意！最好要切換到 Azure CLI 的 Python.exe 目錄下進行操作，避免和系統另外安裝的 Python 混淆。
 
-```bash
+```powershell
 # 切換到 Azure CLI 的 Python.exe 目錄，位置可能因版本而不同
 cd "C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\"
 # 檢查是否有安裝 certifi 套件及原始的憑證檔
@@ -42,7 +42,7 @@ cd "C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\"
 
 接著請下載 ZscalerRootCertificate-2048-SHA256.crt 這張 Zscaler 根憑證檔，並使用下列指令將其加入至 Azure CLI 內建的 Python certifi 中：
 
-```bash
+```powershell
 gc .\ZscalerRootCertificate-2048-SHA256.crt | ac "C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\Lib\site-packages\pip\_vendor\certifi\cacert.pem"
 ```
 
