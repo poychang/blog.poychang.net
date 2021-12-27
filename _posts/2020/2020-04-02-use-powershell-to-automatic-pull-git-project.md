@@ -12,7 +12,7 @@ Git 版控工具是大多數開發者每天都會使用到的工具之一，每�
 首先來處理核心功能，取得 Git 專案下的所有分支名稱，然後逐一執行 `git pull` 將遠端最新版本的資料拉下來，：
 
 ```powershell
-function Receive-AllBranches() {
+function Receive-GitAllBranches() {
     # 取得所有分支名稱
     $branches = git branch
 
@@ -49,11 +49,17 @@ function Receive-AllBranches() {
 程式碼如下：
 
 ```powershell
-function Start-PullAllBranches() {
+function Sync-GitAllBranches() {
+    param (
+        [String]
+        $Target
+    )
+    $Target = [string]::IsNullOrEmpty($Target) ? "C:\Users\poychang\Code\Kingston" : $Target;
+    Write-Output "Sync git repo under '$Target'"
+
     # 指定根目錄位置，並切換到該路徑下
-    $target_location = "C:\Users\poychang\Code"
-    Set-Location -Path $target_location
-    
+    Set-Location -Path $Target
+
     # 找出所有 Git 專案的資料夾路徑
     $folders = Get-ChildItem -Recurse -Depth 1 -Directory -Force -Filter .git | Foreach-Object {
         Write-Output $_.FullName.Replace(".git", [string]::Empty)
@@ -66,13 +72,17 @@ function Start-PullAllBranches() {
             Write-Host("Change to folder '" + $folder + "'")
             Set-Location -Path $folder
             # 執行同步遠端分支的功能
-            Receive-AllBranches
+            Receive-GitAllBranches
+
+            # 切回平常預設會使用的分支
+            $DefaultBranch = "Develop"
+            git checkout $DefaultBranch
         }
     }
 }
 ```
 
-這樣我們就有 `Start-PullAllBranches` 指令可以用，透過這個 PowerShell Script 檔，就可以批次自動更新本機的 Git 專案儲存庫。
+這樣我們就有 `Sync-GitAllBranches` 指令可以用，透過這個 PowerShell Script 檔，就可以批次自動更新本機的 Git 專案儲存庫。
 
 接下來只要每天早上去到咖啡之前，執行這隻指令，就可以在你拿咖啡回座位上之前，把電腦上的 Git 專案都更新到最新的版本了了。
 
