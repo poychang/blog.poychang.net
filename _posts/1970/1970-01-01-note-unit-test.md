@@ -158,6 +158,24 @@ public void 執行GetLastHourPeriod會取得上一個小時的區間(int hour, i
 }
 ```
 
+## 並行執行單元測試
+
+可以在單元測試的專案資料夾中加入 `.runsettings` 設定檔，並填寫以下設定：
+
+```xml
+<RunSettings>
+  <MSTest>
+    <Parallelize>
+      <Workers>4</Workers>
+      <Scope>MethodLevel</Scope>
+    </Parallelize>
+  </MSTest>
+</RunSettings>
+```
+
+- Workers 設定執行測試的並行處理數量。若要設定成連續的序列執行，設定成 `0` 即可。
+- Scope 指執行的程序是使用 Method Level 或 Class Level。若設定為 Method Level 則所有測試方法都會並行執行，若設定成 Class Level 則類別中的測試方法將採序列執行。如果測試方法之間有相依性，則必須採用 Class Level 的方式來處理。
+
 ## .NET Core Option 模式
 
 在 .NET Core 範本的架構下，你會看到大量使用 Options 模式來處理設定值，如果你的專案中也有使用此模式，可以參考下面的方式來將設定注入至測試方法中。
@@ -187,3 +205,4 @@ MyController controller = new MyController(options);
 - [Most Complete MSTest Unit Testing Framework Cheat Sheet](https://www.automatetheplanet.com/mstest-cheat-sheet/)
 - [使用 MSTest 與 .NET Core 為 C# 進行單元測試](https://docs.microsoft.com/zh-tw/dotnet/core/testing/unit-testing-with-mstest?WT.mc_id=DT-MVP-5003022)
 - [Multiple Test Data(DataRow) on MSTest](https://blackie1019.github.io/2017/07/21/Multiple-Test-Data-DataRow-on-MSTest/)
+- [Most Complete MSTest Framework Tutorial Using .Net Core](https://www.lambdatest.com/blog/most-complete-mstest-framework-tutorial-using-net-core-2/)
