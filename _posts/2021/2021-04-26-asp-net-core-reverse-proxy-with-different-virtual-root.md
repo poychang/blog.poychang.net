@@ -21,17 +21,20 @@ ASP.NET Core 預設會使用內建的 [Kestrel 微型網頁伺服器](https://do
 public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 {
   app.UsePathBase("/YOUR-APP");
+  app.UseRouting();
   // 略
 }
 ```
 
 至於這個路徑你要怎麼做成動態設定，根據執行環境做變化，就看你如何規劃，這個路徑值你可以放在環境變數、`appsettings.json` 設定檔、或是用程式碼寫死也都可以。
 
-但有兩件事要注意：
+但有三件事要注意：
 
 第一，請將此設定放在最前面，例如在 `app.UseStaticFiles()` 或 `app.UseMvc()` 的前面，這樣 ASP.NET Core 才會在 HTTP Request 一進來就去判斷是不是在正確的路徑上。
 
-第二，虛擬路徑的值前面要加 `/` 不然不會有作用。
+第二，記得後面要加上 `app.UseRouting()` 來套用路由機制。
+
+第三，虛擬路徑的值前面要加 `/` 不然不會有作用。
 
 如此一來，無論你是要用 IIS 虛擬目錄來掛載網頁應用程式，還是用像是 Nginx 這樣的反向代理，都可以用作簡潔的方式處理好根目錄的問題了。
 
