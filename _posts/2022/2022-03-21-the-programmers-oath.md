@@ -51,6 +51,8 @@ Signed by, Poy Chang
 
 ![The Programmer's Oath - Poy Chang](https://i.imgur.com/5mIWIms.png)
 
+![The Programmer's Oath](https://i.imgur.com/ejfp3my.jpg)
+
 ----------
 
 參考資料：
