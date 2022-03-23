@@ -7,7 +7,7 @@ highlighter: rouge
 markdown: kramdown
 facebook_comments: poychang
 title: Poy Chang
-google_analytics: UA-1849069-6
+google_analytics: G-7ZF14W4E3R
 google_optimize: GTM-W9G45SD
 google_verification: lupuu8pc414C-KkxS_mqZgMcEwWFtckKZN5lsmFhFDA
 google_adsense: ca-pub-9725019211606469
@@ -33,7 +33,7 @@ author:
 
 permalink: /:title/
 
-plugins: 
+plugins:
     - jekyll-paginate
     - jekyll-redirect-from
 

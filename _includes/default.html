@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }}</title>
 
     {% if page.description %}
     <meta name="description" content="{{ page.description }}">
     {% endif %}
     <meta name="author" content="{{ site.author.name }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google Search Console verification -->
     <meta name="google-site-verification" content="{{ site.google_verification }}" />
 
@@ -19,7 +20,7 @@
 
     <!-- Google Fonts Noto Sans TC -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC">
-    
+
     <!-- Le styles -->
     <link rel="stylesheet" href="{{ site.BASE_PATH }}/assets/resources/font-awesome/css/font-awesome.cdn.min.css">
     <!-- <link rel="stylesheet" href="{{ site.BASE_PATH }}/assets/resources/bootstrap/css/bootstrap.min.css"> -->
@@ -35,11 +36,6 @@
     <!-- <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png"> -->
 
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.BASE_PATH }}/feed.xml">
-
-    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-    <!-- [if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif] -->
 
     {% if site.google_analytics %}
     <!-- Google Optimize code -->
@@ -62,14 +58,7 @@
 
     {% if site.google_adsense %}
     <!-- Google AdSense -->
-    <script data-ad-client="{{ site.google_adsense }}" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({
-              google_ad_client: "{{ site.google_adsense }}",
-              enable_page_level_ads: true
-         });
-    </script> -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ site.google_adsense }}" crossorigin="anonymous"></script>
     {% endif %}
 </head>
 
@@ -129,16 +118,6 @@
 
     <div class="col-sm-4 sidebar hidden-xs hidden-sm not-mobile">
         {% include sidebar.html %}
-        <div class="not-mobile row sidebar-extras">
-            <table class="col-centered">
-                <tbody>
-                    <tr>
-                        <td>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
     </div>
 
     <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
@@ -146,7 +125,7 @@
         <footer class="footer-text">
             <hr/>
             <p>
-            Copyright © 2021 - Poy Chang Blog content licensed under the Creative Commons <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+            Copyright © 2022 - Poy Chang Blog content licensed under the Creative Commons <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
             | <a href="https://blog.poychang.net/privacy/">Privacy Policy</a>
             | Unless otherwise stated or granted, code samples licensed under the <a href="https://sm.mit-license.org/">MIT license</a>
             | Site design based on the <a href="https://github.com/dbtek/dbyll">dbyll theme</a> under the <a href="https://sm.mit-license.org/">MIT license</a>
