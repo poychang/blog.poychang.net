@@ -106,6 +106,8 @@ categories: [Javascript, CSharp, Dotnet,Bot]
 }
 ```
 
+![標註 poychang 的訊息效果](https://i.imgur.com/HJMeEYc.png)
+
 ## 後記
 
 眼尖的你，可能會注意到 `msteams` 屬性中，我多加了一個 `width`　並設定成 `Full`，這個屬性是讓 Webhook 訊息能把內容區域撐大，不然預設會是行動裝置適合的大小，而在電腦上看該訊息的時候，就會感覺很奇怪。
