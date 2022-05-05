@@ -96,11 +96,11 @@ var contentJson = card.ToJson();
 - `contentType` 欄位必須設定成 AdaptiveCard 類型，也就是 `application/vnd.microsoft.card.adaptive`
 - `content` 此屬性為 AdaptiveCard 格式的 JSON 物件，主要的內容訊息就在這裡
 
-C# 的寫法可能是像這樣處理：
+C# 的寫法可能是像這樣處理，將 `contentJson` 塞進固定的 JSON 之中：
 
-```csharp
+<pre>
 var content = $@"{{""type"":""message"",""attachments"":[{{""contentType"":""application/vnd.microsoft.card.adaptive"",""contentUrl"":null,""content"":{contentJson}}}]}}";
-```
+</pre>
 
 這樣的的 JSON 內容就可以讓 Teams Webhook 接受，併發訊息到指定頻道了。
 
