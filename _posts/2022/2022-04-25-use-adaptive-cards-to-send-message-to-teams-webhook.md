@@ -98,9 +98,17 @@ var contentJson = card.ToJson();
 
 C# 的寫法可能是像這樣處理，將 `contentJson` 塞進固定的 JSON 之中：
 
-<pre>
-var content = $@"{{""type"":""message"",""attachments"":[{{""contentType"":""application/vnd.microsoft.card.adaptive"",""contentUrl"":null,""content"":{contentJson}}}]}}";
-</pre>
+```csharp
+var content = $@"{{
+    ""type"":""message"",
+    ""attachments"":[
+        {{
+            ""contentType"":""application/vnd.microsoft.card.adaptive"",
+            ""content"":{contentJson}
+        }}
+    ]
+}}";
+```
 
 這樣的的 JSON 內容就可以讓 Teams Webhook 接受，併發訊息到指定頻道了。
 
@@ -119,7 +127,15 @@ client.DefaultRequestHeaders.Add("cache-control", "no-cache");
 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 client.DefaultRequestHeaders.AcceptCharset.Add(new StringWithQualityHeaderValue("utf-8"));
 client.DefaultRequestHeaders.ConnectionClose = false;
-var content = $@"{{""type"":""message"",""attachments"":[{{""contentType"":""application/vnd.microsoft.card.adaptive"",""contentUrl"":null,""content"":{contentJson}}}]}}";
+var content = $@"{{
+    ""type"":""message"",
+    ""attachments"":[
+        {{
+            ""contentType"":""application/vnd.microsoft.card.adaptive"",
+            ""content"":{contentJson}
+        }}
+    ]
+}}";
 
 await client.PostAsync(new Uri(TEAMS_CHANNEL), new StringContent(content, Encoding.UTF8, "application/json"));
 ```
