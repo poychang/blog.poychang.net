@@ -100,6 +100,7 @@ var contentJson = card.ToJson();
 
 C# 的寫法可能是像這樣處理，將 `contentJson` 塞進固定的 JSON 之中：
 
+{% raw %}
 ```csharp
 var content = $@"{{
     ""type"":""message"",
@@ -112,6 +113,7 @@ var content = $@"{{
     ]
 }}";
 ```
+{% endraw %}
 
 這樣的的 JSON 內容就可以讓 Teams Webhook 接受，併發訊息到指定頻道了。
 
@@ -121,6 +123,7 @@ var content = $@"{{
 
 產生後你會得到一個 URL，接著我們只要使用類似下面的方式，將上面我們所產生的 JSON 並使用 HTTP POST 發送到這個 Webhook URL 就可以了：
 
+{% raw %}
 ```csharp
 const string TEAMS_CHANNEL = "https://YOUR_WEBHOOK_URL";
 
@@ -140,6 +143,7 @@ var content = $@"{{
         }}
     ]
 }}";
+{% endraw %}
 
 await client.PostAsync(new Uri(TEAMS_CHANNEL), new StringContent(content, Encoding.UTF8, "application/json"));
 ```

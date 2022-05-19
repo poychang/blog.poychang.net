@@ -11,15 +11,20 @@ categories: [Develop, Docker, PowerShell]
 
 從 Docker 官方文件 [docker ps](https://docs.docker.com/engine/reference/commandline/ps/) 中，有個參數 `--format` 可以妥善利用，使用說明在 [Formatting](https://docs.docker.com/engine/reference/commandline/ps/#formatting) 這個段落。
 
+{% raw %}
 用法很簡單，只要在 `--format` 參數後面使用下面表格中的關鍵字，並用 `{{.xxxxx}}` 來組合你想要呈現的樣式即可，你也可以再前面加上 `table` 關鍵字，讓輸出表格加上表頭說明，詳請參考下面範例：
+{% endraw %}
 
+{% raw %}
 ```bash
 docker ps --format "{{.Names}}\t{{.Status}}"
 
 # project_web_1          Up 11 minutes
 # project_app_1          Up 11 minutes
 ```
+{% endraw %}
 
+{% raw %}
 ```bash
 docker ps --format "table {{.Names}}\t{{.Status}}"
 
@@ -27,7 +32,9 @@ docker ps --format "table {{.Names}}\t{{.Status}}"
 # project_web_1          Up 11 minutes
 # project_app_1          Up 11 minutes
 ```
+{% endraw %}
 
+{% raw %}
 | Placeholder | Description |
 | ----------- | ----------- |
 | .ID         | Container ID |
@@ -43,11 +50,13 @@ docker ps --format "table {{.Names}}\t{{.Status}}"
 | .Label      | Value of a specific label for this container. For example '{{.Label "com.docker.swarm.cpu"}}' |
 | .Mounts     | Names of the volumes mounted in this container. |
 | .Networks   | Names of the networks attached to this container. |
+{% endraw %}
 
 ## 後記
 
 但是如果每次都要打這麼長的格式化參數，那肯定不方便，如果你使用 Powershell 了話，可以參考[透過 Alias 和 Function 讓你的 PowerShell 變得順手、更好用](https://blog.poychang.net/make-your-powershell-handy/)這篇來建立方便你使用的快速鍵，例如：
 
+{% raw %}
 ```powershell
 # 將遠端三台 Docker 的 PS 資訊一次吐回來，並且格式化表格資訊
 function vtps {
@@ -59,6 +68,7 @@ function vtps {
     cmd /c docker -H=VTDocker3.poychang.net ps --format "table {{.Names}}\t{{.Status}}"
 }
 ```
+{% endraw %}
 
 有了這個客製 Powershell Function，我就可以打少少的 4 個字 `vtps` 就可以拿到完整又清楚的 Docker PS 資訊。
 
