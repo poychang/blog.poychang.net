@@ -7,7 +7,7 @@ comments: true
 categories: [CSharp, Dotnet, Develop]
 ---
 
-在 .NET 的世界中，有好用的 Newtonsoft.Json 套件以及官方提供的 System.Text.Json 來序列化/反序列化 JSON 物件，但是要使用這兩個套件是需要另外安裝的，也就是說會相依於某個套件，甚至相依某個版本，如果只是要做簡單的 JSON 序列化/反序列化，而且需要 Newtonsoft.Json 的彈性，或是 System.Text.Json 的速度，簡單用內建的函示庫也是可以撰寫出序列化/反序列化 JSON 物件的程式碼。
+在 .NET 的世界中，有好用的 Newtonsoft.Json 套件以及官方提供的 System.Text.Json 來序列化/反序列化 JSON 物件，但是要使用這兩個套件是需要另外安裝的，也就是說會相依於某個套件，甚至相依某個版本，如果只是要做簡單的 JSON 序列化/反序列化，而不需要 Newtonsoft.Json 的彈性，或是 System.Text.Json 的速度，簡單用內建的函示庫也是可以撰寫出序列化/反序列化 JSON 物件的程式碼。
 
 直接先來看程式碼！
 
