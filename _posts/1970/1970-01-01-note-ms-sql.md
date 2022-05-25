@@ -9,6 +9,10 @@ categories: [Note]
 
 ## LocalDB 連線
 
+LocalDB 其實是 SQL Server Express 產品的一部份，如果你要安裝最新版的 SQL Server LocalDB，那就要下載 SQL Server Express 的安裝檔。LocalDB 的安裝檔 `SqlLocalDB.msi` 必須從 SQL Server Express 的安裝檔來下載，執行後選擇[下載媒體]，然後再選擇 LocalDB 的選項，這樣就能下載到對應版本的 LocalDB 安裝檔。
+
+參考資料：[如何下載與升級 SQL Server Express LocalDB 到最新版](https://blog.miniasp.com/post/2020/02/16/install-and-upgrade-sql-server-express-localdb)
+
 SQL Server 2012 Express LocalDB 的連線伺服器名稱：`(localdb)\v11.0`
 
 SQL Server 2014 Express LocalDB 的連線伺服器名稱：`(localdb)\MSSQLLocalDB`
