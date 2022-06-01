@@ -341,7 +341,7 @@ http://teddy-chen-tw.blogspot.com/2016/05/blog-post_12.html
 
 ![C# Class 存取範圍](https://i.imgur.com/CN7lJVb.png)
 
-<table class="table table-striped">
+<table class="table">
 <thead>
   <tr>
     <th>已宣告存取範圍</th>
@@ -377,6 +377,90 @@ http://teddy-chen-tw.blogspot.com/2016/05/blog-post_12.html
 </table>
 
 REF: [存取範圍層級 (C# 參考)](https://docs.microsoft.com/zh-tw/dotnet/csharp/language-reference/keywords/accessibility-levels?WT.mc_id=DT-MVP-5003022)
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Package 組件</th>
+            <th colspan="4">內部組件 Inside Assembly</th>
+            <th colspan="3">外部組件 Outside Assembly</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>修飾詞</td>
+            <td>基礎類別</td>
+            <td>繼承類別</td>
+            <td>繼承成員</td>
+            <td>其他類別</td>
+            <td>繼承類別</td>
+            <td>繼承成員</td>
+            <td>其他類別</td>
+        </tr>
+        <tr>
+            <td>public</td>
+            <td>O</td>
+            <td>O</td>
+            <td>O</td>
+            <td>O</td>
+            <td>O</td>
+            <td>O</td>
+            <td>O</td>
+        </tr>
+        <tr>
+            <td>protected internal</td>
+            <td>O</td>
+            <td>O</td>
+            <td>O</td>
+            <td>O</td>
+            <td>O</td>
+            <td>X</td>
+            <td>X</td>
+        </tr>
+        <tr>
+            <td>internal</td>
+            <td>O</td>
+            <td>O</td>
+            <td>X</td>
+            <td>O</td>
+            <td>O</td>
+            <td>O</td>
+            <td>O</td>
+        </tr>
+        <tr>
+            <td>protected</td>
+            <td>O</td>
+            <td>O</td>
+            <td>X</td>
+            <td>X</td>
+            <td>O</td>
+            <td>X</td>
+            <td>X</td>
+        </tr>
+        <tr>
+            <td>private</td>
+            <td>O</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>private protected (C# 7.2)</th>
+            <th>O</th>
+            <th>O</th>
+            <th>X</th>
+            <th>X</th>
+            <th>X</th>
+            <th>X</th>
+            <th>X</th>
+        </tr>
+    </tfoot>
+</table>
 
 ## 取得當前名稱空間、類名和方法名稱
 
