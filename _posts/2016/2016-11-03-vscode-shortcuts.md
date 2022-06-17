@@ -51,13 +51,20 @@ John Papa 寫了一篇超值得記憶的重構快速鍵文章，但是是以 Mac
 - `Ctrl` + `K` `Ctrl` + `W` 關閉所有檔案
 - `Ctrl` + `K` `Ctrl` + `M` 開啟選擇語言模式列表
 - `Ctrl` + `Alt` + `↑`/`↓` 垂直選取
-- `Ctrl` + `K`, `Ctrl` + `0` 摺疊所有程式碼
-- `Ctrl` + `K`, `Ctrl` + `[n]` 摺疊至第 n 層的程式碼
-- `Ctrl` + `K`, `Ctrl` + `J` 取消摺疊所有程式碼
 - `Ctrl` + `Shift` + `L` 一次選取檔案內所有相同的文字，這招超好用！
 - `Shift` + `Alt` + `→` 智慧型擴展選擇 Expand AST Select
 - `Shift` + `Alt` + `←` 智慧型縮減選擇 Shrink AST Select
 - `Shift` + `Alt` + `.` 開啟 Auto Fix 選單
+
+### 快速摺疊程式碼
+
+- `Ctrl` + `K`, `Ctrl` + `0` 摺疊所有程式碼
+- `Ctrl` + `K`, `Ctrl` + `J` 取消摺疊（展開）所有程式碼
+- `Ctrl` + `K`, `Ctrl` + `[n]` 摺疊至第 n 層的程式碼
+  - `Ctrl` + `K`, `Ctrl` + `1` 會只把第一層 `{ }` 部分摺疊
+  - `Ctrl` + `K`, `Ctrl` + `2` 會只把第二層 `{ }` 部分摺疊
+  - `Ctrl` + `K`, `Ctrl` + `3` 會只把第三層 `{ }` 部分摺疊
+  - 只針對指定的層級作折疊，不會影響到其它層級
 
 ## 官方寫的 VS Code 技巧清單（English）
 
