@@ -44,47 +44,47 @@ ChatBot 真的好紅，網路上多了很多文章和討論，最近看到 Line 
 <thead>
   <tr>
     <th>參數</th>
-	<th>是否必填</th>
-	<th>型別</th>
-	<th>說明</th>
+    <th>是否必填</th>
+    <th>型別</th>
+    <th>說明</th>
   </tr>
 </thead>
 <tbody>
   <tr>
     <td>response_type</td>
-	<td>YES</td>
-	<td>string</td>
-	<td>指定為 `code`</td>
+    <td>YES</td>
+    <td>string</td>
+    <td>指定為 `code`</td>
   </tr>
   <tr>
     <td>client_id</td>
-	<td>YES</td>
-	<td>string</td>
-	<td>服務的 Client ID</td>
+    <td>YES</td>
+    <td>string</td>
+    <td>服務的 Client ID</td>
   </tr>
   <tr>
     <td>redirect_uri</td>
-	<td>YES</td>
-	<td>string</td>
-	<td>產生 Authorize Code 之後要轉跳的網址，建議使用 HTTPS</td>
+    <td>YES</td>
+    <td>string</td>
+    <td>產生 Authorize Code 之後要轉跳的網址，建議使用 HTTPS</td>
   </tr>
   <tr>
     <td>scope</td>
-	<td>YES</td>
-	<td>string</td>
-	<td>指定為 `notify`</td>
+    <td>YES</td>
+    <td>string</td>
+    <td>指定為 `notify`</td>
   </tr>
   <tr>
     <td>state</td>
-	<td>YES</td>
-	<td>string</td>
-	<td>設計用來避免 CSRF 攻擊，做狀態驗證用</td>
+    <td>YES</td>
+    <td>string</td>
+    <td>設計用來避免 CSRF 攻擊，做狀態驗證用</td>
   </tr>
   <tr>
     <td>response_mode</td>
-	<td>NO</td>
-	<td>string</td>
-	<td>可指定為 `form_post` 讓 redirect_uri 轉跳時使用 `POST` 方法傳遞參數</td>
+    <td>NO</td>
+    <td>string</td>
+    <td>可指定為 `form_post` 讓 redirect_uri 轉跳時使用 `POST` 方法傳遞參數</td>
   </tr>
 </tbody>
 </table>
@@ -113,11 +113,11 @@ Postman 裡面的操作步驟如下：
 
 1. 設定為 `POST` 方法，並輸入 `https://notify-bot.line.me/oauth/token` 取得 Token 的服務網址
 2. 傳遞相關參數
-	* `grant_type` 授權的類別。請指定 `authorization_code`
-	* `code` 對象的暫時識別碼，也就是剛剛取得的 Authorize Code
-	* `redirect_uri` Callback URL
-	* `client_id` 此通知服務的識別碼
-	* `client_secret` 此通知服務的密鑰
+    * `grant_type` 授權的類別。請指定 `authorization_code`
+    * `code` 對象的暫時識別碼，也就是剛剛取得的 Authorize Code
+    * `redirect_uri` Callback URL
+    * `client_id` 此通知服務的識別碼
+    * `client_secret` 此通知服務的密鑰
 3. 送出請求
 4. 若驗證成功會返回發訊息所需要的 Access Token（`access_token`）
 
