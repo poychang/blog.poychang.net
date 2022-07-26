@@ -121,11 +121,7 @@ public static IConfigurationRoot ReadFromAppSettings()
         <None Update="appsettings.json">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
-        <None Update="appsettings.Debug.json">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-            <DependentUpon>appsettings.json</DependentUpon>
-        </None>
-        <None Update="appsettings.Release.json">
+        <None Update="appsettings.*.json">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
             <DependentUpon>appsettings.json</DependentUpon>
         </None>
@@ -133,7 +129,7 @@ public static IConfigurationRoot ReadFromAppSettings()
 </Project>
 ```
 
-除了要把每個檔案都加進去 `ItemGroup`，有兩個屬性要知道：
+接著把每個檔案都加進去 `ItemGroup` 並做對應的設定，或者可以使用 `*` 萬用字元來將多個檔案一起做設定。這裡有兩個屬性要知道：
 
 - `CopyToOutputDirectory` 設定是否複製至輸出資料夾，有以下三個設定值
   - `Never` 不複製至輸出資料夾
