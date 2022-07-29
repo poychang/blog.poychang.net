@@ -11,17 +11,17 @@ categories: [Note, Uncategorized]
 
 ## 更新 Ubuntu 系統套件
 
-後請不時執行以下指令進行系統及套件更新：
+請不時執行以下指令進行系統及套件更新：
 
 ```bash
 # 取得遠端更新伺服器的套件檔案清單
-sudo apt-get update
-# 更新套件
-sudo apt-get -y dist-upgrade
+sudo apt update
+# 更新清單後安靜的安裝要更新的套件
+sudo apt update && sudo apt upgrade -y
 # 清除更新時所下載回來的更新(安裝)檔案
-sudo apt-get clean
+sudo apt clean
 # 自動清除更新後用不到的舊版本檔案（例如舊的核心程式）
-sudo apt-get autoremove
+sudo apt autoremove
 ```
 
 >若不定時移除舊核心檔案，容易造成 /boot 空間不足，嚴重時將無法開機
@@ -37,6 +37,10 @@ fi
 ```
 
 ## 使用 Zsh
+
+Zsh 會讀取 `.zprofile` 來當設定檔，像是 `.zsh_profile` 或 `.bash_profile` 那樣。
+
+安裝請參考下列步驟：
 
 ```bash
 # 安裝 zsh
