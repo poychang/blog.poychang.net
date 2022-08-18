@@ -24,6 +24,8 @@ lshw
 ## 更新系統
 
 ```bash
+# 更新系統
+sudo apt dist-upgrade
 # 檢查可以升級的版本
 sudo do-release-upgrade -c
 # 更新前先重開機
@@ -66,6 +68,22 @@ ctrl+u
 if [ -f ~/.bashrc ]; then
     source ~/.bashrc
 fi
+```
+
+## 查看 port 被程式佔用的方法
+
+使用 `lsof` 指令如下：
+
+```bash
+lsof -i -P -n | grep LISTEN
+lsof -i -P -n | grep :80
+```
+
+使用 `netstat` 指令如下：
+
+```bash
+netstat -tulpn | grep LISTEN
+netstat -tulpn | grep :80
 ```
 
 ## 使用 Zsh
