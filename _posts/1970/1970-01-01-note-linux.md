@@ -9,7 +9,30 @@ categories: [Note, Uncategorized]
 
 本篇作為書籤用途，記錄網路上的 Linux 參考資料
 
-## 更新 Ubuntu 系統套件
+
+## 檢查系統資訊
+
+```bash
+# 查詢與修改系統主機名以及其他相關設置
+hostnamectl
+# 查詢Linux 散佈版本資訊
+lsb_release -a
+# 查詢詳細硬體資訊工具
+lshw
+```
+
+## 更新系統
+
+```bash
+# 檢查可以升級的版本
+sudo do-release-upgrade -c
+# 更新前先重開機
+sudo reboot
+# 使用此指令
+sudo do-release-upgrade
+```
+
+## 更新套件
 
 請不時執行以下指令進行系統及套件更新：
 
@@ -25,6 +48,15 @@ sudo apt autoremove
 ```
 
 >若不定時移除舊核心檔案，容易造成 /boot 空間不足，嚴重時將無法開機
+
+## 清空
+
+```bash
+# 清空螢幕畫面
+ctrl+l
+# 清空指令行 (before cursor)
+ctrl+u
+```
 
 ## 設定 alias
 
