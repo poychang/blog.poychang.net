@@ -1,0 +1,36 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css";
+
+#goToTopBtn {
+    /* Hidden by default */
+    display: none;
+    /* Fixed/sticky position */
+    position: fixed;
+    /* Place the button at the bottom of the page */
+    bottom: 20px;
+    /* Place the button 20px from the right */
+    right: 20px;
+    /* Make sure it does not overlap */
+    z-index: 99;
+    /* Remove borders */
+    border: none;
+    /* Remove outline */
+    outline: none;
+    /* Set a background color */
+    background-color: rgb(150, 150, 150);
+    /* Text color */
+    color: white;
+    /* Add a mouse pointer on hover */
+    cursor: pointer;
+    /* Some padding */
+    padding: 15px;
+    /* Rounded corners */
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+#goToTopBtn:hover {
+    /* Add a dark-grey background on hover */
+    background-color: rgb(85, 85, 85);
+}
