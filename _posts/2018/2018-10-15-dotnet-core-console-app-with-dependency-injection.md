@@ -133,7 +133,7 @@ Microsoft.Extensions.DependencyInjection 提供以下三種生命週期的註冊
 
 參考資料：
 
-* [如何在 .NET Core 使用 DI ?](https://oomusou.io/netcore/di/)
+* [如何在 .NET Core 使用 DI ?](https://old-oomusou.goodjack.tw/netcore/di/)
 * [在 Console 中使用内置 DI 组件](https://www.cnblogs.com/Wddpct/p/7219205.html)
 * [Dependency Injection, Logging and Configuration In A .NET Core Console Application](https://pioneercode.com/post/dependency-injection-logging-and-configuration-in-a-dot-net-core-console-app)
 * [Using dependency injection in a .Net Core console application](https://andrewlock.net/using-dependency-injection-in-a-net-core-console-application/)
