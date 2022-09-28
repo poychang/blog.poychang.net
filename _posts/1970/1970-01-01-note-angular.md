@@ -18,7 +18,7 @@ categories: [Note, Angular]
 
 ## 在 Angular 中使用 Wallaby.js 單元測試
 
-- [如何在 Visual Studio Code 執行 Wallaby 單元測試?](http://oomusou.io/vscode/vscode-wallaby/)
+- [如何在 Visual Studio Code 執行 Wallaby 單元測試?](https://old-oomusou.goodjack.tw/vscode/wallaby/)
 - [範例專案 - wallabyjs/ngCliWebpackSample](https://github.com/wallabyjs/ngCliWebpackSample#wallabyjs)
 - 快速四步驟 1. 專案根目錄加入 [wallaby.js](https://github.com/wallabyjs/ngCliWebpackSample/blob/master/wallaby.js) 設定檔 2. 加入啟動測試程式碼 [wallabyTest.ts](https://github.com/wallabyjs/ngCliWebpackSample/blob/master/src/wallabyTest.ts) 至 `src\wallabyTest.ts` 3. 在 `tsconfig.json` 中設定排除 `src/wallabyTest.ts` 避免影響 Angular AOT 編譯 4. 執行 `npm install wallaby-webpack angular2-template-loader electron --save-dev`
 - Wakkaby 覆蓋指標
