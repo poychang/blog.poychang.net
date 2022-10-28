@@ -35,4 +35,4 @@ Synology NAS 官方會提供支援硬碟型號的列表，但不是不在支援�
 
 參考資料：
 
-* []()
+* [Synology 知識中心](https://kb.synology.com/zh-tw)
