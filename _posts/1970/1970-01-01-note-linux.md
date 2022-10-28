@@ -9,6 +9,11 @@ categories: [Note, Uncategorized]
 
 本篇作為書籤用途，記錄網路上的 Linux 參考資料
 
+## Linux 系統目錄用途
+
+![Linux 系統目錄用途](https://i.imgur.com/TuqtUxI.png)
+
+REF: [https://www.tecmint.com/linux-directory-structure-and-important-files-paths-explained/](https://www.tecmint.com/linux-directory-structure-and-important-files-paths-explained/)
 
 ## 檢查系統資訊
 
