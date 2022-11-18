@@ -85,8 +85,9 @@ lsof -i -P -n | grep :80
 ```
 
 使用 `netstat` 指令如下：
-
 ```bash
+apt install net-tools
+
 netstat -tulpn | grep LISTEN
 netstat -tulpn | grep :80
 ```
