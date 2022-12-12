@@ -104,15 +104,15 @@ test.cmd c:\windows\notepad.exe c:\windows\write.exe
 <thead>
   <tr>
     <th>%0 (命令)</th>
-	<th>%1 (參數1)</th>
-	<th>%2 (參數2)</th>
+    <th>%1 (參數1)</th>
+    <th>%2 (參數2)</th>
   </tr>
 </thead>
 <tbody>
   <tr>
     <td>test.cmd</td>
-	<td>c:\windows\notepad.exe</td>
-	<td>c:\windows\write.exe</td>
+    <td>c:\windows\notepad.exe</td>
+    <td>c:\windows\write.exe</td>
   </tr>
 </tbody>
 </table>
@@ -125,19 +125,19 @@ test.cmd c:\windows\notepad.exe c:\windows\write.exe
 <thead>
   <tr>
     <th>%1</th>
-	<th>%~d1 (取得磁碟機代號)</th>
-	<th>%~p1 (取得路徑)</th>
-	<th>%~n1 (取得檔名)</th>
-	<th>%~x1 (取得副檔名)</th>
+    <th>%~d1 (取得磁碟機代號)</th>
+    <th>%~p1 (取得路徑)</th>
+    <th>%~n1 (取得檔名)</th>
+    <th>%~x1 (取得副檔名)</th>
   </tr>
 </thead>
 <tbody>
   <tr>
     <td>c:\windows\notepad.exe</td>
-	<td>c:</td>
-	<td>\Windows\</td>
-	<td>notepad	</td>
-	<td>.exe</td>
+    <td>c:</td>
+    <td>\Windows\</td>
+    <td>notepad	</td>
+    <td>.exe</td>
   </tr>
 </tbody>
 </table>

@@ -24,7 +24,7 @@ categories: [App, Tools, Note]
 
 當然，或許可以透過打包整個 Git 資料夾的方式，想辦法手動傳到 iOS 上，但我覺得這樣比較繁瑣，不如想辦法在 iOS 上面執行 `git clone` 指令。
 
-前面有提到，iOS 是無法安裝標準的 Git，但藉由 iSH 中的 Alpine Linux，我們可以輕鬆地使用 apt 指令安裝 Git，然後搭配 mount 指令將 iOS 中特定的資料夾掛載到 Linux 中，這樣就可以在 Linux 中執行 `git clone` 指令並將復刻下來的檔案直接存在 iOS 的指定資料夾中。
+前面有提到，iOS 是無法安裝標準的 Git，但藉由 iSH 中的 Alpine Linux，我們可以輕鬆地使用 apk 指令安裝 Git，然後搭配 mount 指令將 iOS 中特定的資料夾掛載到 Linux 中，這樣就可以在 Linux 中執行 `git clone` 指令並將復刻下來的檔案直接存在 iOS 的指定資料夾中。
 
 ## 動手做
 
@@ -73,11 +73,11 @@ categories: [App, Tools, Note]
 
 ![查看 Obsidian 存放 Vault 的資料夾是否存在](https://i.imgur.com/jAsrCVT.jpg)
 
-確認好之後，就可以開啟在 iSH 並使用 `apt` 更新當前 Alpine Linux 已安裝的套件，並且安裝 Git 指令工具：
+確認好之後，就可以開啟在 iSH 並使用 `apk` 更新當前 Alpine Linux 已安裝的套件，並且安裝 Git 指令工具：
 
 ```bash
-apt update & upgrade
-apt add git
+apk update & upgrade
+apk add git
 ```
 
 接著要在 iSH 中掛載 iOS 的指定資料夾，可以參考這份文件 [Mounting other file providers](https://github.com/ish-app/ish/wiki/Mounting-other-file-providers)，基本的操作指令如下：
