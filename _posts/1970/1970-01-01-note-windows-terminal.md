@@ -140,35 +140,107 @@ clear
 echo -ne "Hello, $USER. Today is, "; date
 ```
 
+## 自訂快捷鍵
+
+```json
+{
+    "actions": 
+    [
+        {
+            "command": "find",
+            "keys": "ctrl+shift+f"
+        },
+        {
+            "command": "paste",
+            "keys": "ctrl+v"
+        },
+        {
+            "command": 
+            {
+                "action": "copy",
+                "singleLine": false
+            },
+            "keys": "ctrl+c"
+        },
+        {
+            "command": 
+            {
+                "action": "closeTab"
+            },
+            "keys": "ctrl+w"
+        },
+        {
+            "command": 
+            {
+                "action": "newTab"
+            },
+            "keys": "ctrl+t"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "keys": "alt+shift+d"
+        }
+    ],
+    // 略...
+}
+```
+
+## 全域字型設定
+
+在 `profiles` 底下的 `defaults` 屬性中，加入 `font` 屬性，設定字型名稱、大小、粗細。
+
+```json
+{
+    "profiles": 
+    {
+        "defaults": 
+        {
+            "font": 
+            {
+                "face": "Fira Code",
+                "size": 10,
+                "weight": "normal"
+            }
+        },
+        // 略...
+    }
+}
+```
+
 ## Theme Scheme
 
 修改 Windows Terminal 的終端機樣式，透過將下面的程式碼加到 `profiles.json` 中的 `schemes` 屬性，即可使用。
 
 ```json
 {
-    "background" : "#073642",
-    "black" : "#073642",
-    "blue" : "#268BD2",
-    "brightBlack" : "#002B36",
-    "brightBlue" : "#839496",
-    "brightCyan" : "#93A1A1",
-    "brightGreen" : "#586E75",
-    "brightPurple" : "#6C71C4",
-    "brightRed" : "#CB4B16",
-    "brightWhite" : "#FDF6E3",
-    "brightYellow" : "#657B83",
-    "cyan" : "#2AA198",
-    "foreground" : "#FDF6E3",
-    "green" : "#257387",
-    "name" : "PoyChang Dark Theme",
-    "purple" : "#D33682",
-    "red" : "#D30102",
-    "white" : "#EEE8D5",
-    "yellow" : "#B58900"
-}
+    "background": "#282C34",
+    "black": "#282C34",
+    "blue": "#268BD2",
+    "brightBlack": "#5A6374",
+    "brightBlue": "#268BD2",
+    "brightCyan": "#2AA198",
+    "brightGreen": "#98C379",
+    "brightPurple": "#D33682",
+    "brightRed": "#E06C75",
+    "brightWhite": "#FDF6E3",
+    "brightYellow": "#C19C00",
+    "cursorColor": "#FFFFFF",
+    "cyan": "#2AA198",
+    "foreground": "#FDF6E3",
+    "green": "#98C379",
+    "name": "PoyChang Theme",
+    "purple": "#D33682",
+    "red": "#E06C75",
+    "selectionBackground": "#FFFFFF",
+    "white": "#EEE8D5",
+    "yellow": "#C19C00"
+},
 ```
-
-
 
 ----------
 
