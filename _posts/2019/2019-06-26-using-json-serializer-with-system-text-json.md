@@ -112,10 +112,31 @@ class Student {
 }
 ```
 
-如果你要轉換的屬性型別是 Enum 了話，可以使用下面這個屬性裝飾器：
+如果你要轉換的屬性型別是 Enum 了話，可以在使用該 Enum 的屬性上掛上 `[JsonConverter(typeof(JsonStringEnumConverter))]` 屬性裝飾器，用法如下：
 
 ```csharp
-[JsonConverter(typeof(JsonStringEnumConverter))]
+public enum Type
+{
+    GoodStudent,
+    BadStudent
+}
+
+class Student {
+    [JsonPropertyName("studentName")]
+    public string Name { get; set; }
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    [JsonPropertyName("studentType")]
+    public Type Type { get; set; }
+}
+```
+
+如此一來，透過 `JsonSerializer.Serialize()` 序列化的結過就是變成：
+
+```json
+{
+    "studentName": "Poy Chang",
+    "studentType": "GoodStudent"
+}
 ```
 
 ## 後記
