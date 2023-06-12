@@ -257,7 +257,7 @@ Redis Vector Similarity Search 有兩種索引方式，分別是 FLAT（全平�
   - 優點：搜索速度非常快，特別適用於大規模的向量數據集
   - 缺點：由於是一種近似搜索方法，所以搜索結果可能不夠準確
 
-因此，如果在 Redis 存放非常大量的向量資料時進行搜尋，可以在設定 `Schema` 時，在設定向量欄位時使用 `AddVectorField()` 搭配 `VectorField.VectorAlgo.HNSW` 來建立 HNSW 搜尋索引，並在搜尋語法上，改用 `*=>[KNN 5 @vector $vector_param AS vector_score]`。如此一來會比用 FLAT（`VectorField.VectorAlgo.FLAT`）來的快速，但是相對的，在建置過程中會耗費更多資源且結果會稍微不夠準確。
+因此，如果在 Redis 存放非常大量的向量資料時進行搜尋，可以在設定 `Schema` 時，在設定向量欄位時使用 `AddVectorField()` 搭配 `VectorField.VectorAlgo.HNSW` 來建立 HNSW 搜尋索引。如此一來會比用 FLAT（`VectorField.VectorAlgo.FLAT`）來的快速，但是相對的，在建置過程中會耗費更多資源且結果會稍微不夠準確。
 
 ---
 
