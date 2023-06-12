@@ -1,13 +1,13 @@
 ---
 layout: post
-title: 使用 C# 和 OpenAI Embedding 搭配 Redisearch 查詢向量資料庫
+title: 使用 C# 和 OpenAI Embedding 搭配 RediSearch 查詢向量資料庫
 date: 2023-06-12 15:06
 author: Poy Chang
 comments: true
 categories: [CSharp, Dotnet, Develop, Docker, Tools]
 ---
 
-在開發 OpenAI 的 Embedding 相關的功能時，勢必會需要使用到向量資料庫來儲存向量資料，常見的教學會使用 [Pinecone](https://www.pinecone.io/) 這個 SaaS 的向量資料庫，不過在企業內的環境，使用 [Redis](https://redis.io/) 搭配 [Redisearch](https://redis.com/modules/redis-search/) 模組來建構解決方法，是一個不錯的選擇，這篇來實作這個解決方案。
+在開發 OpenAI 的 Embedding 相關的功能時，勢必會需要使用到向量資料庫來儲存向量資料，常見的教學會使用 [Pinecone](https://www.pinecone.io/) 這個 SaaS 的向量資料庫，不過在企業內的環境，使用 [Redis](https://redis.io/) 搭配 [RediSearch](https://redis.com/modules/redis-search/) 模組來建構解決方法，是一個不錯的選擇，這篇來實作這個解決方案。
 
 ## 環境建置
 
@@ -263,5 +263,5 @@ Redis Vector Similarity Search 有兩種索引方式，分別是 FLAT（全平�
 * [MS Learn - 教學課程：探索 Azure OpenAI 服務內嵌和檔搜尋](https://learn.microsoft.com/zh-tw/azure/cognitive-services/openai/tutorials/embeddings?WT.mc_id=DT-MVP-5003022)
 * [MS Learn - 使用 Redis 模組搭配 Azure Cache for Redis](https://learn.microsoft.com/zh-tw/azure/azure-cache-for-redis/cache-redis-modules?WT.mc_id=DT-MVP-5003022)
 * [NRedisStack - Advanced Querying](https://github.com/redis/NRedisStack/blob/master/Examples/AdvancedQueryOperations.md)
-* [Redisearch魔法：輕松實現K近鄰查詢](https://www.jianshu.com/p/b4a1efe0cd21)
+* [RediSearch 魔法：輕松實現 K 近鄰查詢](https://www.jianshu.com/p/b4a1efe0cd21)
 * [Redis 官方 KNN Search](https://redis.io/docs/stack/search/reference/vectors/#knn-search)
