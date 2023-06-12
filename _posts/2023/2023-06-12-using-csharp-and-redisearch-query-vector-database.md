@@ -163,7 +163,11 @@ await _redisDatabase.HashSetAsync($"{prefix}{docId}", upsertData);
 
 > 詳細程式碼請參考[AddAsync()](https://github.com/poychang/Demo-EmbeddingVectorSearch/blob/main/EmbeddingVectorSearch/VectorSearchService.cs)。
 
-查詢的功能的背景知識比較複雜一些，要先知道 RediSearch 的基本查詢語法，這邊以 KNN 的向量搜尋語法為範例。
+這時可以先使用 RedisInsight 可以查看寫入的向量資料及相關欄位，如下圖：
+
+![使用 RedisInsight 可以查看寫入的向量資料及相關欄位](https://i.imgur.com/RUuiWzQ.png)
+
+接著要實作查詢功能，向量查詢的背景知識比較複雜一些，要先知道 RediSearch 的基本查詢語法，這邊以 KNN 的向量搜尋語法為範例。
 
 基本的 KNN 向量查詢語法為 `*=>[KNN num_relevant @embedding $vector AS vector_score]`，這裡面有幾個關鍵要點：
 
