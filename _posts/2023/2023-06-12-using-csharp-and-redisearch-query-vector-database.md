@@ -15,8 +15,7 @@ categories: [CSharp, Dotnet, Develop, Docker, Tools]
 
 首先是 OpenAI 的 `text-embedding-ada-002` 模型，不論你是使用 OpenAI 或是 [Azure OpenAI](https://azure.microsoft.com/zh-tw/products/cognitive-services/openai-service/) 都可以，之後需要這個模型幫我們產生 Embedding 的向量資料。
 
-接著是 Redis 資料庫並且要安裝 [RediSearch](https://redis.io/docs/stack/search/) 模組，這邊我們使用 Docker 來建立一個 Redis 且已經安裝好 RediSearch 模組的容器。這部分你可以
-從 Docker Hub 下載 [Redis Search](https://hub.docker.com/r/redislabs/redisearch/) 的容器映像檔，相關操作指令如下：
+接著是 Redis 資料庫並且要安裝 [RediSearch](https://redis.io/docs/stack/search/) 模組，這邊我們使用 Docker 來建立一個 Redis 且已經安裝好 RediSearch 模組的容器。這部分你可以從 Docker Hub 下載 [Redis Search](https://hub.docker.com/r/redislabs/redisearch/) 的容器映像檔，相關操作指令如下：
 
 ```bash
 # 下載 Redis Search 映像檔
