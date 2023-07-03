@@ -4,7 +4,7 @@ title: 使用 ML.NET 將文字轉成向量
 date: 2023-06-08 14:28
 author: Poy Chang
 comments: true
-categories: [CSharp, Dotnet, Develop]
+categories: [CSharp, Dotnet, Develop, AI]
 ---
 
 現在越來越多場景需要藉助向量分析，最常見的情境莫過於將文字向量化之後，用於搜尋、聚類分析、建議等等，這篇要介紹如何使用 ML.NET 將文字轉成向量。

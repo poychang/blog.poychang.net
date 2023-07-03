@@ -4,7 +4,7 @@ title: 機器學習筆記
 date: 1970-01-01 12:00
 author: Poy Chang
 comments: true
-categories: [Note, MachineLearning]
+categories: [Note, AI]
 ---
 
 本篇作為書籤用途，記錄網路上的 Machine Learning 參考資料

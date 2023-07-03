@@ -4,7 +4,7 @@ title: 使用 C# 來計算發送 OpenAI GPT 請求會使用到的 Token 數量
 date: 2023-06-06 11:35
 author: Poy Chang
 comments: true
-categories: [CSharp, Dotnet, Develop]
+categories: [CSharp, Dotnet, Develop, AI]
 ---
 
 不管你是直接使用 OpenAI 的 API 還是使用 Azure OpenAI 的 API，在呼叫 AI 模型的時候，都是按照請求的 Token 數量來計算費用的，雖然在呼叫之後所回應的內容會告訴你這次請求使用了多少 Token，不過一般來說，我們還是會希望在發送請求之前，先計算這次請求會用到多少 Token，一方面控制使用量，二方面可以確保所發出的請求不會超過該模型能接受的上線。
