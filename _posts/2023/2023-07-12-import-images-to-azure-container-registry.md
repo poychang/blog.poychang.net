@@ -37,11 +37,13 @@ az acr import `
 ```powershell
 az acr import `
   --name myregistry `
-  --source docker.io/library/hello-world:latest `
+  --source poychang/docker101tutorial:latest `
   --image hello-world:latest
   --username [DOCKER_HUB_ACCOUNT]
   --password [DOCKER_HUB_PAT]
 ```
+
+> 上述指令中的 `source` 是我建立的私有 Container Image，如果你要測試的話，可以改成你自己的私有 Container Image。
 
 至於如何取得 Docker Hub 的 PAT，請登入 Docker Hub 網站後，在 `Account Settings` > `Security` 頁面中點選 `New Access Token` 即可產生，如下圖：
 
