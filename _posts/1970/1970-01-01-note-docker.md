@@ -171,6 +171,26 @@ ENTRYPOINT ["dotnet", "MyClass.dll"]
 - [node](https://hub.docker.com/r/library/node/tags/)
   - `node:8.11.4` (LTS)
 
+## 自動重新啟動容器
+
+| Flag           | Description                                                                                          |
+| -------------- | ---------------------------------------------------------------------------------------------------- |
+| no             | 不要自動重新啟動容器（預設值）                                                                       |
+| on-failure     | 若容器因錯誤而退出，重新啟動容器                                                                     |
+| always         | 總是在容器停止後重新啟動。若手動停止容器，只有在 Docker 重新啟動或容器手動重新啟動時，才重新啟動容器 |
+| unless-stopped | 類似於 `always`，但當容器停止（無論手動或其他原因），即使 Docker 程序重新啟動，也不會重新啟動容器    |
+
+```bash
+# 啟動容器時設定自動重新啟動方式
+docker run -d --restart unless-stopped [Container-ID]
+
+# 更新指定容器的自動重新啟動方式
+docker update --restart unless-stopped [Container-ID]
+
+# 更新所有容器的自動重新啟動方式
+docker update --restart unless-stopped $(docker ps -q)
+```
+
 ## Push Docker Image Push 到 Docker Hub
 
 註冊 [Docker Hub](https://hub.docker.com/) 帳號。
