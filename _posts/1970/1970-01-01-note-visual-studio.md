@@ -62,6 +62,10 @@ categories: [Note, Tools]
     <td>重新命名</td>
   </tr>
   <tr>
+    <td><kbd>F9</kbd></td>
+    <td>移至定義設定中斷點</td>
+  </tr>
+  <tr>
     <td><kbd>F12</kbd></td>
     <td>移至定義</td>
   </tr>
@@ -206,11 +210,11 @@ nuget.exe config -set http_proxy.password=mySuperSecretPassword
 
 參考資料：
 
-- [維持 Visual Studio 2019 跑得又快又好的技巧](#%e7%b6%ad%e6%8c%81-visual-studio-2019-%e8%b7%91%e5%be%97%e5%8f%88%e5%bf%ab%e5%8f%88%e5%a5%bd%e7%9a%84%e6%8a%80%e5%b7%a7)
-- [快捷鍵](#%e5%bf%ab%e6%8d%b7%e9%8d%b5)
-- [必裝套件](#%e5%bf%85%e8%a3%9d%e5%a5%97%e4%bb%b6)
-- [圖示描述](#%e5%9c%96%e7%a4%ba%e6%8f%8f%e8%bf%b0)
-- [輕量型載入](#%e8%bc%95%e9%87%8f%e5%9e%8b%e8%bc%89%e5%85%a5)
-- [關閉 npm 套件自動還原](#%e9%97%9c%e9%96%89-npm-%e5%a5%97%e4%bb%b6%e8%87%aa%e5%8b%95%e9%82%84%e5%8e%9f)
+- [維持 Visual Studio 2019 跑得又快又好的技巧](#維持-visual-studio-2019-跑得又快又好的技巧)
+- [快捷鍵](#快捷鍵)
+- [必裝套件](#必裝套件)
+- [圖示描述](#圖示描述)
+- [輕量型載入](#輕量型載入)
+- [關閉 npm 套件自動還原](#關閉-npm-套件自動還原)
 - [NuGet](#nuget)
-  - [NuGet 設定 Proxy](#nuget-%e8%a8%ad%e5%ae%9a-proxy)
+  - [NuGet 設定 Proxy](#nuget-設定-proxy)

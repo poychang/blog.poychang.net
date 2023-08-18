@@ -169,24 +169,24 @@ await _redisDatabase.HashSetAsync($"{prefix}{docId}", upsertData);
 
 接著要實作查詢功能，向量查詢的背景知識比較複雜一些，要先知道 RediSearch 的基本查詢語法，這邊以 KNN 的向量搜尋語法為範例。
 
-基本的 KNN 向量查詢語法為 `*=>[KNN num_relevant @embedding $vector AS vector_score]`，這裡面有幾個關鍵要點：
+基本的 KNN 向量查詢語法為 `*=>[KNN num_relevant @vector $query_vector AS vector_score]`，這裡面有幾個關鍵要點：
 
 - `*` 表示搜索所有資料
 - `=>` 映射操作符，將資料映射到新的搜索結果
 - `KNN` 特殊聚合函數，用於計算查詢向量與索引中的向量之間的相似度
 - `num_relevant` 是一個整數，表示要取得最相似的資料數量
-- `@embedding` 表示索引中的 `embedding` 欄位
+- `@vector` 表示索引中的 `vector` 欄位
 - `AS vector_score` 將相似度得分存儲在名為 `vector_score` 的欄位中
 
-因此，這句語法用中文解釋就是：使用 `KNN` 函數查詢索引中，`@embedding` 與 `$vector` 查詢向量最接近的前 `num_relevant` 筆資料，並將相似分數存放在 `vector_score` 欄位中做回傳。
+因此，這句語法用中文解釋就是：使用 `KNN` 函數查詢索引中，`@vector` 與 `$query_vector` 查詢向量最接近的前 `num_relevant` 筆資料，並將相似分數存放在 `vector_score` 欄位中做回傳。
 
 接著根據我們的需求，完成如下的程式碼：
 
 ```csharp
 var ft = _redisDatabase.FT();
 var queryVector = vector.SelectMany(BitConverter.GetBytes).ToArray();
-var query = new Query($"*=>[KNN {topN} @vector $vector_param AS vector_score]")
-                .AddParam("vector_param", queryVector)
+var query = new Query($"*=>[KNN {topN} @vector $query_vector AS vector_score]")
+                .AddParam("query_vector", queryVector)
                 .SetSortBy("vector_score")
                 .Dialect(2);
 var result = await ft.SearchAsync(indexName, query);
