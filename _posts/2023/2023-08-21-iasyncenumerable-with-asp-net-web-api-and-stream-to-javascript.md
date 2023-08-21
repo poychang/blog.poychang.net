@@ -118,3 +118,4 @@ stream((data) => {
 * [Clarification on how IAsyncEnumerable works with ASP.NET Web API](https://stackoverflow.com/questions/58876817/clarification-on-how-iasyncenumerable-works-with-asp-net-web-api)
 * [ChatGPT 聊天程式練習 - 使用 .NET + Azure OpenAI API](https://blog.darkthread.net/blog/chatgpt-console-chat/)
 * [MS Learn - IAsyncEnumerable<T> 介面](https://learn.microsoft.com/zh-tw/dotnet/api/system.collections.generic.iasyncenumerable-1?WT.mc_id=DT-MVP-5003022)
+
