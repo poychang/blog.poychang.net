@@ -1,6 +1,6 @@
 ---
 layout: post
-title: <AI文> 關於 Recursion 遞迴函數
+title: 關於 Recursion 遞迴函數的深度
 date: 1971-01-01 12:00
 author: Poy Chang
 comments: true
