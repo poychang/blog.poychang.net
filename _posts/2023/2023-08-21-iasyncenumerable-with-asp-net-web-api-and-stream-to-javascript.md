@@ -56,21 +56,19 @@ function stream(callback) {
         .then((response) => {
             const reader = response.body.getReader();
             // 處理資料流中的每個資料區塊
-            function read() {
-                reader.read().then(({ done, value }) => {
-                    // "done" 是布林值，代表該資料流是否結束
-                    // "value" 是 Uint8Array，代表每個資料區塊的內容值
-                    // 當收到資料流結束的訊號，則關閉此資料流
-                    if (done) return;
+            reader.read().then(function pump({ done, value }) {
+                // "done" 是布林值，代表該資料流是否結束
+                // "value" 是 Uint8Array，代表每個資料區塊的內容值
+                // 當收到資料流結束的訊號，則關閉此資料流
+                if (done) return;
 
-                    // 將 Uint8Array 轉成 string，然後交給 callback 函式處理
-                    let data = new TextDecoder().decode(value);
-                    callback(tolerantParse(data));
+                // 將 Uint8Array 轉成 string，然後交給 callback 函式處理
+                let data = new TextDecoder().decode(value);
+                callback(tolerantParse(data));
 
-                    read();
-                });
-            }
-            read();
+                // 讀取下一段資料區塊
+                return reader.read().then(pump);
+            });
         })
         .catch((error) => console.log('error', error));
 }
