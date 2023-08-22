@@ -7,12 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }}</title>
 
-    {% if page.description %}
-    <meta name="description" content="{{ page.description }}">
-    {% endif %}
     <meta name="author" content="{{ site.author.name }}">
+    <meta name="description" content="{{ page.description }}">
     <!-- Google Search Console verification -->
     <meta name="google-site-verification" content="{{ site.google_verification }}" />
+    <!-- Facebook verification -->
+    <meta property="og:image" content="https://www.gravatar.com/avatar/c525d15ee116aca696f7af9a926e1788?s=250">
+    <meta property="og:locale" content="zh_TW">
 
     <style type="text/css">
         body { background-color: #333333; }
@@ -28,13 +29,6 @@
     <link rel="stylesheet" href="{{ site.BASE_PATH }}/assets/css/vendor.css">
     <link rel="stylesheet" href="{{ site.BASE_PATH }}/assets/css/style.css">
     <link rel="shortcut icon" type="image/x-icon" href="{{ site.BASE_PATH}}/assets/images/favicon.png">
-
-    <!-- Le fav and touch icons -->
-    <!-- Update these with your own images -->
-    <!-- <link rel="apple-touch-icon" href="images/apple-touch-icon.png"> -->
-    <!-- <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png"> -->
-    <!-- <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png"> -->
-
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.BASE_PATH }}/feed.xml">
 
     {% if site.google_analytics %}
@@ -45,7 +39,6 @@
     (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
     })(window,document.documentElement,'async-hide','dataLayer',4000,
     {'{{ site.google_optimize }}':true});</script>
-
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
     <script>
@@ -110,7 +103,6 @@
             <li><a href="{{ site.BASE_PATH}}/{{ site.categories_path }}"><i class="fa fa-coffee"></i>Categories</a></li>
             <li><a href="{{ site.BASE_PATH}}/{{ site.list_path }}"><i class="fa fa-list-ul"></i>List</a></li>
             <li><a href="https://github.com/poychang/blog.poychang.net"><i class="fa fa-file-code-o"></i>On GitHub</a></li>
-            <!--<li><a href="{{ site.BASE_PATH}}/{{ site.tags_path }}"><i class="fa fa-tags"></i>Tags</a></li>-->
             <li class="divider"></li>
             <li><a href="#"><i class="fa fa-arrow-up"></i>Top of Page</a></li>
         </ul>
@@ -125,7 +117,7 @@
         <footer class="footer-text">
             <hr/>
             <p>
-            Copyright © 2022 - Poy Chang Blog content licensed under the Creative Commons <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+            Copyright © 2023 - Poy Chang's Blog content licensed under the Creative Commons <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
             | <a href="https://blog.poychang.net/privacy/">Privacy Policy</a>
             | Unless otherwise stated or granted, code samples licensed under the <a href="https://sm.mit-license.org/">MIT license</a>
             | Site design based on the <a href="https://github.com/dbtek/dbyll">dbyll theme</a> under the <a href="https://sm.mit-license.org/">MIT license</a>

@@ -51,5 +51,7 @@ title: About Poy Chang
 
 <!-- githubchart-api start -->
 <!-- https://github.com/2016rshah/githubchart-api -->
-<img src="https://ghchart.rshah.org/poychang" alt="Poy Chang's GitHub Chart" />
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <img src="https://ghchart.rshah.org/poychang" alt="Poy Chang's GitHub Chart" />
+</div>
 <!-- githubchart-api end -->
