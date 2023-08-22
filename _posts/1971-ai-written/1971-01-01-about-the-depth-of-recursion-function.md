@@ -4,7 +4,7 @@ title: 關於 Recursion 遞迴函數的深度
 date: 1971-01-01 12:00
 author: Poy Chang
 comments: true
-categories: [Javascript, Python, CSharp, Develop]
+categories: [AI-Written, Javascript, Python, CSharp, Develop]
 ---
 
 > 聲明：此篇文章使用 AI 工具所自動產生，請自行判斷文章內容的正確性。
