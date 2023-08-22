@@ -44,6 +44,7 @@ rss_url: http://feeds.feedburner.com/poychang
 categories_path: categories/
 about_path: about/
 list_path: list/
+apps_path: apps/
 #tags_path: tags.html
 
 BASE_PATH: https://blog.poychang.net
