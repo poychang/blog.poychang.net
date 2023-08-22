@@ -1,13 +1,13 @@
 ---
 layout: post
-title: #AI 關於 Recursion 遞迴函數
+title: [AI 文] 關於 Recursion 遞迴函數
 date: 1971-01-01 12:00
 author: Poy Chang
 comments: true
 categories: [Javascript, Python, CSharp, Develop]
 ---
 
-> 聲明：此篇文章是使用 AI 工具所自動產生，並經過人工編輯，請自行判斷文章內容的正確性。
+> 聲明：此篇文章使用 AI 工具所自動產生，請自行判斷文章內容的正確性。
 
 遞迴函式是一種函式，它會直接或間接地呼叫自己。遞迴函式必須有結束遞迴的條件，否則會出現死迴圈造成堆疊溢位。遞迴函式的深度取決於遞迴的次數，也就是函式呼叫自己的次數。遞迴函式的深度也可以受到系統堆疊大小的限制，如果遞迴太深，可能會導致堆疊溢位。
 
