@@ -39,7 +39,7 @@ public class StreamController : ControllerBase
 
 至於前端該如何呼叫這個 API 並接收串流的資料呢？
 
-這裡我使用 `fetch` 來呼叫 API，這部分的操作方式和以前一樣。不同的是，接收到回傳值的時候，由於是資料流的形式，因此要使用 `getReader()` 方法來取得 `response.body` 的可讀取資料流 `ReadableStream`（[詳參考 MDN - ReadableStream](https://developer.mozilla.org/zh-CN/docs/Web/API/ReadableStream)），在依序接收串流資料時，我們可以根據每一段收到的資料，額外進行處理。
+這裡我使用 `fetch` 來呼叫 API，這部分的操作方式和以前一樣。不同的是，接收到回傳值的時候，由於是資料流的形式，因此要使用 `getReader()` 方法來取得 `response.body` 的可讀取資料流 `ReadableStream`（詳參考 MDN - [ReadableStream](https://developer.mozilla.org/zh-CN/docs/Web/API/ReadableStream) 和 [Using readable streams](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API/Using_readable_streams)），在依序接收串流資料時，我們可以根據每一段收到的資料，額外進行處理。
 
 至於要做甚麼處理，這裡我寫成 `callback` 的方式，讓使用者可以自行定義處理方式，這樣就可以達到更大的彈性。
 
@@ -112,6 +112,7 @@ stream((data) => {
 
 參考資料：
 
+* [MDN - Using readable streams](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API/Using_readable_streams)
 * [MDN - ReadableStream](https://developer.mozilla.org/zh-CN/docs/Web/API/ReadableStream)
 * [Clarification on how IAsyncEnumerable works with ASP.NET Web API](https://stackoverflow.com/questions/58876817/clarification-on-how-iasyncenumerable-works-with-asp-net-web-api)
 * [ChatGPT 聊天程式練習 - 使用 .NET + Azure OpenAI API](https://blog.darkthread.net/blog/chatgpt-console-chat/)
