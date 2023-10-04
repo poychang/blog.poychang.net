@@ -112,7 +112,7 @@ stream((data) => {
 
 這篇的作法為了處理 `IAsyncEnumerable<T>` JSON 序列化後的格式，在前端做了一些妥協，不得不額外做特別的處理。後來針對這件事情重新思考了一下，在針對「模擬聊天情境，即時的一字字依序輸出在網頁上」這個目標下，重新設計 API 的回傳方式，讓前端可以更容易的處理串流資料。
 
-關於這件事，請詳閱[在 ASP.NET Web API 使用 IAsyncEnumerable 並串流至 JavaScript - PART 2](./iasyncenumerable-with-asp-net-web-api-and-stream-to-javascript-part-2/)的內容及範例程式碼，請先參考這篇文章。
+關於這件事，請詳閱[在 ASP.NET Web API 使用 IAsyncEnumerable 並串流至 JavaScript - PART 2](~/iasyncenumerable-with-asp-net-web-api-and-stream-to-javascript-part-2/)的內容及範例程式碼，請先參考這篇文章。
 
 ---
 
