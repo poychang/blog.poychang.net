@@ -1,15 +1,15 @@
 ---
 layout: post
 title: 在 ASP.NET Web API 使用 IAsyncEnumerable 並串流至 JavaScript - PART 2
-date: 2023-10-04 12:00
+date: 2023-10-04 11:34
 author: Poy Chang
 comments: true
 categories: [Javascript, CSharp, Dotnet, WebAPI, Develop, AI]
 ---
 
-前陣子在[在 ASP.NET Web API 使用 IAsyncEnumerable 並串流至 JavaScript](~/iasyncenumerable-with-asp-net-web-api-and-stream-to-javascript/)分享到使用 `IAsyncEnumerable<T>` 來處理串流資料，但是當時的範例的回傳值是 JSON 物件，這造成前端在解析資料時，必須處理 `IAsyncEnumerable<T>` 被 JSON 序列化後的格式，這讓前端不得不做一些額外處理。這篇將重新思考這段處理方式，在針對「模擬聊天情境，即時的一字字依序輸出在網頁上」這個目標下，重新設計 API 的回傳方式，讓前端可以更容易的處理串流資料。
+前陣子在[在 ASP.NET Web API 使用 IAsyncEnumerable 並串流至 JavaScript](../iasyncenumerable-with-asp-net-web-api-and-stream-to-javascript/)分享到使用 `IAsyncEnumerable<T>` 來處理串流資料，但是當時的範例的回傳值是 JSON 物件，這造成前端在解析資料時，必須處理 `IAsyncEnumerable<T>` 被 JSON 序列化後的格式，這讓前端不得不做一些額外處理。這篇將重新思考這段處理方式，在針對「模擬聊天情境，即時的一字字依序輸出在網頁上」這個目標下，重新設計 API 的回傳方式，讓前端可以更容易的處理串流資料。
 
-> 本篇基於[在 ASP.NET Web API 使用 IAsyncEnumerable 並串流至 JavaScript](~/iasyncenumerable-with-asp-net-web-api-and-stream-to-javascript/)的內容及範例程式碼，請先參考這篇文章。
+> 本篇基於[在 ASP.NET Web API 使用 IAsyncEnumerable 並串流至 JavaScript](../iasyncenumerable-with-asp-net-web-api-and-stream-to-javascript/)的內容及範例程式碼，請先參考這篇文章。
 
 ## API 端
 
