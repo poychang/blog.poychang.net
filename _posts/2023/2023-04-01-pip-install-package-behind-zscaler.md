@@ -25,13 +25,15 @@ WARNING: Retrying (Retry(total=3, connect=None, read=None, redirect=None, status
 
 首先，要先知道 pip 這個套件管理器的位置，每個人所安裝的位置可能不一樣，不過可以使用 `pip --version` 來查看 pip 的版本和位置。
 
-例如，在我的電腦執行這個指令，就會顯示下面的訊息：
+例如，在我的電腦執行 `pip --version` 這個指令，就會顯示下面的訊息：
 
 ```
 pip 23.0.1 from C:\Users\poychang\AppData\Local\Programs\Python\Python311\Lib\site-packages\pip (python 3.11)
 ```
 
-接著請下載 ZscalerRootCertificate-2048-SHA256.crt 這張 Zscaler 根憑證檔之後，並使用下列指令將其加入至 Python 和 pip 的 certifi 中：
+其中 `C:\Users\poychang\AppData\Local\Programs\Python\Python311\Lib\site-packages\pip` 這個路徑是關鍵，我們要將 Zscaler 的根憑證加入到這個路徑下的 `certifi` 套件中的 `cacert.pem`。
+
+接著，請下載 ZscalerRootCertificate-2048-SHA256.crt 這張 Zscaler 根憑證檔之後，並使用下列指令將其加入至 Python 和 pip 的 certifi 中：
 
 
 ```bash
@@ -57,4 +59,3 @@ gc .\ZscalerRootCertificate-2048-SHA256.crt | ac "C:\Users\poychang\AppData\Loca
 參考資料：
 
 * [Zscaler Docs - Adding Custom Certificate to an Application Specific Trusted Store](https://help.zscaler.com/zia/adding-custom-certificate-application-specific-trust-store#pip-set-cacert)
-* [MS Learn](?WT.mc_id=DT-MVP-5003022)
