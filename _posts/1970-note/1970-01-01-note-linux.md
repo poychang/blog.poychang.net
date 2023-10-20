@@ -56,6 +56,16 @@ sudo apt autoremove
 
 >若不定時移除舊核心檔案，容易造成 /boot 空間不足，嚴重時將無法開機
 
+## 空間使用量
+
+```bash
+# 查詢各個檔案系統的使用量
+df -h
+
+# 查詢根目錄下各個資料夾的使用量
+sudo du -h --max-depth=1 / | sort -h
+```
+
 ## 清空
 
 ```bash
