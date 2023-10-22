@@ -24,7 +24,7 @@ sudo apt clean
 sudo apt autoremove
 ```
 
-# 安裝 Docker 相關工具
+## 安裝 Docker 相關工具
 
 我打算使用 Docker 容器的方式來啟動 AdGuard，因此先來安裝 Docker 相關工具。
 
@@ -50,13 +50,13 @@ echo \
 sudo apt-get update
 ```
 
-1. 安裝 Docker 相關的工具
+2. 安裝 Docker 相關的工具
 
 ```bash
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 
-# 下載 AdGuard Home 的 Docker 映像檔
+## 下載 AdGuard Home 的 Docker 映像檔
 
 AdGuard 已經將包裝好的容器放上 [Docker Hub](https://hub.docker.com/r/adguard/adguardhome)，因此我們只要簡單一個指令即可取得所需要的 Docker 映像檔
 
@@ -66,7 +66,7 @@ sudo docker pull adguard/adguardhome
 
 > 記得使用 `sudo` 提升權限。
 
-# 關閉預設啟動的 DNS 服務
+## 關閉預設啟動的 DNS 服務
 
 由於我會使用 AdGuard Home 所提供的 DNS 服務，因此要先把預設被開啟的 systemd-resolved 服務關閉，避免 53 Port 被占用。
 
@@ -75,7 +75,7 @@ sudo systemctl disable systemd-resolved
 sudo systemctl stop systemd-resolved
 ```
 
-# 建立 Docker Compose 檔案
+## 建立 Docker Compose 檔案
 
 為了更容易管理所啟動的容器，使用 Docker Compose 來管理所啟動的容器。
 
@@ -120,7 +120,7 @@ services:
 
 > 基本上沒有使用到的 Port 設定，是可以直接移除。
 
-# 啟動容器
+## 啟動容器
 
 在有 `docker-compose.yml` 的資料夾中使用以下指令啟動
 
@@ -129,11 +129,11 @@ sudo docker compose up -d
 sudo docker compose down
 ```
 
-# 設定 AdGuard Home
+## 設定 AdGuard Home
 
 使用瀏覽器開啟站台，例如這台 Linux VM 對外 IP 為 180.10.10.10，則使用 http://180.10.10.10:3000 來啟動設定頁面，設定完之後，AdGuard Home Portal 則是使用 80 Port，這時候我們可以回過頭，在 docker-compose.yml 那邊將 3000 Port 關閉，之後啟動就不會對外開放 3000 Port 了。
 
-# 收工
+## 收工
 
 OK，打完收工。
 
