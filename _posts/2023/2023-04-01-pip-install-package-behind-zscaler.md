@@ -31,7 +31,7 @@ WARNING: Retrying (Retry(total=3, connect=None, read=None, redirect=None, status
 pip 23.0.1 from C:\Users\poychang\AppData\Local\Programs\Python\Python311\Lib\site-packages\pip (python 3.11)
 ```
 
-其中 `C:\Users\poychang\AppData\Local\Programs\Python\Python311\Lib\site-packages\pip` 這個路徑是關鍵，我們要將 Zscaler 的根憑證加入到這個路徑下的 `certifi` 套件中的 `cacert.pem`。
+其中 `C:\Users\poychang\AppData\Local\Programs\Python\Python311\Lib\site-packages\pip` 這個路徑是關鍵，我們要將 Zscaler 的根憑證加入到這個路徑中位於 `_vendor` 資料夾下的 `certifi` 套件中的 `cacert.pem`。
 
 接著，請下載 ZscalerRootCertificate-2048-SHA256.crt 這張 Zscaler 根憑證檔之後，並使用下列指令將其加入至 Python 和 pip 的 certifi 中：
 
@@ -39,6 +39,9 @@ pip 23.0.1 from C:\Users\poychang\AppData\Local\Programs\Python\Python311\Lib\si
 ```bash
 # 檢查是否有安裝 certifi 套件及原始的憑證檔
 ./python.exe -m certifi
+# 如果沒有安裝，執行這行指令後會顯示 No module named certifi
+# 有安裝了話，會顯示 cacert.pem 路徑
+
 # 若沒有請使用以下指令來安裝，--trusted-host 為忽略 SSL 相關檢查
 ./pip.exe install --upgrade certifi --trusted-host pypi.org --trusted-host files.pythonhosted.org
 ```
