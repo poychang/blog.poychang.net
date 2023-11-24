@@ -23,6 +23,14 @@ Windows 叫做命令提示字元（cmd.exe, Command Line），Unix-like OS 叫�
 
 REF:[Moving efficiently in the CLI](https://clementc.github.io/blog/2018/01/25/moving_cli/)
 
+## 清除本機的路由快取
+
+```bash
+ipconfig /flushdns
+arp -d
+nbtstat -RR
+```
+
 ## 使用指令啟動 Windows 管理工具
 
 副檔名 `.cpl` 的也可以執行喔,自己用 `dir *.cpl /s` 找找有哪些可以用，像 `desk.cpl` 是桌面內容，`sysdm.cpl` 是系統內容
