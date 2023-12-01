@@ -104,4 +104,4 @@ wget -q --timeout=60 -O- 'https://ftp.apnic.net/apnic/stats/apnic/delegated-apni
 
 參考資料：
 
-* [MS Learn - Azure 網路安全性群組](https://learn.microsoft.com/zh-tw/azure/virtual-network/network-security-groups-overview)
+* [MS Learn - Azure 網路安全性群組](https://learn.microsoft.com/zh-tw/azure/virtual-network/network-security-groups-overview?WT.mc_id=DT-MVP-5003022)
