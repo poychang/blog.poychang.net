@@ -23,7 +23,7 @@ Native AOT 是一種令人興奮的發行 .NET 應用程式的方法，相較於
 
 ![Startup Time & Time to First Response](https://i.imgur.com/ckrjHnf.png)
 
-在啟動所需的時間以及第一次回應的時間上，Native AOT 有著明顯的優勢，由於 Native AOT 在編譯時期就已經完成編譯成機器碼的工作，以及做一定程度的優化，啟動時受惠於不需要使用 Runtime 來處理 JIT 編譯，因此省下了不少時間。在第一次回應所需時間，也基於同樣的原因，讓 Native AOT 有著明顯的優勢。
+在啟動所需的時間以及第一次回應的時間上，Native AOT 有著明顯的優勢，由於 Native AOT 在編譯時期就已經完成編譯成機器碼的工作，以及做一定程度的優化，啟動時受惠於不需要使用 JIT 處理 IL 編譯，因此省下了不少時間。在第一次回應所需時間，也基於同樣的原因，讓 Native AOT 有著明顯的優勢。
 
 這兩點優勢也是為甚麼 Native AOT 非常適合拿來作為 Serverless、Container 或 Cloud Native 的運行方式，因為這兩種情境都需要快速冷啟動的特性。
 
