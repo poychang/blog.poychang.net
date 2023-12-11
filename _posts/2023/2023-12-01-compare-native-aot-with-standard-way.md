@@ -57,5 +57,5 @@ Native AOT 可說是效能上的聖杯，但也未必適合所有情境，如果
 參考資料：
 
 * [MS Learn - ASP.NET Core support for native AOT](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/native-aot?WT.mc_id=DT-MVP-5003022)
-* [Tiny, fast ASP.NET Core APIs with native AOT | .NET Conf 2023](https://www.youtube.com/watch?v=FpQXyFoZ9aY)
+* [Tiny, fast ASP.NET Core APIs with native AOT](https://www.youtube.com/watch?v=FpQXyFoZ9aY)
 
