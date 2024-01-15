@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 關於 Recursion 遞迴函數的深度
-date: 1971-01-01 12:00
+date: 2023-08-22 12:00
 author: Poy Chang
 comments: true
 categories: [AI-Written, Javascript, Python, CSharp, Develop]
