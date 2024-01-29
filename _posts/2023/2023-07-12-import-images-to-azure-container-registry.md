@@ -4,7 +4,7 @@ title: 上傳 Container Image 到 Azure Container Registry
 date: 2023-07-12 09:06
 author: Poy Chang
 comments: true
-categories: [Develop, Docker, PowerShell]
+categories: [Develop, Container, PowerShell]
 ---
 
 有些情境下，特別是在比較封閉的企業內部網路，可能無法直接從 Docker Hub 上取得 Container Image，不過如果你有 Azure Container Registry (ACR) 的話，且網路架構可以存取的時候，就可以透過 Azure CLI 來將 Container Image 上傳到 ACR 中，藉此管理企業內會用到的 Container Image。

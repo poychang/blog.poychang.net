@@ -4,7 +4,7 @@ title: 使用 NSG 設定 Azure VM 只允許國內的 IP 訪問
 date: 2023-10-22 22:49
 author: Poy Chang
 comments: true
-categories: [Azure, Docker, Tools]
+categories: [Azure, Container, Tools]
 ---
 
 前陣子以為自己玩壞了架在 Azure VM 的 AdGuard Home，經過調查之後發現，原來是被來自境外的黑客進行 DDoS 攻擊，雖然小小的 VM 承受得住每秒百來次的查詢請求，但是硬碟空間撐不住每次查詢所紀錄下的 Query Log，因此造成 VM 極度不穩。在不想額外花錢的情況下，這篇文章提供一種解決方案，讓有需要的人可以參考看看。

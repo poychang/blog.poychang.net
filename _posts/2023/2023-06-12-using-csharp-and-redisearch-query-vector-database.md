@@ -4,7 +4,7 @@ title: 使用 C# 和 OpenAI Embedding 搭配 RediSearch 查詢向量資料庫
 date: 2023-06-12 15:06
 author: Poy Chang
 comments: true
-categories: [CSharp, Dotnet, Develop, Docker, Tools, AI]
+categories: [CSharp, Dotnet, Develop, Container, Tools, AI]
 ---
 
 在開發 OpenAI 的 Embedding 相關的功能時，勢必會需要使用到向量資料庫來儲存向量資料，常見的教學會使用 [Pinecone](https://www.pinecone.io/) 這個 SaaS 的向量資料庫，不過在企業內的環境，使用 [Redis](https://redis.io/) 搭配 [RediSearch](https://redis.com/modules/redis-search/) 模組來建構解決方法，是一個不錯的選擇，這篇來實作這個解決方案。

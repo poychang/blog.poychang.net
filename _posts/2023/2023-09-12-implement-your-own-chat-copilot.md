@@ -4,7 +4,7 @@ title: 實現你自己的 Chat Copilot
 date: 2023-09-12 08:55
 author: Poy Chang
 comments: true
-categories: [Dotnet, WebAPI, Azure, Develop, AI, Docker, PowerShell]
+categories: [Dotnet, WebAPI, Azure, Develop, AI, Container, PowerShell]
 ---
 
 經歷過 [ChatGPT](https://chat.openai.com/) 席捲式的熱潮後，許多企業紛紛開始想要打造自己的 AI 對話功能，可能是直接使用 API 的方式開發聊天機器人，或是直接選用廠商提供的解決方案。在 GitHub 上，也有許多開放原始碼專案可以提供我們快速建立相關的應用，例如 [BetterChatGPT](https://github.com/ztjhz/BetterChatGPT/) 就是按造 ChatGPT 的使用介面所打造。在 Microsoft 官方的版本庫中，也有 [Chat Copilot](https://github.com/microsoft/chat-copilot) 專案，提供了我們參考的樣板。

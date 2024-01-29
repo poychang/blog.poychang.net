@@ -4,7 +4,7 @@ title: 在 Azure 上開 Linux VM 架設 AdGuard
 date: 2023-10-20 21:59
 author: Poy Chang
 comments: true
-categories: [Azure, Docker, Tools]
+categories: [Azure, Container, Tools]
 ---
 
 最近不小心把之前架設的 AdGuard 玩壞了，由於上次沒有留下筆記，這次把相關的架設筆記留下來，不然未來某天又玩壞了，還要再花點時間找資料。

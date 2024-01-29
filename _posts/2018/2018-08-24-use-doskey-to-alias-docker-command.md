@@ -4,7 +4,7 @@ title: 使用 DosKey 簡化操作遠端 Docker 的指令
 date: 2018-08-24 12:34
 author: Poy Chang
 comments: true
-categories: [Docker, Tools]
+categories: [Container, Tools]
 ---
 其實這篇不僅僅可以用在 Docker，而是適用於各種*長指令*的情境，這裡的情境是使用 Docker 對遠端伺服器上的 Docker 做指令操作時，會透或 `-H` 的參數指定遠端伺服器，而這個參數值會讓指令變得很常，不好打之外又不好看，透過 DosKey 來簡化操作指令。
 

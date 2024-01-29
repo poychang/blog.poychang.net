@@ -4,7 +4,7 @@ title: 格式化 Docker PS 的輸出樣式
 date: 2019-12-03 11:34
 author: Poy Chang
 comments: true
-categories: [Develop, Docker, PowerShell]
+categories: [Develop, Container, PowerShell]
 ---
 
 最近使用 Docker 時遇到個小狀況，每次下 `docker ps` 查看容器資訊的時候，所輸出的資訊太多，斷行的結果造成閱讀困難，於是就在想，這個輸出應該可以被格式化吧，只顯示部分我比較關心的欄位就好了，於是找了一下官方文件，`docker ps --format` 是這次狀況的好夥伴。
