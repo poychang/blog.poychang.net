@@ -29,6 +29,13 @@ Measure-Command { dotnet build }
 Measure-Command { .\my_script.ps1 }
 ```
 
+如果只想關注測量的秒數，可以這寫執行指令，讓最後的輸出只有測量結果的 `TotalSeconds` 屬性值：
+
+```powershell
+# 測量程式執行時間
+(Measure-Command { dotnet build }).TotalSeconds
+```
+
 ## 同時觀看程式輸出
 
 在執行上面的動作時，會發現它只會輸出結果，因為預設情況下 `Measure-Command` 不會輸出程式本身的輸出訊息。如果想要同時查看程式的輸出，可以將該程式的輸出導向至 `Out-Default`，這樣就可以同時看到程式輸出以及測量的結果。
