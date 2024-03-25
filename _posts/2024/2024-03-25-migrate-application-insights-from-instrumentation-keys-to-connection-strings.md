@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 改用 Connection Strings 來發送遙測資訊到 Application Insights
-date: 2024-03-16 15:27
+date: 2024-03-25 15:48
 author: Poy Chang
 comments: true
 categories: [Azure, Develop]
@@ -44,10 +44,33 @@ System.Net.ServicePointManager.SecurityProtocol |= System.Net.SecurityProtocolTy
 
 以上就是先前在遷移到 Connection Strings 模式時，發現的注意事項。
 
+## 後記
+
+最近在調整 K8S 內的應用程式時，也發生無法順利上傳 Telemtry 到 Application Insights 的狀況。
+
+經過調查，原來是 .NET 5 的時候，因為 Kestrel 變更了背後的行為，將原本預設的 SslProtocols 從 `SslProtocols.Tls12 | SslProtocols.Tls11` 調整成 `SslProtocols.None` （詳細請參考[重大變更：Kestrel：預設支援的 TLS 通訊協定版本改變](https://learn.microsoft.com/zh-tw/dotnet/core/compatibility/aspnet-core/5.0/kestrel-default-supported-tls-protocol-versions-changed?WT.mc_id=DT-MVP-5003022)），這造成跟上面 VSTO 一樣的狀況，因為改用 Connection String 的方式且使用區域的 `IngestionEndpoint`，所以需要 TLS 1.2 才能順利傳送 Telemtry。
+
+解法有以下兩種：
+
+1. 跟 VSTO 一樣，加入上面那行程式碼，透過 `ServicePointManager` 來調整 TLS 的使用版本
+2. 在 `Program.cs` 中，在 `Builder` 中調整 `Kestrel` 的 SSL Protocol 設定，詳細請參考下列程式碼：
+
+```csharp
+var builder = WebApplication.CreateBuilder(args);
+builder.WebHost.UseKestrel(kestrelOptions =>
+{
+    kestrelOptions.ConfigureHttpsDefaults(httpsOptions =>
+    {
+        httpsOptions.SslProtocols = SslProtocols.Tls12 | SslProtocols.Tls11;
+    });
+});
+```
+
 ---
 
 參考資料：
 
 * [MS Learn - 從 Application Insights 檢測金鑰移轉至連接字串](https://learn.microsoft.com/zh-tw/azure/azure-monitor/app/migrate-from-instrumentation-keys-to-connection-strings?WT.mc_id=DT-MVP-5003022)
 * [MS Learn - Azure 監視器所使用的 IP 位址](https://learn.microsoft.com/zh-tw/azure/azure-monitor/ip-addresses#addresses-grouped-by-region-azure-public-cloud?WT.mc_id=DT-MVP-5003022)
-* [針對 Azure 監視器 Application Insights 中遺失的應用程式遙測進行疑難排解](https://learn.microsoft.com/zh-tw/troubleshoot/azure/azure-monitor/app-insights/investigate-missing-telemetry?WT.mc_id=DT-MVP-5003022)
+* [MS Learn - 針對 Azure 監視器 Application Insights 中遺失的應用程式遙測進行疑難排解](https://learn.microsoft.com/zh-tw/troubleshoot/azure/azure-monitor/app-insights/investigate-missing-telemetry?WT.mc_id=DT-MVP-5003022)
+* [MS Learn - Kestrel：預設支援的 TLS 通訊協定版本已變更](https://learn.microsoft.com/zh-tw/dotnet/core/compatibility/aspnet-core/5.0/kestrel-default-supported-tls-protocol-versions-changed?WT.mc_id=DT-MVP-5003022)
