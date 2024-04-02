@@ -11,6 +11,8 @@ categories: [Dotnet, WebAPI]
 
 順道一提，要產生 JWT Token 有很多套件可以幫助開發者快速建立，[JWT](https://github.com/jwt-dotnet/jwt) 這個 NuGet 套件就是其中一個，但這裡我使用官方所提供的 `System.IdentityModel.Tokens.Jwt` 擴充套件來處理，雖然這是官方提供的版本，但寫起來一點也不困難。
 
+> `Microsoft.IdentityModel.JsonWebTokens` 是 `System.IdentityModel.Tokens.Jwt` 的更新、更快速的版本，具有額外的功能。建議改用 [Microsoft.IdentityModel.JsonWebTokens](https://www.nuget.org/packages/Microsoft.IdentityModel.JsonWebTokens)。
+
 ## 建立專案
 
 使用 Visual Studio 2019 建立 ASP.NET Core WebAPI 專案後，首先修改 `Startup.cs` 中的 `ConfigureServices` 方法，設定這個 WebAPI 站台要使用哪種方式來驗證 HTTP Request 是否合法，程式碼如下：
@@ -18,8 +20,6 @@ categories: [Dotnet, WebAPI]
 ```csharp
 public void ConfigureServices(IServiceCollection services)
 {
-    services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-
     // STEP1: 設定用哪種方式驗證 HTTP Request 是否合法
     services
         // 檢查 HTTP Header 的 Authorization 是否有 JWT Bearer Token
@@ -35,7 +35,7 @@ public void ConfigureServices(IServiceCollection services)
                 ValidAudience = Configuration["Jwt:Issuer"],
                 ValidateLifetime = true,
                 ValidateIssuerSigningKey = true,
-                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:SecureKey"]))
             };
         });
 }
@@ -78,7 +78,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 
 我們知道 JWT 是用三部分 Header、Payload 和 Signature，並使用**點**（.）將三個部分連結起來成為一個字串，Signature 這部分會是 Header、Payload 加上一組 Secret 做雜湊運算產生出來的，用來驗證整個 JWT 資訊是沒有被竄改過。加密金鑰這段雖然是選用，但還是相當建議加上去，增加安全強度。
 
-接著透過 `System.IdentityModel.Tokens.Jwt` 這個命名空間底下的 `JwtSecurityTokenHandler` 來產生 JWT Token，而 JWT Token 的內容描述則交由 `SecurityTokenDescriptor` 來組合，在 JWT Token 的內容描述中，請根據需求做調整。
+接著透過 `Microsoft.IdentityModel.JsonWebTokens` 這個命名空間底下的 `JsonWebTokenHandler` 來產生 JWT Token，而 JWT Token 的內容描述則交由 `SecurityTokenDescriptor` 來組合，在 JWT Token 的內容描述中，請根據需求做調整。
 
 如此一來就可以產生所需要的 JWT Token 了。
 
@@ -104,13 +104,13 @@ public class AuthController : ControllerBase
         var userClaims = new ClaimsIdentity(new[] {
             new Claim(JwtRegisteredClaimNames.NameId, name),
             new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-            new Claim("CustomClaim", "Anything You Like")
+            new Claim("Custom", "Anything You Like")
         });
         // STEP2: 取得對稱式加密 JWT Signature 的金鑰
         // 這部分是選用，但此範例在 Startup.cs 中有設定 ValidateIssuerSigningKey = true 所以這裡必填
-        var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
+        var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:SecureKey"]));
         // STEP3: 建立 JWT TokenHandler 以及用於描述 JWT 的 TokenDescriptor
-        var tokenHandler = new JwtSecurityTokenHandler();
+        var tokenHandler = new JsonWebTokenHandler();
         var tokenDescriptor = new SecurityTokenDescriptor
         {
             Issuer = _config["Jwt:Issuer"],
@@ -119,12 +119,10 @@ public class AuthController : ControllerBase
             Expires = DateTime.Now.AddMinutes(30),
             SigningCredentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256)
         };
-        // 產出所需要的 JWT Token 物件
-        var securityToken = tokenHandler.CreateToken(tokenDescriptor);
-        // 產出序列化的 JWT Token 字串
-        var serializeToken = tokenHandler.WriteToken(securityToken);
+        // 產出 JWT
+        var token = tokenHandler.CreateToken(tokenDescriptor);
 
-        return new ContentResult() { Content = serializeToken };
+        return new ContentResult() { Content = token };
     }
 }
 ```
@@ -162,7 +160,7 @@ public class ValuesController : ControllerBase
 
 ### JwtRegisteredClaimNames 屬性說明
 
-在建立使用者的 Claims 聲明時，我們會用到很多 `JwtRegisteredClaimNames` 結構型別，來取得是先定義好的字串，在 `System.IdentityModel.Tokens.Jwt` 命名空間中的 `JwtRegisteredClaimNames` 定義了很多 JWT 會用到的聲明，但[官方文件](https://docs.microsoft.com/en-us/dotnet/api/system.identitymodel.tokens.jwt.jwtregisteredclaimnames?WT.mc_id=DT-MVP-5003022)說明相當的少，自行整理了如下：
+在建立使用者的 Claims 聲明時，我們會用到很多 `JwtRegisteredClaimNames` 結構型別，來取得是先定義好的字串，在 `Microsoft.IdentityModel.JsonWebTokens` 命名空間中的 `JwtRegisteredClaimNames` 定義了很多 JWT 會用到的聲明，但[官方文件](https://learn.microsoft.com/en-us/dotnet/api/microsoft.identitymodel.jsonwebtokens.jwtregisteredclaimnames?WT.mc_id=DT-MVP-5003022)說明相當的少，自行整理了如下：
 
 | 聲明欄位   | 說明                                                 | 連結                                                                  |
 | ---------- | ---------------------------------------------------- | --------------------------------------------------------------------- |
