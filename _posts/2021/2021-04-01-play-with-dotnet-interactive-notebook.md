@@ -1,35 +1,35 @@
 ---
 layout: post
-title: .NET Interactive Notebook 基本玩法
+title: Polyglot Notebooks 基本玩法
 date: 2021-04-01 19:21
 author: Poy Chang
 comments: true
 categories: [Javascript, CSharp, Dotnet, SQL, PowerShell, Tools]
 ---
 
-我們已經可以在 [Azure Data Studio](https://docs.microsoft.com/en-us/sql/azure-data-studio/notebooks/notebooks-guidance?WT.mc_id=DT-MVP-5003022) 中使用 Jupyter Notebooks，那麼地表上最強的編輯器 Visual Studio Code 能否支援呢？當然可以，只要安裝 [.NET Interactive Notebooks](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.dotnet-interactive-vscode) 這個擴充套件，就可以玩 Jupyter Notebooks 囉，來看看 .NET Notebook 怎麼玩吧。
+我們已經可以在 [Azure Data Studio](https://docs.microsoft.com/en-us/sql/azure-data-studio/notebooks/notebooks-guidance?WT.mc_id=DT-MVP-5003022) 中使用 Jupyter Notebooks，那麼地表上最強的編輯器 Visual Studio Code 能否支援呢？當然可以，只要安裝 [Polyglot Notebooks](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.dotnet-interactive-vscode) 這個擴充套件，就可以玩 Jupyter Notebooks 囉，來看看 Polyglot Notebooks 怎麼玩吧。
 
->目前 .NET Interactive Notebooks 擴充套件還在預覽階段，但我相信不久就會發布正式版了，現在相關的文件資訊都在 [dotnet/interactive](https://github.com/dotnet/interactive) 這個 GitHub 專案中。
+>Polyglot Notebooks 的前身是 .NET Interactive Notebooks，引擎本身仍將稱為 .NET Interactive。相關的核心文件資訊都在 [dotnet/interactive](https://github.com/dotnet/interactive) 這個 GitHub 專案中。
 
 ## 簡介
 
 像我自己有時候在處理一些流程或筆記會希望能在文件中加入可即時互動的程式碼，即時產生文件所需要的資料，又或者藉由程式碼來幫助工作流程的處理，而且能在程式碼中加上 Markdown，這樣可以更詳盡的說明流程。
 
-Jupyter Notebooks 就相當適用於這種情境，但如果你不想安裝 Jupyter 或 Python 了話，可以安裝 [.NET Interactive Notebooks](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.dotnet-interactive-vscode) 這個 VSCode 擴充套件，讓你可以輕鬆玩 Jupyter Notebooks。
+Jupyter Notebooks 就相當適用於這種情境，但如果你不想安裝 Jupyter 或 Python 了話，可以安裝 [Polyglot Notebooks](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.dotnet-interactive-vscode) 這個 VSCode 擴充套件，讓你可以輕鬆玩 Jupyter Notebooks。
 
 ## Kernels Overview
 
 ![.NET Interactive Architectural Overview](https://i.imgur.com/Cx42MvH.png)
 
-上面這張圖 是 .NET Interactive 的核心架構圖，大概有個概念就好，如果想更深入了解這個架構內部是怎麼溝通的，可以參考[這篇文件](https://github.com/dotnet/interactive/blob/main/docs/kernels-overview.md)。
+上面這張圖 是 .NET Interactive 的核心架構圖，也是 Polyglot Notebooks 的核心，大概有個概念就好，如果想更深入了解這個架構內部是怎麼溝通的，可以參考[這篇文件](https://github.com/dotnet/interactive/blob/main/docs/kernels-overview.md)。
 
-.NET Interactive Notebooks 現階段支援 7 種 Subkernel，分別是 C#、F#、PowerShell、JavaScript、HTML、Markdown 以及 SQL。
+Polyglot Notebooks 現階段支援 7 種 Subkernel，分別是 C#、F#、PowerShell、JavaScript、HTML、Markdown、Mermaid 以及 SQL 和 KQL。
 
 這裡主要會使用 C# Subkernel。
 
 ## 基本使用
 
-當你在 VSCode 安裝玩 .NET Interactive Notebooks 擴充套件後，可以按 `ctrl` + `shift` + `P` 並輸入 `notebook`，會列出下圖清單，此時選擇 `.NET Interactive: Create new blank notebook` 建立空白的 Notebook 檔案。也可以按 `ctrl` + `shift` + `alt` + `N` 快速建立空白 Notebook。
+當你在 VSCode 安裝完 Polyglot Notebooks 擴充套件後，可以按 `ctrl` + `shift` + `P` 並輸入 `notebook`，會列出下圖清單，此時選擇 `Polyglot Notebook: Create new blank notebook` 建立空白的 Notebook 檔案。也可以按 `ctrl` + `shift` + `alt` + `N` 快速建立空白 Notebook。
 
 ![建立空白的 Notebook](https://i.imgur.com/6A39nOr.png)
 
@@ -73,7 +73,7 @@ C# Notebook 所使用的語法是修改版的 C# Script，也就是使用 `.csx`
 
 你或許會注意到開頭和結尾出現 `#!csharp` 和 `#!time` 這個奇怪的東西。這兩個算是特殊指令，文件叫他們 Magic Commands（稍後的文章內容會再介紹）。那他們主要是做什麼用的呢？
 
-因為 .NET Interactive Extension 預設會使用 C# Subkernel，當然我們可以從右下角手動指定，但重新開啟檔案時，又會跳回預設值了，所以可以使用 `#!csharp` 這 Magic Command 來指定該 Code 區塊要使用 C# Subkernel，其他 Subkernel 則有對應不同的 Magic Command。
+因為 Polyglot Notebooks Extension 預設會使用 C# Subkernel，當然我們可以從右下角手動指定，但重新開啟檔案時，又會跳回預設值了，所以可以使用 `#!csharp` 這 Magic Command 來指定該 Code 區塊要使用 C# Subkernel，其他 Subkernel 則有對應不同的 Magic Command。
 
 >除了預設使用 C# Subkernel 所造成的問題外，有時候會混用 Subkernel 的情況出現，所以建議 Code 區塊都手動加上對應的 Subkernel Magic Command 會比較好。
 
@@ -98,7 +98,7 @@ C# Notebook 所使用的語法是修改版的 C# Script，也就是使用 `.csx`
 #i "nuget:C:\myorg\mypackage\src\bin\Release"
 ```
 
-有了套件來源後，就可以使用 `#r` Magic Command 來加入參考，後面直接接套件名稱和指定的版本即可，如果 .NET Interactive 中沒有該套件，則會嘗試用你所設定的套件來源進行下載及安裝，下面用 Json.NET 來當範例：
+有了套件來源後，就可以使用 `#r` Magic Command 來加入參考，後面直接接套件名稱和指定的版本即可，如果在 Polyglot Notebooks 的核心 .NET Interactive 中找不到該套件，則會嘗試用你所設定的套件來源進行下載及安裝，下面用 Json.NET 來當範例：
 
 ```csharp
 #r "nuget:Newtonsoft.Json,13.0.1"
@@ -108,7 +108,7 @@ C# Notebook 所使用的語法是修改版的 C# Script，也就是使用 `.csx`
 
 ## Magic Commands
 
-剛剛看到很多 [Magic Commands](https://github.com/dotnet/interactive/blob/main/docs/magic-commands.md) 的使用，看的出來這是 .NET Notebook 中很必學的指令，而這類型的指令在 Jupyter 中也很常被使用到，下面就來看看這些把複雜動作變簡單的神奇指令吧！
+剛剛看到很多 [Magic Commands](https://github.com/dotnet/interactive/blob/main/docs/magic-commands.md) 的使用，看的出來這是 Polyglot Notebooks 中很必學的指令，而這類型的指令在 Jupyter 中也很常被使用到，下面就來看看這些把複雜動作變簡單的神奇指令吧！
 
 Magic Commands 會以 `#!` 或 `#` 作為前綴，通常會用前者，後者則是會用在特定語言的編譯器中，例如同時支援 C# 和 F# 的指令才會用 `#` 前綴，而 Magic Commands 分兩種類型，通用型和特定語言專用，首先我們先來看一下通用型。
 
@@ -125,7 +125,7 @@ Magic Commands 會以 `#!` 或 `#` 作為前綴，通常會用前者，後者則
 - `#!html`
 - `#!markdown`
 
-前面也有提到，.NET Notebook 的 Code 區塊預設是使用 C#，但為了明顯提示該區塊的語法是哪種 Subkernel，建議在每個 Code 區塊都手動加上對應的 Subkernel Magic Command 會比較好。
+前面也有提到，Polyglot Notebooks 的 Code 區塊預設是使用 C#，但為了明顯提示該區塊的語法是哪種 Subkernel，建議在每個 Code 區塊都手動加上對應的 Subkernel Magic Command 會比較好。
 
 至於功能類則有：
 
@@ -137,7 +137,7 @@ Magic Commands 會以 `#!` 或 `#` 作為前綴，通常會用前者，後者則
 
 >以上這些 Magic Commands 大多直接宣告上去即可，部分指令是有參數值可以設定，這部分就去官方文件找找吧。
 
-在 .NET Notebook 中的各個 Code 區塊是可以共享變數的，並且是用 Call by Reference 的方式呼叫，因此變數可以跨 Code 區塊使用，而且在 .NET Interactive 所包含的 3 種語言（C#、F#、PowerShell）互相共用（可以參考上面 Kernels Overview 的架構圖）。
+在 Polyglot Notebooks 中的各個 Code 區塊是可以共享變數的，並且是用 Call by Reference 的方式呼叫，因此變數可以跨 Code 區塊使用，而且在 .NET Interactive 所支援的 3 種語言（C#、F#、PowerShell）中互相共用（可以參考上面 Kernels Overview 的架構圖）。
 
 而上面的 `#!value` 相當特別，許多時候我們會想要直接使用文本，例如 JSON、CSV、XML 這類型的文本，這時候就可以用 `#!value` 來儲存這些文本資料，並用 `#!share` 指令讓該變數可以跨 Code 區塊使用，使用起來如下圖：
 
@@ -177,7 +177,7 @@ Magic Commands 會以 `#!` 或 `#` 作為前綴，通常會用前者，後者則
 
 ## 後記
 
-目前 .NET Interactive Notebook 的使用資訊差不多就這樣了，光有這些功能就可以玩出很多有趣 Notebook，讓我可以把一些流程動作，用文件的方式呈現，並且可以邊看邊執行，相當直覺也容易交接給下一個接手的人，歡迎大家分享你們使用 Notebook 的心得和有趣的用法。
+基本的 Polyglot Notebooks 使用資訊差不多就這樣，光有這些功能就可以玩出很多有趣 Notebook，並且足以讓我可以把一些流程動作，用文件的方式呈現，並且可以邊看邊執行，相當直覺也容易交接給下一個接手的人，歡迎大家分享你們使用 Notebook 的心得和有趣的用法。
 
 ----------
 
