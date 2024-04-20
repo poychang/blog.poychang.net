@@ -10,6 +10,7 @@ categories: [Javascript, CSharp, Dotnet, SQL, PowerShell, Tools]
 我們已經可以在 [Azure Data Studio](https://docs.microsoft.com/en-us/sql/azure-data-studio/notebooks/notebooks-guidance?WT.mc_id=DT-MVP-5003022) 中使用 Jupyter Notebooks，那麼地表上最強的編輯器 Visual Studio Code 能否支援呢？當然可以，只要安裝 [Polyglot Notebooks](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.dotnet-interactive-vscode) 這個擴充套件，就可以玩 Jupyter Notebooks 囉，來看看 Polyglot Notebooks 怎麼玩吧。
 
 >Polyglot Notebooks 的前身是 .NET Interactive Notebooks，引擎本身仍將稱為 .NET Interactive。[之所以會改名](https://devblogs.microsoft.com/dotnet/dotnet-interactive-notebooks-is-now-polyglot-notebooks/)，只是是為了充分反映 Polyglot Notebooks 能支援的語言非常豐富，不僅是 .NET 家族。
+>
 >Polyglot Notebooks 的引擎 .NET Interactive，所有相關核心文件都在 [dotnet/interactive](https://github.com/dotnet/interactive) 這個 GitHub 專案中。
 
 ## 簡介
