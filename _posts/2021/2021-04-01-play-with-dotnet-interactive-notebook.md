@@ -9,7 +9,8 @@ categories: [Javascript, CSharp, Dotnet, SQL, PowerShell, Tools]
 
 我們已經可以在 [Azure Data Studio](https://docs.microsoft.com/en-us/sql/azure-data-studio/notebooks/notebooks-guidance?WT.mc_id=DT-MVP-5003022) 中使用 Jupyter Notebooks，那麼地表上最強的編輯器 Visual Studio Code 能否支援呢？當然可以，只要安裝 [Polyglot Notebooks](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.dotnet-interactive-vscode) 這個擴充套件，就可以玩 Jupyter Notebooks 囉，來看看 Polyglot Notebooks 怎麼玩吧。
 
->Polyglot Notebooks 的前身是 .NET Interactive Notebooks，引擎本身仍將稱為 .NET Interactive。相關的核心文件資訊都在 [dotnet/interactive](https://github.com/dotnet/interactive) 這個 GitHub 專案中。
+>Polyglot Notebooks 的前身是 .NET Interactive Notebooks，引擎本身仍將稱為 .NET Interactive。[之所以會改名](https://devblogs.microsoft.com/dotnet/dotnet-interactive-notebooks-is-now-polyglot-notebooks/)，只是是為了充分反映 Polyglot Notebooks 能支援的語言非常豐富，不僅是 .NET 家族。
+>Polyglot Notebooks 的引擎 .NET Interactive，所有相關核心文件都在 [dotnet/interactive](https://github.com/dotnet/interactive) 這個 GitHub 專案中。
 
 ## 簡介
 
@@ -21,7 +22,7 @@ Jupyter Notebooks 就相當適用於這種情境，但如果你不想安裝 Jupy
 
 ![.NET Interactive Architectural Overview](https://i.imgur.com/Cx42MvH.png)
 
-上面這張圖 是 .NET Interactive 的核心架構圖，也是 Polyglot Notebooks 的核心，大概有個概念就好，如果想更深入了解這個架構內部是怎麼溝通的，可以參考[這篇文件](https://github.com/dotnet/interactive/blob/main/docs/kernels-overview.md)。
+上面這張圖 是 .NET Interactive 的核心架構圖，也就是 Polyglot Notebooks 的引擎，這個架構圖大概有個概念就好，如果想更深入了解這個架構內部是怎麼溝通的，可以參考[這篇文件](https://github.com/dotnet/interactive/blob/main/docs/kernels-overview.md)。
 
 Polyglot Notebooks 現階段支援 7 種 Subkernel，分別是 C#、F#、PowerShell、JavaScript、HTML、Markdown、Mermaid 以及 SQL 和 KQL。
 
@@ -98,7 +99,7 @@ C# Notebook 所使用的語法是修改版的 C# Script，也就是使用 `.csx`
 #i "nuget:C:\myorg\mypackage\src\bin\Release"
 ```
 
-有了套件來源後，就可以使用 `#r` Magic Command 來加入參考，後面直接接套件名稱和指定的版本即可，如果在 Polyglot Notebooks 的核心 .NET Interactive 中找不到該套件，則會嘗試用你所設定的套件來源進行下載及安裝，下面用 Json.NET 來當範例：
+有了套件來源後，就可以使用 `#r` Magic Command 來加入參考，後面直接接套件名稱和指定的版本即可，如果在 Polyglot Notebooks 的引擎 .NET Interactive 中找不到該套件，則會嘗試用你所設定的套件來源進行下載及安裝，下面用 Json.NET 來當範例：
 
 ```csharp
 #r "nuget:Newtonsoft.Json,13.0.1"
