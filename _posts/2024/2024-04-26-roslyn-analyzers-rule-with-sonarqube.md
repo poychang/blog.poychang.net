@@ -4,7 +4,7 @@ title: 關於 Roslyn Analyzers 規則與 SonarQube
 date: 2024-04-26 15:34
 author: Poy Chang
 comments: true
-categories: [Typescript, Javascript, Python, CSharp, Dotnet, Blazor, SQL, App, Angular, WebAPI, Azure, Develop, Bot, IoT, AI, Container, PowerShell, Tools, Test, Note, Uncategorized]
+categories: [CSharp, Dotnet, Develop, Tools]
 ---
 
 在寫[在 CI 流程中忽略 SonarQube 的特定分析規則](https://blog.poychang.net/ignore-sonarqube-rule-in-ci-process)這篇文章的時候，發現了一個有趣的資訊，SonarQube Scanner for MSBuild v2.0 這個版本支援第三方 Roslyn 分析器，這對於我們來說是一個很好的消息，因為這樣我們就可以在 SonarQube 上使用第三方的 Roslyn 分析器。
