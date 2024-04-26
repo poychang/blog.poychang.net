@@ -7,7 +7,7 @@ comments: true
 categories: [AI-Written, Javascript, Python, CSharp, Develop]
 ---
 
-> 聲明：此篇文章使用 AI 工具所自動產生，請自行判斷文章內容的正確性。
+> 聲明：此篇文章使用 AI 工具產生，請自行判斷文章內容的正確性。
 
 # 介紹
 
