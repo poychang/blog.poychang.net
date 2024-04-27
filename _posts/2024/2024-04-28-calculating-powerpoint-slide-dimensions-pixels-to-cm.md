@@ -17,7 +17,9 @@ PowerPoint 作為一個製作簡報的工具相當好用，其實作為一個排
 
 ![使用 px 來設定版面尺寸](https://i.imgur.com/wFCfP2Q.png)
 
-> 不過有時候會發生計算錯誤，可能是有 Bug。
+> 這個技巧其實在官方的[PowerPoint 變更投影片大小](https://support.microsoft.com/zh-tw/office/%E8%AE%8A%E6%9B%B4%E6%8A%95%E5%BD%B1%E7%89%87%E5%A4%A7%E5%B0%8F-040a811c-be43-40b9-8d04-0de5ed79987e)支援文件有提到，只是它的標題命名為「選擇自訂尺寸 (英吋、公分或圖元)」，沒人知道「圖元」這東西是甚麼。
+>
+> 不過我在測試的時後，這種方式可能會發生計算錯誤，或許是有 Bug。
 
 ## 數學計算
 
@@ -104,3 +106,4 @@ PowerPoint 作為一個製作簡報的工具相當好用，其實作為一個排
 
 * [How to convert pixels to cm](https://www.youtube.com/watch?v=tlQ9Sh1jYAA)
 * [How to export PowerPoint slides to a 4K resolution File](https://www.youtube.com/watch?v=ME0HN8Q8TE4)
+* [Change the size of your slides](https://support.microsoft.com/en-us/office/change-the-size-of-your-slides-040a811c-be43-40b9-8d04-0de5ed79987e)
