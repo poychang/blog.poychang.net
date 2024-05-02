@@ -14,6 +14,7 @@ categories: [Note]
 - [iHateRegex](https://ihateregex.io/) 查詢常用的正規表示式
 - [RegExr - Regular Expression Online](http://regexr.com/) 線上測試正規表示式
 - [JavaScript Regular Expression Visualizer](https://jex.im/regulex/) 視覺化呈現正規表示式的規則路徑
+- [Pyrexp](https://pythonium.net/regex) 在线正则表达式可视化测试工具
 
 ## 效能
 
