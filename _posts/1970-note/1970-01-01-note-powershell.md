@@ -56,13 +56,19 @@ REF: [CTP: PowerShell Versioning](https://blogs.msdn.microsoft.com/powershell/20
   (Get-ChildItem $Path -Recurse -File | Measure-Object -property length -sum).SUM / 1GB
   ```
 
-## 匿名物件
+## 物件與陣列
 
-```ps1
-$Object = @{ 'Key' = 'Value'; }
-# 比較嚴謹的寫法，在前面加 [PSCustomObject]
-# $Object = [PSCustomObject]@{ 'Key' = 'Value'; }
-ConvertTo-Json $Object # 轉成 JSON 字串
+```powershell
+# HashTable 資料結構
+$HashTable = @{ 'Key1' = 'Value'; 'Key2' = 'Value'; }
+# 在前面加 [PSCustomObject] 就變成物件
+$Object = [PSCustomObject]@{ 'Key' = 'Value'; }
+
+# 轉成 JSON 字串
+ConvertTo-Json $Object
+# 或這樣寫
+$Object | ConvertTo-Json
+
 
 $Array = @(
   @{ 'Key' = 'Value1'; },
@@ -75,14 +81,14 @@ ConvertTo-Json $Array # 轉成 JSON 字串
 
 REF: [Windows PowerShell ISE 的鍵盤快速鍵](https://docs.microsoft.com/zh-tw/powershell/scripting/core-powershell/ise/keyboard-shortcuts-for-the-windows-powershell-ise?view=powershell-6&WT.mc_id=DT-MVP-5003022)
 
-動作                    | 鍵盤快速鍵
----------------------- | ------------
-顯示/隱藏指令碼窗格       | CTRL + R
-將指令碼窗格移至上方      | CTRL + 1
-將指令碼窗格移至右方      | CTRL + 2
-最大化指令碼窗格          | CTRL + 3
-關閉 PowerShell 索引標籤 | CTRL + W
-新增 PowerShell 索引標籤 | CTRL + T
+| 動作                     | 鍵盤快速鍵 |
+| ------------------------ | ---------- |
+| 顯示/隱藏指令碼窗格      | CTRL + R   |
+| 將指令碼窗格移至上方     | CTRL + 1   |
+| 將指令碼窗格移至右方     | CTRL + 2   |
+| 最大化指令碼窗格         | CTRL + 3   |
+| 關閉 PowerShell 索引標籤 | CTRL + W   |
+| 新增 PowerShell 索引標籤 | CTRL + T   |
 
 ## 常用指令
 
@@ -139,20 +145,30 @@ PowerShell ISE 有 Add-On 可以安裝，[這篇文章](https://social.technet.m
 
 PowerShell 的比較運算子有分**字串**及**數字**的比較，字串又分為**限制大小寫**及**不限制大小寫**的比較，若是要限制比較字串的大小寫時，則在運算子前面加上 `c` 字元，如 `-cle` 即可。
 
-| 運算子        | 說明      | 範例                                | 備註          |
-| ------------ | -------- | ------------------------------------| ------------ |
-| -le          | 小於或等於 | `10 -le 10` true                    | 字串不限大小寫 |
-| -lt          | 小於      | `10 -lt 10` false                   | 字串不限大小寫 |
-| -ge          | 大於或等於 | `10 -ge 10` true                    | 字串不限大小寫 |
-| -gt          | 大於      | `10 -ge 10` false                   | 字串不限大小寫 |
-| -eq          | 等於      | `10 -eq 10` true                    | 字串不限大小寫 |
-| -ne          | 不等於    | `10 -en 10` false                   | 字串不限大小寫 |
-| -like        | 相似      | `"ABC" -like "abc"` true            | 字串可用 `＊` 和 `?` 替代，並不限大小寫 |
-| -notlike     | 不相似    | `"ABC" -notlike "abc"` false        | 字串可用 `＊` 和 `?` 替代，並不限大小寫 |
-| -match       | 符合      | `"ABC" -match "[AE]"` true          | 字串不限大小寫，並不限大小寫 |
-| -notmatch    | 不符合    | `"ABC" -notmatch "A"` true          | 字串不限大小寫，並不限大小寫 |
-| -contains    | 包含      | `"A","B","C" -contains "A"` true    | 運算子的左邊含有右邊的值，並不限大小寫 |
-| -notcontains | 不包含    | `"A","B","C" notcontains "A"` false | 運算子的左邊含有右邊的值，並不限大小寫 |
+| 運算子       | 說明       | 範例                                | 備註                                    |
+| ------------ | ---------- | ----------------------------------- | --------------------------------------- |
+| -le          | 小於或等於 | `10 -le 10` true                    | 字串不限大小寫                          |
+| -lt          | 小於       | `10 -lt 10` false                   | 字串不限大小寫                          |
+| -ge          | 大於或等於 | `10 -ge 10` true                    | 字串不限大小寫                          |
+| -gt          | 大於       | `10 -ge 10` false                   | 字串不限大小寫                          |
+| -eq          | 等於       | `10 -eq 10` true                    | 字串不限大小寫                          |
+| -ne          | 不等於     | `10 -en 10` false                   | 字串不限大小寫                          |
+| -like        | 相似       | `"ABC" -like "abc"` true            | 字串可用 `＊` 和 `?` 替代，並不限大小寫 |
+| -notlike     | 不相似     | `"ABC" -notlike "abc"` false        | 字串可用 `＊` 和 `?` 替代，並不限大小寫 |
+| -match       | 符合       | `"ABC" -match "[AE]"` true          | 字串不限大小寫，並不限大小寫            |
+| -notmatch    | 不符合     | `"ABC" -notmatch "A"` true          | 字串不限大小寫，並不限大小寫            |
+| -contains    | 包含       | `"A","B","C" -contains "A"` true    | 運算子的左邊含有右邊的值，並不限大小寫  |
+| -notcontains | 不包含     | `"A","B","C" notcontains "A"` false | 運算子的左邊含有右邊的值，並不限大小寫  |
+
+## 常用符號的用途
+
+| 符號 | 用途                   | 範例                                                                                        |
+| ---- | ---------------------- | ------------------------------------------------------------------------------------------- |
+| `$`  | 宣告變數               | `$a`                                                                                        |
+| `=`  | 賦值給變數             | `$a = get-date`                                                                             |
+| `""` | 使用雙引號來顯示文字   | 當變數 `$a = Monday` 則 `"DayOfTheWeek: $a"` 的輸出為 `DayOfTheWeek: Monday`                |
+| `+`  | 串接                   | 當變數 `$a = November` 則 `"DayOfTheWeek: " + $a.Dayofweek` 的輸出為 `DayOfTheWeek: Monday` |
+| `()` | 建立子表達式、內嵌變數 | `(get-date).day`、`"Hello, $(Get-Date)"`                                                     |
 
 ---
 
