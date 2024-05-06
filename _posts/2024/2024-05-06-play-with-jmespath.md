@@ -1,0 +1,184 @@
+---
+layout: post
+title: 輕鬆上手 JMESPath
+date: 2024-05-06 16:02
+author: Poy Chang
+comments: true
+categories: [Typescript, Javascript, Python, CSharp, Dotnet, Blazor, SQL, App, Angular, WebAPI, Azure, Develop, Bot, IoT, AI, Container, PowerShell, Tools, App, Test, Note, Uncategorized]
+---
+
+JMESPath 是一種 JSON 的查詢語言，讓使用者可以透過簡單的語法，來查詢 JSON 格式的資料，甚至重新組合 JSON，如果運用得當可以幫助我們處理查詢複雜的 JSON 資料，甚至可以簡化程式碼、改善可讀性，這篇文章將帶你輕鬆上手 JMESPath。
+
+## 支援語言
+
+[JMESPath](https://jmespath.org/) 本身是種查詢語言的規格，不是特定程式語言的函示庫，不過 JMESPath 官方實作了各種程式語言的函示庫，目前支援：[Python](https://github.com/jmespath/jmespath.py)、Go、Lua、[Javascript](https://github.com/jmespath/jmespath.js)、PHP、Ruby、Rust。
+
+除了官方的實作之外，社群也根據[JMESPath 規格](https://jmespath.org/specification.html)實作了以下語言的函示庫：C++、C++、Elixir、Java、[.NET](https://github.com/jdevillard/JmesPath.Net)、[TypeScript](https://github.com/nanoporetech/jmespath-ts)。
+
+> 完整的支援列表請參考官方網站 [JMESPath Libraries](https://jmespath.org/libraries.html)。
+
+## 快速上手
+
+這裡我提供一個快速認識的切入點，幫助你快速理解 JMESPath 的使用語法。
+
+JMESPath 要查詢的資料來源就是 JSON 格式，我們知道 JSON 本身主要會有兩種資料結構：物件（Object）和陣列（Array），因此我們主要可以利用 JMESPath 對 JSON 做兩種事：
+
+1. 從物件中取得或計算我們關注的屬性值
+2. 從陣列中執行查詢條件
+
+這兩種資料結構，或者說對這兩種目的，分別有各自的處理函數和存取語法。
+
+例如，我們要取值，就可以使用 `.` 來存取物件的屬性，例如 `location.name` 可以取得 `location` 物件中的 `name` 屬性值。
+
+如果要查詢陣列，可以使用 `[]` 搭配函數來查詢陣列中的元素，例如 `locations[?contains(name == 'Seattle')]` 可以取得 `locations` 陣列中，那些物件的 `name` 屬性是 `Seattle` 的元素。
+
+基本上 JMESPath 的語法就這兩個方向，剩下的就是各種運算符、運算式、[函數](https://jmespath.org/specification.html#built-in-functions)的組合和搭配，最終透過所組合的表達式來取得我們想要的 JSON 資料樣貌。
+
+> JMESPath 官網的 [Tutorial](https://jmespath.org/tutorial.html) 提供了許多範例可以參考。
+
+## 範例：基本表達式 Basic Expressions
+
+有以下 JSON 資料，要取得 `location` 的 `name` 屬性值，可以使用 `location.name` 表達式。
+
+```json
+{
+    "location": {
+        "name": "Seattle",
+        "state": "WA"
+    }
+}
+```
+
+有以下 JSON 資料，要取得 `locations` 清單中的第 1 筆物件 (Seattle)，可以使用 `locations[0]` 表達式；要取得倒數第 2 筆物件 (New York)，可以使用 `locations[-2]` 表達式。索引值從 0 開始，負數則表示倒數，當查查無資料則會回傳 `null`。
+
+```json
+{
+    "locations": [
+        {"name": "Seattle", "state": "WA"},
+        {"name": "New York", "state": "NY"},
+        {"name": "Bellevue", "state": "WA"}
+    ]
+}
+```
+
+如果 JSON 資料本身就是陣列，如以下 JSON 資料，可以直接使用 `[]` 來查詢，例如要取得清單中第 2 筆資料，可以使用 `[1]` 表達式，這樣會取得 `{"name": "New York", "state": "NY"}`。
+
+```json
+[
+    {"name": "Seattle", "state": "WA"},
+    {"name": "New York", "state": "NY"},
+    {"name": "Bellevue", "state": "WA"}
+]
+```
+
+## 範例：切片表達式 Slicing Expressions
+
+這裡我們統一有以下 JSON 資料：
+
+```json
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
+
+切片表達式是用來取得陣列中的一部分，主要會使用到 `:` 運算符，然後搭配索引值。
+
+取得指定區間的資料，例如取得 3 到 6 的資料，可以使用 `[3:6]` 表達式。請注意，這裡的索引值是從 0 開始，所以 `[3:6]` 會取得 3, 4, 5 這三個元素。
+
+這裡的表達式就是 `[start:stop]` 的意思，從哪裡開始（包含）到哪裡結束（不包含）。
+
+如果 `start` 沒有給值則代表從第 1 個開始取值，因此要取得前 3 個元素，可以使用 `[0:3]` 表達式，也可以使用 `[:3]` 表達式。如果 `stop` 沒有給值則代表會取到最後一個元素。
+
+在切片表達式中還可以設定 `step`，也就是取值的間隔，表達式就是 `[start:stop:step]`，例如 `[::2]` 會取得所有元素，但是間隔 2 個取值，所以會取得 0, 2, 4, 6, 8 這幾個元素。
+
+## 範例：投影表達式 Projection Expressions
+
+這個表達式非常常用，主要用來將物件轉換成另一種形式，例如將陣列中的某物件屬性值取出來成為清單，或是將取得的值指派給新的屬性，組合成新物件。
+
+這裡我們統一有以下 JSON 資料：
+
+```json
+{
+    "locations": [
+        {"name": "Seattle", "state": "WA"},
+        {"name": "New York", "state": "NY"},
+        {"name": "Bellevue", "state": "WA"}
+    ]
+}
+```
+
+如果想要將資料轉換成 `{ "longName":"" }` 這樣的資料樣貌，可以使用 `locations[*].{longName:name}` 表達式，前段 `locations[*]` 用於取得所有 `locations` 陣列中的資料，後段 `.{longName:name}` 則是將原本的 `name` 屬性值值派給 `longName` 這個新屬性值，結果如下：
+
+```json
+[
+    {"longName": "Seattle"},
+    {"longName": "New York"},
+    {"longName": "Bellevue"}
+]
+```
+
+這裡做兩個延伸，如果不想要指定新的屬性名稱，可以直接使用 `locations[*].name` 表達式，這樣會取得 `locations` 陣列中所有物件的 `name` 屬性值，並轉換成一個陣列，結果如下：
+
+```json
+["Seattle", "New York", "Bellevue"]
+```
+
+另一個延伸，上面使用 `locations[*]` 取得所有 `locations` 陣列中的資料，這裡的 `*` 我們可替換成條件表達式，例如 `locations[?state == 'WA']` 可以取得 `locations` 陣列中，那些物件的 `state` 屬性是 `WA` 的元素，結果如下：
+
+```json
+[
+    {"name": "Seattle", "state": "WA"},
+    {"name": "Bellevue", "state": "WA"}
+]
+```
+
+比較運算子清單如下：
+
+| 比較運算子 | 範例                                           |
+| ---------- | ---------------------------------------------- |
+| `==`       | locations[?state == 'WA']                      |
+| `>`        | people[?age > `18`]                            |
+| `<`        | people[?age < `20`]                            |
+| `\|\|`     | people[?age =='18' \|\| age == '20']           |
+| `&&`       | locations[?name == 'Seattle' && state == 'WA'] |
+
+除了用條件表達式之外，也可以搭配內建的函數來做條件判斷，例如 `locations[?contains(name, 'a')]` 可以取得 `locations` 陣列中，那些物件的 `name` 屬性值包含 `e` 的元素。
+
+> JMESPath 提供非常多內建的[函數](https://jmespath.org/specification.html#built-in-functions)，可以根據你的需要做各種條件判斷。
+
+## 範例：管線表達式 (Pipe Expression)
+
+這也是一個非常重要且非常強大的表達式，這裡的 Pipe 概念跟 Unix 的管線概念很像，可以將前一個表達式的結果當作下一個表達式的輸入，這樣可以將多個表達式串接在一起，達到更複雜的查詢結果。
+
+舉一個簡單的例子，假設我們有以下 JSON 資料：
+
+```json
+{
+    "locations": [
+        {"name": "Seattle", "state": "WA"},
+        {"name": "New York", "state": "NY"},
+        {"name": "Bellevue", "state": "WA"},
+        {"name": "Olympia", "state": "WA"}
+    ]
+}
+```
+
+我想要取得 `locations` 陣列中，那些物件的 `state` 屬性是 `WA` 的元素，並且只取得 `name` 屬性值，然後最終結果只需要前 2 筆資料即可，這時可以使用 `locations[?state == 'WA'].name | [:2]` 表達式，結果如下：
+
+```json
+["Seattle", "Bellevue"]
+```
+
+如果要先做字母排序再取資料了話，表達式可以寫成 `locations[?state == 'WA'].name | sort(@) | [:2]`，中間先使用 `sort(@)` 這個內建函數將 `name` 屬性值做排序，再取前 2 筆資料。
+
+藉由管線表達式，我們就可以組合出更複雜的查詢效果。
+
+## 後記
+
+讀完這篇文章之後，基本上大部分的 JMESPath 表達式應該都能應付，如果有更複雜的需求，可以參考 JMESPath 官方網站提供的[規格](https://jmespath.org/specification.html)和[內建函數](https://jmespath.org/specification.html#built-in-functions)，特別是內建函數的部分，可以先掃過一遍，當實務上有需要的時候，再去文件找怎麼使用。
+
+---
+
+參考資料：
+
+* [JMESPath 官方網站](https://jmespath.org/)
+* [JMESPath Filtering](https://mixedanalytics.com/knowledge-base/filter-specific-fields-values/)
+* [MS Learn - 如何使用 JMESPath 查詢來查詢 Azure CLI 命令輸出](https://learn.microsoft.com/zh-tw/cli/azure/query-azure-cli?WT.mc_id=DT-MVP-5003022)
