@@ -4,7 +4,7 @@ title: 輕鬆上手 JMESPath
 date: 2024-05-06 16:02
 author: Poy Chang
 comments: true
-categories: [Typescript, Javascript, Python, CSharp, Dotnet, Blazor, SQL, App, Angular, WebAPI, Azure, Develop, Bot, IoT, AI, Container, PowerShell, Tools, App, Test, Note, Uncategorized]
+categories: [Typescript, Javascript, Python, CSharp, Develop]
 ---
 
 JMESPath 是一種 JSON 的查詢語言，讓使用者可以透過簡單的語法，來查詢 JSON 格式的資料，甚至重新組合 JSON，如果運用得當可以幫助我們處理查詢複雜的 JSON 資料，甚至可以簡化程式碼、改善可讀性，這篇文章將帶你輕鬆上手 JMESPath。
