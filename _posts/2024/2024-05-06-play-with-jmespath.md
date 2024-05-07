@@ -140,9 +140,9 @@ JMESPath 要查詢的資料來源就是 JSON 格式，我們知道 JSON 本身�
 | 比較運算子 | 範例                                           |
 | ---------- | ---------------------------------------------- |
 | `==`       | locations[?state == 'WA']                      |
-| `>`        | people[?age > `18`]                            |
-| `<`        | people[?age < `20`]                            |
-| `||`       | people[?age =='18' \|\| age == '20']           |
+| `>`        | people[?age > 18]                            |
+| `<`        | people[?age < 20]                            |
+| `||`       | people[?age == 18 \|\| age == 20]           |
 | `&&`       | locations[?name == 'Seattle' && state == 'WA'] |
 
 除了用條件表達式之外，也可以搭配內建的函數來做條件判斷，例如 `locations[?contains(name, 'a')]` 可以取得 `locations` 陣列中，那些物件的 `name` 屬性值包含 `e` 的元素。
@@ -176,9 +176,58 @@ JMESPath 要查詢的資料來源就是 JSON 格式，我們知道 JSON 本身�
 
 藉由管線表達式，我們就可以組合出更複雜的查詢效果。
 
+## 範例：巢狀陣列過濾
+
+這個範例比較複雜一點，假設我們有以下 JSON 資料：
+
+```json
+{
+    "locations": [
+        { "name": "Seattle", "list": [{ "id": "1" }, { "id": "3" }] },
+        { "name": "New York", "list": [{ "id": "2" }, { "id": "3" }] },
+        { "name": "Bellevue", "list": [{ "id": "2" }, { "id": "3" }] },
+        { "name": "Olympia", "list": [{ "id": "1" }, { "id": "2" }] }
+    ]
+}
+```
+
+期望在這個巢狀陣列中針對 `list` 做過濾的動作，例如取得 `locations` 陣列中，那些物件的 `list` 陣列中有 `id` 屬性值是 `1` 的元素，這時可以使用 `locations[?list[?id == '1']]` 表達式，結果如下：
+
+```json
+[
+    {
+        "name": "Seattle",
+        "list": [
+            { "id": "1" },
+            { "id": "3" }
+        ]
+    },
+    {
+        "name": "Olympia",
+        "list": [
+            { "id": "1" },
+            { "id": "2" }
+        ]
+    }
+]
+```
+
+接著想要列出 `list` 底下的物件，並且只取得 `id` 屬性值是 `1` 的元素，這時可以改寫成 `locations[?list[?id == '1']].list[] | [?contains(id,'1')]` 表達式，透過管線的處理，將所要的值過濾出來，結果如下：
+
+```json
+[
+    { "id": "1" },
+    { "id": "1" }
+]
+```
+
+> 看到最後的輸出，你可能會想要把重複的資料作合併，可惜的是 JMESPath 本身並沒有提供這樣的功能，因此這樣的操作會需要透過程式做額外的處理。
+
 ## 後記
 
 讀完這篇文章之後，基本上大部分的 JMESPath 表達式應該都能應付，如果有更複雜的需求，可以參考 JMESPath 官方網站提供的[規格](https://jmespath.org/specification.html)和[內建函數](https://jmespath.org/specification.html#built-in-functions)，特別是內建函數的部分，可以先掃過一遍，當實務上有需要的時候，再去文件找怎麼使用。
+
+另外，在使用 Azure CLI 來查詢 Azure DevOps Pipeline 資訊的時候，可以透過 `--query` 參數並搭配 JMESPath 來做資料過濾，這樣可以讓你的查詢更精準，加快找到指定目標的作業。
 
 ---
 
