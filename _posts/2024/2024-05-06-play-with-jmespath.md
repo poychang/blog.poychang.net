@@ -244,7 +244,7 @@ JMESPath 要查詢的資料來源就是 JSON 格式，我們知道 JSON 本身�
 <script>
     const app = document.getElementById('app');
     function evaluateDemo(el) {
-        var data = JSON.parse(el.querySelector('.input').value);
+        var data = JSON.parse(el.querySelector('.data').value);
         var expression = el.querySelector('.expression').value;
         var result = jmespath.search(data, expression);
         el.querySelector('.result').textContent = JSON.stringify(result, null, 2);
