@@ -237,7 +237,7 @@ JMESPath 要查詢的資料來源就是 JSON 格式，我們知道 JSON 本身�
     <h3>Data</h3>
     <textarea class="input form-control" rows="5">{"a": "foo", "b": "bar", "c": "hello-world"}</textarea>
     <h3>Result</h3>
-    <pre class="result form-control"></pre>
+    <pre class="result form-control" style="height:100%;"></pre>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jmespath/0.16.0/jmespath.min.js" integrity="sha512-w/sNKK/59oJUi6v+SjgfIijrkFN8Pfv5QFZSV4KvrNMJrlbVM3017ZGNCA2AwZ6PKJzTPxQaDs/TbPcVGnF+pQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
