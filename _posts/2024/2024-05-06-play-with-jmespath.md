@@ -229,34 +229,6 @@ JMESPath 要查詢的資料來源就是 JSON 格式，我們知道 JSON 本身�
 
 另外，在使用 Azure CLI 來查詢 Azure DevOps Pipeline 資訊的時候，可以透過 `--query` 參數並搭配 JMESPath 來做資料過濾，這樣可以讓你的查詢更精準，加快找到指定目標的作業。
 
-# JMESPath Playground
-
-<div id="app" class="container border">
-    <h3>Expression</h3>
-    <input class="jmespath-expression form-control" type="text" placeholder="Expression" value="a" />
-    <h3>Data</h3>
-    <textarea class="jmespath-input form-control" rows="5">{"a": "foo", "b": "bar", "c": "hello-world"}</textarea>
-    <h3>Result</h3>
-    <pre class="jmespath-result form-control"></pre>
-</div>
-
-<script>
-    const appDiv = document.getElementById('app');
-    function evaluateDemo(el) {
-        var expression = el.querySelector('.jmespath-expression').value;
-        var inputData = JSON.parse(el.querySelector('.jmespath-input').value);
-        var result = jmespath.search(inputData, expression);
-        var resultElement = el.querySelector('.jmespath-result');
-        resultElement.textContent = JSON.stringify(result, null, 2);
-    }
-    evaluateDemo(appDiv);
-    appDiv.querySelector('.jmespath-expression').addEventListener('input', function() { evaluateDemo(appDiv); });
-    appDiv.querySelector('.jmespath-input').addEventListener('input', function() { evaluateDemo(appDiv); });
-</script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jmespath/0.16.0/jmespath.min.js" integrity="sha512-w/sNKK/59oJUi6v+SjgfIijrkFN8Pfv5QFZSV4KvrNMJrlbVM3017ZGNCA2AwZ6PKJzTPxQaDs/TbPcVGnF+pQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
 ---
 
 參考資料：
