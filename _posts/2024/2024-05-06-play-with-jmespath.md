@@ -229,6 +229,31 @@ JMESPath 要查詢的資料來源就是 JSON 格式，我們知道 JSON 本身�
 
 另外，在使用 Azure CLI 來查詢 Azure DevOps Pipeline 資訊的時候，可以透過 `--query` 參數並搭配 JMESPath 來做資料過濾，這樣可以讓你的查詢更精準，加快找到指定目標的作業。
 
+# JMESPath Playground
+
+<div id="app" class="container border">
+    <h3>Expression</h3>
+    <input class="expression form-control" type="text" placeholder="Expression" value="a" />
+    <h3>Data</h3>
+    <textarea class="input form-control" rows="5">{"a": "foo", "b": "bar", "c": "hello-world"}</textarea>
+    <h3>Result</h3>
+    <pre class="result form-control"></pre>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jmespath/0.16.0/jmespath.min.js" integrity="sha512-w/sNKK/59oJUi6v+SjgfIijrkFN8Pfv5QFZSV4KvrNMJrlbVM3017ZGNCA2AwZ6PKJzTPxQaDs/TbPcVGnF+pQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    const app = document.getElementById('app');
+    function evaluateDemo(el) {
+        var expression = el.querySelector('.expression').value;
+        var data = JSON.parse(el.querySelector('.input').value);
+        var result = jmespath.search(data, expression);
+        el.querySelector('.result').textContent = JSON.stringify(result, null, 2);
+    }
+    evaluateDemo(app);
+    app.querySelector('.expression').addEventListener('input', () => evaluateDemo(app));
+    app.querySelector('.input').addEventListener('input', () => evaluateDemo(app));
+</script>
+
 ---
 
 參考資料：
