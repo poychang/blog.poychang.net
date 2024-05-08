@@ -235,7 +235,7 @@ JMESPath 要查詢的資料來源就是 JSON 格式，我們知道 JSON 本身�
     <h3>Expression</h3>
     <input class="expression form-control" type="text" placeholder="Expression" value="a" />
     <h3>Data</h3>
-    <textarea class="input form-control" rows="5">{"a": "foo", "b": "bar", "c": "hello-world"}</textarea>
+    <textarea class="input form-control" rows="5" style="width:100%;">{"a": "foo", "b": "bar", "c": "hello-world"}</textarea>
     <h3>Result</h3>
     <pre class="result form-control" style="height:100%;"></pre>
 </div>
