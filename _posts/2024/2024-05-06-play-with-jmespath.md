@@ -232,10 +232,10 @@ JMESPath 要查詢的資料來源就是 JSON 格式，我們知道 JSON 本身�
 # JMESPath Playground
 
 <div id="app" class="container border">
+    <h3>Data</h3>
+    <textarea class="data form-control" rows="5" style="width:100%;">{"a": "foo", "b": "bar", "c": "hello-world"}</textarea>
     <h3>Expression</h3>
     <input class="expression form-control" type="text" placeholder="Expression" value="a" />
-    <h3>Data</h3>
-    <textarea class="input form-control" rows="5" style="width:100%;">{"a": "foo", "b": "bar", "c": "hello-world"}</textarea>
     <h3>Result</h3>
     <pre class="result form-control" style="height:100%;"></pre>
 </div>
@@ -244,14 +244,14 @@ JMESPath 要查詢的資料來源就是 JSON 格式，我們知道 JSON 本身�
 <script>
     const app = document.getElementById('app');
     function evaluateDemo(el) {
-        var expression = el.querySelector('.expression').value;
         var data = JSON.parse(el.querySelector('.input').value);
+        var expression = el.querySelector('.expression').value;
         var result = jmespath.search(data, expression);
         el.querySelector('.result').textContent = JSON.stringify(result, null, 2);
     }
     evaluateDemo(app);
     app.querySelector('.expression').addEventListener('input', () => evaluateDemo(app));
-    app.querySelector('.input').addEventListener('input', () => evaluateDemo(app));
+    app.querySelector('.data').addEventListener('input', () => evaluateDemo(app));
 </script>
 
 ---
