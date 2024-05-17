@@ -262,4 +262,5 @@ JMESPath 要查詢的資料來源就是 JSON 格式，我們知道 JSON 本身�
 * [JMESPath 簡體中文網站](https://www.osgeo.cn/jmespath/)
 * [JMESPath Filtering](https://mixedanalytics.com/knowledge-base/filter-specific-fields-values/)
 * [MS Learn - 如何使用 JMESPath 查詢來查詢 Azure CLI 命令輸出](https://learn.microsoft.com/zh-tw/cli/azure/query-azure-cli?WT.mc_id=DT-MVP-5003022)
+* [A Gentle Introduction to JMESPath — an intuitive way to parse JSON documents](https://medium.com/toyota-connected-india/a-gentle-introduction-to-jmespath-an-intuitive-way-to-parse-json-documents-daa6d699467a)
 * [Ycombinator News - JMESPath](https://news.ycombinator.com/item?id=16400320)
