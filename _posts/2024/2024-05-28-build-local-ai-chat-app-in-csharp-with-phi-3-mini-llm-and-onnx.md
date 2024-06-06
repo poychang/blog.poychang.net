@@ -31,7 +31,7 @@ ONNX (Open Neural Network Exchange) 是一個開放的標準，用於操作機�
 
 ONNX Runtime 則是跨平台的機器學習模型加速器，具有彈性介面來整合硬體特定連結庫。ONNX Runtime 可以搭配來自 PyTorch、Tensorflow/Keras、TFLite、 scikit-learn 和其他架構的模型，更詳細資訊請參閱 [ONNX Runtime 文件](https://onnxruntime.ai/docs/)。
 
-而關於 ONNX 的 .NET 函示庫，會有以下四個套件，分別的用途：
+而關於 ONNX Runtime 的 Generative AI .NET 函示庫，會有以下四個套件，分別的用途：
 
 1. **Microsoft.ML.OnnxRuntimeGenAI**:
    - 這是 ONNX Runtime 的通用套件，包含執行 ONNX 模型所需的核心功能
@@ -177,7 +177,7 @@ while (true)
 
 另外，上面的範例說明都是以 CPU 運算的環境來執行，事實上，完整的範例程式中，我有標註可以改用 GPU 的環境來加速運算，要切換的做法如下：
 
-將相依的 ONNX 套件換成 `Microsoft.ML.OnnxRuntimeGenAI.Cuda` 和 `Microsoft.ML.OnnxRuntime.Gpu`，但由於 `Microsoft.ML.OnnxRuntime.Gpu` 目前還在 Preview 階段，所以要加入 `nuget.config` 並設定 NuGet 來源為 ONNX 團隊的私有 Feed，這樣才能夠下載到這個套件。
+將相依的 ONNX 套件換成 `Microsoft.ML.OnnxRuntimeGenAI.Cuda` 和 `Microsoft.ML.OnnxRuntime.Gpu`，但由於支援 CUDA v12 的 `Microsoft.ML.OnnxRuntime.Gpu` 目前還在 Preview 階段，所以要加入 `nuget.config` 並設定 NuGet 來源為 ONNX 團隊的私有 Feed，這樣才能夠下載到這個套件。
 
 完成後的 `csproj` 檔案會向下面這樣：
 
