@@ -52,8 +52,8 @@ ONNX Runtime 針對 Generative AI 的使用場景，提供了一系列的 NuGet 
 
 | ONNX Runtime | CUDA | cuDNN                                   |
 | ------------ | ---- | --------------------------------------- |
-| 1.18         | 12.4 | 8.9.2.26 (Linux)<br> 8.9.2.26 (Windows) |
-| 1.18         | 11.8 | 8.9.2.26 (Linux)<br> 8.9.2.26 (Windows) |
+| 1.18         | 12.4 | 8.9.2.26 (Linux) 8.9.2.26 (Windows) |
+| 1.18         | 11.8 | 8.9.2.26 (Linux) 8.9.2.26 (Windows) |
 
 > ONNX Runtime v1.18 預設是使用 CUDA v11.8，如果想要使用 CUDA v12 的版本，可以參考[此連結](https://onnxruntime.ai/docs/install/#cccwinml-installs)，會教你如何安裝支援 CUDA v12 的 ONNX Runtime。
 
