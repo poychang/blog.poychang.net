@@ -12,41 +12,41 @@ categories: [CSharp, Dotnet, WebAPI, Develop]
 首先，我參考了 [Obsolete Attribute 原始碼](https://github.com/dotnet/runtime/blob/main/src/libraries/System.Private.CoreLib/src/System/ObsoleteAttribute.cs)，建立了一個用於定義 API 是否為棄用的 Attribute，這個 Attribute 會提供一個訊息，讓呼叫端知道這個 API 即將棄用，並可以設定是否強制報錯，使該 API 的呼叫無法繼續執行。程式碼如下：
 
 ```csharp
+/// <summary>
+/// 定義 API 即將棄用的訊息
+/// </summary>
+[AttributeUsage(AttributeTargets.Method | AttributeTargets.Class, AllowMultiple = false)]
+public class DeprecatedAttribute : Attribute
+{
     /// <summary>
-    /// 定義 API 即將棄用的訊息
+    /// 通知呼叫端此 API 即將棄用，並提供相關訊息
     /// </summary>
-    [AttributeUsage(AttributeTargets.Method | AttributeTargets.Class, AllowMultiple = false)]
-    public class DeprecatedAttribute : Attribute
+    public string Message { get; }
+    /// <summary>
+    /// 設定此呼叫是否應該被視為錯誤
+    /// </summary>
+    public bool IsError { get; }
+
+    /// <summary>
+    /// 盡量在訊息中提供替代方案
+    /// </summary>
+    /// <param name="message"></param>
+    public DeprecatedAttribute(string message)
     {
-        /// <summary>
-        /// 通知呼叫端此 API 即將棄用，並提供相關訊息
-        /// </summary>
-        public string Message { get; }
-        /// <summary>
-        /// 設定此呼叫是否應該被視為錯誤
-        /// </summary>
-        public bool IsError { get; }
-
-        /// <summary>
-        /// 盡量在訊息中提供替代方案
-        /// </summary>
-        /// <param name="message"></param>
-        public DeprecatedAttribute(string message)
-        {
-            Message = message;
-        }
-
-        public DeprecatedAttribute(string message, bool error)
-        {
-            Message = message;
-            IsError = error;
-        }
-
-        public DeprecatedAttribute()
-        {
-            Message = "This API is deprecated, and it may cause to failed.";
-        }
+        Message = message;
     }
+
+    public DeprecatedAttribute(string message, bool error)
+    {
+        Message = message;
+        IsError = error;
+    }
+
+    public DeprecatedAttribute()
+    {
+        Message = "This API is deprecated, and it may cause to failed.";
+    }
+}
 ```
 
 接著，我們要設定 Middleware 來處理這些被標記成即將棄用的 API，這個 Middleware 會檢查每個請求是否有被標記棄用，如果是的話，就會回應的 Header 中，加上 `X-API-Deprecation-Message` 標頭，並提供相對應的訊息。
@@ -54,43 +54,43 @@ categories: [CSharp, Dotnet, WebAPI, Develop]
 如果我們有設定 `IsError` 使之強制報錯，則該呼叫會直接回應 HTTP 405 狀態，並提供對應的錯誤訊息。程式碼如下：
 
 ```csharp
-    /// <summary>
-    /// 檢查每個請求是否是呼叫即將棄用的 API
-    /// </summary>
-    public class ApiDeprecationMiddleware
+/// <summary>
+/// 檢查每個請求是否是呼叫即將棄用的 API
+/// </summary>
+public class ApiDeprecationMiddleware
+{
+    private readonly RequestDelegate _next;
+
+    public ApiDeprecationMiddleware(RequestDelegate next)
     {
-        private readonly RequestDelegate _next;
+        _next = next;
+    }
 
-        public ApiDeprecationMiddleware(RequestDelegate next)
+    public async Task InvokeAsync(HttpContext context)
+    {
+        var endpoint = context.GetEndpoint();
+        if (endpoint != null)
         {
-            _next = next;
-        }
-
-        public async Task InvokeAsync(HttpContext context)
-        {
-            var endpoint = context.GetEndpoint();
-            if (endpoint != null)
+            var deprecatedAttribute = endpoint.Metadata.GetMetadata<DeprecatedAttribute>();
+            if (deprecatedAttribute != null)
             {
-                var deprecatedAttribute = endpoint.Metadata.GetMetadata<DeprecatedAttribute>();
-                if (deprecatedAttribute != null)
+                if (deprecatedAttribute.IsError)
                 {
-                    if (deprecatedAttribute.IsError)
-                    {
-                        context.Response.StatusCode = StatusCodes.Status405MethodNotAllowed;
-                        context.Response.Headers.Add("X-API-Deprecation-Message", deprecatedAttribute.Message);
-                        await context.Response.WriteAsync(deprecatedAttribute.Message);
-                        return;
-                    }
-                    else
-                    {
-                        context.Response.Headers.Add("X-API-Deprecation-Message", deprecatedAttribute.Message);
-                    }
+                    context.Response.StatusCode = StatusCodes.Status405MethodNotAllowed;
+                    context.Response.Headers.Add("X-API-Deprecation-Message", deprecatedAttribute.Message);
+                    await context.Response.WriteAsync(deprecatedAttribute.Message);
+                    return;
+                }
+                else
+                {
+                    context.Response.Headers.Add("X-API-Deprecation-Message", deprecatedAttribute.Message);
                 }
             }
-
-            await _next(context);
         }
+
+        await _next(context);
     }
+}
 ```
 
 接著，我們要在 `Program.cs` 中設定啟用此 Middleware 的啟用，如下列程式碼：
