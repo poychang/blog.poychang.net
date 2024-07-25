@@ -12,7 +12,7 @@ categories: [CSharp, Dotnet, WebAPI, Develop]
 假設我們有個 API 可以取得 JSON 資料，如下：
 
 ```csharp
-var jsonFileUrl = "https://blog.poychang.net/apps/json-mock-data/json-array-data-10.json";
+var jsonFileUrl = "https://blog.poychang.net/apps/mock-json-data/json-array-data-10.json";
 ```
 
 並假設我們已經有一個 `DataModel` 對應上述 API 所提供的 JSON 資料的格式。

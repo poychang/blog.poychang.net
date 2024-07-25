@@ -9,7 +9,7 @@ title: Apps
         <li><span><a href="{{ BASE_PATH }}/apps/coffitivity-pwa">coffitivity-pwa</a></span></li>
         <li><span><a href="{{ BASE_PATH }}/apps/github-markdown">github-markdown</a></span></li>
         <li><span><a href="{{ BASE_PATH }}/apps/invoice-helper">invoice-helper</a></span></li>
-        <li><span><a href="{{ BASE_PATH }}/apps/json-mock-data">json-mock-data</a></span></li>
+        <li><span><a href="{{ BASE_PATH }}/apps/mock-json-data">mock-json-data</a></span></li>
         <li><span><a href="{{ BASE_PATH }}/apps/ninja-cat-rides">ninja-cat-rides</a></span></li>
         <li><span><a href="{{ BASE_PATH }}/apps/online-docs-viewer">online-docs-viewer</a></span></li>
         <li><span><a href="{{ BASE_PATH }}/apps/chrome-dino">chrome-dino</a></span></li>
