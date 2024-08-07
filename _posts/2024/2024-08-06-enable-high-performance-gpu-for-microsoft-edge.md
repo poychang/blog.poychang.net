@@ -9,6 +9,8 @@ categories: [Develop, AI, Tools]
 
 WebNN（Web Neural Network API）是一個正在開發中的 Web 標準，它為瀏覽器提供了一個統一的 API，讓我們能在網頁中執行深度學習模型。在嘗試 WebNN 的應用時，你可能會想要為 Microsoft Edge 啟用高效能 GPU，這樣可以讓你在使用 Edge 瀏覽器時，獲得更好的推理效能，這篇文章將告訴你如何進行設定。
 
+![WebNN](https://i.imgur.com/wbWPf9p.png)
+
 我的電腦有兩個 GPU，一個是 Intel 的內建 GPU，另一個是 NVIDIA 的獨立 GPU。預設的情況下，瀏覽器會使用 Intel 的內建 GPU 來執行，這樣可以節省電力，但是在執行機器學習模型時，效能可能不夠。因此，我想要為 Edge 啟用高效能 GPU，這樣可以在執行機器學習模型時，獲得更好的效能。
 
 設定方式如下：
