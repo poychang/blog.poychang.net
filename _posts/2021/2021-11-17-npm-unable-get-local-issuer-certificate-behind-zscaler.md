@@ -45,20 +45,37 @@ npm config set cafile <Path to Certificate>/ZscalerRootCertificate-2048-SHA256.c
 # 下載 CA 憑證，並放在家目錄下
 copy "T:\Temp\Poy Chang\Zscaler Cert\ZscalerRootCertificate-2048-SHA256.crt" $env:USERPROFILE
 # 設定環境變數，並指定 CA 憑證的位置
-SET NODE_EXTRA_CA_CERTS=$env:USERPROFILE\ZscalerRootCertificate-2048-SHA256.crt
+$NODE_EXTRA_CA_CERTS = "$env:USERPROFILE\ZscalerRootCertificate-2048-SHA256.crt"
+[System.Environment]::SetEnvironmentVariable("NODE_EXTRA_CA_CERTS", $NODE_EXTRA_CA_CERTS, "User")
 ```
 
 接者檢查系統的環境變數是否有設定好 `NODE_EXTRA_CA_CERTS` 這個設定值，你可以參考下列 PowerShell 指令：
 
 ```powershell
-Get-ChildItem env:NODE_EXTRA_CA_CERTS
+[System.Environment]::GetEnvironmentVariable('NODE_EXTRA_CA_CERTS')
 ```
 
 查詢結果的畫面如下：
 
-![查詢環境變數是否有 NODE_EXTRA_CA_CERTS 設定值](https://i.imgur.com/wYh1355.png)
+![查詢環境變數是否有 NODE_EXTRA_CA_CERTS 設定值](https://i.imgur.com/QZXxxRg.png)
 
 如此一來 npm 在連線到套件網站時，就不會因為憑證無法驗證，造成問題了。
+
+## 後記
+
+我猜很多人會有跟我一樣的問題，不知道 Zscaler 的 CA 根憑證要去哪裡取得，這裡提供一個方法，可以透過瀏覽器的檢視憑證工具，藉由查看網站的憑證，然後使用匯出功能，這樣就可以取得 Zscaler 的 CA 根憑證了。
+
+簡單步驟如下：
+
+1. 用瀏覽器開啟一個會使用到 Zscaler CA 憑證的網站，例如 https://registry.npmjs.com/
+2. 點選網址列中的鎖頭，然後選擇 `Connection is secure`
+    ![點選鎖頭，查看連線](https://i.imgur.com/MVGZxrr.png)
+3. 點選右上的憑證圖示，查看憑證內容
+    ![點選右上的憑證圖示查看憑證內容](https://i.imgur.com/bQoyN0E.png)
+4. 點選憑證中最上方的 Root CA 憑證，然後點選右下角的匯出 Export 按鈕
+    ![點選 Root CA 憑證並匯出](https://i.imgur.com/QcmTFi6.png)
+
+這樣一來你就取得 Zscaler 的 CA 根憑證了。
 
 ----------
 
