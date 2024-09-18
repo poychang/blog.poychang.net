@@ -1,12 +1,12 @@
 ---
 layout: post
 title: 用簡單的方法讓 WebAPI 將 Enum 用自訂的文字輸出
-date: 2018-08-17 19:31
+date: 2024-09-18 11:34
 author: Poy Chang
 comments: true
 categories: [CSharp, Dotnet, WebAPI]
 ---
-使用 Enum 的好處很多，可以有強型別又有 intellisense 提示，還可以增加閱讀性，但在 WebAPI 中要將 Enum 的值輸出時，有點不如期待，他會用數字代碼來當作 JSON 的值，這樣有點不方便閱讀，這裡提供 2 種方法，讓你用簡單的方式，把 Enum 用有意義的文字做輸出。
+使用 Enum 的好處很多，可以有強型別又有 intellisense 提示，還可以增加閱讀性，但在 WebAPI 中要將 Enum 的值輸出時，有點不如期待，他會用數字代碼來當作 JSON 的值，這樣有點不方便閱讀，這裡提供 3 種方法，讓你用簡單的方式，把 Enum 用有意義的文字做輸出。
 
 假設你有個 Enum 來標示產品狀態，產品模型和 Enum 狀態的程式碼長得像下面這樣：
 
