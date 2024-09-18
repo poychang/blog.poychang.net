@@ -67,6 +67,8 @@ public class ValueController : ControllerBase
 
 這樣的狀態資訊是不容易閱讀的，這時候你可能會想到拿到的有意義的文字，而不是用數字代碼來表達。
 
+## 解法一：在 `Startup.cs` 設定 JSON 序列化
+
 這時候你可以在 `Startup.cs` 檔案中，在 `AddMvc` 加入 JSON 的序列化設定，下面的程式碼會將 Enum 轉成 JSON 時用名稱替代，並且忽略 JSON 中 Null 的屬性值。
 
 ```csharp
@@ -84,7 +86,9 @@ public class Startup
 }
 ```
 
-不過這個解法我沒有很喜歡，我喜歡下面這一種，不在這麼頂層的地方處理，而是在靠近模型的地方操作，這樣對我來說比較容易記憶用途。
+## 解法二：在 Enum 上加上 JsonConverter (Newtonsoft.Json)
+
+不過上面這個解法我沒有很喜歡，我喜歡下面這一種，不在這麼頂層的地方處理，而是在靠近模型的地方操作，這樣對我來說比較容易記憶用途。
 
 因此在不修改 `Startup.cs` 檔案的前提下，Enum 可以使用 Json.NET 的 `JsonConverter` 搭配內建的 `StringEnumConverter` 處理，參考下面的寫法：
 
@@ -125,16 +129,40 @@ namespace API.Models
 
 是不是變得比較容易閱讀了。
 
+## 解法三：在 Enum 上加上 JsonConverter (System.Text.Json)
+
+後來 `System.Text.Json` 也有推出相同的處理方式，只是要使用 `JsonStringEnumConverter` 來處理，參考下面的寫法：
+
+```csharp
+using System.Text.Json;
+using System.Text.Json.Serialization;
+
+namespace API.Models
+{
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public enum Status
+    {
+        Normal,
+        Warning,
+        Error
+    }
+}
+```
+
+最後一種方式，是我最喜歡的。
+
+## 自訂輸出文字
+
 如果你想要自訂輸出的文字，`Enum` 可以加上 `System.Runtime.Serialization` 的 `EnumMemberAttribute` 來做覆寫，參考下面的寫法：
 
 ```csharp
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace API.Models
 {
-    [JsonConverter(typeof(StringEnumConverter))]
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum Status
     {
         [EnumMember(Value = "It's Normal")]
