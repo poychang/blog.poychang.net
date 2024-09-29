@@ -104,7 +104,7 @@ stream((data) => {
 });
 ```
 
-![執行效果](https://i.imgur.com/ogRnghM.gif)
+![執行效果](https://i.imgur.com/QFJQjKt.gif)
 
 > 本篇完整範例程式碼請參考 [poychang/demo-AsyncEnumerableApi](https://github.com/poychang/demo-AsyncEnumerableApi)。
 
