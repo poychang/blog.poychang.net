@@ -176,25 +176,78 @@ public void 執行GetLastHourPeriod會取得上一個小時的區間(int hour, i
 - Workers 設定執行測試的並行處理數量。若要設定成連續的序列執行，設定成 `0` 即可。
 - Scope 指執行的程序是使用 Method Level 或 Class Level。若設定為 Method Level 則所有測試方法都會並行執行，若設定成 Class Level 則類別中的測試方法將採序列執行。如果測試方法之間有相依性，則必須採用 Class Level 的方式來處理。
 
-## .NET Core Option 模式
+## .NET 單元測試
 
-在 .NET Core 範本的架構下，你會看到大量使用 Options 模式來處理設定值，如果你的專案中也有使用此模式，可以參考下面的方式來將設定注入至測試方法中。
+我會盡可能使用 MSTest 的方式來寫單元測試，只使用 MSTest 的內建功能，不使用第三方套件。
 
-主要使用 `Microsoft.Extensions.Options.Options` 這個命名空間中的 `Options.Create()` 靜態方法，讓你可以產生出適合的注入設定物件
+### IOption
 
-.Net Core Unit Testing - Mock IOptions<T>
+在 .NET 的架構下（非 .NET Framework），你會看到大量使用 Options 模式來處理設定值，如果你的專案中也有使用此模式，可以參考下面的方式來將設定注入至測試方法中。
+
+使用 `Microsoft.Extensions.Options` 這個命名空間中的 `Options.Create()` 靜態方法，讓你可以產生出適合的注入設定物件。
+
+.Net Unit Testing - Mock IOptions<T>
 https://stackoverflow.com/questions/40876507/net-core-unit-testing-mock-ioptionst
 
-
 https://stackoverflow.com/questions/41399526/how-to-initialize-ioptionappsettings-for-unit-testing-a-net-core-mvc-service/41399622
-I discovered the answer shortly after posting the question.
-use Helper class `Microsoft.Extensions.Options.Options`
-Creates a wrapper around an instance of TOptions to return itself as IOptions
 
 ```csharp
-AppSettings appSettings = new AppSettings() { ConnectionString = "..." };
-IOptions<AppSettings> options = Options.Create(appSettings);
-MyController controller = new MyController(options);
+using using Microsoft.Extensions.Options;
+
+var appSettings = new AppSettings
+    {
+        Setting1 = "...",
+        Setting2 = "...",
+    };
+var options = Options.Create(appSettings);
+var controller = new MyController(options);
+```
+
+### ILogger、IMemoryCache、IHttpClient
+
+使用 `ServiceCollection` 來建立 `ServiceProvider`，並透過 `GetService` 取得需要的物件。
+
+```csharp
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Logging.Abstractions;
+
+[TestClass]
+public class SampleUnitTest
+{
+    private ILoggerFactory loggerFactory;
+    private IMemoryCache memoryCache;
+    private IHttpClientFactory httpClientFactory;
+
+    [TestInitialize]
+    public void Initialize()
+    {
+        var services = new ServiceCollection();
+        // 註冊 ILoggerFactory
+        services.AddSingleton<ILoggerFactory, NullLoggerFactory>();
+        // 註冊 IMemoryCache
+        services.AddMemoryCache();
+        // 註冊 HttpClient 和 HttpClientFactory
+        services.AddHttpClient();
+
+        // 建立 ServiceProvider
+        var serviceProvider = services.BuildServiceProvider();
+
+        // 取得 ILoggerFactory 和 IMemoryCache
+        loggerFactory = _serviceProvider.GetService<ILoggerFactory>();
+        memoryCache = serviceProvider.GetService<IMemoryCache>();
+        memoryCachhttpClientFactory = serviceProvider.GetService<IHttpClientFactory>();
+    }
+
+    [TestMethod]
+    public void SampleTest()
+    {
+        var logger = loggerFactory.CreateLogger<MyController>();
+        var controller = new MyController(logger, memoryCache);
+
+        controller.TestSomething();
+    }
+}
 ```
 
 ---
