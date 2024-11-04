@@ -26,7 +26,7 @@ categories: [Javascript]
 // @license      MIT
 // @author       Poy Chang
 // @homepage     https://blog.poychang.net
-// @version      0.2.3
+// @version      0.2.4
 // @updateURL    https://raw.githubusercontent.com/poychang/userscripts/main/src/convert-to-zhtw.user.js
 // @match        *://*/*
 // @exclude      http://*.tw/*
@@ -42,12 +42,12 @@ const url = (filename) =>
 const loadDict = () =>
     fetch(url("manifest.json"))
         .then((res) => res.json())
-        // 取得 manifest.json 中所提供的檔案列表，僅取得 s2t （簡轉中）的字典
+        // 取得 manifest.json 中所提供的檔案列表，僅取得 s2t （簡轉繁）的字典
         .then((manifest) =>
             Promise.all(
                 manifest.dicts
                     .filter((d) => d.min)
-                    .filter((d) => d.filename.substring(0, 2) === "s2")
+                    .filter((d) => d.filename.substring(0, 3) === "s2t")
                     .map((d) => url(d.filename))
             )
         )
