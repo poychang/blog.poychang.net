@@ -1,5 +1,16 @@
-@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+@import "https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css";
 @import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css";
+
+@font-face {
+    font-family: 'BpmfZihiSans';
+    src: url('../assets/BpmfZihiSans-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'BpmfZihiSans', sans-serif;
+}
 
 #goToTopBtn {
     /* Hidden by default */
