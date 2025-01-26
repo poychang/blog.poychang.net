@@ -74,6 +74,8 @@
                         } else if (line.startsWith('## ')) {
                             newHtml += `<br />`;
                             newHtml += `<h2 class="has-text-weight-bold">${line.substring(3).trim()}</h2>`;
+                        } else if (line.startsWith('')) {
+                            newHtml += `<br />`;
                         } else {
                             newHtml += `<p class="py-3">${line.trim()}</p>`;
                         }
