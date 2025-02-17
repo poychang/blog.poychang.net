@@ -7,7 +7,7 @@ comments: true
 categories: [Javascript]
 ---
 
-如果你經常搭乘台灣高鐵出差了話，你應該會辦一張悠遊聯名卡來自動扣款，方便你快速進出站，然後再報支差旅費的時候，透過[台灣高鐵悠遊聯名卡搭乘資訊查詢系統](https://queryweb.tscc.com.tw/thsrc_web/)查詢搭查紀錄，列印相關搭乘紀錄做為申請出差費的報銷憑證，但每次查詢的過程中都要輸入一樣的悠遊卡號碼和生日，有點累，透過這篇的小技巧，可以加速查詢搭查紀錄的作業時間。
+如果你經常搭乘台灣高鐵出差了話，你應該會辦一張悠遊聯名卡來自動扣款，方便你快速進出站，然後再報支差旅費的時候，透過[台灣高鐵悠遊聯名卡搭乘資訊查詢系統](https://queryweb.easycard.com.tw/thsrc_web/)查詢搭查紀錄，列印相關搭乘紀錄做為申請出差費的報銷憑證，但每次查詢的過程中都要輸入一樣的悠遊卡號碼和生日，有點累，透過這篇的小技巧，可以加速查詢搭查紀錄的作業時間。
 
 ## 安裝方式
 
@@ -32,7 +32,7 @@ categories: [Javascript]
 請你先修改下列程式碼中的 `YOUR_CARD_ID` (悠遊聯名卡卡號)和 `YOUR_BIRTHDAY` (持卡人生日 4 碼)改成您的查詢資訊。
 
 ```js
-javascript:!function(){var t="https://queryweb.tscc.com.tw/thsrc_web/";if(location.href===t){var e=document.getElementById("txtCardID"),c=document.getElementById("txtBirth");e.value="YOUR_CARD_ID",c.value="YOUR_BIRTHDAY"}else location.href=t}();
+javascript:!function(){var t="https://queryweb.easycard.com.tw/thsrc_web/";if(location.href===t){var e=document.getElementById("txtCardID"),c=document.getElementById("txtBirth");e.value="YOUR_CARD_ID",c.value="YOUR_BIRTHDAY"}else location.href=t}();
 ```
 
 ### 步驟三
@@ -43,7 +43,7 @@ javascript:!function(){var t="https://queryweb.tscc.com.tw/thsrc_web/";if(locati
 
 ## 使用方式
 
-使用方式非常簡單，第一次點選書籤時，會開啟[台灣高鐵悠遊聯名卡搭乘資訊查詢系統](https://queryweb.tscc.com.tw/thsrc_web/)。
+使用方式非常簡單，第一次點選書籤時，會開啟[台灣高鐵悠遊聯名卡搭乘資訊查詢系統](https://queryweb.easycard.com.tw/thsrc_web/)。
 
 再點選一次書籤，會自動輸入你所設定的悠遊聯名卡卡號及持卡人生日。
 
