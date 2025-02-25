@@ -15,7 +15,7 @@ Azure Web App 上的環境變數是不能直接使用 ASP.NET Core 原生的 `ap
 
 你會發現，使用`進階編輯`的 JSON 內容（右側）和 ASP.NET Core 的 `appsettings.json` 內容有很大的不同。
 
-除此之外，調整上還需要注意，Azure Web App 所使用的 App Service 是使用哪種作業系統，Windows 或是 Linux，因為這兩種系統所需要做的調整有些微的不同。
+除此之外，調整上還需要注意，Azure Web App 所使用的 [App Service Plan](https://learn.microsoft.com/zh-tw/azure/app-service/overview-hosting-plans) 是使用哪種作業系統，Windows 或是 Linux，因為這兩種系統所需要做的調整有些微的不同。
 
 在 Windows 下，要將有階層結構的 `appsettings.json` 轉換成環境變數，除了需要壓平階層外，原本階層的關係要用`:`來表示，如下所示：
 
