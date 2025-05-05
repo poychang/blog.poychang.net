@@ -20,6 +20,20 @@ info
 info
 ```
 
+## 測試
+
+```mermaid
+---
+title: 測試標題
+subtitle: 測試副標題
+description: |
+  測試描述
+  測試描述
+---
+flowchart TD
+    Start --> Stop
+```
+
 ## Flowchart
 
 官方教學文件：[https://mermaid.js.org/syntax/flowchart.html](https://mermaid.js.org/syntax/flowchart.html)
@@ -141,18 +155,23 @@ flowchart LR
   style id2 fill:#e9b41b, stroke:#4f3d09, stroke-width:3px, stroke-dasharray:5 4
 ```
 
-## TEST
+## 在沒有支援的網頁使用 Mermaid
 
-```mermaid
----
-title: 測試標題
-subtitle: 測試副標題
-description: |
-  測試描述
-  測試描述
----
-flowchart TD
-    Start --> Stop
+如果是要在一般的網頁上面呈現 Mermaid，可以使用此技巧，將下面的程式碼放在 HTML 或是 Markdown 中，如此一來，當文件被呈現時，會自動載入 Mermaid 的 js 函示庫，這樣就可以在沒有支援的網頁上面呈現 Mermaid 了。
+
+```
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+        startOnLoad:true,
+        theme: 'neutral',
+        flowchart:{
+            useMaxWidth:false,
+            htmlLabels:true
+        }
+    });
+    await mermaid.run({querySelector:'code.language-mermaid'});
+</script>
 ```
 
 <script type="module">
