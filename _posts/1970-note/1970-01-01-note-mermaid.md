@@ -21,7 +21,7 @@ flowchart TD
     Start --> Stop
 ```
 
-<!-- ## TEST
+## TEST
 
 <script type="module">
     import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
@@ -34,10 +34,11 @@ flowchart TD
         }
     });
     await mermaid.run({querySelector:'code.language-mermaid'});
-</script> -->
+</script>
 
 ---
 
 參考資料：
 
-- [Sass/SCSS 簡明入門教學](http://blog.kdchang.cc/2016/10/11/sass-scss-tutorial-introduction/)
+- [Mermaid Offical Website](https://mermaid.js.org/)
+- [Creating diagrams on GitHub](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams)
