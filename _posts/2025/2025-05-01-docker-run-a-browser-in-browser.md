@@ -115,6 +115,10 @@ docker run -d --name=edge \
 lscr.io/linuxserver/msedge
 ```
 
+最後，啟動容器後就可以透過瀏覽器連線到該容器，用瀏覽器來瀏覽瀏覽器了。
+
+![browser in browser](https://i.imgur.com/TnyalWA.png)
+
 ## 後記
 
 如果你習慣使用的是 Chrome 或 Firefox 瀏覽器了話，也可以參考 [linuxserver/docker-chromium](https://github.com/linuxserver/docker-chromium) 或 [linuxserver/docker-firefox](https://github.com/linuxserver/docker-firefox) 來啟動對應的容器喔。
