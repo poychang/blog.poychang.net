@@ -9,6 +9,12 @@ categories: [Azure, Develop, PowerShell, Tools]
 
 由於 Zscaler 會抽換中繼憑證，造成在安裝 Azure DevOps CLI 擴充功能的時候，會因為無法合法的辨識 Zscaler 中繼憑證，而無法安裝成功，這篇提供一個方法來解決這個問題。
 
+錯誤訊息可能會長得像下面這樣：
+
+```log
+Please ensure you have network connection. Error detail: HTTPSConnectionPool(host='objects.githubusercontent.com', port=443): Max retries exceeded with url: /github-production-release-asset-2e65be/107708057/86b7deeb-d3c5-4f14-87dd-22e5e47e9f1c?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20250602%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250602T030130Z&X-Amz-Expires=300&X-Amz-Signature=44dd58a86bde6dc8bf8b5477272ad7470b1ec8ca1edc64e3311fbee8c2135d83&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3Dazure_devops-0.22.0-py2.py3-none-any.whl&response-content-type=application%2Foctet-stream (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)')))
+```
+
 ## 安裝 Azure CLI
 
 首先若電腦還沒有安裝 Azure CLI，可以參考[官方這篇文章](https://docs.microsoft.com/zh-tw/cli/azure/install-azure-cli?WT.mc_id=DT-MVP-5003022)來進行安裝，但如果手邊的電腦只能手動安裝，這時請使用下列連結下載 `.msi` 安裝檔進行安裝：[https://aka.ms/installazurecliwindows](https://aka.ms/installazurecliwindows)。
@@ -18,7 +24,7 @@ categories: [Azure, Develop, PowerShell, Tools]
 因為在安裝了 Zscaler 的電腦，會因為保護資安的原因抽換中繼憑證，造成無法直接使用 `az extension add --name azure-devops` 這樣的方式進行安裝 Azure CLI 的擴充套件，必須明確指定檔案來源，因此要先到 [Azure DevOps CLI 的 GitHub](https://github.com/Azure/azure-devops-cli-extension)，從 Release 中找到最新版的 Python Whell File (.whl 檔)來安裝，範例指令如下：
 
 ```bash
-az extension add --source https://github.com/Azure/azure-devops-cli-extension/releases/download/20211108.1/azure_devops-0.22.0-py2.py3-none-any.whl
+az extension add --source https://github.com/Azure/azure-devops-cli-extension/releases/download/20240514.1/azure_devops-1.0.1-py2.py3-none-any.whl
 ```
 
 >你可以在上述指令加上 `--debug` 來顯示更多資訊。
@@ -33,7 +39,7 @@ az extension add --source https://github.com/Azure/azure-devops-cli-extension/re
 
 ```powershell
 # 切換到 Azure CLI 的 Python.exe 目錄，位置可能因版本而不同
-cd "C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\"
+cd "C:\Program Files\Microsoft SDKs\Azure\CLI2\"
 # 檢查是否有安裝 certifi 套件及原始的憑證檔
 ./python.exe -m certifi
 # 若沒有請使用以下指令來安裝，--trusted-host 為忽略 SSL 相關檢查

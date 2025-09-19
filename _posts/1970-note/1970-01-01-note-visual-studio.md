@@ -94,6 +94,14 @@ categories: [Note, Tools]
 
 ## 必裝套件
 
+- [Visual Studio Spell Checker](https://marketplace.visualstudio.com/items?itemName=EWoodruff.VisualStudioSpellCheckerVS2017andLater)
+  - 檢查程式碼英文拼寫是否正確
+  - [介紹文](https://blog.poychang.net/visual-studio-spell-checker/)
+- [GitLineCodeLens](https://marketplace.visualstudio.com/items?itemName=jotting89.GitLineCodeLens)
+  - 在該行程式碼的後面顯示最後一次修改該行程式碼的 Commit 訊息
+
+## 關注套件
+
 - [Whack Whack Terminal](https://marketplace.visualstudio.com/items?itemName=DanielGriffen.WhackWhackTerminal)
   - 終端機模擬器，讓你可以在 Visual Studio 中開啟各種終端機，如 command prompt、powershell、WSL bash
   - 快速鍵 `Ctrl` + `\`, `Ctrl` + `\`
@@ -103,9 +111,6 @@ categories: [Note, Tools]
 - [CodeMaid](https://marketplace.visualstudio.com/items?itemName=SteveCadwallader.CodeMaid)
   - 自動程式排版，快速鍵 `Ctrl` + `M`, `空白鍵`
   _ 檢視各個 Method 的循環複雜度
-- [Visual Studio Spell Checker](https://marketplace.visualstudio.com/items?itemName=EWoodruff.VisualStudioSpellCheckerVS2017andLater)
-  - 檢查程式碼英文拼寫是否正確
-  - [介紹文](https://blog.poychang.net/visual-studio-spell-checker/)
 - [Web Essentials](http://vswebessentials.com/)
   - Web Essentials 是增強 Visual Studio 在 Web、CSS、JavaScript 開發上的方便性
   - 再加裝 [Web Extension Pack](https://visualstudiogallery.msdn.microsoft.com/f3b504c6-0095-42f1-a989-51d5fc2a8459?SRC=Home) 裡面包含很多好用的工具
@@ -120,8 +125,6 @@ categories: [Note, Tools]
   - 程式碼產生器編輯器
 - [Force UTF8](https://visualstudiogallery.msdn.microsoft.com/d94a3ad9-0549-4641-89b7-d858407bd6e9)
   - 存檔時自動轉 UTF8 with BOM
-- ~~[VSCommands for Visual Studio](http://vscommands.squaredinfinity.com/)~~(已停止維護)
-  - 利用 VSCommands 可以讓 Visual Studio 變的更聰明些，因為此套件功能相當的多，筆者無法一一介紹，所以就這在裡介紹一些較為亮眼的功能。
 - [Snippet Designer](https://github.com/mmanela/SnippetDesigner)
   - 用更人性化的方式管理我們常用的或內建的 Code Snippet 程式碼片段
 - [Glyphfriend](https://visualstudiogallery.msdn.microsoft.com/5fd24afb-b3b2-4cec-9b03-1cfcec6123aa?SRC=Home)
@@ -129,11 +132,11 @@ categories: [Note, Tools]
 - [JavaScript Snippet Pack](https://visualstudiogallery.msdn.microsoft.com/423eb4a3-215f-4a8f-9287-1512618ffda3?SRC=Home)
   - JavaScript 的 Code Snippet
 - [Macros for Visual Studio ](https://marketplace.visualstudio.com/items?itemName=VisualStudioPlatformTeam.MacrosforVisualStudio)
-  _ [DEMO 大的介紹文](http://demo.tc/post/833#.WGomoFFb9cM.facebook)
-  _ 由於巨集腳本沒有同步功能，建議參考「DEMO 大的介紹文」設定透過 OneDrive 同步
+  - [介紹文](http://demo.tc/post/833#.WGomoFFb9cM.facebook)
+  - 由於巨集腳本沒有同步功能，建議參考介紹文的設定，透過 OneDrive 同步
 - [Snippet Designer](https://marketplace.visualstudio.com/items?itemName=vs-publisher-2795.SnippetDesigner)
-  _ 自己寫一個 Code Snippets Template 來產生自己要的程式碼區段
-  _ [介紹文 - Code Snippets 產生常用程式碼 Template](http://limitedcode.blogspot.tw/2015/10/visual-studio-code-snippetstemplate.html)
+  - 自己寫一個 Code Snippets Template 來產生自己要的程式碼區段
+  - [介紹文 - Code Snippets 產生常用程式碼 Template](http://limitedcode.blogspot.tw/2015/10/visual-studio-code-snippetstemplate.html)
 - [Output Enhancer](https://marketplace.visualstudio.com/items?itemName=NikolayBalakin.Outputenhancer)
   - 幫你的輸出內容加上顏色，方便閱讀
 
@@ -213,6 +216,7 @@ nuget.exe config -set http_proxy.password=mySuperSecretPassword
 - [維持 Visual Studio 2019 跑得又快又好的技巧](#維持-visual-studio-2019-跑得又快又好的技巧)
 - [快捷鍵](#快捷鍵)
 - [必裝套件](#必裝套件)
+- [關注套件](#關注套件)
 - [圖示描述](#圖示描述)
 - [輕量型載入](#輕量型載入)
 - [關閉 npm 套件自動還原](#關閉-npm-套件自動還原)
