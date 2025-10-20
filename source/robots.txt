@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /
+Sitemap: https://vnext.blog.poychang.net/sitemap.xml
