@@ -83,7 +83,7 @@ HTTP 狀態碼指的是從伺服器端回應(HTTP Response)的狀態，對於狀
 這代表錯誤發生，且這錯誤發生的原因跟「伺服器」有關。伺服器因為發生錯誤或例外狀況(Exception)而無法完成要求(Request)時，就會回應 5xx 的錯誤，且這肯定跟伺服器有關。
 
 - `500` Internal Server Error - 內部伺服器錯誤。
-- `501` Not Implemented – 標頭值指定未實作的設定。
+- `501` Not Implemented - 標頭值指定未實作的設定。
 - `502` Bad Gateway - Web 伺服器在作為閘道或 Proxy 時收到無效的回應。
 - `503` Service Unavailable - 服務無法使用。 這是 IIS 6.0 專用的錯誤碼。
 - `504` Gateway Timeout - 閘道逾時。

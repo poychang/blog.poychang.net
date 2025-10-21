@@ -149,4 +149,4 @@ function lintFile(file, callback) {
 
 參考資料：
 
-* [Minifying Your App’s Source Code](http://blog.ionic.io/minifying-your-source-code/)
+* [Minifying Your App's Source Code](http://blog.ionic.io/minifying-your-source-code/)

@@ -24,4 +24,4 @@ SSMS 連接上資料庫後，會自動建立給 Intellisense 使用的快取，�
 參考資料：
 
 * [下載 SQL Server Management Studio (SSMS)](https://docs.microsoft.com/zh-tw/sql/ssms/download-sql-server-management-studio-ssms?WT.mc_id=DT-MVP-5003022)
-* [SQL SERVER – How to Refresh SSMS Intellisense Cache to Update Schema Changes](https://blog.sqlauthority.com/2013/07/04/sql-server-how-to-refresh-ssms-intellisense-cache-to-update-schema-changes/)
+* [SQL SERVER - How to Refresh SSMS Intellisense Cache to Update Schema Changes](https://blog.sqlauthority.com/2013/07/04/sql-server-how-to-refresh-ssms-intellisense-cache-to-update-schema-changes/)

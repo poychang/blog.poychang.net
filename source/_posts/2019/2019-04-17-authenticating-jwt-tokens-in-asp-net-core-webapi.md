@@ -207,6 +207,6 @@ public class ValuesController : ControllerBase
 - [ASP.NET Core 中的那些認證中間件及一些重要知識點](http://www.qingruanit.net/c_all/article_6645.html)
 - [Asp.net Core WebApi 項目使用Jwt進行授權管理和權限驗證](http://zhaokuohaha.github.io/2017/01/07/webapijwt/)
 - [asp.net core 2.0 web api 基於 JWT 自定義策略授權](http://www.itread01.com/articles/1505620631.html)
-- [Issuing and authenticating JWT tokens in ASP.NET Core WebAPI – Part I](https://goblincoding.com/2016/07/03/issuing-and-authenticating-jwt-tokens-in-asp-net-core-webapi-part-i/)
+- [Issuing and authenticating JWT tokens in ASP.NET Core WebAPI - Part I](https://goblincoding.com/2016/07/03/issuing-and-authenticating-jwt-tokens-in-asp-net-core-webapi-part-i/)
 - [移轉的驗證和身份識別，ASP.NET Core 2.0](https://docs.microsoft.com/zh-tw/aspnet/core/migration/1x-to-2x/identity-2x?WT.mc_id=DT-MVP-5003022)
 - [RFC7519 - JSON Web Token - JWT Claims](https://tools.ietf.org/html/rfc7519#section-4)

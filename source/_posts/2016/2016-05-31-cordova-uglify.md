@@ -110,5 +110,5 @@ npm install cordova-uglify --legacy-bundling --save-dev
 
 參考資料：
 
-* [Minifying Your App’s Source Code](http://blog.ionic.io/minifying-your-source-code/)
+* [Minifying Your App's Source Code](http://blog.ionic.io/minifying-your-source-code/)
 * [260+ Ionic Framework Resources](http://mcgivery.com/100-ionic-framework-resources/)

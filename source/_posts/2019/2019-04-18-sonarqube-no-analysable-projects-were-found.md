@@ -87,5 +87,5 @@ EndProject
 
 參考資料：
 
-* [Duplicate ProjectGuid: “00000000-0000-0000-0000-000000000000” on dotnet core scan](https://community.sonarsource.com/t/duplicate-projectguid-00000000-0000-0000-0000-000000000000-on-dotnet-core-scan/4804/2)
+* [Duplicate ProjectGuid: "00000000-0000-0000-0000-000000000000" on dotnet core scan](https://community.sonarsource.com/t/duplicate-projectguid-00000000-0000-0000-0000-000000000000-on-dotnet-core-scan/4804/2)
 * [The following projects do not have a valid ProjectGuid and were not built using a valid solution (.sln) thus will be skipped from analysis](https://stackoverflow.com/questions/50479716/the-following-projects-do-not-have-a-valid-projectguid-and-were-not-built-using)

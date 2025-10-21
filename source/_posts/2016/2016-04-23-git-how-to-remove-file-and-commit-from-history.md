@@ -13,11 +13,11 @@ permalink: git-how-to-remove-file-and-commit-from-history/
 如何修改 commit 歷史紀錄，把不該出現的紀錄移除，可以參考下列情境：
 
 假設我們的版控歷史紀錄如下：
->R–A–B–C–D–E–HEAD
+>R-A-B-C-D-E-HEAD
 
 接下來要移除 B 跟 C 的 commit tree，變成
 
->R–A–D’–E–HEAD
+>R-A-D'-E-HEAD
 
 依序執行下列指令可以移除 B & C
 

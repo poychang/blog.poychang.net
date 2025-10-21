@@ -40,4 +40,4 @@ permalink: troubleshoot-an-error-occurred-in-asp-dot-net-core-on-iis/
 
 參考資料：
 
-* [How to troubleshoot: “An error occurred while starting the application” in ASP.NET Core on IIS](https://scottsauber.com/2017/04/10/how-to-troubleshoot-an-error-occurred-while-starting-the-application-in-asp-net-core-on-iis/)
+* [How to troubleshoot: "An error occurred while starting the application" in ASP.NET Core on IIS](https://scottsauber.com/2017/04/10/how-to-troubleshoot-an-error-occurred-while-starting-the-application-in-asp-net-core-on-iis/)

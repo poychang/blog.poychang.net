@@ -46,7 +46,7 @@ inst: 1,mgr: Inactive, queue: 73, qu=6, qs=67, qc=0, wr=1/1, in=0/0
   </tr>
   <tr>
     <td>mgr</td>
-    <td>the socket manager is performing “socket.select”, which means it is asking the OS to indicate a socket that has something to do; basically: the reader is not actively reading from the network because it doesn’t think there is anything to do</td>
+    <td>the socket manager is performing "socket.select", which means it is asking the OS to indicate a socket that has something to do; basically: the reader is not actively reading from the network because it doesn't think there is anything to do</td>
     <td></td>
     <td>最後的操作命令</td>
   </tr>
