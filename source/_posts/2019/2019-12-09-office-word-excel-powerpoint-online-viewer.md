@@ -19,7 +19,7 @@ permalink: office-word-excel-powerpoint-online-viewer/
 https://view.officeapps.live.com/op/view.aspx?src=
 ```
 
-例如我有個 Word 檔網址是 `https://github.com/poychang/blog.poychang.net/raw/master/assets/post-files/THIS-IS-WORD.docx`，你的預覽網址便是長這樣 `https://view.officeapps.live.com/op/view.aspx?src=https://github.com/poychang/blog.poychang.net/raw/master/assets/post-files/THIS-IS-WORD.docx`，直接連到此網址結果如下：
+例如我有個 Word 檔網址是 `https://blog.poychang.net/assets/resources/THIS-IS-WORD.docx`，你的預覽網址便是長這樣 `https://view.officeapps.live.com/op/view.aspx?src=https://blog.poychang.net/assets/resources/THIS-IS-WORD.docx`，直接連到此網址結果如下：
 
 ![Microsoft Office Viewer 預覽 Word 文件](https://i.imgur.com/Uq0rk0y.png)
 
@@ -33,7 +33,7 @@ https://view.officeapps.live.com/op/embed.aspx?src=
 
 ```html
 <iframe
-    src='https://view.officeapps.live.com/op/embed.aspx?src=https://github.com/poychang/blog.poychang.net/raw/master/assets/post-files/THIS-IS-WORD.docx'
+    src='https://view.officeapps.live.com/op/embed.aspx?src=https://blog.poychang.net/assets/resources/THIS-IS-WORD.docx'
     width='500px' height='300px' frameborder='0'>
     This is an embedded <a target='_blank' href='http://office.com'>Microsoft Office</a> document, powered by <a target='_blank' href='http://office.com/webapps'>Office Online</a>.
 </iframe>
