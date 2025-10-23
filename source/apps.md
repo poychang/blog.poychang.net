@@ -12,3 +12,8 @@ title: apps
 - [Ninja Cat Rides](/apps/ninja-cat-rides/)
 - [Online Docs Viewer](/apps/online-docs-viewer/)
 - [Recit From Memory](/apps/recit-from-memory/)
+- [Kids Writing Board](https://kids-writing-board.poychang.net/)
+- [Microsoft Terminology Lookup](https://lookup-terms.poychang.net/)
+- [JMESPath Playground](https://jmespath.poychang.net/)
+- [Images Hosting](https://images.poychang.net/)
+- [Short URL Service](https://s.poychang.net/)
