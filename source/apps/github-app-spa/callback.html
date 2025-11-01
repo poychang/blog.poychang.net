@@ -1,0 +1,25 @@
+<!doctype html>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<!-- <meta http-equiv="Content-Security-Policy" content="
+default-src 'none';
+script-src 'self';
+style-src 'self';
+img-src 'self' data:;
+connect-src https://api.github.com https://github.com;
+form-action https://github.com;
+frame-ancestors 'none';
+base-uri 'none';
+manifest-src 'self';
+upgrade-insecure-requests;
+block-all-mixed-content
+"> -->
+<title>GitHub App SPA Callback</title>
+<link rel="stylesheet" href="./styles.css">
+
+<h1>GitHub App SPA Callback</h1>
+<p id="status">Exchanging code for tokens...</p>
+<pre id="out"></pre>
+<p><a class="button" href="./index.html">Back</a></p>
+
+<script type="module" src="./callback.js"></script>

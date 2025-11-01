@@ -1,0 +1,26 @@
+<!doctype html>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta http-equiv="Content-Security-Policy" content="
+default-src 'none';
+script-src 'self';
+style-src 'self';
+img-src 'self' data:;
+connect-src https://api.github.com https://github.com;
+form-action https://github.com;
+frame-ancestors 'none';
+base-uri 'none';
+manifest-src 'self';
+upgrade-insecure-requests;
+block-all-mixed-content
+">
+<title>GitHub App SPA + PKCE (Demo)</title>
+<link rel="stylesheet" href="./styles.css">
+
+<h1>GitHub App SPA + PKCE (Demo)</h1>
+<p class="note">This demo signs in with a GitHub App using PKCE and calls the GitHub REST API directly from the browser (no server).</p>
+
+<p><button id="login">Login with GitHub</button></p>
+<pre id="out"></pre>
+
+<script type="module" src="./index.js"></script>
