@@ -64,7 +64,9 @@ permalink: comfy-vibe-coding-experience/
 
 經過幾次的嘗試和調整，終於完成了第二版的介面設計，這次的設計更加符合我的需求，也讓使用體驗變得更好。
 
-![第二版](https://files.poychang.net/storage/comfy-vibe-coding-experience/files-system-v2.png)
+![第二版 分類介面](https://files.poychang.net/storage/comfy-vibe-coding-experience/files-system-v2-1.png)
+
+![第二版 檔案介面](https://files.poychang.net/storage/comfy-vibe-coding-experience/files-system-v2-2.png)
 
 ## 大重構
 
