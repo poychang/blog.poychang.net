@@ -61,7 +61,7 @@ Azure Web App 上的環境變數是不能直接使用 ASP.NET Core 原生的 `ap
 
 <div id="app"></div>
 
-<script>
+<script type="text/javascript">
     // 取得 app 容器
     const app = document.getElementById('app');
 

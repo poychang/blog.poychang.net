@@ -32,7 +32,7 @@ PowerPoint 作為一個製作簡報的工具相當好用，其實作為一個排
 
 <div id="app"></div>
 
-<script>
+<script type="text/javascript">
     // 獲取 div 容器的引用
     const appDiv = document.getElementById('app');
 
