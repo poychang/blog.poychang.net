@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPA - Google Identity</title>
+</head>
+
+<body>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+    <div id="g_id_onload" data-client_id="671108794678-hp7qfi7ovl10ukrsk8dafgmplknt691p.apps.googleusercontent.com" data-callback="onLogin">
+    </div>
+
+    <div class="g_id_signin" data-type="standard"></div>
+
+    <div id="profile">
+        <div id="name"></div>
+        <div id="email"></div>
+        <img id="picture" />
+    </div>
+
+    <script>
+        function parseJwt(token) {
+            const b64 = token.split('.')[1].replace(/-/g, '+').replace(/_/g, '/');
+            return JSON.parse(atob(b64));
+        }
+
+        function onLogin(response) {
+            const p = parseJwt(response.credential);
+            document.getElementById('name').textContent = p.name;
+            document.getElementById('email').textContent = p.email;
+            document.getElementById('picture').src = p.picture;
+        }
+    </script>
+
+</body>
+
+</html>

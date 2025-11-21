@@ -2,7 +2,13 @@
 title: apps
 ---
 
-# Apps List
+## Primary Apps
+
+- [Files Hosting](https://files.poychang.net/)
+- [Short URL Service](https://s.poychang.net/)
+- [Microsoft Terminology Lookup](https://lookup-terms.poychang.net/)
+
+## Playground Apps
 
 - [Chrome Dino](/apps/chrome-dino/)
 - [Coffitivity PWA](/apps/coffitivity-pwa/)
@@ -13,7 +19,5 @@ title: apps
 - [Online Docs Viewer](/apps/online-docs-viewer/)
 - [Recit From Memory](/apps/recit-from-memory/)
 - [Kids Writing Board](https://kids-writing-board.poychang.net/)
-- [Microsoft Terminology Lookup](https://lookup-terms.poychang.net/)
 - [JMESPath Playground](https://jmespath.poychang.net/)
-- [Images Hosting](https://images.poychang.net/)
-- [Short URL Service](https://s.poychang.net/)
+- [Google Identity](/apps/google-identity/)
