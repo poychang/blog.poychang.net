@@ -4,35 +4,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPA - Google Identity</title>
+    <title>Google Identity</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Google Identity Services -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+    <style>
+        body {
+            background-color: #f5f5f5;
+        }
+
+        .profile-card {
+            margin-top: 40px;
+        }
+
+        .profile-avatar {
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #e0e0e0;
+        }
+    </style>
 </head>
 
 <body>
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
 
-    <div id="g_id_onload" data-client_id="671108794678-hp7qfi7ovl10ukrsk8dafgmplknt691p.apps.googleusercontent.com" data-callback="onLogin">
+                <h1 class="mt-5 mb-4 text-center">Google Identity</h1>
+
+                <!-- 登入區塊 -->
+                <div id="login-section" class="text-center">
+
+                    <!-- Google 會在這個容器內渲染登入按鈕 -->
+                    <div id="gsi-button-container" class="d-inline-block"></div>
+                </div>
+
+                <!-- Profile 區塊 -->
+                <div id="profile-section" class="profile-card" style="display:none;">
+                    <div class="card shadow-sm">
+                        <div class="card-body d-flex align-items-center">
+                            <div class="me-3 text-center">
+                                <img id="picture" class="profile-avatar" src="" alt="Avatar">
+                            </div>
+                            <div class="flex-grow-1">
+                                <h5 class="card-title mb-1" id="name"></h5>
+                                <p class="card-text text-muted mb-2" id="email"></p>
+                                <button id="logout-btn" class="btn btn-outline-danger btn-sm">
+                                    登出
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
 
-    <div class="g_id_signin" data-type="standard"></div>
-
-    <div id="profile">
-        <div id="name"></div>
-        <div id="email"></div>
-        <img id="picture" />
-    </div>
+    <!-- Bootstrap JS (可選，用於元件，但此例不依賴) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
+        const GOOGLE_CLIENT_ID = '671108794678-hp7qfi7ovl10ukrsk8dafgmplknt691p.apps.googleusercontent.com';
+
+        // 解析 ID Token (JWT)
         function parseJwt(token) {
-            const b64 = token.split('.')[1].replace(/-/g, '+').replace(/_/g, '/');
-            return JSON.parse(atob(b64));
+            const base64 = token.split('.')[1].replace(/-/g, '+').replace(/_/g, '/');
+            const pad = base64.length % 4;
+            const base64Padded = base64 + (pad ? '='.repeat(4 - pad) : '');
+            const json = atob(base64Padded);
+            return JSON.parse(json);
         }
 
-        function onLogin(response) {
-            const p = parseJwt(response.credential);
-            document.getElementById('name').textContent = p.name;
-            document.getElementById('email').textContent = p.email;
-            document.getElementById('picture').src = p.picture;
+        function initializeGoogleSignIn() {
+            if (!(window.google && google.accounts && google.accounts.id)) {
+                console.error('Google Identity Services is not ready yet.');
+                return;
+            }
+
+            google.accounts.id.initialize({
+                client_id: GOOGLE_CLIENT_ID,
+                callback: onLogin,
+                auto_select: false,
+                cancel_on_tap_outside: false
+            });
+
+            const buttonContainer = document.getElementById('gsi-button-container');
+            if (buttonContainer) {
+                google.accounts.id.renderButton(buttonContainer, {
+                    type: 'standard',
+                    theme: 'outline',
+                    size: 'large',
+                    text: 'signin_with',
+                    shape: 'rectangular',
+                    logo_alignment: 'left'
+                });
+            }
         }
+
+        // 顯示 Profile
+        function renderProfile(p) {
+            document.getElementById('name').textContent = p.name || '';
+            document.getElementById('email').textContent = p.email || '';
+            document.getElementById('picture').src = p.picture || '';
+        }
+
+        function showProfileSection() {
+            document.getElementById('profile-section').style.display = 'block';
+            document.getElementById('login-section').style.display = 'none';
+        }
+
+        function showLoginSection() {
+            document.getElementById('profile-section').style.display = 'none';
+            document.getElementById('login-section').style.display = 'block';
+        }
+
+        // Google 登入成功 callback
+        function onLogin(response) {
+            const payload = parseJwt(response.credential);
+
+            // 將使用者資訊存在 localStorage，以便重新整理後還能顯示
+            localStorage.setItem('googleProfile', JSON.stringify(payload));
+
+            renderProfile(payload);
+            showProfileSection();
+        }
+
+        // 登出邏輯
+        function signOut() {
+            const stored = localStorage.getItem('googleProfile');
+            if (stored) {
+                const p = JSON.parse(stored);
+
+                // 通知 Google 撤銷授權（可選）
+                if (window.google && google.accounts && google.accounts.id && p.email) {
+                    google.accounts.id.revoke(p.email, done => {
+                        localStorage.removeItem('googleProfile');
+                        location.reload();
+                    });
+                } else {
+                    localStorage.removeItem('googleProfile');
+                    location.reload();
+                }
+            } else {
+                location.reload();
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // 綁定登出按鈕
+            document.getElementById('logout-btn').addEventListener('click', signOut);
+
+            // 檢查是否已有登入資料（重新整理時使用）
+            const stored = localStorage.getItem('googleProfile');
+            if (stored) {
+                const p = JSON.parse(stored);
+                renderProfile(p);
+                showProfileSection();
+            } else {
+                showLoginSection();
+            }
+
+            initializeGoogleSignIn();
+        });
     </script>
 
 </body>
