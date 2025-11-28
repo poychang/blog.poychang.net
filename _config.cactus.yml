@@ -138,13 +138,13 @@ page_width: 60
 ##############################################################################
 
 # Enable or disable the RSS feed.
-rss: false
+rss: true
 
 # Turn your web pages into graph objects (see http://ogp.me).
 open_graph:
-  fb_app_id:
+  fb_app_id: poychang.tech
   fb_admins:
-  twitter_id:
+  twitter_id: poychang
   google_plus:
 
 
@@ -163,8 +163,8 @@ disqus:
 
 # Fill in your Utterances data to enable Utterances comments
 utterances:
-  enabled: false
-  repo: owner/githubrepo
+  enabled: true
+  repo: poychang/blog.poychang.net
   issue_term: pathname
   label: Comment
   theme: github-dark
@@ -177,17 +177,17 @@ google_analytics:
 # Fill in your Baidu Analytics tracking ID to enable Baidu Analytics.
 baidu_analytics:
   enabled: false
-  id: 2e6da3c375c8a87f5b664cea6d4cb29c
+  id: 
 
 # Fill in your Cloudflare Analytics tracking ID to enable Cloudflare Analytics.
 cloudflare_analytics:
   enabled: false
-  id: 0dabb6e21848405483a237e6a7b6ed04
+  id: 
 
 # Fill in your Umami Analytics tracking ID to enable Umami Analytics.
 umami_analytics:
   enabled: false
-  id: e77e68be-f6e4-4br3-9365-2b76b57cd571
+  id: 
   host: https://analytics.domain.com
   script_name: umami.js
 
