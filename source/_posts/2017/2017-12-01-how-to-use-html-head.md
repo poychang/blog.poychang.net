@@ -335,6 +335,8 @@ HTML 中的 Meta 標籤可以用來提供網頁的內容資訊給瀏覽器或存
 
 #### Facebook / Instant Articles
 
+> Facebook 的 Instant Articles 已在 2023 年 4 月正式停用
+
 ```html
 <meta charset="utf-8">
 <meta property="op:markup_version" content="v1.0">
