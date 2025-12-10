@@ -142,7 +142,7 @@ rss: true
 
 # Turn your web pages into graph objects (see http://ogp.me).
 open_graph:
-  fb_app_id: poychang.tech
+  fb_app_id: 325238924476122
   fb_admins:
   twitter_id: poychang
   google_plus:
