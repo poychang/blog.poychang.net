@@ -96,12 +96,8 @@ youtube-dl -x --audio-format mp3 https://www.youtube.com/watch?v=XXXXXXXXXXX
 youtube-dl --username "[USERNAME]" --password "[PASSWORD]" -o "[C:/下載位置]/%(playlist)s/%(chapter_number)s - %(chapter)s/%(playlist_index)s - %(title)s.%(ext)s" --min-sleep-interval 30 --max-sleep-interval 60 [PLURALSIGHT_COURSES_URL] --playlist-start 1
 ```
 
-參考資料：
-
-- [Download courses from learning sites](https://gist.github.com/poychang/74a1ab546a765f341c4b07c7f8cd5149)
-
 ----------
 
 參考資料：
 
-* []()
+- [Download courses from learning sites](https://gist.github.com/poychang/74a1ab546a765f341c4b07c7f8cd5149)
