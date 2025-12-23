@@ -29,16 +29,19 @@ public static class PC
     /// <summary>
     /// 從 User Secrets 或環境變數載入 Secrets 設定。
     /// </summary>
-    public static Secrets Secrets()
+    public static Secrets Secrets
     {
-        var secrets = new ConfigurationBuilder()
-            .AddUserSecrets("azure-openai-secrets")
-            .Build()
-            .Get<Secrets>() ?? throw new InvalidOperationException("無法載入 Secrets 設定，請確認 user secrets 或環境變數是否已設定。");
-        return secrets;
+        get
+        {
+            return new ConfigurationBuilder()
+             //C:\Users\PoyChang\AppData\Roaming\Microsoft\UserSecrets\azure-openai-secrets
+             .AddUserSecrets("azure-openai-secrets")
+             .Build()
+             .Get<Secrets>() ?? throw new InvalidOperationException("無法載入 Secrets 設定，請確認 user secrets 或環境變數是否已設定。");
+        }
     }
 
-    public static Secrets ShowSecrets() => Secrets().Dump();
+    public static Secrets ShowSecrets() => Secrets.Dump();
 
     public static void ShowRaw()
     {
@@ -65,18 +68,18 @@ public class Secrets
 }
 ```
 
-如此一來，在 LINQPad 的查詢中，就可以直接使用 `PC.Secrets()` 來取得常用的機密設定值了。
+如此一來，在 LINQPad 的查詢中，就可以直接使用 `PC.Secrets` 來取得常用的機密設定值了。
 
-例如要查看目前所有的 Secrets 設定值，可以執行：
+例如要查看目前所有的 `Secrets` 設定值，可以執行：
 
 ```csharp
 PC.ShowSecrets();
 ```
 
-或者使用 `PC.Secrets()` 來取得指定的設定值：
+或者使用 `PC.Secrets` 來取得指定的設定值：
 
 ```csharp
-PC.Secrets().AzureOpenAI.Endpoint.Dump();
+PC.Secrets.AzureOpenAI.Endpoint.Dump();
 ```
 
 如果想要查看 `secrets.json` 的原始內容，可以使用：
