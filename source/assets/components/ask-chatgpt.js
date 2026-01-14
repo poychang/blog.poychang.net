@@ -1,6 +1,6 @@
-// 封裝成元件：ask-chatgpt.js（ESM）
+// ask-chatgpt.js（ESM）
 // 元件用法：
-// 網頁載入此元件 <script type="module" src="/path/ask-chatgpt.js"></script>
+// 網頁載入此元件 <script type="module" src="/assets/components/ask-chatgpt.js"></script>
 // 在頁面任意位置放此標籤 <ask-chatgpt q="你的問題"></ask-chatgpt>
 
 class AskChatGPT extends HTMLElement {
