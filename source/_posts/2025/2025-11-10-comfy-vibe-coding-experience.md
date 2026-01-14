@@ -96,8 +96,11 @@ permalink: comfy-vibe-coding-experience/
 
 ## 後記
 
-用 AI 寫程式碼已經快到一個境界了，在明確知道用途和介面的狀況下，AI 可以很快的幫你產生出你想要的程式碼，但這次的過程中，我認為 HI（Human Intelligence，人類智慧）依然是不可或缺的，特別是要知道你想呈現的架構和技術概念在哪裡。
+用 AI（Artificial Intelligence）寫程式碼已經快到一個境界了，在明確知道用途和介面的狀況下，AI 可以很快的幫你產生出你想要的程式碼，但這次的過程中，我認為 HI（Human Intelligence，人類智慧）依然是不可或缺的，特別是要知道你想呈現的架構和技術概念在哪裡。
 
 HI 對技術界線的掌握，對整體架構的布局，對細節的把關，這些都是 AI 尚無法完全取代的部分，因為我們是要做出符合我們心中期待的應用程式，而不是產生一個黑盒子，一個只有 I (input) 與 O (output) 的系統。
 
 在整個開發過程中，AI 的輔助讓我能夠更專注於高層次的設計和邏輯思考，而不必過於糾結於細節實現上。這樣的合作模式讓我感受到，AI 不僅僅是工具，更是開發過程中的夥伴。
+
+<script type="module" src="/assets/components/ask-bing.js"></script>
+<ask-bing q="AI（Artificial Intelligence）和HI（Human Intelligence）的最新合作場景有哪些，請列出今年度最有發展潛力的場景">AI 與 HI 的合作場景</ask-bing>
