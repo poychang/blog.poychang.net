@@ -48,7 +48,7 @@ class AskChatGPT extends HTMLElement {
     this._btn = btn;
     this._label = label;
 
-    // 監看 slot 內容變更（<ask-chatgpt>ABC</ask-chatgpt>）
+    // 監看 slot 內容變更（<ask-chatgpt>內容</ask-chatgpt>）
     this._mo = new MutationObserver(() => this.syncUI());
   }
 
