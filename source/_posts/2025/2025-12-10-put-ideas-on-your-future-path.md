@@ -43,3 +43,6 @@ https://www.facebook.com/profile/[YOUR_FACEBOOK_ID]/search?q=[SEARCH_TAG]
 ## 後記
 
 「專案開始之初，首重看見全貌」加上讓你「持續看見」的概念，I LOVE IT ❤️
+
+<script type="module" src="/assets/components/ask-chatgpt.js"></script>
+<ask-chatgpt q="何謂「專案開始之初，首重看見全貌」">什麼是專案之初的全貌？</ask-chatgpt>
