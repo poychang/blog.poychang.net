@@ -1,7 +1,7 @@
 ---
 layout: post
 title: SonarQube 如何偵測程式碼重複
-date: 2021-08-18 14:12
+date: 2026-01-18 14:12
 author: Poy Chang
 comments: true
 categories: [Develop, Tools]
@@ -34,17 +34,30 @@ SonarQube 會掃描專案中是否有過多重複的程式碼，若超過一定�
 
 | Key                                   | Default |
 | ------------------------------------- | ------- |
-| `sonar.cpd.${language}.minimumtokens` | 100     |
+| `sonar.cpd.${language}.minimumTokens` | 100     |
 | `sonar.cpd.${language}.minimumLines`  | 10      |
 
 這邊要稍微注意的是，這個設定值會根據語言不同而有不同的寫法，例如如果要檢測的是 C# 專案，那麼你可以參考下面的設定方式：
 
 ```ini
-sonar.cpd.cs.minimumtokens=100
+sonar.cpd.cs.minimumTokens=100
 sonar.cpd.cs.minimumLines=5
 ```
 
-但根據上面定義中所提到的，Java 專案是不會根據 Token 數量去檢測，因此如果是 Java 專案，設定 `sonar.cpd.java.minimumtokens=100` 是沒有效果的。
+但根據上面定義中所提到的，Java 專案是不會根據 Token 數量去檢測，因此如果是 Java 專案，設定 `sonar.cpd.java.minimumTokens=100` 是沒有效果的。
+
+> 請注意，以前的官方文件有錯字，`minimumTokens` 被誤寫成 `minimumtokens`，請確認拼字大小寫。
+> 關於 Duplication check 的官方文件在[這裡](https://docs.sonarsource.com/sonarqube-server/analyzing-source-code/analysis-parameters/parameters-not-settable-in-ui#duplication-check)。
+
+除了上述兩個設定之外，SonarQube 也提供了 `sonar.cpd.exclusions` 設定值，讓我們手動排除不應納入重複分析的檔案，例如如果要排除專案資料夾中 `Generated` 資料夾以及檔名包含 `.designer.cs` 的檔案，那麼你可以參考下面的設定方式：
+
+```ini
+sonar.cpd.exclusions=**/Generated/**,**/*.designer.cs
+```
+
+多個檔案或條件，中間用 `,` 分隔即可。
+
+> `sonar.cpd` 的全名是指 SonarQube 的 Copy-Paste Detection。
 
 ## 重構
 
@@ -69,9 +82,9 @@ sonar.cpd.cs.minimumLines=5
 
 SonarQube 本身開放原始碼專案，再知道要如何手動修改設定值後，順手來看看原始碼來驗證預設值吧！
 
-`minimumTokens` 的預設值從[這裡](https://github.com/SonarSource/sonarqube/blob/master/sonar-scanner-engine/src/main/java/org/sonar/scanner/cpd/CpdSettings.java#L42)可以看到，當取不到設定值的時候，他會預設給他 100 來當作檢查 Token 數量的標準。
+`minimumTokens` 的預設值從[這裡](https://github.com/SonarSource/sonarqube/blob/master/sonar-scanner-engine/src/main/java/org/sonar/scanner/cpd/CpdSettings.java)可以看到，當 `getMinimumTokens` 方法取不到設定值的時候，他會預設給他 100 來當作檢查 Token 數量的標準。
 
-而 `minimumLines` 的預設值可以從[這裡](https://github.com/SonarSource/sonarqube/blob/master/sonar-scanner-engine/src/main/java/org/sonar/scanner/sensor/DefaultSensorStorage.java#L388)看到，程式碼中直接針對 Cobol 和 ABAP 的語言設定成為 30 和 20 預設值，其他的都是偵測 10 行作為預設值。
+而 `minimumLines` 的預設值可以從[這裡](https://github.com/SonarSource/sonarqube/blob/master/sonar-scanner-engine/src/main/java/org/sonar/scanner/sensor/DefaultSensorStorage.java)看到，在程式碼中的 `getCpdBlockSize` 方法，直接針對 Cobol 和 ABAP 的語言設定成為 30 和 20 預設值，其他的都是偵測 10 行作為預設值。
 
 ----------
 
