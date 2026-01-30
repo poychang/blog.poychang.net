@@ -88,9 +88,6 @@ if ($withinDays) {
     #                                 #
     # 偵測到有更新，可在這裡處理後續通知作業 #
     #                                 #
-
-    $body = $bodyObject | ConvertTo-Json -Depth 10
-    $response = Invoke-RestMethod '$(PRD.MTS.APIM.URL)' -Method 'POST' -Headers $headers -Body $body
 } 
 else { 
     Write-Output "Status: Older than $checkingDays days. No action needed."
