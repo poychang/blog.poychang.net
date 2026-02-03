@@ -79,6 +79,57 @@ Visual Studio 會自動偵測專案資料夾中是否有一個名為 `.filenesti
 
 更詳細的設定選項，請參考 [File nesting in Solution Explorer](https://docs.microsoft.com/zh-tw/visualstudio/ide/file-nesting-solution-explorer)。
 
+另外，Visual Studio 的預設值不是以 `.filenesting.json` 檔案的方式存在，但可以透過建立新的檢視設定來查看預設值，預設值內容如下：
+
+```json
+{
+    "help": "https://go.microsoft.com/fwlink/?linkid=866610",
+    "root": true,
+    "dependentFileProviders": {
+        "add": {
+            "addedExtension": {},
+            "pathSegment": {
+                "add": {
+                    ".*": [".js", ".css", ".html", ".htm", ".less", ".scss", ".coffee", ".iced", ".config", ".cs", ".vb", ".json"]
+                }
+            },
+            "extensionToExtension": {
+                "add": {
+                    ".js": [".coffee", ".iced", ".ts", ".tsx", ".jsx"],
+                    ".css": [".less", ".scss", ".sass", ".styl"],
+                    ".html": [".md", ".mdown", ".markdown", ".mdwn"],
+                    ".map": [".js", ".css"],
+                    ".svgz": [".svg"],
+                    ".designer.cs": [".resx"],
+                    ".cs.d.ts": [".cs"]
+                }
+            },
+            "fileToFile": {
+                "add": {
+                    ".bowerrc": ["bower.json"],
+                    ".npmrc": ["package.json"],
+                    "npm-shrinkwrap.json": ["package.json"],
+                    "yarn.lock": ["package.json"],
+                    ".yarnclean": ["package.json"],
+                    ".yarnignore": ["package.json"],
+                    ".yarn-integrity": ["package.json"],
+                    ".yarnrc": ["package.json"],
+                    "package-lock.json": ["package.json"]
+                }
+            },
+            "fileSuffixToExtension": {
+                "add": {
+                    "-vsdoc.js": [".js"]
+                }
+            },
+            "allExtensions": {
+                "add": {}
+            }
+        }
+    }
+}
+```
+
 ## 後記
 
 我個人在寫 .NET 專案的時候，對於功能多又複雜的 Class 類別檔，喜歡用 `partial` 部分類別關鍵字修飾詞並且拆分成多個檔案，如此一來可以讓我更容易管理檔案內的方法與屬性，而且可以更容易的根據使用目的來分門別類。
