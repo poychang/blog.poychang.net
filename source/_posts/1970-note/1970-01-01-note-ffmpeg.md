@@ -14,6 +14,42 @@ permalink: note-ffmpeg/
 
 [FFmpeg](https://ffmpeg.org/) 的全名是 Fast Forward MPEG (Moving Picture Experts Group)，是一個用 C 語言所撰寫的開源多媒體處理框架，可以用來將影音解碼、編碼、編碼轉換、混合、抽取、串流、過濾等功能，而且幾乎支援從古至今的任何影音格式。
 
+## 如何選擇 FFmpeg 下載版本
+
+GitHub 上的 [BtbN/FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds) 提供多種 Windows 版本，名稱看起來複雜，但實際只要掌握三個選項就能選到正確版本。
+
+### 版本分支：master vs n7.1 / n8.0
+
+- master：每日自動編譯，功能最新，但偶爾不穩定。
+- n7.1 / n8.0：對應 FFmpeg 官方穩定版，功能固定、較可靠。
+
+一般使用者建議選擇 穩定版（n7.1 或 n8.0）；若需要測試最新功能，再額外下載 master。
+
+### 授權：gpl vs lgpl
+
+- gpl：包含 x264、x265、fdk-aac 等常用編碼器，功能最完整。
+- lgpl：授權較寬鬆，但缺少部分編碼器。
+
+大多數情況都建議選 gpl。
+
+### 是否需要 shared
+
+- non-shared（建議）：所有功能都在可執行檔內，解壓即可使用。
+- shared：需要額外 DLL，通常只有在程式開發需要動態載入時才會用到。
+
+### 建議下載組合
+
+依一般 Windows 使用情境（轉檔、壓縮、搭配 yt-dlp），建議下載：ffmpeg-n7.1-latest-win64-gpl-7.1.zip
+
+理由：
+
+- 穩定版，適合長期使用與寫筆記
+- 64 位元、完整編碼器
+- 解壓即可使用，不需 DLL
+- 與 yt-dlp 等工具相容性佳
+
+若需要最新功能，可下載：ffmpeg-master-latest-win64-gpl.zip
+
 ## 多個音頻合併/擷取/拆分
 
 1. 多個 MP3 合併成一個檔案
