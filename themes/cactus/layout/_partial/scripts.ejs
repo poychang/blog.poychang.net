@@ -49,15 +49,12 @@
 
     var $inputArea = $("input#search-input");
     var $resultArea = document.querySelector("div#search-result");
-
-    $inputArea.focus(function() {
-      var search_path = "<%= config.search.path %>";
-      if (search_path.length == 0) {
-        search_path = "search.xml";
-      }
-      var path = "<%= config.root %>" + search_path;
-      searchFunc(path, 'search-input', 'search-result');
-    });
+    var search_path = "<%= config.search.path %>";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "<%= config.root %>" + search_path;
+    searchFunc(path, 'search-input', 'search-result');
 
     $inputArea.keydown(function(e) {
       if (e.which == 13) {
