@@ -24,8 +24,7 @@ type: search
     window.addEventListener('load', function() {
       searchInput.focus();
       searchInput.value = searchTerm;
+      searchInput.dispatchEvent(new Event('input', { bubbles: true }));
     });
-
-    // TODO: 目前還需要手動輸入一個字元才能觸發搜尋，之後可改進自動觸發
   })();
 </script>

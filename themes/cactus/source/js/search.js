@@ -68,12 +68,16 @@ var searchFunc = function(path, searchId, contentId) {
     if (!$input) { return; }
     var $resultContent = document.getElementById(contentId);
     if (!$resultContent) { return; }
+    var $noResult = document.querySelector(".search-no-result");
 
-    $input.addEventListener("input", function(){
+    function handleInput() {
       var resultList = [];
       var keywords = getAllCombinations(this.value.trim().toLowerCase().split(" "))
         .sort(function(a,b) { return b.split(" ").length - a.split(" ").length; });
       $resultContent.innerHTML = "";
+      if ($noResult) {
+        $noResult.style.display = "none";
+      }
       if (this.value.trim().length <= 0) {
         return;
       }
@@ -154,8 +158,14 @@ var searchFunc = function(path, searchId, contentId) {
         }
         result += "</ul>";
         $resultContent.innerHTML = result;
+      } else if ($noResult) {
+        $noResult.style.display = "block";
       }
-    });
+    }
+    $input.addEventListener("input", handleInput);
+    if ($input.value.trim().length > 0) {
+      handleInput.call($input);
+    }
     state.initialized = true;
   }
 
