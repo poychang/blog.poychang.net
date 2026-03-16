@@ -63,6 +63,40 @@ var searchFunc = function(path, searchId, contentId) {
     return result;
   }
 
+  function showLoadError(message) {
+    var $resultContent = document.getElementById(contentId);
+    var $noResult = document.querySelector(".search-no-result");
+
+    if ($noResult) {
+      $noResult.style.display = "none";
+    }
+
+    if ($resultContent) {
+      $resultContent.innerHTML = "<p class=\"search-result\">" + message + "</p>";
+    }
+  }
+
+  function buildSnippet(content, firstOccur) {
+    var radius = 50;
+    var start = Math.max(0, firstOccur - radius);
+    var end = Math.min(content.length, firstOccur + radius);
+    var snippet = content.substring(start, end);
+
+    if (start > 0) {
+      snippet = "..." + snippet;
+    }
+
+    if (end < content.length) {
+      snippet += "...";
+    }
+
+    return snippet;
+  }
+
+  function escapeRegExp(string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  }
+
   function bindSearch(datas) {
     var $input = document.getElementById(searchId);
     if (!$input) { return; }
@@ -74,6 +108,9 @@ var searchFunc = function(path, searchId, contentId) {
       var resultList = [];
       var keywords = getAllCombinations(this.value.trim().toLowerCase().split(" "))
         .sort(function(a,b) { return b.split(" ").length - a.split(" ").length; });
+      var highlightKeywords = keywords
+        .filter(function(keyword) { return keyword.length > 0; })
+        .map(escapeRegExp);
       $resultContent.innerHTML = "";
       if ($noResult) {
         $noResult.style.display = "none";
@@ -83,11 +120,12 @@ var searchFunc = function(path, searchId, contentId) {
       }
       // perform local searching
       datas.forEach(function(data) {
-        var matches = 0;
+        var titleMatches = 0;
+        var contentMatches = 0;
         if (!data.title || data.title.trim() === "") {
           data.title = "Untitled";
         }
-        var dataTitle = data.title.trim().toLowerCase();
+        var dataTitle = data.title.trim();
         var dataTitleLowerCase = dataTitle.toLowerCase();
         var dataContent = stripHtml(data.content.trim());
         var dataContentLowerCase = dataContent.toLowerCase();
@@ -95,54 +133,46 @@ var searchFunc = function(path, searchId, contentId) {
         var indexTitle = -1;
         var indexContent = -1;
         var firstOccur = -1;
-        // only match artiles with not empty contents
-        if (dataContent !== "") {
-          keywords.forEach(function(keyword) {
-            indexTitle = dataTitleLowerCase.indexOf(keyword);
+        keywords.forEach(function(keyword) {
+          indexTitle = dataTitleLowerCase.indexOf(keyword);
+          if (dataContent !== "") {
             indexContent = dataContentLowerCase.indexOf(keyword);
+          } else {
+            indexContent = -1;
+          }
 
-            if( indexTitle >= 0 || indexContent >= 0 ){
-              matches += 1;
-              if (indexContent < 0) {
-                indexContent = 0;
-              }
-              if (firstOccur < 0) {
-                firstOccur = indexContent;
-              }
+          if( indexTitle >= 0 || indexContent >= 0 ){
+            if (indexTitle >= 0) {
+              titleMatches += 1;
             }
-          });
-        }
+            if (indexContent >= 0) {
+              contentMatches += 1;
+            }
+            if (indexContent >= 0 && firstOccur < 0) {
+              firstOccur = indexContent;
+            }
+          }
+        });
         // show search results
-        if (matches > 0) {
+        if (titleMatches > 0 || contentMatches > 0) {
           var searchResult = {};
-          searchResult.rank = matches;
+          searchResult.rank = (titleMatches * 1000) + (contentMatches * 10);
+          searchResult.titleMatches = titleMatches;
+          searchResult.contentMatches = contentMatches;
+          searchResult.firstOccur = firstOccur < 0 ? Number.MAX_SAFE_INTEGER : firstOccur;
           searchResult.str = "<li><a href='"+ dataUrl +"' class='search-result-title'>"+ dataTitle +"</a>";
           if (firstOccur >= 0) {
-            // cut out 100 characters
-            var start = firstOccur - 20;
-            var end = firstOccur + 80;
-
-            if(start < 0){
-              start = 0;
-            }
-
-            if(start == 0){
-              end = 100;
-            }
-
-            if(end > dataContent.length){
-              end = dataContent.length;
-            }
-
-            var matchContent = dataContent.substring(start, end);
+            var matchContent = buildSnippet(dataContent, firstOccur);
 
             // highlight all keywords
-            var regS = new RegExp(keywords.join("|"), "gi");
-            matchContent = matchContent.replace(regS, function(keyword) {
-              return "<em class=\"search-keyword\">"+keyword+"</em>";
-            });
+            if (highlightKeywords.length > 0) {
+              var regS = new RegExp(highlightKeywords.join("|"), "gi");
+              matchContent = matchContent.replace(regS, function(keyword) {
+                return "<em class=\"search-keyword\">"+keyword+"</em>";
+              });
+            }
 
-            searchResult.str += "<p class=\"search-result\">" + matchContent +"...</p>";
+            searchResult.str += "<p class=\"search-result\">" + matchContent +"</p>";
           }
           searchResult.str += "</li>";
           resultList.push(searchResult);
@@ -150,7 +180,16 @@ var searchFunc = function(path, searchId, contentId) {
       });
       if (resultList.length) {
         resultList.sort(function(a, b) {
-            return b.rank - a.rank;
+            if (b.rank !== a.rank) {
+              return b.rank - a.rank;
+            }
+            if (b.titleMatches !== a.titleMatches) {
+              return b.titleMatches - a.titleMatches;
+            }
+            if (b.contentMatches !== a.contentMatches) {
+              return b.contentMatches - a.contentMatches;
+            }
+            return a.firstOccur - b.firstOccur;
         });
         var result ="<ul class=\"search-result-list\">";
         for (var i = 0; i < resultList.length; i++) {
@@ -188,6 +227,12 @@ var searchFunc = function(path, searchId, contentId) {
       }).get();
 
       bindSearch(state.datas);
+    },
+    error: function(jqXHR, textStatus, errorThrown) {
+      var errorMessage = errorThrown || textStatus || "unknown error";
+
+      console.error("Failed to load search index from " + path + ":", errorMessage);
+      showLoadError("Search index failed to load. Please refresh the page and try again.");
     }
   });
 };
