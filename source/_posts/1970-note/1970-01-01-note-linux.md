@@ -184,11 +184,14 @@ wsl --install -d <DistroName>
 wsl --update
 # 退回上一版的 WSL Linux kernel
 wsl --update rollback
+# 設定未來安裝的發行，預設使用 WSL 2
+wsl --set-default-version 2
 ```
 
 ```bash
 # 檢查當前 WSL 所使用的版本，列表中的 VERSION 代表所使用的 WSL 的版本
 wsl --list --verbose
+wsl -l -v
 # 檢查當前 WSL 所使用的 Linux 發行版本及核心版本
 wsl --status
 ```
