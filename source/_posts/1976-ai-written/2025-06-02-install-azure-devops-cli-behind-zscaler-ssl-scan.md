@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 在安裝 Zscaler 的電腦上安裝 Azure DevOps CLI
-date: 2021-11-16 18:21
+date: 2025-06-02 18:21
 author: Poy Chang
 comments: true
 categories: [Azure, Develop, PowerShell, Tools]
