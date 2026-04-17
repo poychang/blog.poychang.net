@@ -97,10 +97,11 @@ jobs:
             automated
 
   # ─────────────────────────────────────────────
-  # Job 3: Create issue for packages with breaking changes
+  # Job 3: Create per-package issues for breaking changes
+  #         → labelled `copilot` so Copilot coding agent picks them up
   # ─────────────────────────────────────────────
   report-breaking-changes:
-    name: Report Breaking Changes
+    name: Create Copilot Issues for Breaking Changes
     needs: analyze
     if: needs.analyze.outputs.has_breaking_updates == 'true'
     runs-on: ubuntu-latest
@@ -118,7 +119,7 @@ jobs:
         with:
           name: update-analysis
 
-      - name: Create issue for packages needing manual review
+      - name: Create Copilot issues for packages with breaking changes
         run: node .github/scripts/create-breaking-issue.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

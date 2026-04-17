@@ -1,10 +1,12 @@
 /**
  * create-breaking-issue.js
  *
- * Reads breaking-updates.json and opens a GitHub issue that lists every
- * package with a detected (or uncertain) breaking change.
- * The issue is labelled `dependencies` + `needs-review` so it can be
- * picked up by a team member or a GitHub Copilot coding agent.
+ * Reads breaking-updates.json and creates one GitHub issue **per package**
+ * that has a detected (or uncertain) breaking change.
+ *
+ * Each issue is labelled with `copilot` so that GitHub Copilot coding agent
+ * automatically picks it up, attempts the upgrade, fixes build errors,
+ * and opens a PR.
  */
 
 'use strict';
@@ -26,81 +28,10 @@ if (!token || !repoFullName) {
   process.exit(1);
 }
 
+const [owner, repo] = repoFullName.split('/');
 const date = new Date().toISOString().split('T')[0];
 
-// ── Build issue body ─────────────────────────────────────────────────────────
-
-let body = `# ⚠️ npm Packages Requiring Manual Review\n\n`;
-body += `The **npm update agent** detected the following packages that either contain breaking changes or could not be verified automatically. Please review before updating.\n\n`;
-body += `**Detected on:** ${date}\n\n`;
-body += `---\n\n`;
-
-for (const u of breakingUpdates) {
-  const badge = u.uncertain ? '⚠️ Uncertain' : '🔴 Breaking changes detected';
-  body += `## \`${u.package}\` — \`${u.current}\` → \`${u.latest}\` (${u.updateType})\n\n`;
-  body += `| Field | Value |\n|---|---|\n`;
-  body += `| Status | ${badge} |\n`;
-  body += `| Reason | ${u.reason} |\n`;
-
-  if (u.githubUrl) body += `| Release notes | [View on GitHub](${u.githubUrl}) |\n`;
-  if (u.npmUrl) body += `| npm page | [View on npm](${u.npmUrl}) |\n`;
-
-  if (u.affectedReleases?.length) {
-    const tags = u.affectedReleases.map((r) => `\`${r.tag}\``).join(', ');
-    body += `| Versions to review | ${tags} |\n`;
-  }
-
-  body += `\n`;
-}
-
-body += `---\n\n`;
-body += `## ✅ Suggested Action Steps\n\n`;
-body += `1. Open the release-notes links above and check for removed APIs or config changes.\n`;
-body += `2. If the update is safe, run locally:\n`;
-body += `   \`\`\`bash\n   npm install <package>@latest\n   npm run build   # or: hexo generate\n   \`\`\`\n`;
-body += `3. Fix any broken code (imports, config keys, deprecated options).\n`;
-body += `4. Push a PR and let the CI build verify the result.\n\n`;
-body += `---\n`;
-body += `> 🤖 This issue was automatically created by the [npm update agent workflow](.github/workflows/npm-update-agent.yml).\n`;
-
-// ── Create the GitHub issue ──────────────────────────────────────────────────
-
-const title = `⚠️ [npm Update Agent] ${breakingUpdates.length} package(s) need manual review (${date})`;
-
-async function createIssue() {
-  const [owner, repo] = repoFullName.split('/');
-
-  // Ensure labels exist (best-effort – ignore 422 if already present)
-  for (const label of [
-    { name: 'dependencies', color: '0075ca', description: 'Pull requests that update a dependency file' },
-    { name: 'needs-review', color: 'e4e669', description: 'Requires human or agent review before merging' },
-  ]) {
-    await fetch(`https://api.github.com/repos/${owner}/${repo}/labels`, {
-      method: 'POST',
-      headers: authHeaders(),
-      body: JSON.stringify(label),
-    }).catch(() => {});
-  }
-
-  const res = await fetch(`https://api.github.com/repos/${owner}/${repo}/issues`, {
-    method: 'POST',
-    headers: authHeaders(),
-    body: JSON.stringify({
-      title,
-      body,
-      labels: ['dependencies', 'needs-review'],
-    }),
-  });
-
-  if (!res.ok) {
-    const err = await res.text();
-    console.error('Failed to create issue:', res.status, err);
-    process.exit(1);
-  }
-
-  const issue = await res.json();
-  console.log(`✅ Issue created: ${issue.html_url}`);
-}
+// ── Helpers ──────────────────────────────────────────────────────────────────
 
 function authHeaders() {
   return {
@@ -111,7 +42,125 @@ function authHeaders() {
   };
 }
 
-createIssue().catch((err) => {
+async function ensureLabels() {
+  const labels = [
+    { name: 'dependencies', color: '0075ca', description: 'Pull requests that update a dependency file' },
+    { name: 'copilot', color: '6f42c1', description: 'Assigned to GitHub Copilot coding agent' },
+  ];
+  for (const label of labels) {
+    await fetch(`https://api.github.com/repos/${owner}/${repo}/labels`, {
+      method: 'POST',
+      headers: authHeaders(),
+      body: JSON.stringify(label),
+    }).catch(() => {});
+  }
+}
+
+async function findExistingIssue(packageName) {
+  const q = `repo:${owner}/${repo} is:issue is:open in:title "[npm Update Agent] Update ${packageName}"`;
+  const res = await fetch(
+    `https://api.github.com/search/issues?q=${encodeURIComponent(q)}&per_page=1`,
+    { headers: authHeaders() },
+  );
+  if (!res.ok) return null;
+  const data = await res.json();
+  return data.items?.[0] || null;
+}
+
+// ── Build issue body for a single package ────────────────────────────────────
+
+function buildIssueBody(u) {
+  const badge = u.uncertain ? '⚠️ Uncertain (changelog unavailable)' : '🔴 Breaking changes detected';
+  const releaseLinks = u.githubUrl ? `[Release notes](${u.githubUrl})` : '';
+  const npmLink = u.npmUrl ? `[npm page](${u.npmUrl})` : '';
+  const refs = [releaseLinks, npmLink].filter(Boolean).join(' · ');
+
+  let body = '';
+  body += `## Context\n\n`;
+  body += `The **npm update agent** workflow detected that \`${u.package}\` needs a **${u.updateType}** version update.\n\n`;
+  body += `| Field | Value |\n|---|---|\n`;
+  body += `| Package | \`${u.package}\` |\n`;
+  body += `| Current version | \`${u.current}\` |\n`;
+  body += `| Latest version | \`${u.latest}\` |\n`;
+  body += `| Update type | ${u.updateType} |\n`;
+  body += `| Status | ${badge} |\n`;
+  body += `| Reason | ${u.reason} |\n`;
+  if (refs) body += `| References | ${refs} |\n`;
+
+  if (u.affectedReleases?.length) {
+    body += `\n### Relevant releases\n\n`;
+    for (const r of u.affectedReleases) {
+      body += `- \`${r.tag}\` — ${r.title || '(no title)'}\n`;
+    }
+  }
+
+  body += `\n---\n\n`;
+  body += `## Task for Copilot\n\n`;
+  body += `Please perform the following steps:\n\n`;
+  body += `1. **Update the package** — run:\n`;
+  body += `   \`\`\`bash\n   npm install ${u.package}@latest\n   \`\`\`\n`;
+  body += `2. **Build the site** — run:\n`;
+  body += `   \`\`\`bash\n   npx hexo generate\n   \`\`\`\n`;
+  body += `3. **If the build fails**, read the error messages and the release notes linked above, `;
+  body += `then fix any breaking changes in the source code. Common fixes include:\n`;
+  body += `   - Updating renamed/removed API calls or imports\n`;
+  body += `   - Adjusting configuration keys in \`_config.yml\` or \`_config.cactus.yml\`\n`;
+  body += `   - Replacing deprecated plugin options\n`;
+  body += `4. **Repeat steps 2–3** until \`npx hexo generate\` succeeds.\n`;
+  body += `5. Commit all changes (\`package.json\`, \`package-lock.json\`, and any source fixes).\n\n`;
+  body += `> ⚠️ Do NOT modify content files under \`source/_posts/\` unless a breaking change directly affects markdown rendering.\n\n`;
+  body += `---\n`;
+  body += `> 🤖 This issue was automatically created by the [npm update agent workflow](.github/workflows/npm-update-agent.yml) on ${date}.\n`;
+
+  return body;
+}
+
+// ── Main ─────────────────────────────────────────────────────────────────────
+
+async function main() {
+  await ensureLabels();
+
+  let created = 0;
+  let skipped = 0;
+
+  for (const u of breakingUpdates) {
+    const title = `⬆️ [npm Update Agent] Update \`${u.package}\` from ${u.current} to ${u.latest}`;
+
+    // Skip if an open issue already exists for this package
+    const existing = await findExistingIssue(u.package);
+    if (existing) {
+      console.log(`⏭️  Issue already exists for ${u.package}: ${existing.html_url}`);
+      skipped++;
+      continue;
+    }
+
+    const body = buildIssueBody(u);
+
+    const res = await fetch(`https://api.github.com/repos/${owner}/${repo}/issues`, {
+      method: 'POST',
+      headers: authHeaders(),
+      body: JSON.stringify({
+        title,
+        body,
+        labels: ['dependencies', 'copilot'],
+      }),
+    });
+
+    if (!res.ok) {
+      const err = await res.text();
+      console.error(`❌ Failed to create issue for ${u.package}:`, res.status, err);
+      continue;
+    }
+
+    const issue = await res.json();
+    console.log(`✅ Issue created for ${u.package}: ${issue.html_url}`);
+    created++;
+  }
+
+  console.log(`\n📋 Summary: ${created} issue(s) created, ${skipped} skipped (already open).`);
+}
+
+main().catch((err) => {
   console.error('Fatal error:', err);
   process.exit(1);
 });

@@ -28,7 +28,7 @@ for (const update of safeUpdates) {
   const section = pkg.dependencies?.[name] != null ? 'dependencies' : 'devDependencies';
 
   if (!pkg[section]?.[name]) {
-    console.warn(`⚠️  ${name} not found in package.json – skipping`);
+    console.warn(`⚠️  ${name} not found in package.json - skipping`);
     continue;
   }
 
@@ -69,7 +69,7 @@ body += `**${applied.length}** package(s) updated.\n\n`;
 
 if (majorList.length > 0) {
   body += `## 🔴 Major Updates\n`;
-  body += `> Changelog was reviewed – no breaking changes detected.\n\n`;
+  body += `> Changelog was reviewed - no breaking changes detected.\n\n`;
   body += `| Package | From | To | Notes |\n|---|---|---|---|\n`;
   body += majorList.map((u) => tableRow(u, true)).join('\n') + '\n\n';
 }
@@ -86,7 +86,7 @@ if (patchList.length > 0) {
   body += patchList.map((u) => tableRow(u)).join('\n') + '\n\n';
 }
 
-body += `---\n*Created automatically – please review and merge if the site looks good.*\n`;
+body += `---\n*Created automatically - please review and merge if the site looks good.*\n`;
 
 fs.writeFileSync('pr-body.md', body);
 console.log('\n📝 PR body written to pr-body.md');

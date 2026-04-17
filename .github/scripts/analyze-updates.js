@@ -7,9 +7,9 @@
  *   - uncertain: major bump where changelog could not be fetched (treated as needing review)
  *
  * Outputs:
- *   safe-updates.json     – array of safe update objects
- *   breaking-updates.json – array of breaking / uncertain update objects
- *   GITHUB_OUTPUT flags   – has_safe_updates, has_breaking_updates
+ *   safe-updates.json     - array of safe update objects
+ *   breaking-updates.json - array of breaking / uncertain update objects
+ *   GITHUB_OUTPUT flags   - has_safe_updates, has_breaking_updates
  */
 
 'use strict';
@@ -105,7 +105,7 @@ async function analyzePackage(name, current, latest, token) {
   const updateType = isMajor ? 'major' : isMinor ? 'minor' : 'patch';
 
   if (!isMajor) {
-    return { updateType, hasBreaking: false, reason: `${updateType} version bump – generally safe` };
+    return { updateType, hasBreaking: false, reason: `${updateType} version bump - generally safe` };
   }
 
   // ── Major bump: inspect GitHub release notes ──────────────────────────────
@@ -125,7 +125,7 @@ async function analyzePackage(name, current, latest, token) {
     return {
       updateType,
       hasBreaking: null,
-      reason: 'No GitHub repository found – changelog unavailable',
+      reason: 'No GitHub repository found - changelog unavailable',
       npmUrl: `https://www.npmjs.com/package/${name}?activeTab=versions`,
     };
   }
@@ -162,7 +162,7 @@ async function analyzePackage(name, current, latest, token) {
 async function main() {
   const token = process.env.GITHUB_TOKEN || '';
 
-  // npm outdated exits with code 1 when packages are outdated – use spawnSync
+  // npm outdated exits with code 1 when packages are outdated - use spawnSync
   const result = spawnSync('npm', ['outdated', '--json'], { encoding: 'utf8' });
   let outdated = {};
   try {
