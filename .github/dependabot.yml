@@ -1,7 +1,17 @@
 version: 2
 updates:
-- package-ecosystem: npm
-  directory: "/"
-  schedule:
-    interval: daily
-  open-pull-requests-limit: 20
+  # Security-only updates via Dependabot.
+  # Routine version bumps are handled by the npm-update-agent workflow
+  # (.github/workflows/npm-update-agent.yml) which also checks for breaking changes.
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    # Only open PRs for security vulnerabilities
+    ignore:
+      - dependency-name: "*"
+        update-types:
+          - "version-update:semver-patch"
+          - "version-update:semver-minor"
+          - "version-update:semver-major"

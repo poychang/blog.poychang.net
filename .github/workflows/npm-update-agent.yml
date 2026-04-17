@@ -1,0 +1,125 @@
+name: npm Packages Update Agent
+
+on:
+  schedule:
+    - cron: '0 8 * * 1' # Every Monday at 08:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  # ─────────────────────────────────────────────
+  # Job 1: Scan outdated packages & detect breaking changes
+  # ─────────────────────────────────────────────
+  analyze:
+    name: Analyze Package Updates
+    runs-on: ubuntu-latest
+    outputs:
+      has_safe_updates: ${{ steps.analyze.outputs.has_safe_updates }}
+      has_breaking_updates: ${{ steps.analyze.outputs.has_breaking_updates }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install current dependencies
+        run: npm ci
+
+      - name: Analyze outdated packages
+        id: analyze
+        run: node .github/scripts/analyze-updates.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload analysis results
+        uses: actions/upload-artifact@v4
+        with:
+          name: update-analysis
+          path: |
+            safe-updates.json
+            breaking-updates.json
+          retention-days: 1
+
+  # ─────────────────────────────────────────────
+  # Job 2: Apply safe updates, verify build, open PR
+  # ─────────────────────────────────────────────
+  apply-safe-updates:
+    name: Apply Safe Updates & Create PR
+    needs: analyze
+    if: needs.analyze.outputs.has_safe_updates == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install current dependencies
+        run: npm ci
+
+      - name: Download analysis results
+        uses: actions/download-artifact@v4
+        with:
+          name: update-analysis
+
+      - name: Apply safe package updates
+        run: node .github/scripts/apply-updates.js
+
+      - name: Install hexo-cli for build verification
+        run: npm install -g hexo-cli
+
+      - name: Verify blog builds successfully
+        run: hexo generate
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'chore(deps): update npm packages to latest versions'
+          title: '⬆️ Auto-update npm packages'
+          body-path: pr-body.md
+          branch: 'auto-update/npm-packages'
+          delete-branch: true
+          labels: |
+            dependencies
+            automated
+
+  # ─────────────────────────────────────────────
+  # Job 3: Create issue for packages with breaking changes
+  # ─────────────────────────────────────────────
+  report-breaking-changes:
+    name: Report Breaking Changes
+    needs: analyze
+    if: needs.analyze.outputs.has_breaking_updates == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Download analysis results
+        uses: actions/download-artifact@v4
+        with:
+          name: update-analysis
+
+      - name: Create issue for packages needing manual review
+        run: node .github/scripts/create-breaking-issue.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
