@@ -10,6 +10,8 @@ permalink: check-agent-framework-http-traffic/
 
 在使用 Microsoft Agent Framework 呼叫 AI Provider 的時候，基本上都是透過 HTTP 的方式呼叫，開發過程中如果想要查看呼叫的 HTTP 詳細資訊，例如 URL、Header、Body 等等，這篇文章將分享如何在 Microsoft Agent Framework 中查看呼叫 HTTP 的詳細資訊。
 
+![cover](https://files.poychang.net/storage/check-agent-framework-http-traffic/cover.png)
+
 ## 介紹 Pipeline
 
 在 Microsoft Agent Framework 底層，會使用 Pipeline 的設計模式來處理請求與回應的流程，Pipeline 可以做為攔截與擴充請求處理流程的機制，作用類似 HTTP middleware，其核心位置在「Agent 執行流程的中間層」，負責在請求進入模型或工具前後插入控制邏輯，也就是說我們可以在 request / response 前後插入邏輯。
