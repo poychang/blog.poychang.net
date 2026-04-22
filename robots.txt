@@ -1,5 +1,0 @@
-User-agent: facebookexternalhit
-Allow: /
-
-User-agent: *
-Sitemap: https://blog.poychang.net/sitemap.xml
