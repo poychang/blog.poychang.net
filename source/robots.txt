@@ -1,11 +1,10 @@
 User-agent: Facebot
 Allow: /
 Allow: /assets/
-Allow: /images/
-Allow: /og/
 
 User-agent: facebookexternalhit
 Allow: /
 
 User-agent: *
 Sitemap: https://blog.poychang.net/sitemap.xml
+Disallow: /api/
