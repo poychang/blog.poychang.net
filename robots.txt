@@ -2,5 +2,4 @@ User-agent: facebookexternalhit
 Allow: /
 
 User-agent: *
-Disallow: 
 Sitemap: https://blog.poychang.net/sitemap.xml
