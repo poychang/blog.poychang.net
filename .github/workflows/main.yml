@@ -17,20 +17,25 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
+# Force JavaScript actions to run on Node.js 24 for actions that haven't released Node 24 versions yet
+# See: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     name: A job to build blog.
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: '25'
       # Caching dependencies to speed up workflows. (GitHub will remove any cache entries that have not been accessed in over 7 days.)
       - name: Cache node modules
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         id: cache
         with:
           path: node_modules
