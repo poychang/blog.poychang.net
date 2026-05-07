@@ -29,6 +29,7 @@ permalink: setting-github-copilot/
 
 | 欄位           | 必要 | 用途                                        | 值                                 |
 | -------------- | ---: | ------------------------------------------- | ---------------------------------- |
+| `description`  |   否 | Instruction 描述                            | 簡短描述這個 instruction 的用途。  |
 | `applyTo`      |   是 | 指定這份 instruction 套用到哪些檔案或資料夾 | glob pattern，例如 `"**/*.cs"`     |
 | `excludeAgent` |   否 | 排除特定 Copilot agent 使用這份 instruction | `"code-review"` 或 `"cloud-agent"` |
 
@@ -36,8 +37,8 @@ permalink: setting-github-copilot/
 
 | 欄位            | 必要 | 用途           | 說明                                                                                                                                      |
 | --------------- | ---: | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| `description`   |   否 | Prompt 描述    | 簡短描述這個 prompt 的用途。                                                                                                              |
 | `name`          |   否 | Prompt 名稱    | 在 Chat 中輸入 `/` 後使用的名稱；未指定時使用檔名。                                                                                       |
+| `description`   |   否 | Prompt 描述    | 簡短描述這個 prompt 的用途。                                                                                                              |
 | `argument-hint` |   否 | 參數提示       | 顯示在 chat input 中，用來提示使用者如何提供參數。                                                                                        |
 | `agent`         |   否 | 指定執行 agent | 可用 `ask`、`agent`、`plan`，或自訂 agent 名稱。未指定時使用目前 agent；若有指定 `tools`，預設 agent 會是 `agent`。                       |
 | `model`         |   否 | 指定語言模型   | 未指定時使用 model picker 目前選取的模型。                                                                                                |

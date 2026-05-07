@@ -12,11 +12,11 @@ permalink: chat-with-github-copilot/
 
 在和 GitHub Copilot Chat 的視窗中，可以利用 `@` `#` `/` 這些特殊關鍵字來呼叫一些特定的功能，或者是直接輸入指令來讓 GitHub Copilot 執行特定的任務，這些都是可以幫助你更精確地和 GitHub Copilot 溝通的方式。
 
-| 關鍵字                 | 簡稱 | 用途             |
-| -------------------- | ---- | ---------------- |
-| `@` (Chat participants)       | 叫人 | 要跟誰說話       |
-| `#` (Chat Variables) | 餵料 | 要給他看什麼資訊 |
-| `/` (Slash Commands) | 下令 | 要他做什麼動作   |
+| 關鍵字                  | 簡稱 | 用途             |
+| ----------------------- | ---- | ---------------- |
+| `@` (Chat participants) | 叫人 | 要跟誰說話       |
+| `#` (Chat Variables)    | 餵料 | 要給他看什麼資訊 |
+| `/` (Slash Commands)    | 下令 | 要他做什麼動作   |
 
 ## 叫人 @
 
