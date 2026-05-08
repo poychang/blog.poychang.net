@@ -56,6 +56,8 @@ prismjs:
   preprocess: true
   line_number: true
   tab_replace: ''
+marked:
+  smartypants: false # disable smartypants to prevent converting straight quotes to curly quotes
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
