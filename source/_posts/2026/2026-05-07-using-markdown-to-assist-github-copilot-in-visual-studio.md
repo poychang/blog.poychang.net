@@ -162,8 +162,8 @@ Resolve greeting requests with friendly and engaging responses.
 
 | 技能類型                             | 來源                                                           |
 | ------------------------------------ | -------------------------------------------------------------- |
-| 工作空間或專案技能（儲存在儲存庫中） | `.github/skills/`、`.claude/skills/`、`.agents/skills/`        |
-| 個人技能（儲存在使用者家目錄中）     | `~/.copilot/skills/`、`~/.claude/skills/`、`~/.agents/skills/` |
+| 工作空間或專案技能（存在儲存庫） | `.github/skills/`、`.claude/skills/`、`.agents/skills/`        |
+| 個人技能（存在使用者家目錄）     | `~/.copilot/skills/`、`~/.claude/skills/`、`~/.agents/skills/` |
 
 關於 Skill，你可以參考 [Awesome GitHub Copilot - Skills](https://awesome-copilot.github.com/skills/) 獲得更多範例。
 
