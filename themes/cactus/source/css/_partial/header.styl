@@ -29,8 +29,8 @@
     background-size: $logo-width $logo-height
     background-repeat: no-repeat
     if $logo-grayout
-      filter: grayscale(100%)
-      -webkit-filter: grayscale(100%)
+      filter: none
+      -webkit-filter: none
 
   #nav
     color: $color-accent-1
@@ -72,8 +72,8 @@
 if $logo-grayout
   #header:hover
     #logo
-      filter: none
-      -webkit-filter: none
+      filter: grayscale(100%)
+      -webkit-filter: grayscale(100%)
 
 @media screen and (max-width: 480px)
   #header #title
