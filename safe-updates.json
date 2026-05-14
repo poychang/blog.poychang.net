@@ -1,0 +1,11 @@
+[
+  {
+    "package": "hexo",
+    "current": "8.1.1",
+    "wanted": "8.1.2",
+    "latest": "8.1.2",
+    "updateType": "patch",
+    "hasBreaking": false,
+    "reason": "patch version bump - generally safe"
+  }
+]

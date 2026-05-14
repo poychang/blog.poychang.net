@@ -183,10 +183,10 @@ license: MIT
 ## 執行步驟
 1. 確認已安裝 .NET SDK 10 以上（支援 .NET File-based App 功能）。
 2. 在終端機切換到此 skill 目錄，並執行以下指令：
-    ```
+    ````
     powershell
     dotnet ./scripts/tool.cs
-    ```
+    ````
 3. 取得輸出並將該文字原樣回覆給呼叫者。
 
 ## 依賴項
