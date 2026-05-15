@@ -4,7 +4,7 @@ title: 在 Visual Studio 中使用 Markdown 檔輔助 GitHub Copilot
 date: 2026-05-07 15:19
 author: Poy Chang
 comments: true
-categories: [Develop, Tools]
+categories: [Develop, AI, Tools]
 permalink: using-markdown-to-assist-github-copilot-in-visual-studio/
 ---
 
@@ -169,7 +169,7 @@ Resolve greeting requests with friendly and engaging responses.
 
 看到這邊可想而知，建立自己的 Skill 就是另一個重要議題了。
 
-但這篇先介紹到這裡，之後再來寫關於 Visual Studio 中如何讓 Agent 使用 Skill 的部分。
+關於 Visual Studio 中如何讓 Agent 使用 Skill 的部分，請參考這篇[在 Visual Studio 中使用 GitHub Copilot 和 Agent Skills](https://blog.poychang.net/using-agent-skills-with-github-copilot-in-visual-studio/)。
 
 ---
 
