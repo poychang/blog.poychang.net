@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 計算 PowerPoint 版面尺寸：pixels to cm
-date: 2024-04-27 19:23
+title: PowerPoint 版面尺寸計算機：pixels to cm
+date: 2024-04-28 19:23
 author: Poy Chang
 comments: true
 categories: [Tools, App]
