@@ -49,20 +49,20 @@ Statically 是一個免費的 CDN 服務，專門為靜態資源提供加速。
 
 接著在選單中找到 `Workers & Pages`，點選 `Create Application` 建立專案。
 
-[1 create application](https://files.poychang.net/storage/speed-up-github-pages-image-loading/1-create-application.png)
+![1 create application](https://files.poychang.net/storage/speed-up-github-pages-image-loading/1-create-application.png)
 
 建立的過程中，我們可以先選 `Start with Hello World` 範本，然後為這個 Worker 專案設定一個網域名稱，最後點選 `Deploy`。
-[2 start with hello world](https://files.poychang.net/storage/speed-up-github-pages-image-loading/2-start-with-hello-world.png)
+![2 start with hello world](https://files.poychang.net/storage/speed-up-github-pages-image-loading/2-start-with-hello-world.png)
 
-[3 set worker name](https://files.poychang.net/storage/speed-up-github-pages-image-loading/3-set-worker-name.png)
+![3 set worker name](https://files.poychang.net/storage/speed-up-github-pages-image-loading/3-set-worker-name.png)
 
 這時會回到後台儀表板中，點選 `Edit code` 來編輯這個 Worker 的程式碼。
 
-[4 edit code](https://files.poychang.net/storage/speed-up-github-pages-image-loading/4-edit-code.png)
+![4 edit code](https://files.poychang.net/storage/speed-up-github-pages-image-loading/4-edit-code.png)
 
 在編輯器中，將下面所提供的程式碼，替換掉部分設定值後，貼到 Worker 的程式碼中。在這個編輯畫面中，你可以先從右邊試試看要執行的網址是否符合預期，如果一切正常，就可以點選 `Deploy` 來部署這個 Worker。
 
-[5 paste code](https://files.poychang.net/storage/speed-up-github-pages-image-loading/5-paste-code.png)
+![5 paste code](https://files.poychang.net/storage/speed-up-github-pages-image-loading/5-paste-code.png)
 
 ### 程式碼
 
