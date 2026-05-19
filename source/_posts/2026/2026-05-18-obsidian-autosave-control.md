@@ -27,6 +27,8 @@ permalink: obsidian-autosave-control/
 
 在 Obsidian 介面的右下角，你可以看到目前的儲存狀態，當變更的內容尚未儲存時，會出現藍色的燈號，反之，如果檔案已經儲存，則會顯示綠色的燈號，這樣你就可以很清楚地知道目前的檔案狀態。
 
+![saved status color on bottom right corner](https://files.poychang.net/storage/obsidian-autosave-control/saved-status-color.png)
+
 有了這個套件的幫忙，我就可以更好地控制 Obsidian 的自動儲存行為，避免了檔案衝突的問題，也讓我的筆記管理更加順暢了。
 
 ---
