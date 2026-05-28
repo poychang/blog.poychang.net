@@ -10,7 +10,7 @@ permalink: csharp-class-convert-to-json-schema/
 
 在開發 AI 結構化輸出功能時，常常需要將 C# 物件轉換成 JSON Schema，以便讓 AI 模型能夠理解和使用這些結構化資料。本文將提供一個簡單的工具來實現這個轉換過程。
 
-[poychang/csharp-class-to-json-schema](https://github.com/poychang/csharp-class-to-json-schema) 提供兩個零相依的 Web Component，可將 C# `class` / `record` 模型轉換成 Azure OpenAI Structured Outputs 可接受的 JSON Schema 子集。
+[poychang/csharp-class-to-json-schema](https://github.com/poychang/csharp-class-to-json-schema) 提供兩個 Web Component，可將 C# `class` / `record` 模型轉換成 Azure OpenAI Structured Outputs 可接受的 JSON Schema 子集。
 
 ## 標準結構化輸出的 JSON Schema
 
