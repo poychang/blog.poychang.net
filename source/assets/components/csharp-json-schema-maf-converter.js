@@ -316,7 +316,7 @@ if (globalScope.document && globalScope.customElements) {
               class="metadata-input"
               maxlength="64"
               pattern="[A-Za-z0-9_-]{1,64}"
-              placeholder="NameOfResponseFormat"
+              placeholder="The name of the response format"
               autocomplete="off"
             >
             <span class="metadata-hint">Use letters, numbers, underscores, or dashes. Maximum length is 64.</span>
@@ -326,9 +326,10 @@ if (globalScope.document && globalScope.customElements) {
             <input
               id="format-description"
               class="metadata-input"
-              placeholder="Description of what the response format is for"
+              placeholder="A description of what the response format is for"
               autocomplete="off"
             >
+            <span class="metadata-hint">Used by the model to determine how to respond in the format.</span>
           </div>
         </div>
         <label for="source">C# Class</label>
