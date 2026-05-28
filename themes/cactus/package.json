@@ -31,7 +31,7 @@
     "gulp-download-stream": "*",
     "gulp-jshint": "*",
     "gulp-stylint": "*",
-    "js-yaml": "*",
+    "js-yaml": "^4.1.1",
     "jshint": "^2.9.6",
     "jshint-stylish": "*",
     "stylelint-formatter-pretty": "^3.1.0",
