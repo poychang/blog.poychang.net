@@ -84,7 +84,7 @@ if (globalScope.document && globalScope.customElements) {
       .output-label {
         display: block;
         margin: 0 0 8px;
-        color: #354258;
+        // color: #354258;
         font-size: 0.92rem;
         font-weight: 680;
       }
