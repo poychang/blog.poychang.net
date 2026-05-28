@@ -14,7 +14,7 @@ permalink: switch-github-copilot-account-in-vscode/
 
 首先，在 VSCode 的擴充套件中找到 [GitHub Copilot Chat](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat)，然後點擊齒輪圖示開啟設定清單，選擇 **Account Preferences**。
 
-![open extenstion setting](https://files.poychang.net/storage/switch-github-copilot-account-in-vscode/01-open-extensions-setting.png)
+![open extension setting](https://files.poychang.net/storage/switch-github-copilot-account-in-vscode/01-open-extensions-setting.png)
 
 接著上方會跳出選單，讓你選擇要透過哪一個認證提供者來處理帳號驗證，通常會選擇 **GitHub**。
 
