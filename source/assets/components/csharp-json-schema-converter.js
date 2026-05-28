@@ -1,8 +1,3 @@
-// csharp-schema-converter.js (ESM)
-// 元件用法：
-// 網頁載入此元件 <script type="module" src="/assets/components/csharp-schema-converter.js"></script>
-// 在頁面任意位置放此標籤 <csharp-schema-converter></csharp-schema-converter>
-
 const CsharpSchemaConverterApi = (function initCsharpSchemaConverter(globalScope) {
   const INTEGER_TYPES = new Set([
     "byte",
