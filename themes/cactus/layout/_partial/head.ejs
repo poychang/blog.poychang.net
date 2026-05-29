@@ -5,7 +5,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
     <!-- Facebook verification -->
-    <meta property="og:image" content="https://api.poychang.net/api/og-image.png?t=<%= page_title() %>&st=Poy Chang&url=blog.poychang.net">
+    <% const ogImageParams = {
+      t: encodeURIComponent(page_title()),
+      st: encodeURIComponent('Poy Chang'),
+      url: encodeURIComponent('blog.poychang.net')
+    } %>
+    <meta property="og:image" content="https://api.poychang.net/api/og-image.png?t=<%= ogImageParams.t %>&st=<%= ogImageParams.st %>&url=<%= ogImageParams.url %>">
     <meta property="og:locale" content="zh_TW">
 
     <%- open_graph({
