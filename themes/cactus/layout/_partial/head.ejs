@@ -7,12 +7,11 @@
     <!-- Facebook verification -->
     <!-- <meta property="og:image" content="https://www.gravatar.com/avatar/c525d15ee116aca696f7af9a926e1788?s=250"> -->
     <% const ogImage = {
-      t: Buffer.from(page_title(), 'utf8').toString('base64url'),
+      title: encodeURIComponent(page_title()),
       width: 1200,
       height: 630
     } %>
-    <!-- <meta property="og:image" content="https://api.poychang.net/api/blog-og-image/<%= ogImage.t %>/<%= ogImage.width %>x<%= ogImage.height %>/cover.png?v=<%= Date.now() %>"> -->
-    <meta property="og:image" content="https://api.poychang.net/api/blog-og-image/cover.png?v=<%= Date.now() %>">
+    <meta property="og:image" content="https://api.poychang.net/api/blog-og-image/<%= ogImage.title %>/<%= ogImage.width %>x<%= ogImage.height %>/cover.png?v=<%= Date.now() %>">
     <meta property="og:image:width" content="<%= ogImage.width %>">
     <meta property="og:image:height" content="<%= ogImage.height %>">
     <meta property="og:locale" content="zh_TW">
