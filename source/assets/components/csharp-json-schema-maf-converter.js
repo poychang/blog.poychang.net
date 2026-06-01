@@ -80,8 +80,7 @@ if (globalScope.document && globalScope.customElements) {
         min-width: 0;
       }
 
-      label,
-      .output-label {
+      label {
         display: block;
         margin: 0 0 8px;
         // color: #354258;
@@ -310,7 +309,7 @@ if (globalScope.document && globalScope.customElements) {
       <div class="pane">
         <div class="metadata-grid">
           <div>
-            <label for="format-name">Response format name</label>
+            <label for="format-name">1. Response format name</label>
             <input
               id="format-name"
               class="metadata-input"
@@ -322,7 +321,7 @@ if (globalScope.document && globalScope.customElements) {
             <span class="metadata-hint">Use letters, numbers, underscores, or dashes. Maximum length is 64.</span>
           </div>
           <div>
-            <label for="format-description">Response format description</label>
+            <label for="format-description">2. Response format description</label>
             <input
               id="format-description"
               class="metadata-input"
@@ -332,14 +331,14 @@ if (globalScope.document && globalScope.customElements) {
             <span class="metadata-hint">Used by the model to determine how to respond in the format.</span>
           </div>
         </div>
-        <label for="source">C# Class</label>
+        <label for="source">3. C# Class</label>
         <div class="editor-shell">
           <pre id="source-highlight" class="highlight-layer" aria-hidden="true"></pre>
           <textarea id="source" spellcheck="false" wrap="off"></textarea>
         </div>
       </div>
       <div class="pane">
-        <span class="output-label">MAF Response Format</span>
+        <label for="output">Output: MAF Response Format</label>
         <div class="output-shell">
           <button type="button" title="Copy MAF Response Format" aria-label="Copy MAF Response Format">
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">

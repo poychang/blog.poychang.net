@@ -1423,8 +1423,7 @@ const CsharpSchemaConverterApi = (function initCsharpSchemaConverter(globalScope
         min-width: 0;
       }
 
-      label,
-      .output-label {
+      label {
         display: block;
         margin: 0 0 8px;
         // color: #354258;
@@ -1617,14 +1616,14 @@ const CsharpSchemaConverterApi = (function initCsharpSchemaConverter(globalScope
 
     <section class="converter">
       <div class="pane">
-        <label for="source">C# Class</label>
+        <label for="source">Input: C# Class</label>
         <div class="editor-shell">
           <pre id="source-highlight" class="highlight-layer" aria-hidden="true"></pre>
           <textarea id="source" spellcheck="false" wrap="off"></textarea>
         </div>
       </div>
       <div class="pane">
-        <span class="output-label">JSON Schema</span>
+        <label for="output">Output: JSON Schema</label>
         <div class="output-shell">
           <button type="button" title="Copy JSON Schema" aria-label="Copy JSON Schema">
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
