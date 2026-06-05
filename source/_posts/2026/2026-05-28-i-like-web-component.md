@@ -15,7 +15,7 @@ permalink: i-like-web-component/
 <script type="module" src="/assets/components/ask-bing.js"></script>
 <ask-bing q="什麼是 Web Component？技術細節和優缺點是什麼？">什麼是 Web Component</ask-bing>
 
-嚴格來說不只是 Web Component 這項技術，任何能夠將功能封裝成一個獨立模組的技術我都很喜歡，除了它原本的設計目標就是為了封裝功能之外，在能用 AI 加速程式開發的情境下，我們可以透過 AI 快速創作出一個想要的菇能，然後將它封裝成一個 Web Component，這樣就可以在任何需要的地方使用這個功能，而不會和既有程式或環境造成衝突。
+嚴格來說不只是 Web Component 這項技術，任何能夠將功能封裝成一個獨立模組的技術我都很喜歡，除了它原本的設計目標就是為了封裝功能之外，在能用 AI 加速程式開發的情境下，我們可以透過 AI 快速創作出一個想要的功能，然後將它封裝成一個 Web Component，這樣就可以在任何需要的地方使用這個功能，而不會和既有程式或環境造成衝突。
 
 我的部落格是用 Markdown 的方式撰寫內容，有時候我會想直接在文章中放一些互動的工具，過去，我可以直接在文章中放一些 JavaScript 程式碼來呈現，例如[PowerPoint 版面尺寸計算機：pixels to cm](https://blog.poychang.net/calculating-powerpoint-slide-dimensions-pixels-to-cm/)這篇裡面的計算機工具。
 
