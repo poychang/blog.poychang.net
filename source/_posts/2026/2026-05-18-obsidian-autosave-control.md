@@ -16,7 +16,9 @@ permalink: obsidian-autosave-control/
 
 個人覺得最簡單的解決方案，就是讓我手動儲存或是控制自動儲存的行為，但是這兩種方案 Obsidian 都沒有提供，幸好有社群的開發者開發了一個套件，叫做 [Autosave Control](https://github.com/mihasm/obsidian-autosave-control)，它可以讓使用者控制 Obsidian 的自動儲存行為。
 
-不過由於這個套件目前沒有上架到 Obsidian 的套件商店，不過有在 GitHub 開源，所以我們可以到 [Release](https://github.com/mihasm/obsidian-autosave-control/releases) 中下載 `obsidian-autosave-control.zip` 檔，然後解壓縮到你的 Obsidian Vault 的套件資料夾中，通常是 `your-vault/.obsidian/plugins/autosave-control`，最後在 Obsidian 的 `Community Plugins` 中啟用這個套件就可以了。
+> [Autosave Control](obsidian://show-plugin?id=autosave-control) 已經上架到 Obsidian 的社群外掛程式商店了，可以直接在 Obsidian 的社群外掛程式商店中搜尋 `Autosave Control` 來安裝使用。
+
+不過由於這個套件目前沒有上架到 Obsidian 的社群外掛程式商店（**已上架**），不過有在 GitHub 開源，所以我們可以到 [Release](https://github.com/mihasm/obsidian-autosave-control/releases) 中下載 `obsidian-autosave-control.zip` 檔，然後解壓縮到你的 Obsidian Vault 的套件資料夾中，通常是 `your-vault/.obsidian/plugins/autosave-control`，最後在 Obsidian 的 `Community Plugins` 中啟用這個套件就可以了。
 
 ![obsidian autosave control setting](https://files.poychang.net/storage/obsidian-autosave-control/obsidian-autosave-control-setting.png)
 
