@@ -1,0 +1,418 @@
+:root {
+  --accent: #7cfc00;
+  --danger: #ff4d4d;
+  color-scheme: dark;
+}
+
+/* ===== 全域重設與可存取焦點 ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #0a0e14;
+  font-family: "Microsoft JhengHei", "PingFang TC", "Noto Sans CJK TC", sans-serif;
+}
+
+button {
+  font: inherit;
+}
+
+button:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
+#stage {
+  position: fixed;
+  inset: 0;
+}
+
+/* ===== 遊戲舞台：攝影機藏在背景，Canvas 填滿畫面 ===== */
+#cam {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#game {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+}
+
+.overlay {
+  position: absolute;
+  z-index: 10;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: safe center;
+  overflow-y: auto;
+  padding: 18px 14px;
+  color: #fff;
+  text-align: center;
+  background: radial-gradient(circle at 50% 35%, rgb(20 30 45 / 78%), rgb(5 8 12 / 95%));
+}
+
+/* ===== 主選單與結算共用元件 ===== */
+#menu {
+  background: radial-gradient(circle at 50% 40%, rgb(8 12 20 / 50%), rgb(4 7 11 / 82%));
+}
+
+.hidden {
+  display: none !important;
+}
+
+.title {
+  margin-bottom: 6px;
+  color: transparent;
+  font-size: min(13vw, 120px);
+  font-weight: 900;
+  letter-spacing: 4px;
+  background: linear-gradient(180deg, #bfff5b, #39b54a);
+  background-clip: text;
+  filter: drop-shadow(0 6px 20px rgb(80 200 60 / 35%));
+}
+
+.over-title {
+  font-size: min(9vw, 72px);
+}
+
+.subtitle {
+  margin-bottom: 24px;
+  color: #cfe8c0;
+  font-size: min(4.5vw, 22px);
+  opacity: 0.9;
+}
+
+.btnrow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.option-row {
+  margin-bottom: 10px;
+}
+
+.btn,
+.modebtn,
+.ctrlbtn,
+.hbtn {
+  border: 0;
+  cursor: pointer;
+  transition: transform 80ms, box-shadow 80ms;
+}
+
+.btn {
+  padding: 16px 40px;
+  border-radius: 60px;
+  color: #0a2b0a;
+  font-size: min(5.5vw, 28px);
+  font-weight: 800;
+  background: linear-gradient(180deg, #aef25a, #5fbf2e);
+  box-shadow: 0 8px 0 #2f7a17, 0 14px 30px rgb(0 0 0 / 45%);
+}
+
+.btn:active {
+  transform: translateY(6px);
+  box-shadow: 0 2px 0 #2f7a17, 0 6px 16px rgb(0 0 0 / 45%);
+}
+
+.btn-blue {
+  color: #04243f;
+  background: linear-gradient(180deg, #9bd8ff, #3a93dd);
+  box-shadow: 0 8px 0 #1f5fa0, 0 14px 30px rgb(0 0 0 / 45%);
+}
+
+.btn-blue:active {
+  box-shadow: 0 2px 0 #1f5fa0, 0 6px 16px rgb(0 0 0 / 45%);
+}
+
+.modebtn {
+  padding: 8px 24px;
+  border: 2px solid #4a6b4a;
+  border-radius: 40px;
+  color: #cfe8c0;
+  font-size: min(4vw, 18px);
+  font-weight: 800;
+  background: rgb(255 255 255 / 6%);
+}
+
+.modebtn:active,
+.ctrlbtn:active,
+.hbtn:active {
+  transform: scale(0.94);
+}
+
+.modebtn.active {
+  border-color: #ffd24a;
+  color: #3a2a04;
+  background: linear-gradient(180deg, #ffe07a, #ffb733);
+}
+
+#ctrls {
+  position: absolute;
+  z-index: 12;
+  top: 10px;
+  right: 12px;
+  display: flex;
+  gap: 8px;
+}
+
+/* ===== 右上角全域按鈕 ===== */
+.ctrlbtn {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 20px;
+  line-height: 1;
+  background: rgb(0 0 0 / 42%);
+}
+
+.tips {
+  max-width: 700px;
+  margin-top: 28px;
+  color: #9fb6c9;
+  font-size: min(3.6vw, 16px);
+  line-height: 1.9;
+}
+
+.tips b {
+  color: #cfe8c0;
+}
+
+.err {
+  max-width: 600px;
+  margin-top: 18px;
+  color: #ff8a8a;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.big-score {
+  margin: 6px 0 2px;
+  color: #ffd93b;
+  font-size: min(9vw, 64px);
+  font-weight: 900;
+  filter: drop-shadow(0 4px 18px rgb(0 0 0 / 50%));
+}
+
+.stat-row {
+  margin: 4px 0;
+  color: #dfeaf2;
+  font-size: min(4.5vw, 22px);
+}
+
+.stat-row b {
+  color: var(--accent);
+}
+
+#overRecord {
+  min-height: 1em;
+  margin-top: 8px;
+  color: #ffd93b;
+  font-size: min(4.5vw, 20px);
+  font-weight: 800;
+}
+
+.over-actions {
+  margin-top: 24px;
+}
+
+.over-count {
+  margin-top: 16px;
+  color: #9fb6c9;
+  font-size: 16px;
+}
+
+.pill {
+  position: absolute;
+  z-index: 11;
+  bottom: 14px;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 96vw;
+  padding: 7px 12px;
+  border-radius: 22px;
+  background: rgb(0 0 0 / 40%);
+  transform: translateX(-50%);
+}
+
+/* ===== 遊戲中攝影機校正與結束控制列 ===== */
+.hint-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.pill.collapsed .hint-inner {
+  display: none;
+}
+
+.pill.collapsed {
+  padding: 5px 8px;
+}
+
+.hbtn {
+  padding: 8px 14px;
+  border: 1px solid #46586a;
+  border-radius: 14px;
+  color: #e6eef6;
+  font-size: 15px;
+  font-weight: 700;
+  white-space: nowrap;
+  background: rgb(255 255 255 / 12%);
+}
+
+.hbtn-toggle {
+  margin-right: 8px;
+  padding: 6px 11px;
+  font-size: 18px;
+  line-height: 1;
+}
+
+#sensVal {
+  min-width: 92px;
+  padding: 0 4px;
+  color: #ffd93b;
+  font-size: 15px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.pill.click-mode :is(#sensDown, #sensVal, #sensUp, #mirrorBtn2, #rotBtn2, #camBtn2, #hintToggle) {
+  display: none;
+}
+
+.pill.click-mode .hint-inner {
+  display: flex !important;
+}
+
+.debug-control {
+  display: none;
+}
+
+.hiscore {
+  margin-top: 16px;
+  color: #ffd479;
+  font-size: min(3.6vw, 14px);
+}
+
+/* ===== 本機最高分榜 ===== */
+.hs-title {
+  margin-bottom: 6px;
+  font-weight: 800;
+}
+
+.hs-list {
+  position: relative;
+  width: min(86vw, 300px);
+  height: 142px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 5px 4px;
+  border: 1px solid rgb(255 212 121 / 25%);
+  border-radius: 10px;
+  text-align: left;
+  background: rgb(0 0 0 / 25%);
+}
+
+.hs-scroll {
+  display: flex;
+  flex-direction: column;
+}
+
+.hs-list:hover .hs-scroll {
+  animation-play-state: paused;
+}
+
+.hs-row {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  padding: 3px 10px;
+}
+
+.hs-rank {
+  width: 2.4em;
+  text-align: right;
+  opacity: 0.75;
+}
+
+.hs-score {
+  flex: 1;
+  font-weight: 800;
+}
+
+.hs-date,
+.hs-empty {
+  color: #b9c4cf;
+}
+
+.hs-date {
+  font-size: 0.82em;
+}
+
+@keyframes hs-loop {
+  to { transform: translateY(-50%); }
+}
+
+/* ===== 小螢幕與橫向手機配置 ===== */
+@media (max-width: 480px) {
+  .subtitle { margin-bottom: 14px; }
+  .tips { margin-top: 14px; line-height: 1.7; }
+  .hiscore { margin-top: 10px; }
+  .hs-list { height: 120px; }
+}
+
+@media (max-height: 600px) {
+  .title { margin-bottom: 2px; font-size: min(9vw, 46px); letter-spacing: 2px; }
+  .subtitle { margin-bottom: 10px; font-size: 13px; }
+  .btn { padding: 10px 26px; font-size: 17px; }
+  .modebtn { padding: 6px 16px; font-size: 13px; }
+  .btnrow { gap: 12px; }
+  .tips { display: none; }
+  .hiscore { margin-top: 8px; }
+  .hs-list { height: 104px; }
+  .big-score { font-size: 40px; }
+  .over-title { font-size: min(9vw, 46px); }
+}
+
+@media (max-height: 520px) {
+  .pill { bottom: 8px; padding: 4px 8px; }
+  .hbtn { padding: 5px 9px; border-radius: 9px; font-size: 12px; }
+  #sensVal { min-width: auto; font-size: 12px; }
+  .hbtn-toggle { padding: 5px 9px; font-size: 15px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+  }
+}

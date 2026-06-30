@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#0a0e14">
+  <title>開心殭屍 · 體感揮手遊戲</title>
+  <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+  <!-- Canvas 舞台：video 僅作為影像來源，實際遊戲與攝影機疊圖都畫在 canvas。 -->
+  <main id="stage" aria-label="開心殭屍遊戲區">
+    <video id="cam" autoplay playsinline muted aria-hidden="true"></video>
+    <canvas id="game" aria-label="殭屍遊戲畫面"></canvas>
+
+    <!-- 不論在哪個遊戲狀態都可使用的全域控制。 -->
+    <nav id="ctrls" aria-label="常用控制">
+      <button id="musicBtn" class="ctrlbtn" type="button" title="背景音樂開關 (B)" aria-label="切換背景音樂">🔊</button>
+      <button id="fsBtn" class="ctrlbtn" type="button" title="全螢幕 (F)" aria-label="切換全螢幕">⛶</button>
+    </nav>
+
+    <!-- 主選單：選擇玩法、難度與輸入方式。 -->
+    <section id="menu" class="overlay" aria-labelledby="gameTitle">
+      <h1 id="gameTitle" class="title">開心殭屍</h1>
+      <p class="subtitle">殭屍從鬼屋衝出來，把他們打爆！</p>
+
+      <div class="btnrow option-row" role="group" aria-label="遊戲模式">
+        <button id="timedBtn" class="modebtn active" type="button" aria-pressed="true">⏱ 計時 3 分</button>
+        <button id="endlessBtn" class="modebtn" type="button" aria-pressed="false">♾️ 無限闖關</button>
+      </div>
+      <div class="btnrow option-row" role="group" aria-label="難度">
+        <button id="easyBtn" class="modebtn" type="button" aria-pressed="false">😊 簡單</button>
+        <button id="normalBtn" class="modebtn active" type="button" aria-pressed="true">🙂 一般</button>
+        <button id="hardBtn" class="modebtn" type="button" aria-pressed="false">😈 困難</button>
+      </div>
+      <div class="btnrow">
+        <button id="camBtn" class="btn" type="button">📷 攝影機揮手</button>
+        <button id="clickBtn" class="btn btn-blue" type="button">🖱️ 滑鼠/觸控點擊</button>
+      </div>
+
+      <p class="tips">
+        📷 <b>攝影機揮手</b>：站到鏡頭前，對著殭屍揮手打爆（投影機／大螢幕情境）。<br>
+        🖱️ <b>滑鼠／觸控點擊</b>：沒攝影機也能玩，直接點擊殭屍（手機可用）。<br>
+        <b>計時</b>＝3 分鐘拚高分；<b>無限</b>＝關卡無止盡、殭屍越來越多。
+      </p>
+      <p id="menuErr" class="err" role="alert"></p>
+      <div id="hiscore" class="hiscore" aria-label="最高分紀錄"></div>
+    </section>
+
+    <!-- 結算層：由 main.js 寫入本局成績，十秒未操作會自動重玩。 -->
+    <section id="over" class="overlay hidden" aria-labelledby="overTitle">
+      <h2 class="title over-title" id="overTitle">遊戲結束</h2>
+      <p class="big-score" id="finalScore">0</p>
+      <p class="stat-row">擊倒殭屍 <b id="finalKills">0</b> 隻 · 到達第 <b id="finalLevel">1</b> 關</p>
+      <p id="overRecord"></p>
+      <div class="btnrow over-actions">
+        <button id="againBtn" class="btn" type="button">再玩一次</button>
+        <button id="menuBtn" class="btn btn-blue" type="button">返回主選單</button>
+      </div>
+      <p id="overCount" class="over-count"></p>
+    </section>
+  </main>
+
+  <!-- 遊戲中校正列；點擊模式會透過 CSS 隱藏攝影機專屬按鈕。 -->
+  <aside id="hint" class="pill hidden" aria-label="遊戲中控制列">
+    <button class="hbtn hbtn-toggle" id="hintToggle" type="button" aria-label="收合或展開控制列">⚙</button>
+    <span id="hintInner" class="hint-inner">
+      <button class="hbtn" id="sensDown" type="button" aria-label="提高動作偵測靈敏度">−</button>
+      <span id="sensVal">靈敏度 12</span>
+      <button class="hbtn" id="sensUp" type="button" aria-label="降低動作偵測靈敏度">＋</button>
+      <button class="hbtn" id="mirrorBtn2" type="button">🪞 鏡像 開</button>
+      <button class="hbtn" id="rotBtn2" type="button">🔄 旋轉 0°</button>
+      <button class="hbtn" id="camBtn2" type="button">📷 攝影機 關閉</button>
+      <button class="hbtn debug-control" id="godBtn" type="button">🛡 無敵</button>
+      <button class="hbtn" id="endBtn2" type="button">✖ 結束</button>
+    </span>
+  </aside>
+
+  <noscript>這個遊戲需要啟用 JavaScript。</noscript>
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>
