@@ -86,7 +86,7 @@ class AskChatGPT extends HTMLElement {
   }
 
   open() {
-    const url = "https://chatgpt.com/?temporary-chat=true&q=" + encodeURIComponent(this.q);
+    const url = "https://chatgpt.com/?temporary-chat=true&prompt=" + encodeURIComponent(this.q);
     window.open(url, "_blank", "noopener,noreferrer");
   }
 }
