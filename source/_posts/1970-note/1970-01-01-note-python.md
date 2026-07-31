@@ -127,7 +127,132 @@ pip install -r requirements.txt
 
 # 3. Python 基本語法
 
-## 3.1 變數
+## 3.1 註解
+
+註解是寫給開發者閱讀的說明文字，不會被 Python 當成程式執行。
+
+### 單行註解
+
+Python 使用 `#` 撰寫單行註解：
+
+```python
+# 顯示歡迎訊息
+print("Hello, Python")
+```
+
+也可以寫在程式碼後方：
+
+```python
+timeout = 30  # HTTP API 逾時秒數
+```
+
+行尾註解應保持簡短。較長的說明應放在程式碼上方。
+
+```python
+# API 最多等待 30 秒，避免服務無回應時
+# 程式持續停留在 HTTP 呼叫階段
+timeout = 30
+```
+
+### 多行註解
+
+Python 沒有專用的多行註解語法。多行註解通常是在每一行前面加上 `#`：
+
+```python
+# 取得遠端使用者資料
+# 將欄位轉換成系統需要的格式
+# 最後輸出成 JSON 檔案
+```
+
+部分程式碼會使用三個引號：
+
+```python
+"""
+這段文字可以跨越多行，
+但它本質上是一個字串，
+不是正式的 Python 註解。
+"""
+```
+
+三引號通常應用於文件字串，而不是一般註解。
+
+### 文件字串 Docstring
+
+Docstring 用來說明模組、函式、類別或方法的用途。
+
+#### 函式 Docstring
+
+```python
+def calculate_total(price: float, quantity: int) -> float:
+    """計算指定數量商品的總金額。"""
+    return price * quantity
+```
+
+較完整的寫法：
+
+```python
+def calculate_total(price: float, quantity: int) -> float:
+    """
+    計算商品總金額。
+
+    Args:
+        price: 商品單價。
+        quantity: 商品數量。
+
+    Returns:
+        商品單價乘以數量後的總金額。
+
+    Raises:
+        ValueError: 當價格或數量小於零時。
+    """
+    if price < 0:
+        raise ValueError("商品單價不可小於零")
+
+    if quantity < 0:
+        raise ValueError("商品數量不可小於零")
+
+    return price * quantity
+```
+
+#### 類別 Docstring
+
+```python
+class ApiClient:
+    """負責呼叫遠端 HTTP API。"""
+
+    def get_users(self) -> list[dict]:
+        """取得所有使用者資料。"""
+        return []
+```
+
+#### 模組 Docstring
+
+模組說明通常放在 `.py` 檔案最上方：
+
+```python
+"""
+使用者資料匯出工具。
+
+此模組負責呼叫使用者 API、轉換資料，
+並將結果輸出成 JSON 檔案。
+"""
+
+import json
+import requests
+```
+
+### 註解原則
+
+* 使用 `#` 撰寫一般註解。
+* 使用 Docstring 說明模組、類別與函式。
+* 說明程式採用某種做法的原因。
+* 不要逐行翻譯明顯的程式碼。
+* 不要長期保留大量被註解掉的舊程式碼。
+* 修改程式碼時同步更新註解。
+* API 限制、資料格式與相容性處理應留下說明。
+* 複雜程式應優先改善命名與結構，而不是用大量註解補救。
+
+## 3.2 變數
 
 Python 不需要事先宣告變數型別。
 
@@ -138,7 +263,7 @@ height = 180.5
 is_developer = True
 ```
 
-## 3.2 常見資料型別
+## 3.3 常見資料型別
 
 | 型別      | 說明    | 範例                |
 | ------- | ----- | ----------------- |
@@ -166,7 +291,7 @@ print(type(value))
 <class 'int'>
 ```
 
-## 3.3 型別提示
+## 3.4 型別提示
 
 Python 支援型別提示，建議在正式專案中使用。
 
