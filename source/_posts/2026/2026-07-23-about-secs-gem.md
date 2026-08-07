@@ -10,6 +10,10 @@ permalink: about-secs-gem/
 
 SECS/GEM 是半導體製造的核心骨幹，使主機系統與設備之間能夠進行無縫通訊，並且能夠實現自動化生產流程。本文將介紹 SECS/GEM 的基本概念、架構以及其在半導體製造中的應用。
 
+>SEMI 制定的相關標準可以在[官網](https://www.semi.org)的[商店](https://store-us.semi.org/collections/standards/)購買並下載最新版本，例如 SEMI E5 可以在[這裡](https://store-us.semi.org/products/e00500-semi-e5-specification-for-semi-equipment-communications-standard-2-message-content-secs-ii)購買。
+
+>基本上這些標準的核心內容通常不會有太大變動，如果你手邊有舊版本的 SEMI 標準文件也可以繼續參考。版本更新通常是針對一些細節、錯字或是補充說明進行修正，不會影響既有的標準規範。
+
 ## SECS/GEM 的基本概念
 
 SECS，全名為 SEMI Equipment Communications Standard，是一個通訊協議家族，主要用於半導體製造設備與主機系統之間的通訊。這個協議家族由 SEMI（半導體設備與材料國際協會）制定，SECS 通訊協議家族其實包含三個標準：
