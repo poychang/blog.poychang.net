@@ -4,7 +4,7 @@ title: Surface Pro 睡著了，WSL 服務卻還在跑
 date: 2026-07-06 16:06
 author: Poy Chang
 comments: true
-categories: [Typescript, Javascript, Python, CSharp, Dotnet, Blazor, SQL, Angular, WebAPI, Azure, Develop, Bot, IoT, AI, Container, PowerShell, Tools, App, Test, Note, Concept, Uncategorized]
+categories: [AI, Container, Tools]
 permalink: wsl-service-running-on-asleep-device/
 ---
 

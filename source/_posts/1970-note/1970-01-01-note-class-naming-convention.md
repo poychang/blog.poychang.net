@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  類別的命名慣例
+title: 類別的命名慣例
 date: 1970-01-01 12:00
 author: Poy Chang
 comments: true
 categories: [Develop]
-permalink: class-naming-convention/
+permalink: note-class-naming-convention/
 ---
 
 參考一定程度的程式命名慣例，能幫助我們更好的維護程式碼。
