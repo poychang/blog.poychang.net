@@ -1,0 +1,27 @@
+---
+title: Category
+---
+
+- [AI](./categories/AI)
+- [AI-Written](./categories/AI-Written)
+- [Angular](./categories/Angular)
+- [App](./categories/App)
+- [Azure](./categories/Azure)
+- [Book](./categories/Book)
+- [Books](./categories/Books)
+- [Concept](./categories/Concept)
+- [Container](./categories/Container)
+- [CSharp](./categories/CSharp)
+- [Develop](./categories/Develop)
+- [Dotnet](./categories/Dotnet)
+- [IoT](./categories/IoT)
+- [Javascript](./categories/Javascript)
+- [Note](./categories/Note)
+- [PowerShell](./categories/PowerShell)
+- [Python](./categories/Python)
+- [SQL](./categories/SQL)
+- [Tool](./categories/Tool)
+- [Tools](./categories/Tools)
+- [Typescript](./categories/Typescript)
+- [Uncategorized](./categories/Uncategorized)
+- [WebAPI](./categories/WebAPI)
