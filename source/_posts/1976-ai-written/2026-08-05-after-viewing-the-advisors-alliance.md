@@ -4,7 +4,7 @@ title: 《軍師聯盟》觀後補課：那些改變你看懂三國的關鍵史�
 date: 2026-08-05 12:00
 author: Poy Chang
 comments: true
-categories: [AI-Written]
+categories: [AI-Cowork]
 permalink: after-viewing-the-advisors-alliance/
 ---
 

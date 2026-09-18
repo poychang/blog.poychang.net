@@ -4,7 +4,7 @@ title: C# 中透過 call by reference 的方式來修改原始變數
 date: 2024-04-25 12:00
 author: Poy Chang
 comments: true
-categories: [AI-Written, CSharp, Develop]
+categories: [AI-Cowork, CSharp, Develop]
 permalink: call-by-reference/
 ---
 

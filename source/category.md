@@ -3,7 +3,7 @@ title: Category
 ---
 
 - [AI](./categories/AI)
-- [AI-Written](./categories/AI-Written)
+- [AI-Cowork](./categories/AI-Cowork)
 - [Angular](./categories/Angular)
 - [App](./categories/App)
 - [Azure](./categories/Azure)

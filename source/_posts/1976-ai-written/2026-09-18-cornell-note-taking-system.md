@@ -4,7 +4,7 @@ title: Cornell Note-Taking System：用一頁紙把「記錄」變成「理解�
 date: 2026-0-18 12:00
 author: Poy Chang
 comments: true
-categories: [AI-Written]
+categories: [AI-Cowork]
 permalink: cornell-note-taking-system/
 ---
 

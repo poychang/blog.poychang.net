@@ -4,7 +4,7 @@ title: C# 中 IndexOf 和 Contains 的差別
 date: 2024-02-01 12:00
 author: Poy Chang
 comments: true
-categories: [AI-Written, CSharp, Develop]
+categories: [AI-Cowork, CSharp, Develop]
 permalink: difference-between-indexof-and-contains-in-csharp/
 ---
 
