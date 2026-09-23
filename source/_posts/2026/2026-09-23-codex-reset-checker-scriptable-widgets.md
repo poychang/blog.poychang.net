@@ -43,3 +43,4 @@ iOS 上的 Widget 很適合拿來建立即時資訊的小工具，於是我就�
 參考資料：
 - [Scriptable：用 JavaScript 打造自己的 iPhone／iPad 自動化工具與 Widget](https://blog.poychang.net/scriptable-widget-introduction/)
 - [Codex Reset Checker Scriptable Widgets](https://github.com/poychang/scriptable-widgets/blob/main/widgets/codex-reset-checker/README.md)
+- [rushhiii/Scriptable-iOSWidgets](https://github.com/rushhiii/Scriptable-iOSWidgets)
