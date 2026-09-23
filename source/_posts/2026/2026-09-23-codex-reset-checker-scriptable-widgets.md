@@ -14,9 +14,11 @@ iOS 上的 Widget 很適合拿來建立即時資訊的小工具，於是我就�
 
 > 當然，以下程式碼是請 Codex 幫我寫的。
 
-<script src="https://raw.githubusercontent.com/poychang/scriptable-widgets/main/widgets/codex-reset-checker/codex-reset-checker.js"></script>
+完整程式碼請參考 [codex-reset-checker.js](https://raw.githubusercontent.com/poychang/scriptable-widgets/main/widgets/codex-reset-checker/codex-reset-checker.js)。
 
-在下載並安裝 Scriptable 之後，可以透過以下方式來建立這個 Scriptable Widget，安裝方式如下：
+## 安裝與設定
+
+在 App Store 下載並安裝 [Scriptable](https://apps.apple.com/tw/app/scriptable/id1405459188) 之後，可以透過以下方式來建立這個 Scriptable Widget，安裝方式如下：
 
 1. 將 [codex-reset-checker.js](./codex-reset-checker.js) 的內容複製到 Scriptable，建立同名腳本。
 2. 開啟腳本最上方的 `AUTH_JSON` 設定。
