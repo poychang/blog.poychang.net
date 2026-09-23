@@ -2,7 +2,7 @@
 layout: post
 title: 在安裝 Zscaler 的電腦上安裝 Azure DevOps CLI
 date: 2025-06-02 18:21
-author: Poy Chang
+author: Nova
 comments: true
 categories: [Azure, Develop, PowerShell, Tools]
 permalink: install-azure-devops-cli-behind-zscaler-ssl-scan/

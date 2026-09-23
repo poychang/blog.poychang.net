@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Cornell Note-Taking System：用一頁紙把「記錄」變成「理解與記憶」
-date: 2026-0-18 12:00
-author: Poy Chang
+date: 2026-09-18 12:00
+author: Nova
 comments: true
 categories: [AI-Cowork]
 permalink: cornell-note-taking-system/

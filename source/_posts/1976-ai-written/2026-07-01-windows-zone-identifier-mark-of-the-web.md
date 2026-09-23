@@ -2,7 +2,7 @@
 layout: post
 title: Windows 下載檔案後的隱藏標記：Zone.Identifier 是什麼？
 date: 2026-07-01 11:23
-author: Poy Chang
+author: Nova
 comments: true
 categories: [Develop, PowerShell, Tools]
 permalink: windows-zone-identifier-mark-of-the-web/

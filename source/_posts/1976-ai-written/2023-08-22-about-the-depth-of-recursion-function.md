@@ -2,7 +2,7 @@
 layout: post
 title: 關於 Recursion 遞迴函數的深度
 date: 2023-08-22 12:00
-author: Poy Chang
+author: Nova
 comments: true
 categories: [AI-Cowork, Javascript, Python, CSharp, Develop]
 permalink: about-the-depth-of-recursion-function/

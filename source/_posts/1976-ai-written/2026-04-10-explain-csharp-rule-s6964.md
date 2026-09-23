@@ -2,7 +2,7 @@
 layout: post
 title: 解釋 C# 規則 S6964
 date: 2026-04-10 16:07
-author: Poy Chang
+author: Nova
 comments: true
 categories: [Develop, PowerShell, Tools]
 permalink: explain-csharp-rule-s6964/

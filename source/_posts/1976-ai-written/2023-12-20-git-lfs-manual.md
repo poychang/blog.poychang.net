@@ -2,7 +2,7 @@
 layout: post
 title: Git LFS 使用手冊
 date: 2023-12-20 12:00
-author: Poy Chang
+author: Nova
 comments: true
 categories: [AI-Cowork, Javascript, Python, CSharp, Develop]
 permalink: git-lfs-manual/
