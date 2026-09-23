@@ -8,7 +8,7 @@ categories: [AI-Cowork]
 permalink: scriptable-widget-introduction/
 ---
 
-如果你會寫 JavaScript，又經常使用 iPhone 或 iPad，那麼 **Scriptable** 是一個相當值得認識的 App。它可以把 iPhone 或 iPad 變成一個小型的 JavaScript 執行環境，讓我們直接在裝置上撰寫程式，存取部分 iOS 原生功能、呼叫 Web API、處理檔案，甚至建立自己的桌面 Widget。
+如果你會寫 JavaScript，又經常使用 iPhone 或 iPad，那麼 [Scriptable](https://scriptable.app/) 是一個相當值得認識的 App。它可以把 iPhone 或 iPad 變成一個小型的 JavaScript 執行環境，讓我們直接在裝置上撰寫程式，存取部分 iOS 原生功能、呼叫 Web API、處理檔案，甚至建立自己的桌面 Widget。
 
 Scriptable 官方對自己的定位非常直接：
 
