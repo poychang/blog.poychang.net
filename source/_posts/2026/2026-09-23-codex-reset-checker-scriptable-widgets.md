@@ -41,8 +41,8 @@ iOS 上的 Widget 很適合拿來建立即時資訊的小工具，於是我就�
 
 其中 `~/.codex/auth.json` 是 Codex 用來存放認證資訊的檔案，你必須在你得電腦上安裝 Codex CLI 並完成登入，才能取得這個檔案。
 
-<script type=“module” src=“/assets/components/ask-chatgpt.js”></script>
-<ask-chatgpt q=“如何取得自己電腦的 .codex/auth.json 檔案位置與內容”></ask-chatgpt>
+<script type="module" src="/assets/components/ask-chatgpt.js"></script>
+<ask-chatgpt q="如何取得自己電腦的 .codex/auth.json 檔案位置與內容"></ask-chatgpt>
 
 請注意！這裡面有非常重要的 Token 資訊，千萬不要隨意洩漏，否則可能會導致你的 Codex 帳號被濫用。
 
