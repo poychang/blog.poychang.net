@@ -2,16 +2,19 @@
 title: apps
 ---
 
-## Primary Apps
+## Apps
 
 - [Files Hosting](https://files.poychang.net/)
 - [Short URL Service](https://s.poychang.net/)
-- [Microsoft Terminology Lookup](https://lookup-terms.poychang.net/)
-- [JMESPath Playground](https://jmespath.poychang.net/)
-- [Kids Writing Board](https://kids-writing-board.poychang.net/)
-- [Write Mate](https://write-mate.poychang.net/)
 
-## Playground Apps
+## Projects
+
+- [Microsoft Terminology Lookup](https://project.poychang.net/Lookup-Microsoft-Terms)
+- [JMESPath Playground](https://project.poychang.net/jmespath-playground)
+- [Kids Writing Board](https://project.poychang.net/kids-writing-board)
+- [Write Mate](https://project.poychang.net/write-mate)
+
+## Playground
 
 - [Chrome Dino](/apps/chrome-dino/)
 - [Coffitivity PWA](/apps/coffitivity-pwa/)
