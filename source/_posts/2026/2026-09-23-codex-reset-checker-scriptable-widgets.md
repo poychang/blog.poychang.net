@@ -20,13 +20,29 @@ iOS 上的 Widget 很適合拿來建立即時資訊的小工具，於是我就�
 
 在 App Store 下載並安裝 [Scriptable](https://apps.apple.com/tw/app/scriptable/id1405459188) 之後，可以透過以下方式來建立這個 Scriptable Widget，安裝方式如下：
 
-1. 將 [codex-reset-checker.js](./codex-reset-checker.js) 的內容複製到 Scriptable，建立同名腳本。
-2. 開啟腳本最上方的 `AUTH_JSON` 設定。
-3. 將 `~/.codex/auth.json` 的完整 JSON 貼到 `AUTH_JSON` 物件中。
-4. 在 Scriptable 執行一次腳本，確認能正常顯示使用量。
-5. 將腳本加入主畫面小工具，選擇 Small、Medium 或 Large 尺寸。
+1. 開啟 Scriptable，點選右上方 ＋ 按鈕，新增一個名為 `Codex Reset Checker` 的 Script，並將上面所提供的程式碼貼進去
+![01-create-new-script](https://files.poychang.net/storage/codex-reset-checker-scriptable-widgets/01-create-new-script.jpeg)
+
+2. 從你電腦中取得 `~/.codex/auth.json` 內容，再將完整的 JSON 貼到 Script 上方的 `AUTH_JSON` 物件中
+![02-paste-the-code](https://files.poychang.net/storage/codex-reset-checker-scriptable-widgets/02-paste-the-code.jpeg)
+
+3. 回到桌面並開啟編輯模式，準備加入 Widget 小工具
+![03-press-screen-to-select-and-add](https://files.poychang.net/storage/codex-reset-checker-scriptable-widgets/03-press-screen-to-select-and-add.jpeg)
+
+4. 選擇`加入小工具`，會開啟 Scriptable 讓你選擇要加入 Widget 的尺寸，建議選擇 medium
+![04-add-widget](https://files.poychang.net/storage/codex-reset-checker-scriptable-widgets/04-add-widget.jpeg)
+
+5. 點選桌面上的 Scriptable Widget 並選擇`編輯小工具`，接著 Script 挑選剛剛建立好的 `Codex Reset Checker`
+![06-edit-the-widget](https://files.poychang.net/storage/codex-reset-checker-scriptable-widgets/06-edit-the-widget.jpeg)
+![07-select-the-script](https://files.poychang.net/storage/codex-reset-checker-scriptable-widgets/07-select-the-script.jpeg)
+
+6. 即可在桌面上看到你的 Codex 使用量 
+![08-now-you-can-check-your-usage](https://files.poychang.net/storage/codex-reset-checker-scriptable-widgets/08-now-you-can-check-your-usage.jpeg)
 
 其中 `~/.codex/auth.json` 是 Codex 用來存放認證資訊的檔案，你必須在你得電腦上安裝 Codex CLI 並完成登入，才能取得這個檔案。
+
+<script type=“module” src=“/assets/components/ask-chatgpt.js”></script>
+<ask-chatgpt q=“如何取得自己電腦的 .codex/auth.json 檔案位置與內容”></ask-chatgpt>
 
 請注意！這裡面有非常重要的 Token 資訊，千萬不要隨意洩漏，否則可能會導致你的 Codex 帳號被濫用。
 
