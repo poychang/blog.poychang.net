@@ -1,0 +1,645 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - link "Skip to content" [ref=e4] [cursor=pointer]:
+      - /url: "#start-of-content"
+    - banner [ref=e9]:
+      - heading "Navigation Menu" [level=2] [ref=e10]
+      - generic [ref=e11]:
+        - link "Homepage" [ref=e13] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e16]:
+          - navigation "Global" [ref=e17]:
+            - list [ref=e18]:
+              - listitem [ref=e19]:
+                - button "Platform" [ref=e21] [cursor=pointer]
+              - listitem [ref=e24]:
+                - button "Solutions" [ref=e26] [cursor=pointer]
+              - listitem [ref=e29]:
+                - button "Resources" [ref=e31] [cursor=pointer]
+              - listitem [ref=e34]:
+                - button "Open Source" [ref=e36] [cursor=pointer]
+              - listitem [ref=e39]:
+                - button "Enterprise" [ref=e41] [cursor=pointer]
+              - listitem [ref=e44]:
+                - link "Pricing" [ref=e45] [cursor=pointer]:
+                  - /url: https://github.com/pricing
+          - generic [ref=e46]:
+            - button "Search or jump to, type / to search" [ref=e48] [cursor=pointer]
+            - link "Sign in" [ref=e55] [cursor=pointer]:
+              - /url: /login?return_to=https%3A%2F%2Fgithub.com%2Fpoychang%2Fblog.poychang.net%2Fpull%2F50
+            - link "Sign up" [ref=e58] [cursor=pointer]:
+              - /url: /signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Fvoltron%2Fpull_requests_fragments%2Fpull_request_layout&source=header-repo&source_repo=poychang%2Fblog.poychang.net
+            - button "Appearance settings" [ref=e61] [cursor=pointer]
+  - main [ref=e68]:
+    - generic [ref=e69]:
+      - generic [ref=e70]:
+        - generic [ref=e72]:
+          - link "poychang" [ref=e76] [cursor=pointer]:
+            - /url: /poychang
+          - generic [ref=e77]: /
+          - strong [ref=e78]:
+            - link "blog.poychang.net" [ref=e79] [cursor=pointer]:
+              - /url: /poychang/blog.poychang.net
+          - generic [ref=e80]: Public
+        - generic [ref=e81]:
+          - list:
+            - listitem [ref=e82]:
+              - link "You must be signed in to change notification settings" [ref=e83] [cursor=pointer]:
+                - /url: /login?return_to=%2Fpoychang%2Fblog.poychang.net
+                - text: Notifications
+            - listitem [ref=e86]:
+              - link "Fork 2" [ref=e87] [cursor=pointer]:
+                - /url: /login?return_to=%2Fpoychang%2Fblog.poychang.net
+                - text: Fork
+                - generic "2" [ref=e90]
+            - listitem [ref=e91]:
+              - link "You must be signed in to star a repository" [ref=e93] [cursor=pointer]:
+                - /url: /login?return_to=%2Fpoychang%2Fblog.poychang.net
+                - text: Star
+                - generic "6 users starred this repository" [ref=e96]: "6"
+      - navigation "Repository" [ref=e97]:
+        - list [ref=e98]:
+          - listitem [ref=e99]:
+            - link "Code" [ref=e100] [cursor=pointer]:
+              - /url: /poychang/blog.poychang.net
+          - listitem [ref=e104]:
+            - link "Issues 1" [ref=e105] [cursor=pointer]:
+              - /url: /poychang/blog.poychang.net/issues
+              - generic [ref=e109]: Issues
+              - generic "1" [ref=e110]
+          - listitem [ref=e111]:
+            - link "Pull requests 1" [ref=e112] [cursor=pointer]:
+              - /url: /poychang/blog.poychang.net/pulls
+              - generic [ref=e115]: Pull requests
+              - generic "1" [ref=e116]
+          - listitem [ref=e117]:
+            - link "Actions" [ref=e118] [cursor=pointer]:
+              - /url: /poychang/blog.poychang.net/actions
+          - listitem [ref=e122]:
+            - link "Projects" [ref=e123] [cursor=pointer]:
+              - /url: /poychang/blog.poychang.net/projects
+          - listitem [ref=e127]:
+            - link "Security and quality" [ref=e128] [cursor=pointer]:
+              - /url: /poychang/blog.poychang.net/security
+          - listitem [ref=e132]:
+            - link "Insights" [ref=e133] [cursor=pointer]:
+              - /url: /poychang/blog.poychang.net/pulse
+    - generic [ref=e143]:
+      - generic [ref=e147]:
+        - generic [ref=e149]:
+          - 'heading "新增 OpenAI DevDay 2026 回顧文章 - #50" [level=1] [ref=e150]':
+            - text: 新增 OpenAI DevDay 2026 回顧文章
+            - generic [ref=e151]: "- #50"
+          - generic [aria-hidden] [ref=e153]: "#50"
+        - generic [ref=e155]:
+          - generic [ref=e157]:
+            - img "Pull request" [ref=e158]
+            - text: Draft
+          - generic [ref=e161]:
+            - generic [ref=e163]:
+              - link "poychang" [ref=e164] [cursor=pointer]:
+                - /url: /poychang
+              - text: with
+              - link "Copilot" [ref=e165] [cursor=pointer]:
+                - /url: /apps/copilot-swe-agent
+            - text: wants to merge 4 commits into
+            - generic [ref=e166]:
+              - link "main" [ref=e167] [cursor=pointer]:
+                - /url: /poychang/blog.poychang.net/tree/main
+              - generic [ref=e168]: from
+              - generic [ref=e169]:
+                - link "copilot/openai-new-tech-2026" [ref=e170] [cursor=pointer]:
+                  - /url: /poychang/blog.poychang.net/tree/copilot/openai-new-tech-2026
+                - button "Copy head branch name to clipboard" [ref=e171] [cursor=pointer]
+        - navigation "Pull request navigation" [ref=e179]:
+          - generic [ref=e180]:
+            - link "Conversation" [ref=e181] [cursor=pointer]:
+              - /url: /poychang/blog.poychang.net/pull/50
+            - link "Commits (4)" [ref=e184] [cursor=pointer]:
+              - /url: /poychang/blog.poychang.net/pull/50/commits
+              - text: Commits
+              - generic [aria-hidden] [ref=e187]: "4"
+              - generic [ref=e188]: (4)
+            - link "Checks" [ref=e189] [cursor=pointer]:
+              - /url: /poychang/blog.poychang.net/pull/50/checks
+            - link "Files changed" [ref=e192] [cursor=pointer]:
+              - /url: /poychang/blog.poychang.net/pull/50/files
+      - generic [ref=e199]:
+        - generic [ref=e201]:
+          - heading "Conversation" [level=2] [ref=e202]
+          - generic [ref=e203]:
+            - generic [ref=e204]:
+              - generic [ref=e206]:
+                - link "Copilot" [ref=e207] [cursor=pointer]:
+                  - /url: /apps/copilot-swe-agent
+                - generic [ref=e213]:
+                  - generic [ref=e214]:
+                    - heading "Copilot AI commented Oct 4, 202616 minutes ago •" [level=3] [ref=e215]:
+                      - generic [ref=e216]:
+                        - strong [ref=e217]:
+                          - link "Copilot" [ref=e218] [cursor=pointer]:
+                            - /url: /apps/copilot-swe-agent
+                          - generic [ref=e219]: AI
+                        - text: commented
+                        - link "Oct 4, 202616 minutes ago" [ref=e220] [cursor=pointer]:
+                          - /url: "#issue-5695367038"
+                        - generic [ref=e221]:
+                          - generic [ref=e222]: •
+                          - group [ref=e223]:
+                            - button "edited" [ref=e224] [cursor=pointer]
+                    - generic [ref=e228]:
+                      - group [ref=e230]:
+                        - button [ref=e231] [cursor=pointer]:
+                          - img "Show options" [ref=e234]
+                      - generic "This user has previously committed to the blog.poychang.net repository." [ref=e237]: Contributor
+                  - generic [ref=e242]:
+                    - paragraph [ref=e243]: 新增繁體中文文章，整理 OpenAI DevDay 2026 回顧中的技術公告，並說明對工程團隊的觀察方向。
+                    - list [ref=e244]:
+                      - listitem [ref=e245]:
+                        - strong [ref=e246]: 涵蓋內容
+                        - list [ref=e247]:
+                          - listitem [ref=e248]: 模型、代理、Codex 工具、API 與 plugin 公告
+                          - listitem [ref=e249]: 新技術的評估與導入考量
+                      - listitem [ref=e250]:
+                        - strong [ref=e251]: 撰寫範圍
+                        - list [ref=e252]:
+                          - listitem [ref=e253]: 不加入程式碼範例
+                          - listitem [ref=e254]: 不推測摘要未能確認的功能規格、價格、效能或可用性
+              - generic [ref=e255]:
+                - generic [ref=e266]:
+                  - generic [ref=e268]:
+                    - link "Copilot" [ref=e269] [cursor=pointer]:
+                      - /url: /apps/copilot-swe-agent
+                    - link [ref=e274] [cursor=pointer]:
+                      - /url: /poychang
+                      - img "@poychang" [ref=e275]
+                  - generic [ref=e276]:
+                    - code [ref=e277]:
+                      - 'link "feat(post): draft ''openai-devday-2026-recap'' by nova" [ref=e278] [cursor=pointer]':
+                        - /url: /poychang/blog.poychang.net/pull/50/commits/bd9d96fc33a610f17b8ceeb3568131619b8bb1a7
+                    - button "Commit message body" [ref=e280] [cursor=pointer]: …
+                  - code [ref=e290]:
+                    - link "bd9d96f" [ref=e291] [cursor=pointer]:
+                      - /url: /poychang/blog.poychang.net/pull/50/commits/bd9d96fc33a610f17b8ceeb3568131619b8bb1a7
+                - generic [ref=e292]:
+                  - generic [ref=e297]:
+                    - link "Copilot" [ref=e298] [cursor=pointer]:
+                      - /url: /apps/copilot-swe-agent
+                    - link "Copilot" [ref=e303] [cursor=pointer]:
+                      - /url: /apps/copilot-swe-agent
+                    - generic [ref=e304]: AI
+                    - text: assigned
+                    - link "Copilot" [ref=e305] [cursor=pointer]:
+                      - /url: /apps/copilot-swe-agent
+                    - text: and
+                    - link "poychang" [ref=e306] [cursor=pointer]:
+                      - /url: /poychang
+                    - link "Oct 4, 202616 minutes ago" [ref=e307] [cursor=pointer]:
+                      - /url: "#event-32423945147"
+                  - generic [ref=e314]:
+                    - strong [ref=e315]: Copilot
+                    - link "created this pull request from a session" [ref=e316] [cursor=pointer]:
+                      - /url: https://github.com/poychang/blog.poychang.net/sessions/9aeebf1e-9570-447b-ab85-e1b5abe788cd
+                    - text: on behalf of
+                    - link "poychang" [ref=e317] [cursor=pointer]:
+                      - /url: /poychang
+                    - link "October 4, 2026 01:5315 minutes ago" [ref=e318] [cursor=pointer]:
+                      - /url: "#event-32423957220"
+                    - link "View session 9aeebf1e-9570-447b-ab85-e1b5abe788cd" [ref=e319] [cursor=pointer]:
+                      - /url: https://github.com/poychang/blog.poychang.net/sessions/9aeebf1e-9570-447b-ab85-e1b5abe788cd
+                      - generic [ref=e320]: View session
+                  - generic [ref=e328]:
+                    - strong [ref=e329]: Copilot
+                    - link "finished work" [ref=e330] [cursor=pointer]:
+                      - /url: https://github.com/poychang/blog.poychang.net/sessions/9aeebf1e-9570-447b-ab85-e1b5abe788cd
+                    - text: on behalf of
+                    - link "poychang" [ref=e331] [cursor=pointer]:
+                      - /url: /poychang
+                    - link "October 4, 2026 01:5315 minutes ago" [ref=e332] [cursor=pointer]:
+                      - /url: "#event-32423957411"
+                  - generic [ref=e338]:
+                    - link "Copilot" [ref=e340] [cursor=pointer]:
+                      - /url: /apps/copilot-swe-agent
+                    - generic [ref=e345]:
+                      - link "Copilot" [ref=e346] [cursor=pointer]:
+                        - /url: /apps/copilot-swe-agent
+                      - generic [ref=e347]: AI
+                      - text: requested a review from
+                      - link "poychang" [ref=e348] [cursor=pointer]:
+                        - /url: /poychang
+                      - link "October 4, 2026 01:5315 minutes ago" [ref=e349] [cursor=pointer]:
+                        - /url: "#event-32423957578"
+                - generic [ref=e351]:
+                  - link "Copilot" [ref=e353] [cursor=pointer]:
+                    - /url: /apps/copilot-swe-agent
+                  - generic [ref=e359]:
+                    - generic [ref=e360]:
+                      - heading "Copilot AI commented Oct 4, 202612 minutes ago" [level=3] [ref=e361]:
+                        - generic [ref=e362]:
+                          - strong [ref=e363]:
+                            - link "Copilot" [ref=e364] [cursor=pointer]:
+                              - /url: /apps/copilot-swe-agent
+                            - generic [ref=e365]: AI
+                          - text: commented
+                          - link "Oct 4, 202612 minutes ago" [ref=e366] [cursor=pointer]:
+                            - /url: "#issuecomment-5975574223"
+                      - generic [ref=e367]:
+                        - group [ref=e369]:
+                          - button [ref=e370] [cursor=pointer]:
+                            - img "Show options" [ref=e373]
+                        - generic [ref=e375]:
+                          - generic "This user has previously committed to the blog.poychang.net repository." [ref=e376]: Contributor
+                          - generic "This user is the author of this pull request." [ref=e378]: Author
+                    - table [ref=e382]:
+                      - rowgroup [ref=e383]:
+                        - row [ref=e384]:
+                          - cell [ref=e385]:
+                            - paragraph [ref=e386]:
+                              - link "@poychang" [ref=e387] [cursor=pointer]:
+                                - /url: https://github.com/poychang
+                              - text: Thanks for sending me some feedback. Unfortunately, I hit an error while trying to use the custom
+                              - link "Copilot setup steps" [ref=e388] [cursor=pointer]:
+                                - /url: https://gh.io/copilot/actions-setup-steps
+                              - text: "configured for this repository. The error I am seeing is:"
+                            - generic [ref=e389]:
+                              - code [ref=e391]: no supported setup-steps job found in your workflow file. Please ensure you have a job named copilot-setup-steps. For more details, see https://gh.io/copilot/actions-setup-steps
+                              - button "Copy code to clipboard" [ref=e393] [cursor=pointer]
+                            - paragraph [ref=e397]: Once you or someone with the necessary access fixes the problem, please let me know in a comment and I'll try again. Thanks!
+                - generic [ref=e405]:
+                  - strong [ref=e406]: Copilot
+                  - link "started work" [ref=e407] [cursor=pointer]:
+                    - /url: https://github.com/poychang/blog.poychang.net/sessions/e5ec6cf2-fa3f-4a58-8710-cc5c91588f0b
+                  - text: on behalf of
+                  - link "poychang" [ref=e408] [cursor=pointer]:
+                    - /url: /poychang
+                  - link "October 4, 2026 01:5612 minutes ago" [ref=e409] [cursor=pointer]:
+                    - /url: "#event-32424038818"
+                  - link "View session e5ec6cf2-fa3f-4a58-8710-cc5c91588f0b" [ref=e410] [cursor=pointer]:
+                    - /url: https://github.com/poychang/blog.poychang.net/sessions/e5ec6cf2-fa3f-4a58-8710-cc5c91588f0b
+                    - generic [ref=e411]: View session
+                - generic [ref=e423]:
+                  - generic [ref=e425]:
+                    - link "Copilot" [ref=e426] [cursor=pointer]:
+                      - /url: /apps/copilot-swe-agent
+                    - link [ref=e431] [cursor=pointer]:
+                      - /url: /poychang
+                      - img "@poychang" [ref=e432]
+                  - generic [ref=e433]:
+                    - code [ref=e434]:
+                      - 'link "docs: refine DevDay article heading" [ref=e435] [cursor=pointer]':
+                        - /url: /poychang/blog.poychang.net/pull/50/commits/57fbfa512c0af0cfb5d8fcadca15233b9e6f10e6
+                    - button "Commit message body" [ref=e437] [cursor=pointer]: …
+                  - code [ref=e447]:
+                    - link "57fbfa5" [ref=e448] [cursor=pointer]:
+                      - /url: /poychang/blog.poychang.net/pull/50/commits/57fbfa512c0af0cfb5d8fcadca15233b9e6f10e6
+                - generic [ref=e456]:
+                  - strong [ref=e457]: Copilot
+                  - link "finished work" [ref=e458] [cursor=pointer]:
+                    - /url: https://github.com/poychang/blog.poychang.net/sessions/e5ec6cf2-fa3f-4a58-8710-cc5c91588f0b
+                  - text: on behalf of
+                  - link "poychang" [ref=e459] [cursor=pointer]:
+                    - /url: /poychang
+                  - link "October 4, 2026 01:5811 minutes ago" [ref=e460] [cursor=pointer]:
+                    - /url: "#event-32424070237"
+                - generic [ref=e462]:
+                  - link "Copilot" [ref=e464] [cursor=pointer]:
+                    - /url: /apps/copilot-swe-agent
+                  - generic [ref=e470]:
+                    - generic [ref=e471]:
+                      - heading "Copilot AI commented Oct 4, 202610 minutes ago" [level=3] [ref=e472]:
+                        - generic [ref=e473]:
+                          - strong [ref=e474]:
+                            - link "Copilot" [ref=e475] [cursor=pointer]:
+                              - /url: /apps/copilot-swe-agent
+                            - generic [ref=e476]: AI
+                          - text: commented
+                          - link "Oct 4, 202610 minutes ago" [ref=e477] [cursor=pointer]:
+                            - /url: "#issuecomment-5975586966"
+                      - generic [ref=e478]:
+                        - group [ref=e480]:
+                          - button [ref=e481] [cursor=pointer]:
+                            - img "Show options" [ref=e484]
+                        - generic [ref=e486]:
+                          - generic "This user has previously committed to the blog.poychang.net repository." [ref=e487]: Contributor
+                          - generic "This user is the author of this pull request." [ref=e489]: Author
+                    - table [ref=e493]:
+                      - rowgroup [ref=e494]:
+                        - row [ref=e495]:
+                          - cell [ref=e496]:
+                            - paragraph [ref=e497]:
+                              - link "@poychang" [ref=e498] [cursor=pointer]:
+                                - /url: https://github.com/poychang
+                              - text: Thanks for sending me some feedback. Unfortunately, I hit an error while trying to use the custom
+                              - link "Copilot setup steps" [ref=e499] [cursor=pointer]:
+                                - /url: https://gh.io/copilot/actions-setup-steps
+                              - text: "configured for this repository. The error I am seeing is:"
+                            - generic [ref=e500]:
+                              - code [ref=e502]: no supported setup-steps job found in your workflow file. Please ensure you have a job named copilot-setup-steps. For more details, see https://gh.io/copilot/actions-setup-steps
+                              - button "Copy code to clipboard" [ref=e504] [cursor=pointer]
+                            - paragraph [ref=e508]: Once you or someone with the necessary access fixes the problem, please let me know in a comment and I'll try again. Thanks!
+                - generic [ref=e516]:
+                  - strong [ref=e517]: Copilot
+                  - link "started work" [ref=e518] [cursor=pointer]:
+                    - /url: https://github.com/poychang/blog.poychang.net/sessions/69a4cd71-094b-4f95-bbb4-b716e4a5f714
+                  - text: on behalf of
+                  - link "poychang" [ref=e519] [cursor=pointer]:
+                    - /url: /poychang
+                  - link "October 4, 2026 01:5810 minutes ago" [ref=e520] [cursor=pointer]:
+                    - /url: "#event-32424093057"
+                  - link "View session 69a4cd71-094b-4f95-bbb4-b716e4a5f714" [ref=e521] [cursor=pointer]:
+                    - /url: https://github.com/poychang/blog.poychang.net/sessions/69a4cd71-094b-4f95-bbb4-b716e4a5f714
+                    - generic [ref=e522]: View session
+                - generic [ref=e534]:
+                  - generic [ref=e536]:
+                    - link "Copilot" [ref=e537] [cursor=pointer]:
+                      - /url: /apps/copilot-swe-agent
+                    - link [ref=e542] [cursor=pointer]:
+                      - /url: /poychang
+                      - img "@poychang" [ref=e543]
+                  - generic [ref=e544]:
+                    - code [ref=e545]:
+                      - 'link "docs: verify official DevDay images before article edits" [ref=e546] [cursor=pointer]':
+                        - /url: /poychang/blog.poychang.net/pull/50/commits/bc3e32c559a4bf73d65b68fc86ff78298c57debd
+                    - button "Commit message body" [ref=e548] [cursor=pointer]: …
+                  - code [ref=e558]:
+                    - link "bc3e32c" [ref=e559] [cursor=pointer]:
+                      - /url: /poychang/blog.poychang.net/pull/50/commits/bc3e32c559a4bf73d65b68fc86ff78298c57debd
+                - generic [ref=e567]:
+                  - strong [ref=e568]: Copilot
+                  - link "finished work" [ref=e569] [cursor=pointer]:
+                    - /url: https://github.com/poychang/blog.poychang.net/sessions/69a4cd71-094b-4f95-bbb4-b716e4a5f714
+                  - text: on behalf of
+                  - link "poychang" [ref=e570] [cursor=pointer]:
+                    - /url: /poychang
+                  - link "October 4, 2026 02:008 minutes ago" [ref=e571] [cursor=pointer]:
+                    - /url: "#event-32424137429"
+                - generic [ref=e573]:
+                  - link "Copilot" [ref=e575] [cursor=pointer]:
+                    - /url: /apps/copilot-swe-agent
+                  - generic [ref=e581]:
+                    - generic [ref=e582]:
+                      - heading "Copilot AI commented Oct 4, 20266 minutes ago" [level=3] [ref=e583]:
+                        - generic [ref=e584]:
+                          - strong [ref=e585]:
+                            - link "Copilot" [ref=e586] [cursor=pointer]:
+                              - /url: /apps/copilot-swe-agent
+                            - generic [ref=e587]: AI
+                          - text: commented
+                          - link "Oct 4, 20266 minutes ago" [ref=e588] [cursor=pointer]:
+                            - /url: "#issuecomment-5975611141"
+                      - generic [ref=e589]:
+                        - group [ref=e591]:
+                          - button [ref=e592] [cursor=pointer]:
+                            - img "Show options" [ref=e595]
+                        - generic [ref=e597]:
+                          - generic "This user has previously committed to the blog.poychang.net repository." [ref=e598]: Contributor
+                          - generic "This user is the author of this pull request." [ref=e600]: Author
+                    - table [ref=e604]:
+                      - rowgroup [ref=e605]:
+                        - row [ref=e606]:
+                          - cell [ref=e607]:
+                            - paragraph [ref=e608]:
+                              - link "@poychang" [ref=e609] [cursor=pointer]:
+                                - /url: https://github.com/poychang
+                              - text: Thanks for sending me some feedback. Unfortunately, I hit an error while trying to use the custom
+                              - link "Copilot setup steps" [ref=e610] [cursor=pointer]:
+                                - /url: https://gh.io/copilot/actions-setup-steps
+                              - text: "configured for this repository. The error I am seeing is:"
+                            - generic [ref=e611]:
+                              - code [ref=e613]: no supported setup-steps job found in your workflow file. Please ensure you have a job named copilot-setup-steps. For more details, see https://gh.io/copilot/actions-setup-steps
+                              - button "Copy code to clipboard" [ref=e615] [cursor=pointer]
+                            - paragraph [ref=e619]: Once you or someone with the necessary access fixes the problem, please let me know in a comment and I'll try again. Thanks!
+                - generic [ref=e627]:
+                  - strong [ref=e628]: Copilot
+                  - link "started work" [ref=e629] [cursor=pointer]:
+                    - /url: https://github.com/poychang/blog.poychang.net/sessions/3508ec31-a2fe-43b7-ade1-1c44125974d3
+                  - text: on behalf of
+                  - link "poychang" [ref=e630] [cursor=pointer]:
+                    - /url: /poychang
+                  - link "October 4, 2026 02:026 minutes ago" [ref=e631] [cursor=pointer]:
+                    - /url: "#event-32424194270"
+                  - link "View session 3508ec31-a2fe-43b7-ade1-1c44125974d3" [ref=e632] [cursor=pointer]:
+                    - /url: https://github.com/poychang/blog.poychang.net/sessions/3508ec31-a2fe-43b7-ade1-1c44125974d3
+                    - generic [ref=e633]: View session
+                - generic [ref=e645]:
+                  - generic [ref=e647]:
+                    - link "Copilot" [ref=e648] [cursor=pointer]:
+                      - /url: /apps/copilot-swe-agent
+                    - link [ref=e653] [cursor=pointer]:
+                      - /url: /poychang
+                      - img "@poychang" [ref=e654]
+                  - generic [ref=e655]:
+                    - code [ref=e656]:
+                      - 'link "docs: align section wording with new features" [ref=e657] [cursor=pointer]':
+                        - /url: /poychang/blog.poychang.net/pull/50/commits/b738b171cb6679bd94ea64dbce87ce05eece8082
+                    - button "Commit message body" [ref=e659] [cursor=pointer]: …
+                  - code [ref=e669]:
+                    - link "b738b17" [ref=e670] [cursor=pointer]:
+                      - /url: /poychang/blog.poychang.net/pull/50/commits/b738b171cb6679bd94ea64dbce87ce05eece8082
+                - generic [ref=e678]:
+                  - strong [ref=e679]: Copilot
+                  - link "finished work" [ref=e680] [cursor=pointer]:
+                    - /url: https://github.com/poychang/blog.poychang.net/sessions/3508ec31-a2fe-43b7-ade1-1c44125974d3
+                  - text: on behalf of
+                  - link "poychang" [ref=e681] [cursor=pointer]:
+                    - /url: /poychang
+                  - link "October 4, 2026 02:045 minutes ago" [ref=e682] [cursor=pointer]:
+                    - /url: "#event-32424226511"
+                - generic [ref=e684]:
+                  - link "Copilot" [ref=e686] [cursor=pointer]:
+                    - /url: /apps/copilot-swe-agent
+                  - generic [ref=e692]:
+                    - generic [ref=e693]:
+                      - heading "Copilot AI commented Oct 4, 20262 minutes ago" [level=3] [ref=e694]:
+                        - generic [ref=e695]:
+                          - strong [ref=e696]:
+                            - link "Copilot" [ref=e697] [cursor=pointer]:
+                              - /url: /apps/copilot-swe-agent
+                            - generic [ref=e698]: AI
+                          - text: commented
+                          - link "Oct 4, 20262 minutes ago" [ref=e699] [cursor=pointer]:
+                            - /url: "#issuecomment-5975636015"
+                      - generic [ref=e700]:
+                        - group [ref=e702]:
+                          - button [ref=e703] [cursor=pointer]:
+                            - img "Show options" [ref=e706]
+                        - generic [ref=e708]:
+                          - generic "This user has previously committed to the blog.poychang.net repository." [ref=e709]: Contributor
+                          - generic "This user is the author of this pull request." [ref=e711]: Author
+                    - table [ref=e715]:
+                      - rowgroup [ref=e716]:
+                        - row [ref=e717]:
+                          - cell [ref=e718]:
+                            - paragraph [ref=e719]:
+                              - link "@poychang" [ref=e720] [cursor=pointer]:
+                                - /url: https://github.com/poychang
+                              - text: Thanks for sending me some feedback. Unfortunately, I hit an error while trying to use the custom
+                              - link "Copilot setup steps" [ref=e721] [cursor=pointer]:
+                                - /url: https://gh.io/copilot/actions-setup-steps
+                              - text: "configured for this repository. The error I am seeing is:"
+                            - generic [ref=e722]:
+                              - code [ref=e724]: no supported setup-steps job found in your workflow file. Please ensure you have a job named copilot-setup-steps. For more details, see https://gh.io/copilot/actions-setup-steps
+                              - button "Copy code to clipboard" [ref=e726] [cursor=pointer]
+                            - paragraph [ref=e730]: Once you or someone with the necessary access fixes the problem, please let me know in a comment and I'll try again. Thanks!
+                - generic [ref=e731]:
+                  - generic [ref=e738]:
+                    - strong [ref=e739]: Copilot
+                    - link "started work" [ref=e740] [cursor=pointer]:
+                      - /url: https://github.com/poychang/blog.poychang.net/sessions/95a32be8-7e07-4760-b04b-d8e415794f66
+                    - text: on behalf of
+                    - link "poychang" [ref=e741] [cursor=pointer]:
+                      - /url: /poychang
+                    - link "October 4, 2026 02:062 minutes ago" [ref=e742] [cursor=pointer]:
+                      - /url: "#event-32424305362"
+                    - link "View session 95a32be8-7e07-4760-b04b-d8e415794f66" [ref=e743] [cursor=pointer]:
+                      - /url: https://github.com/poychang/blog.poychang.net/sessions/95a32be8-7e07-4760-b04b-d8e415794f66
+                      - generic [ref=e744]: View session
+                  - generic [ref=e752]:
+                    - strong [ref=e753]: Copilot
+                    - link "finished work" [ref=e754] [cursor=pointer]:
+                      - /url: https://github.com/poychang/blog.poychang.net/sessions/95a32be8-7e07-4760-b04b-d8e415794f66
+                    - text: on behalf of
+                    - link "poychang" [ref=e755] [cursor=pointer]:
+                      - /url: /poychang
+                    - link "October 4, 2026 02:071 minute ago" [ref=e756] [cursor=pointer]:
+                      - /url: "#event-32424325411"
+                - generic [ref=e758]:
+                  - link "Copilot" [ref=e760] [cursor=pointer]:
+                    - /url: /apps/copilot-swe-agent
+                  - generic [ref=e766]:
+                    - generic [ref=e767]:
+                      - heading "Copilot AI commented Oct 4, 2026now" [level=3] [ref=e768]:
+                        - generic [ref=e769]:
+                          - strong [ref=e770]:
+                            - link "Copilot" [ref=e771] [cursor=pointer]:
+                              - /url: /apps/copilot-swe-agent
+                            - generic [ref=e772]: AI
+                          - text: commented
+                          - link "Oct 4, 2026now" [ref=e773] [cursor=pointer]:
+                            - /url: "#issuecomment-5975648338"
+                      - generic [ref=e774]:
+                        - group [ref=e776]:
+                          - button [ref=e777] [cursor=pointer]:
+                            - img "Show options" [ref=e780]
+                        - generic [ref=e782]:
+                          - generic "This user has previously committed to the blog.poychang.net repository." [ref=e783]: Contributor
+                          - generic "This user is the author of this pull request." [ref=e785]: Author
+                    - table [ref=e789]:
+                      - rowgroup [ref=e790]:
+                        - row [ref=e791]:
+                          - cell [ref=e792]:
+                            - paragraph [ref=e793]:
+                              - link "@poychang" [ref=e794] [cursor=pointer]:
+                                - /url: https://github.com/poychang
+                              - text: Thanks for sending me some feedback. Unfortunately, I hit an error while trying to use the custom
+                              - link "Copilot setup steps" [ref=e795] [cursor=pointer]:
+                                - /url: https://gh.io/copilot/actions-setup-steps
+                              - text: "configured for this repository. The error I am seeing is:"
+                            - generic [ref=e796]:
+                              - code [ref=e798]: no supported setup-steps job found in your workflow file. Please ensure you have a job named copilot-setup-steps. For more details, see https://gh.io/copilot/actions-setup-steps
+                              - button "Copy code to clipboard" [ref=e800] [cursor=pointer]
+                            - paragraph [ref=e804]: Once you or someone with the necessary access fixes the problem, please let me know in a comment and I'll try again. Thanks!
+                - generic [ref=e812]:
+                  - strong [ref=e813]: Copilot
+                  - link "started work" [ref=e814] [cursor=pointer]:
+                    - /url: https://github.com/poychang/blog.poychang.net/sessions/0d0d80db-7482-4804-8f7c-f6bfbd40f09e
+                  - text: on behalf of
+                  - link "poychang" [ref=e815] [cursor=pointer]:
+                    - /url: /poychang
+                  - link "October 4, 2026 02:08now" [ref=e816] [cursor=pointer]:
+                    - /url: "#event-32424355107"
+                  - link "View session 0d0d80db-7482-4804-8f7c-f6bfbd40f09e" [ref=e817] [cursor=pointer]:
+                    - /url: https://github.com/poychang/blog.poychang.net/sessions/0d0d80db-7482-4804-8f7c-f6bfbd40f09e
+                    - generic [ref=e818]: View session
+                - generic [ref=e823]:
+                  - heading "This branch has not been deployed" [level=3] [ref=e827]
+                  - text: No deployments
+            - generic [ref=e830]:
+              - link "Sign up for free" [ref=e831] [cursor=pointer]:
+                - /url: /join?source=comment-repo
+              - strong [ref=e832]: to join this conversation on GitHub
+              - text: . Already have an account?
+              - link "Sign in to comment" [ref=e833] [cursor=pointer]:
+                - /url: /login?return_to=https%3A%2F%2Fgithub.com%2Fpoychang%2Fblog.poychang.net%2Fpull%2F50
+        - generic [ref=e837]:
+          - form "Select reviewers" [ref=e839]:
+            - heading "Reviewers" [level=3] [ref=e840]
+            - generic [ref=e842]:
+              - generic [ref=e843]:
+                - link [ref=e844] [cursor=pointer]:
+                  - /url: /poychang
+                  - img "@poychang" [ref=e845]
+                - link "poychang" [ref=e846] [cursor=pointer]:
+                  - /url: /poychang
+              - button "Awaiting requested review from poychang" [ref=e847] [cursor=pointer]
+          - form "Select assignees" [ref=e852]:
+            - heading "Assignees" [level=3] [ref=e853]
+            - generic [ref=e854]:
+              - paragraph [ref=e855]:
+                - generic [ref=e856]:
+                  - link [ref=e857] [cursor=pointer]:
+                    - /url: /poychang
+                    - img "@poychang" [ref=e858]
+                  - link "poychang" [ref=e859] [cursor=pointer]:
+                    - /url: /poychang
+              - paragraph [ref=e860]:
+                - generic [ref=e861]:
+                  - link "Copilot code review" [ref=e862] [cursor=pointer]:
+                    - /url: /apps/copilot-swe-agent
+                  - link "Copilot" [ref=e868] [cursor=pointer]:
+                    - /url: /apps/copilot-swe-agent
+          - generic [ref=e869]:
+            - heading "Labels" [level=3] [ref=e870]
+            - generic [ref=e871]: None yet
+          - form "Select projects" [ref=e873]:
+            - heading "Projects" [level=3] [ref=e874]
+            - text: None yet
+          - form "Select milestones" [ref=e876]:
+            - heading "Milestone" [level=3] [ref=e877]
+            - text: No milestone
+          - form "Link issues" [ref=e883]:
+            - heading "Development" [level=3] [ref=e884]
+            - paragraph [ref=e885]: Successfully merging this pull request may close these issues.
+          - generic [ref=e887]:
+            - heading "2 participants" [level=3] [ref=e888]
+            - generic [ref=e889]:
+              - link [ref=e890] [cursor=pointer]:
+                - /url: /apps/copilot-swe-agent
+              - link [ref=e895] [cursor=pointer]:
+                - /url: /poychang
+                - img "@poychang" [ref=e896]
+  - contentinfo [ref=e897]:
+    - heading "Footer" [level=2] [ref=e898]
+    - generic [ref=e899]:
+      - generic [ref=e900]:
+        - link "GitHub Homepage" [ref=e901] [cursor=pointer]:
+          - /url: https://github.com
+        - generic [ref=e904]: © 2026 GitHub, Inc.
+      - navigation "Footer" [ref=e905]:
+        - heading "Footer navigation" [level=3] [ref=e906]
+        - list "Footer navigation" [ref=e907]:
+          - listitem [ref=e908]:
+            - link "Terms" [ref=e909] [cursor=pointer]:
+              - /url: https://docs.github.com/site-policy/github-terms/github-terms-of-service
+          - listitem [ref=e910]:
+            - link "Privacy" [ref=e911] [cursor=pointer]:
+              - /url: https://docs.github.com/site-policy/privacy-policies/github-privacy-statement
+          - listitem [ref=e912]:
+            - link "Security" [ref=e913] [cursor=pointer]:
+              - /url: https://github.com/security
+          - listitem [ref=e914]:
+            - link "Status" [ref=e915] [cursor=pointer]:
+              - /url: https://www.githubstatus.com/
+          - listitem [ref=e916]:
+            - link "Community" [ref=e917] [cursor=pointer]:
+              - /url: https://github.community/
+          - listitem [ref=e918]:
+            - link "Docs" [ref=e919] [cursor=pointer]:
+              - /url: https://docs.github.com/
+          - listitem [ref=e920]:
+            - link "Contact" [ref=e921] [cursor=pointer]:
+              - /url: https://support.github.com?tags=dotcom-footer
+          - listitem [ref=e922]:
+            - button "Manage cookies" [ref=e924] [cursor=pointer]
+          - listitem [ref=e925]:
+            - button "Do not share my personal information" [ref=e927] [cursor=pointer]
