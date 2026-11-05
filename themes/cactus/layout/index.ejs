@@ -51,6 +51,7 @@
     <% show_posts.each(function(post, i){ %>
       <li class="post-item">
         <%- partial('_partial/post/date', { post: post, class_name: 'meta' }) %>
+        <%- partial('_partial/post/author', { post: post, class_name: 'meta-author' }) %>
         <span><%- partial('_partial/post/title', { post: post, index: true, class_name: '' }) %></span>
       </li>
     <% }); %>
